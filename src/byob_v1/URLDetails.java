@@ -11,4 +11,19 @@ package byob_v1;
  */
 public class URLDetails {
     
+    String URL;
+    int waitTime;
+    long contactsNum;
+    int sleepMode;
+    String userAgent;
+    
+    URLDetails(String URL, int waitTime, long contactsNum, int sleepMode, String userAgent) {
+        
+        this.URL = URL;
+        this.waitTime = waitTime;
+        this.contactsNum = contactsNum;
+        this.sleepMode = sleepMode;
+        this.userAgent = userAgent;
+    }
+    
 }
