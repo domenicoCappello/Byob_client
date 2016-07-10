@@ -34,6 +34,11 @@ public class Parser {
     ENCODING = StandardCharsets.UTF_8;
   }
   
+  public ArrayList<URLDetails> readConfigurationFile() throws IOException{
+      
+      return readConfigurationFile(FILE_NAME);
+  }
+  
   /**
    Function returns configuration values of a file.
    @param fileName full name of an existing, readable .txt file.

@@ -22,7 +22,7 @@ public class ByobComm {
         
     }
     
-    int httpGet(String url) {
+    static int httpGet(String url) {
         
         String charset = "UTF-8"; 
         
@@ -31,7 +31,9 @@ public class ByobComm {
             connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestProperty("Accept-Charset", charset);
             System.out.println(connection.getResponseMessage());
-            return connection.getResponseCode();
+            int ret = connection.getResponseCode();
+            connection.disconnect();
+            return ret;
             
         } catch (MalformedURLException ex) {
             Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);

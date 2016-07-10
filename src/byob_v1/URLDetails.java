@@ -12,7 +12,9 @@ package byob_v1;
 public class URLDetails {
     
     String URL;
-    int waitTime;
+    int waitTime;  // DEPRECATED
+    int minWaitTime;
+    int maxWaitTime;
     long contactsNum;
     int sleepMode;
     String userAgent;
