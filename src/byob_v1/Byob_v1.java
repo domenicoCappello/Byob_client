@@ -15,7 +15,9 @@ public class Byob_v1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Ciao, Domè. Te vedo chiù leoness\', chiù selvagg\'!");
+
+            new ByobComm().httpGet("http://www.google.com");
+            
     }
     
 }

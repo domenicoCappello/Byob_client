@@ -10,5 +10,5 @@ package byob_v1;
  * @author diomenik
  */
 public class Tools {
-    
+
 }
