@@ -7,6 +7,9 @@ package byob_v1;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,16 +27,19 @@ public class Byob_v1 {
    
     public static void main(String[] args) {
 
-        Parser parser = new Parser(FILE_CONF_PATH);
-        try {
-            ArrayList <URLDetails> task = parser.readConfigurationFile();
-        } catch (IOException ex) {
-            Logger.getLogger(Byob_v1.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        Parser parser = new Parser(FILE_CONF_PATH);
+//        try {
+//            ArrayList <URLDetails> task = parser.readConfigurationFile();
+//        } catch (IOException ex) {
+//            Logger.getLogger(Byob_v1.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
         // Create threadpool and start threads
+        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+        ses.schedule(new ByobTask(ses, 3, "A"), 500, TimeUnit.MILLISECONDS);
+        ses.schedule(new ByobTask(ses, 3, "B"), 1000, TimeUnit.MILLISECONDS);
         
-        while(true){
+        while(ses.isTerminated()){
             // sleep and write to C&C (?)
         }
         
