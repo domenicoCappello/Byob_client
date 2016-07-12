@@ -103,12 +103,13 @@ public class Parser {
         URLDetails detail = null;
         if(params.length >= 5) {
             String _URL = params[0];
-            int _waitTime = Integer.parseInt(params[1]);
-            long _contactsNum = Long.parseLong(params[2]);
-            int _sleepMode = Integer.parseInt(params[3]);
-            String _userAgent = params[4];
+            int _minTime = Integer.parseInt(params[1]);
+            int _maxTime = Integer.parseInt(params[2]);
+            long _contactsNum = Long.parseLong(params[3]);
+            int _sleepMode = Integer.parseInt(params[4]);
+            String _userAgent = params[5];
                
-            detail = new URLDetails(_URL, _waitTime, _contactsNum, _sleepMode, _userAgent);
+            detail = new URLDetails(_URL, _minTime, _maxTime, _contactsNum, _sleepMode, _userAgent);
         }
         return detail;
     }

@@ -32,10 +32,11 @@ public class URLDetails {
     * @param sleepMode sleep time
     * @param userAgent new userAgent to use
     */
-    URLDetails(String URL, int waitTime, long contactsNum, int sleepMode, String userAgent) {
+    URLDetails(String URL, int minTime, int maxTime, long contactsNum, int sleepMode, String userAgent) {
         
         this.URL = URL;
-        this.waitTime = waitTime;
+        this.minWaitTime = minTime;
+        this.maxWaitTime = maxTime;
         this.contactsNum = contactsNum;
         this.sleepMode = sleepMode;
         this.userAgent = userAgent;

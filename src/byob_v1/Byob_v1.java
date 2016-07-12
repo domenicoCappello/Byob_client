@@ -25,7 +25,7 @@ public class Byob_v1 {
     
     final static String FILE_CONF_PATH = "";
    
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        Parser parser = new Parser(FILE_CONF_PATH);
 //        try {
@@ -38,7 +38,8 @@ public class Byob_v1 {
         ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
         ses.schedule(new ByobTask(ses, 3, "A"), 500, TimeUnit.MILLISECONDS);
         ses.schedule(new ByobTask(ses, 3, "B"), 1000, TimeUnit.MILLISECONDS);
-        
+        LoggerByob loggerWrapper = LoggerByob.getInstance();
+        loggerWrapper.myLogger.severe( "Your severe message" );
         while(ses.isTerminated()){
             // sleep and write to C&C (?)
         }
