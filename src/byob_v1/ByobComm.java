@@ -30,7 +30,7 @@ public class ByobComm {
         try {
             connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestProperty("Accept-Charset", charset);
-            System.out.println(connection.getResponseMessage());
+//            System.out.println(connection.getResponseMessage());
             int ret = connection.getResponseCode();
             connection.disconnect();
             return ret;

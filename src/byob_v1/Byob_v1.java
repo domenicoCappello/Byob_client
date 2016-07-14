@@ -23,27 +23,29 @@ public class Byob_v1 {
      * @param args the command line arguments
      */
     
-    final static String FILE_CONF_PATH = "";
+    final static String FILE_CONF_PATH = "conf.txt";
+    final static ByobSingleton byobWrapper = ByobSingleton.getInstance();
    
     public static void main(String[] args) throws IOException {
 
-//        Parser parser = new Parser(FILE_CONF_PATH);
-//        try {
-//            ArrayList <URLDetails> task = parser.readConfigurationFile();
-//        } catch (IOException ex) {
-//            Logger.getLogger(Byob_v1.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
-        // Create threadpool and start threads
-        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
-        ses.schedule(new ByobTask(ses, 3, "A"), 500, TimeUnit.MILLISECONDS);
-        ses.schedule(new ByobTask(ses, 3, "B"), 1000, TimeUnit.MILLISECONDS);
-        LoggerByob loggerWrapper = LoggerByob.getInstance();
-        loggerWrapper.myLogger.severe( "Your severe message" );
-        while(ses.isTerminated()){
-            // sleep and write to C&C (?)
+        Parser parser = new Parser(FILE_CONF_PATH);
+        try {
+            ArrayList <URLDetails> task = parser.readConfigurationFile();
+            schedule(task);
+        } catch (IOException ex) {
+            byobWrapper.myLogger.severe("Parser I/O exception");
         }
         
+//        while(byobWrapper.ses.isTerminated()){
+//            // sleep and write to C&C (?)
+//        }
+        
+    }
+    
+    public static void schedule(ArrayList <URLDetails> task){
+        for(int i = 0; i < task.size(); i++){
+            byobWrapper.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
+        }
     }
     
 }

@@ -53,7 +53,7 @@ public class Parser {
         String line = br.readLine();
         if (line != null)
         {
-            String[] detail = splitString(line, ",");
+            String[] detail = splitString(line, ";");
             if (detail.length >= 5) 
                 configuration.add(convertParam(detail));
         }
@@ -110,6 +110,7 @@ public class Parser {
             String _userAgent = params[5];
                
             detail = new URLDetails(_URL, _minTime, _maxTime, _contactsNum, _sleepMode, _userAgent);
+            System.out.println(detail.getURL());
         }
         return detail;
     }

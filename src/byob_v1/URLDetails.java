@@ -11,13 +11,12 @@ package byob_v1;
  */
 public class URLDetails {
     
-    String URL;
-    int waitTime;  // DEPRECATED
-    int minWaitTime;
-    int maxWaitTime;
-    long contactsNum;
-    int sleepMode;
-    String userAgent;
+    private String URL;
+    private int minWaitTime;
+    private int maxWaitTime;
+    private long contactsNum;
+    private int sleepMode;
+    private String userAgent;
     
     /**
     Constructor.
@@ -41,4 +40,63 @@ public class URLDetails {
         this.sleepMode = sleepMode;
         this.userAgent = userAgent;
     }  
+    
+    @Override
+    public String toString(){
+        String ret = URL + ", contactsNum: " + contactsNum + ", sleepMode: " + 
+                sleepMode + ", userAgent: " + userAgent; 
+        return ret;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+
+    public void setMinWaitTime(int minWaitTime) {
+        this.minWaitTime = minWaitTime;
+    }
+
+    public void setMaxWaitTime(int maxWaitTime) {
+        this.maxWaitTime = maxWaitTime;
+    }
+
+    public void setContactsNum(long contactsNum) {
+        this.contactsNum = contactsNum;
+    }
+
+    public void setSleepMode(int sleepMode) {
+        this.sleepMode = sleepMode;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
+    public int getMinWaitTime() {
+        return minWaitTime;
+    }
+
+    public int getMaxWaitTime() {
+        return maxWaitTime;
+    }
+
+    public long getContactsNum() {
+        return contactsNum;
+    }
+
+    public int getSleepMode() {
+        return sleepMode;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+    
+    public void decreaseContactNum(){
+        contactsNum = contactsNum - 1;
+    }
+    
+    public String getURL(){
+        return URL;
+    }
 }
