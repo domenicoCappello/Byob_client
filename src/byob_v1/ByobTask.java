@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
 import java.util.Random;
@@ -11,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 /**
- *
- * @author diomenik
+ * TODO
+ * @author Cappello, Nazio
  */
 public class ByobTask implements Runnable {
 
@@ -20,6 +15,10 @@ public class ByobTask implements Runnable {
     URLDetails contact;
     private static final Random random = new Random();
     
+    /**
+    * Constructor.
+    * @param contact details of the hosts to contact.
+    */
     ByobTask(URLDetails contact){
         this.contact = contact;
     }
@@ -37,7 +36,5 @@ public class ByobTask implements Runnable {
                      (contact.getMaxWaitTime() - contact.getMinWaitTime()) * random.nextDouble();
             ses.schedule(this, (long)(randomInterval*1000), TimeUnit.MILLISECONDS);
         }
-
-    }
-    
+    }  
 }

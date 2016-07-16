@@ -9,35 +9,40 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
- *
- * @author Alessio
+ * The class manages every aspect of the configuration file: creation and reading of it,
+ * string splitting and parameters conversions.
+ * @author Cappello, Nazio
  */
 public class Parser {
     
-  static String FILE_NAME;
-  static Charset ENCODING;
+    static String FILE_NAME;
+    static Charset ENCODING;
   
-   /**
-   Constructor.
-  */
-  public Parser(){
-    FILE_NAME = "C:\\input.txt";
-    ENCODING = StandardCharsets.UTF_8;
-  }
+    /**
+    Constructor.
+    */
+   public Parser(){
+     FILE_NAME = "C:\\input.txt";
+     ENCODING = StandardCharsets.UTF_8;
+    }
   
-  /**
-   Constructor.
-   @param fileName full name of an existing, readable textfile.
-  */
-  public Parser(String fileName){
-    FILE_NAME = fileName;
-    ENCODING = StandardCharsets.UTF_8;
-  }
+    /**
+     Constructor.
+     @param fileName full name of an existing, readable textfile.
+     */
+    public Parser(String fileName){
+      FILE_NAME = fileName;
+      ENCODING = StandardCharsets.UTF_8;
+    }
   
-  public ArrayList<URLDetails> readConfigurationFile() throws IOException{
-      
-      return readConfigurationFile(FILE_NAME);
-  }
+    /**
+    Function returns an list of array with hosts' informations.
+    * @exception IOException in case of reading's problem.
+    * @return hosts' informations.
+    */
+    public ArrayList<URLDetails> readConfigurationFile() throws IOException{
+        return readConfigurationFile(FILE_NAME);
+    }
   
   /**
    Function returns configuration values of a file.
@@ -83,10 +88,10 @@ public class Parser {
     }
     
     /**
-     * Function returns an array of a String splitted on a deliiter.
-     * @param toBeParsed string who needs parsing
-     * @param delimeter symbol for splitting @param toBeParsed 
-     * @return  Array of splitted Strings
+     *  Function returns an array of a String splitted on a deliiter.
+     *  @param toBeParsed string who needs parsing
+     *  @param delimeter symbol for splitting @param toBeParsed 
+     *  @return Array of splitted Strings
      */
     public static String[] splitString(String toBeParsed, String delimiter){
         delimiter = "["+delimiter+"]";
@@ -95,9 +100,9 @@ public class Parser {
     }
     
     /**
-    Function returns an URLDetails object with the configuration parameters.
-    @param params Array of parameters
-     * @return URLDetails object
+    *   Function returns an URLDetails object with the configuration parameters.
+    *   @param params Array of parameters
+    *   @return host's details.
     */
     private static URLDetails convertParam(String[] params) {
         URLDetails detail = null;

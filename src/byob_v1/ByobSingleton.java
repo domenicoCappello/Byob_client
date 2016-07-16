@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
 import java.io.File;
@@ -17,28 +12,37 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- *
- * @author Alessio
+ * TODO
+ * @author Cappello, Nazio
  */
 public class ByobSingleton {
-    String toLog="";  // DEPRECATED
-    GregorianCalendar clock;  // DEPRECATED
     
     private static ByobSingleton instance = null;
-
     public static final Logger myLogger = Logger.getLogger("BYOB");
     public static final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
  
+    /**
+    * Costructor.
+    */
     public ByobSingleton() {}
         
+    /**
+    * Fuction that gets the instance of the singleton.
+    * @return instance Singleton's obecjt instance
+    */
     public static ByobSingleton getInstance() {
       if(instance == null) {
         prepareLogger();
         instance = new ByobSingleton ();
       }
       return instance;
-   }
-  
+    }
+    
+    /**
+    * Method that creates and initializes the Log file.
+    * @exception IOException
+    * @exception SecurityException
+    */
     private static void prepareLogger() {
         try {
             FileHandler myFileHandler = new FileHandler("_log.txt");
@@ -48,27 +52,6 @@ public class ByobSingleton {
             myLogger.setLevel(Level.FINEST);
         } catch (IOException | SecurityException ex) {
             Logger.getLogger(ByobSingleton.class.getName()).log(Level.SEVERE, null, ex);
-    }
-} 
-//     public void writeLog(String input){
-//        clock = new GregorianCalendar();
-//        toLog = "["+clock+"] " + input;
-//        String path = "Ser/log.txt";
-//        FileWriter fw;
-//        try {
-//            File file = new File(path);
-//            if(!file.exists())  
-//                fw = new FileWriter(file,true);
-//            else      
-//            {
-//                file.createNewFile();
-//                fw = new FileWriter(file);
-//            }
-//            fw.write(toLog+"\r\n");
-//            fw.flush();
-//            fw.close();
-//        } catch(IOException e) {
-//            e.printStackTrace();
-//            }
-//    }
+        }
+    }    
 }

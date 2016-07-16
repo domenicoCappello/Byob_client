@@ -6,8 +6,8 @@
 package byob_v1;
 
 /**
- *
- * @author diomenik
+ *  TODO
+ *  @author Cappello, Nazio
  */
 public class URLDetails {
     
@@ -26,7 +26,8 @@ public class URLDetails {
     /**
     Constructor.
     * @param URL URL to contact
-    * @param waitTime time slot for waiting   
+    * @param minTime minimum waiting time of the slot
+    * @param maxTime maximum waiting time of the slot 
     * @param contactsNum number of times contact has to be done   
     * @param sleepMode sleep time
     * @param userAgent new userAgent to use
@@ -42,40 +43,69 @@ public class URLDetails {
     }  
     
     @Override
+    /**
+    *   Function to string conversion.
+    *   @return string with host's details.
+    */
     public String toString(){
         String ret = URL + ", contactsNum: " + contactsNum + ", sleepMode: " + 
                 sleepMode + ", userAgent: " + userAgent; 
         return ret;
     }
-
+    /**
+    *   Method to set URL value.
+    */
     public void setURL(String URL) {
         this.URL = URL;
     }
-
+    
+    /**
+    *   Method to set minimum time value of the slots.
+    */
     public void setMinWaitTime(int minWaitTime) {
         this.minWaitTime = minWaitTime;
     }
-
+    
+    /**
+    *   Method to set maximum time value of the slots.
+    */
     public void setMaxWaitTime(int maxWaitTime) {
         this.maxWaitTime = maxWaitTime;
     }
 
-    public void setContactsNum(long contactsNum) {
+    
+    /**
+    *   Method to set the number of the contacts.
+    */public void setContactsNum(long contactsNum) {
         this.contactsNum = contactsNum;
     }
 
+    /**
+    *   Method to set the sleep mode.
+    */
     public void setSleepMode(int sleepMode) {
         this.sleepMode = sleepMode;
     }
-
+    
+    /**
+    *   Method to set the user-agent.
+    */
     public void setUserAgent(String userAgent) {
         this.userAgent = userAgent;
     }
 
+    /**
+    * Function returns the minimum waiting time of the slot.
+    * @return  minimum waiting time.
+    */
     public int getMinWaitTime() {
         return minWaitTime;
     }
-
+    
+    /**
+    * Function returns the maximum waiting time of the slot.
+    * @return  minimum waiting time.
+    */
     public int getMaxWaitTime() {
         return maxWaitTime;
     }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
 import java.io.IOException;
@@ -13,15 +8,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author diomenik
+ * TODO
+ * @author Cappello - Nazio
  */
 public class ByobComm {
     
-    ByobComm(){
-        
-    }
+    /**
+    * Costructor.
+    */
+    ByobComm(){}
     
+    /**
+    * TODO
+    * @param url string with the URL of the site to contact.
+    * @exception MalformedURLException
+    * @exception IOException
+    * @return
+    */
     static int httpGet(String url) {
         
         String charset = "UTF-8"; 
