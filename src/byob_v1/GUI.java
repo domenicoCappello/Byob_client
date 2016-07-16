@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package byob_v1;
+
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author User
@@ -46,6 +50,7 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("Open conf.txt");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +66,7 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jRadioButton2.setText("Insert values");
+        jRadioButton2.setEnabled(false);
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
@@ -68,16 +74,27 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jLabel1.setText("URL");
+        jLabel1.setEnabled(false);
+        jLabel1.setOpaque(true);
 
         jLabel2.setText("Contact Time");
+        jLabel2.setEnabled(false);
+        jLabel2.setOpaque(true);
 
         jLabel3.setText("# contacts");
+        jLabel3.setEnabled(false);
+        jLabel3.setOpaque(true);
 
         jLabel4.setText("Sleep Condition");
+        jLabel4.setEnabled(false);
+        jLabel4.setOpaque(true);
 
         jLabel5.setText("User-Agent");
+        jLabel5.setEnabled(false);
+        jLabel5.setOpaque(true);
 
         jButton2.setText("Erase ALL");
+        jButton2.setEnabled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -91,7 +108,18 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jTextField2.setEnabled(false);
+
+        jTextField3.setEnabled(false);
+
+        jTextField4.setEnabled(false);
+
+        jTextField5.setEnabled(false);
+
+        jTextField6.setEnabled(false);
+
         jButton4.setText("Save conf.txt");
+        jButton4.setEnabled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -186,6 +214,13 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION)
+        {
+            File selectedFile = fileChooser.getSelectedFile();
+            jTextField1.setText(selectedFile.getName().toString());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
