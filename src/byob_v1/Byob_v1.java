@@ -27,15 +27,17 @@ public class Byob_v1 {
     final static ByobSingleton byobWrapper = ByobSingleton.getInstance();
    
     public static void main(String[] args) throws IOException {
-        GUI frame = new GUI();
-        frame.setVisible(true); //or whatever the method is in jframe.class
-        Parser parser = new Parser(FILE_CONF_PATH);
-        try {
-            ArrayList <URLDetails> task = parser.readConfigurationFile();
-            schedule(task);
-        } catch (IOException ex) {
-            byobWrapper.myLogger.severe("Parser I/O exception");
-        }
+//        GUI frame = new GUI();
+//        frame.setVisible(true); //or whatever the method is in jframe.class
+//        Parser parser = new Parser(FILE_CONF_PATH);
+//        try {
+//            ArrayList <URLDetails> task = parser.readConfigurationFile();
+//            schedule(task);
+//        } catch (IOException ex) {
+//            byobWrapper.myLogger.severe("Parser I/O exception");
+//        }
+
+        Tools.getBrowsers();
         
 //        while(byobWrapper.ses.isTerminated()){
 //            // sleep and write to C&C (?)

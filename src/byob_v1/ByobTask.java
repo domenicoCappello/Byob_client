@@ -27,7 +27,7 @@ public class ByobTask implements Runnable {
     public void run() {
         ByobSingleton.getInstance().myLogger.severe(contact.toString());
         System.out.println("Contacting " + contact.getURL() + " : " + contact.getContactsNum() + " more times");
-        int code = ByobComm.httpGet(contact.getURL());
+        int code = ByobComm.httpGet(contact.getURL(), URLDetails.proxyIp, URLDetails.proxyPort);
         contact.decreaseContactNum(); 
         System.out.println(contact.getURL() + " returned: " + code);
         

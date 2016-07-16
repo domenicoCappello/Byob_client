@@ -18,6 +18,9 @@ public class URLDetails {
     private int sleepMode;
     private String userAgent;
     
+    public static String proxyIp = "";
+    public static int proxyPort = 0;
+    
     /**
     Constructor.
     */
@@ -41,6 +44,12 @@ public class URLDetails {
         this.sleepMode = sleepMode;
         this.userAgent = userAgent;
     }  
+    
+    
+    public void setProxy(String ip, int port){
+        proxyIp = ip;
+        proxyPort = port;
+    }
     
     @Override
     /**
