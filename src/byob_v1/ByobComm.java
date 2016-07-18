@@ -20,6 +20,16 @@ public class ByobComm {
     */
     ByobComm(){}
     
+    static int httpGet(String url){
+        
+        return httpGet(url, "", "", -1);
+    }
+    
+    static int httpGet(String url, String userAgent){
+        
+        return httpGet(url, userAgent, "", -1);
+    }
+    
     /**
     * TODO
     * @param url string with the URL of the site to contact.
@@ -27,7 +37,7 @@ public class ByobComm {
     * @exception IOException
     * @return
     */
-    static int httpGet(String url, String proxyIp, int proxyPort) {
+    static int httpGet(String url, String userAgent, String proxyIp, int proxyPort) {
         
         String charset = "UTF-8"; 
         
@@ -40,6 +50,10 @@ public class ByobComm {
                 connection = (HttpURLConnection) new URL(url).openConnection();
             }
             connection.setRequestProperty("Accept-Charset", charset);
+            
+            if(!userAgent.isEmpty())
+                connection.setRequestProperty("User-Agent", userAgent);
+            
 //            System.out.println(connection.getResponseMessage());
             int ret = connection.getResponseCode();
             connection.disconnect();

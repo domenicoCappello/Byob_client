@@ -6,12 +6,11 @@
 package byob_v1;
 
 import java.io.IOException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -29,15 +28,15 @@ public class Byob_v1 {
     public static void main(String[] args) throws IOException {
 //        GUI frame = new GUI();
 //        frame.setVisible(true); //or whatever the method is in jframe.class
-//        Parser parser = new Parser(FILE_CONF_PATH);
-//        try {
-//            ArrayList <URLDetails> task = parser.readConfigurationFile();
-//            schedule(task);
-//        } catch (IOException ex) {
-//            byobWrapper.myLogger.severe("Parser I/O exception");
-//        }
+        Parser parser = new Parser(FILE_CONF_PATH);
+        try {
+            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+            schedule(taskList);
+        } catch (IOException ex) {
+            byobWrapper.myLogger.severe("Parser I/O exception");
+        }
 
-        Tools.getBrowsers();
+//        Tools.getBrowsers();
         
 //        while(byobWrapper.ses.isTerminated()){
 //            // sleep and write to C&C (?)

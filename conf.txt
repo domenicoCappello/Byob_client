@@ -1,2 +1,2 @@
-http://www.google.com;1;3;4;0;UserAgent
-http://www.stackoverflow.com;2;2;5;0;UserAgent
+http://www.google.com;1;3;4;A;UserAgent
+http://www.stackoverflow.com;2;2;5;PO;UserAgent

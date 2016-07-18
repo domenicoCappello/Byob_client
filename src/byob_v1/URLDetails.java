@@ -5,6 +5,10 @@
  */
 package byob_v1;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Calendar;
+
 /**
  *  TODO
  *  @author Cappello, Nazio
@@ -15,7 +19,7 @@ public class URLDetails {
     private int minWaitTime;
     private int maxWaitTime;
     private long contactsNum;
-    private int sleepMode;
+    private String sleepMode;   // xy, x = O/E/'' : Odd/Even day of the week, y = A/P/'' : AM/PM hour of the day
     private String userAgent;
     
     public static String proxyIp = "";
@@ -35,7 +39,7 @@ public class URLDetails {
     * @param sleepMode sleep time
     * @param userAgent new userAgent to use
     */
-    URLDetails(String URL, int minTime, int maxTime, long contactsNum, int sleepMode, String userAgent) {
+    URLDetails(String URL, int minTime, int maxTime, long contactsNum, String sleepMode, String userAgent) {
         
         this.URL = URL;
         this.minWaitTime = minTime;
@@ -61,6 +65,36 @@ public class URLDetails {
                 sleepMode + ", userAgent: " + userAgent; 
         return ret;
     }
+    
+    public boolean sleepMode(){
+        LocalDate date  = LocalDate.now();
+        DayOfWeek dow   = date.getDayOfWeek();
+        boolean odd     = (dow.getValue() % 2 == 1);
+        Calendar cal    = Calendar.getInstance();
+        boolean am      = (cal.get(Calendar.AM_PM) == Calendar.AM);
+                
+        return (odd  && sleepOddDays() )||
+               (!odd && sleepEvenDays())||
+               (am   && sleepAMHours() )||
+               (!am  && sleepPMHours() );
+    }
+    
+    private boolean sleepOddDays(){
+        return sleepMode.toLowerCase().contains("o");
+    }
+    
+    private boolean sleepEvenDays(){
+        return sleepMode.toLowerCase().contains("e");
+    }
+    
+    private boolean sleepAMHours(){
+        return sleepMode.toLowerCase().contains("a");
+    }
+    
+    private boolean sleepPMHours(){
+        return sleepMode.toLowerCase().contains("p");
+    }
+    
     /**
     *   Method to set URL value.
     */
@@ -92,7 +126,7 @@ public class URLDetails {
     /**
     *   Method to set the sleep mode.
     */
-    public void setSleepMode(int sleepMode) {
+    public void setSleepMode(String sleepMode) {
         this.sleepMode = sleepMode;
     }
     
@@ -123,7 +157,7 @@ public class URLDetails {
         return contactsNum;
     }
 
-    public int getSleepMode() {
+    public String getSleepMode() {
         return sleepMode;
     }
 
