@@ -1,10 +1,22 @@
-lug 18, 2016 4:37:26 PM byob_v1.ByobTask run
+lug 23, 2016 10:57:07 AM byob_v1.ByobTask run
+GRAVE: Contacting http://www.google.com in 36 minutes
+lug 23, 2016 10:57:07 AM byob_v1.ByobTask run
+GRAVE: http://www.stackoverflow.com, contactsNum: 5, sleepMode: PO, userAgent: UserAgent
+lug 23, 2016 10:57:09 AM byob_v1.ByobTask run
+GRAVE: http://www.stackoverflow.com, contactsNum: 4, sleepMode: PO, userAgent: UserAgent
+lug 23, 2016 10:57:12 AM byob_v1.ByobTask run
+GRAVE: http://www.stackoverflow.com, contactsNum: 3, sleepMode: PO, userAgent: UserAgent
+lug 23, 2016 10:57:14 AM byob_v1.ByobTask run
+GRAVE: http://www.stackoverflow.com, contactsNum: 2, sleepMode: PO, userAgent: UserAgent
+lug 23, 2016 10:57:16 AM byob_v1.ByobTask run
+GRAVE: http://www.stackoverflow.com, contactsNum: 1, sleepMode: PO, userAgent: UserAgent
+lug 23, 2016 11:33:07 AM byob_v1.ByobTask run
+GRAVE: Contacting http://www.google.com in 37 minutes
+lug 23, 2016 12:10:07 PM byob_v1.ByobTask run
 GRAVE: http://www.google.com, contactsNum: 4, sleepMode: A, userAgent: UserAgent
-lug 18, 2016 4:37:26 PM byob_v1.ByobTask run
-GRAVE: Contacting http://www.stackoverflow.com in 41 minutes
-lug 18, 2016 4:37:28 PM byob_v1.ByobTask run
+lug 23, 2016 12:10:09 PM byob_v1.ByobTask run
 GRAVE: http://www.google.com, contactsNum: 3, sleepMode: A, userAgent: UserAgent
-lug 18, 2016 4:37:30 PM byob_v1.ByobTask run
+lug 23, 2016 12:10:11 PM byob_v1.ByobTask run
 GRAVE: http://www.google.com, contactsNum: 2, sleepMode: A, userAgent: UserAgent
-lug 18, 2016 4:37:32 PM byob_v1.ByobTask run
+lug 23, 2016 12:10:15 PM byob_v1.ByobTask run
 GRAVE: http://www.google.com, contactsNum: 1, sleepMode: A, userAgent: UserAgent
