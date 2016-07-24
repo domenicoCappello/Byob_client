@@ -5,11 +5,19 @@
  */
 package byob_v1;
 
+import java.awt.Component;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -18,12 +26,20 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class GUI extends javax.swing.JFrame {
 
+    List<JTextField> textParam = new ArrayList<JTextField>();
+    
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
-                
+        textParam.add(jTextField2);
+        textParam.add(jTextField3);
+        textParam.add(jTextField4);
+        textParam.add(jTextField5);
+        textParam.add(jTextField6);
+        textParam.add(jTextField7);
+        System.out.println("# di text: "+textParam.size());
         ButtonGroup group = new ButtonGroup();
         group.add(jRadioButton1);
         group.add(jRadioButton2);
@@ -75,6 +91,8 @@ public class GUI extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jTextField1.setName(""); // NOI18N
 
         jRadioButton2.setText("Insert values");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +184,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
-                                .addGap(57, 57, 57)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -294,7 +312,38 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        boolean flag = true;
+        int dialogButton = JOptionPane.YES_NO_OPTION;
+        File fileToSave = null;
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setDialogTitle("Specify a file to save"); 
+        
+        while(flag)
+        {
+            int userSelection = fileChooser.showSaveDialog(parentFrame);
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                fileToSave = fileChooser.getSelectedFile();
+                int dialogResult = JOptionPane.showConfirmDialog (null, "Is the name correct?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION) {
+                    flag = false;
+                    if (!fileToSave.getName().contains(".txt")) 
+                        fileToSave = new File(fileToSave.toString() + ".txt");
+                }
+                else
+                    flag = true;
+                
+            //System.out.println("Save as file: " + extractData);
+            }  
+        }
+        System.out.println("Estraggo i parametri.");
+        try {
+            Parser.writeConfigurationFile(fileToSave,extractData());
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -340,7 +389,6 @@ public class GUI extends javax.swing.JFrame {
     {
         jButton1.setEnabled(flag);
         jTextField1.setEnabled(flag);
-        
         jTextField2.setEnabled(!flag);
         jTextField3.setEnabled(!flag);
         jTextField4.setEnabled(!flag);
@@ -356,6 +404,21 @@ public class GUI extends javax.swing.JFrame {
         jButton2.setEnabled(!flag);
         jButton4.setEnabled(!flag);
         jButton5.setEnabled(!flag);
+    }
+    
+    /**
+     * The fucntion returns the data written in the jTextFields.
+     * @return Array of the parameters
+     */
+    private String[] extractData() {
+        
+        String[] params = new String[textParam.size()];
+        for(int i = 0; i < textParam.size() ; i++) {
+            
+            params[i] = textParam.get(i).getText();
+            System.out.println(i + ": "+params[i]);
+        } 
+        return params;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
