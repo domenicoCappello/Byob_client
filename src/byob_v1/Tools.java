@@ -59,4 +59,29 @@ public class Tools {
             }
             return out;
     }
-}
+    
+    /**
+     * The function runs a command on the host's command line and captures
+     * the result fromthe console.
+     * @param command   command to be run
+     * @return output from the command line
+     */
+    public static String runCmd(String command) {
+        String cmdOutput = "";
+        String _string = null;
+
+        try {
+            Process _process = Runtime.getRuntime().exec(command);
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(_process.getInputStream()));
+            while((_string = stdInput.readLine()) != null) {
+                cmdOutput += _string+"\n";
+            }
+        }
+
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+        
+        return cmdOutput;
+        }
+    }
