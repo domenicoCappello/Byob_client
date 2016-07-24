@@ -1,8 +1,12 @@
 package byob_v1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -66,6 +70,26 @@ public class Parser {
     br.close();    
     return configuration;
   }
+  
+  /**
+     * The function runs a command on the host's command line and captures
+     * the result fromthe console.
+     * @param command   command to be run
+     * @return output from the command line
+     */
+    public static void writeConfigurationFile(File fileToWrite, String[] params) throws IOException {
+        if (!fileToWrite.exists())
+	    fileToWrite.createNewFile();
+        FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath());
+        BufferedWriter bw = new BufferedWriter(fw);
+	for (int i = 0; i < params.length; i++) {
+		bw.write(params[i]);
+                bw.newLine();
+	}
+	
+        bw.close();
+        fw.close();
+     }
   
     /**
      * Function returns number of lines of a file.
