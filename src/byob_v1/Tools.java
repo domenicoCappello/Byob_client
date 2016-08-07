@@ -8,6 +8,10 @@ package byob_v1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,4 +88,66 @@ public class Tools {
         
         return cmdOutput;
         }
+    
+    /**
+     * Th function returns a unique bot id using a hash of the host hardware
+     * information. 
+     * @return unique ID of the bot
+     */
+    public String idGeneration() {
+        String hardware = "";
+        String command = "";
+        switch(getOs().toUpperCase()){
+            case "LINUX":
+                //command = "lshw | grep -e serial -e product | grep -v Controller | grep -v None";
+                command = "lshw | grep -e serial";
+                break;
+                
+            case "OSX":
+                command = "ifconfig en0 | grep ether";
+                break;
+                
+            case "WINDOWS":
+                command = "getmac";
+                break;
+        }
+        
+        hardware = Tools.runCmd(command);
+        return hashFunction(hardware);
+    }
+    
+    /**
+     * The function returns the MD5 Checksum of a string.
+     * @param hw the string youwant to compute the checksum of
+     * @returnthe checksum of the string
+     */
+    public static String hashFunction(String hw) {
+        
+        byte[] bytesMsg = null;
+        byte[] bytesDigest = null;
+        MessageDigest md = null;
+        String hashText = "";
+        
+        try {
+            bytesMsg = hw.getBytes("UTF-8");
+        }
+        catch(UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        
+        try {
+            md = MessageDigest.getInstance("MD5");
+        }
+        catch(NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        
+        bytesDigest = md.digest(bytesMsg);
+        hashText = (new BigInteger(1, bytesDigest)).toString(16);
+        while(hashText.length() < 32) {
+            hashText = "0"+hashText;
+        }
+        
+        return hashText;
+    }
     }

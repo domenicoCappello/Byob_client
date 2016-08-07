@@ -84,68 +84,6 @@ public class URLDetails {
                (!am  && sleepPMHours() );
     }
     
-    /**
-     * Th function returns a unique bot id using a hash of the host hardware
-     * information. 
-     * @return unique ID of the bot
-     */
-    public String idGeneration() {
-        String hardware = "";
-        String command = "";
-        switch(Tools.getOs().toUpperCase()){
-            case "LINUX":
-                command = "lshw | grep -e serial -e product | grep -v Controller | grep -v None";
-                break;
-                
-            case "OSX":
-                // TO-DO
-                break;
-                
-            case "WINDOWS":
-                // TO-DO
-                break;
-        }
-        
-        hardware = Tools.runCmd(command);
-        return hashFunction(hardware);
-    }
-    
-    /**
-     * The function returns the MD5 Checksum of a string.
-     * @param hw the string youwant to compute the checksum of
-     * @returnthe checksum of the string
-     */
-    public static String hashFunction(String hw) {
-        
-        byte[] bytesMsg = null;
-        byte[] bytesDigest = null;
-        MessageDigest md = null;
-        String hashText = "";
-        
-        try {
-            bytesMsg = hw.getBytes("UTF-8");
-        }
-        catch(UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        
-        try {
-            md = MessageDigest.getInstance("MD5");
-        }
-        catch(NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        
-        bytesDigest = md.digest(bytesMsg);
-        hashText = (new BigInteger(1, bytesDigest)).toString(16);
-        while(hashText.length() < 32) {
-            hashText = "0"+hashText;
-        }
-        
-        return hashText;
-    }
-    
-    
     private boolean sleepOddDays(){
         return sleepMode.toLowerCase().contains("o");
     }
