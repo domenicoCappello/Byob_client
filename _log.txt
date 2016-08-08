@@ -1,10 +1,10 @@
-ago 08, 2016 12:39:09 PM byob_v1.ByobTask run
+ago 08, 2016 3:52:28 PM byob_v1.ByobTask run
 SEVERE: http://www.google.com, contactsNum: 4, sleepMode: A, userAgent: UserAgent
-ago 08, 2016 12:39:10 PM byob_v1.ByobTask run
-SEVERE: Contacting http://www.stackoverflow.com in 35 minutes
-ago 08, 2016 12:39:13 PM byob_v1.ByobTask run
+ago 08, 2016 3:52:29 PM byob_v1.ByobTask run
+SEVERE: Contacting http://www.stackoverflow.com in 45 minutes
+ago 08, 2016 3:52:32 PM byob_v1.ByobTask run
 SEVERE: http://www.google.com, contactsNum: 3, sleepMode: A, userAgent: UserAgent
-ago 08, 2016 12:39:17 PM byob_v1.ByobTask run
+ago 08, 2016 3:52:35 PM byob_v1.ByobTask run
 SEVERE: http://www.google.com, contactsNum: 2, sleepMode: A, userAgent: UserAgent
-ago 08, 2016 12:39:20 PM byob_v1.ByobTask run
+ago 08, 2016 3:52:38 PM byob_v1.ByobTask run
 SEVERE: http://www.google.com, contactsNum: 1, sleepMode: A, userAgent: UserAgent
