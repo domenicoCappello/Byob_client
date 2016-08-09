@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.io.File;
 import java.io.IOException;
@@ -19,36 +13,20 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.HashMap;
-import java.util.Map;
-import javax.swing.Action;
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.DefaultEditorKit;
 
 /**
  * The class creates and manages anything who's connected to the Graphic User 
@@ -56,7 +34,7 @@ import javax.swing.text.DefaultEditorKit;
  * enabled/disabled.
  * @author Cappello - Nazio
  */
-public class GUI extends javax.swing.JFrame {
+public final class GUI extends javax.swing.JFrame {
 
     // List of user's params JTextField 
     List<JTextField> textParam = new ArrayList<>();
@@ -93,7 +71,8 @@ public class GUI extends javax.swing.JFrame {
     
     /**
      * Constructor. 
-     * It creates new form GUI and initiates components.
+     * It creates new form GUI, it initiates components and creates Lists to
+     * represent the set of components.
      */
     public GUI() {
         initComponents();
@@ -104,7 +83,6 @@ public class GUI extends javax.swing.JFrame {
         helpLabel.add(jLabel4);
         helpLabel.add(jLabel5);
         helpLabel.add(jLabel6);
-        //textParam.add(jTextField2);
         textParam.add(jTextField3);
         textParam.add(jTextField4);
         textParam.add(jTextField5);
@@ -125,7 +103,6 @@ public class GUI extends javax.swing.JFrame {
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -141,7 +118,6 @@ public class GUI extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
@@ -162,13 +138,6 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButton3.setText("Launch");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("URL");
         jLabel1.setEnabled(false);
@@ -227,14 +196,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Add");
-        jButton6.setEnabled(false);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
         jButton7.setText("Open");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,9 +248,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton7)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -339,8 +298,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -416,9 +374,6 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
@@ -429,9 +384,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -445,7 +398,6 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
         fileChooser.setFileFilter(filter);
@@ -458,11 +410,6 @@ public class GUI extends javax.swing.JFrame {
             jTextField1.setText(path);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         JFrame parentFrame = new JFrame();
@@ -483,12 +430,10 @@ public class GUI extends javax.swing.JFrame {
                 if(dialogResult == JOptionPane.YES_OPTION) {
                     flag = false;
                     if (!fileToSave.getName().contains(".txt"))
-                    fileToSave = new File(fileToSave.toString() + ".txt");
+                        fileToSave = new File(fileToSave.toString() + ".txt");
                 }
                 else
-                flag = true;
-
-                //System.out.println("Save as file: " + extractData);
+                    flag = true;
             }
         }
         System.out.println("Extracting parameters.");
@@ -500,11 +445,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
         jTextField1.setText("");
-        for(int i=0; i < textParam.size(); i++) {
+        for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setText("");
-        }
         jTextArea1.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -512,11 +455,10 @@ public class GUI extends javax.swing.JFrame {
         final JFrame parent = new JFrame();
         parent.setLayout(new GridLayout(1,1));
         final JPanel panelCheckbox = new JPanel();
-        //parent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JButton button = new JButton("Add items");
         panelCheckbox.setLayout(new BoxLayout(panelCheckbox, BoxLayout.Y_AXIS));
         for(int i=0; i<condition.size(); i++)
-        panelCheckbox.add(condition.get((i)));
+            panelCheckbox.add(condition.get((i)));
         panelCheckbox.add(button);
         parent.add(panelCheckbox);
         parent.pack();
@@ -538,105 +480,13 @@ public class GUI extends javax.swing.JFrame {
                     if(((JCheckBox) comp).isSelected())
                     checkboxes.add( (JCheckBox)comp );
                 }
-                for(int i=0; i<checkboxes.size(); i++ ) {
-                    System.out.println(checkboxes.get(i).getText());
+                for(int i=0; i<checkboxes.size(); i++ ) 
                     sleepCondition += conditionMap.get((
                         checkboxes.get(i).getText())).toString()+";";
+                jTextField5.setText(sleepCondition);
             }
-            System.out.println(sleepCondition);
-            jTextField5.setText(sleepCondition);
-        }
-
         } );
-
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        JFrame frame = new JFrame("Add URLs");
-        Container contentPane = frame.getContentPane();
-        Dimension empty = new Dimension(0, 0);
-        final JTextArea leftArea = new JTextArea();
-        JScrollPane leftScrollPane = new JScrollPane(leftArea);
-        leftScrollPane.setPreferredSize(empty);
-
-        JMenuBar menuBar = new JMenuBar();
-        frame.setJMenuBar(menuBar);
-        JMenu menu = new JMenu("File");
-        menuBar.add(menu);
-        JMenuItem menuItem;
-
-        Action readAction = leftArea.getActionMap().get(
-            DefaultEditorKit.readOnlyAction);
-        menuItem = menu.add(readAction);
-        menuItem.setText("Add URL");
-        menuItem.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-
-        });
-
-        contentPane.add(leftArea, BorderLayout.CENTER);
-        frame.setSize(400, 250);
-        frame.setVisible(true);
-        //        final JFrame parent = new JFrame();
-        //        //parent.setLayout(new GridLayout(1,1));
-        //        final JPanel panelURL = new JPanel();
-        //        JButton addItem = new JButton("Add",new ImageIcon());
-        //        panelURL.add(addItem);
-        //
-        //        final Toolkit toolkit = Toolkit.getDefaultToolkit();
-        //        final Dimension screenSize = toolkit.getScreenSize();
-        //        final int x = (screenSize.width - parent.getWidth()) / 2;
-        //        final int y = (screenSize.height - parent.getHeight()) / 2;
-        //        parent.setLocation(x, y);
-        //        parent.setVisible(true);
-        //        final JFrame frame = new JFrame("Popup Menu Demo");
-        //        final JTextArea url = new JTextArea(24, 476);
-        //        // build poup menu
-        //        final JPopupMenu popup = new JPopupMenu();
-        //        // New project menu item
-        //        JMenuItem menuItem = new JMenuItem("New URL...",
-            //                new ImageIcon("images/newIcon.png"));
-        //        menuItem.setMnemonic(KeyEvent.VK_F);
-        //        menuItem.addActionListener(new ActionListener() {
-            //
-            //            public void actionPerformed(ActionEvent e) {
-                //                JOptionPane.showMessageDialog(frame, "New File clicked!");
-                //            }
-            //        });
-    //        //popup.add(menuItem);
-    //        url.
-    //        popup.add(url);
-
-    // add mouse listener
-    //        frame.addMouseListener(new MouseAdapter() {
-        //
-        //            @Override
-        //            public void mousePressed(MouseEvent e) {
-            //                showPopup(e);
-            //            }
-        //
-        //            @Override
-        //            public void mouseReleased(MouseEvent e) {
-            //                showPopup(e);
-            //            }
-        //
-        //            private void showPopup(MouseEvent e) {
-            //                if (e.isPopupTrigger()) {
-                //                    popup.show(e.getComponent(),
-                    //                            e.getX(), e.getY());
-                //                }
-            //            }
-        //        });
-        //
-        //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //        frame.setSize(300, 200);
-        //        frame.setVisible(true);
-        //
-        //
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTextArea1.setText("");
@@ -661,11 +511,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
         if(jToggleButton1.isSelected())
-        jToggleButton1.setText("Disable Help");
+            jToggleButton1.setText("Disable Help");
         else
-        jToggleButton1.setText("Enable Help");
+            jToggleButton1.setText("Enable Help");
+        
         helpLegend();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -768,10 +618,8 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
