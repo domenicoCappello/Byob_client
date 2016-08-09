@@ -5,10 +5,6 @@
  */
 package byob_v1;
 
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Calendar;

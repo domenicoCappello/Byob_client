@@ -5,6 +5,8 @@
  */
 package byob_v1;
 
+import com.sun.jna.platform.win32.Advapi32Util;
+import com.sun.jna.platform.win32.WinReg;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,28 +22,63 @@ import java.util.logging.Logger;
  * @author diomenik
  */
 public class Tools {
-
+    
     public static String getOs(){
         return System.getProperty("os.name");
+    }
+    
+    public static boolean isSystem64Bit(){
+        return System.getProperty("os.arch").contains("64");
     }
     
     public static String getBrowsers(){
         
         String browsers = "";
-        String tmp;
         if(getOs().toLowerCase().contains("linux")){
+            String tmp;
             tmp = linuxTermOut("google-chrome --version");
-            System.out.println(tmp);
+            browsers = browsers + tmp + "\n";
             tmp = linuxTermOut("firefox --version");
-            System.out.println(tmp);
+            browsers = browsers + tmp + "\n";
             tmp = "Opera ".concat(linuxTermOut("opera --version"));
-            System.out.println(tmp);
+            browsers = browsers + tmp + "\n";
             tmp = linuxTermOut("chromium-browser --version");
-            System.out.println(tmp);
+            browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
         }
         else if(getOs().toLowerCase().contains("windows")){
+            // IE
+            String path = "SOFTWARE\\Microsoft\\Internet Explorer";
+            String vField = getOs().toLowerCase().equals("windows 8")? "svcVersion" : "Version";
+            String version = Advapi32Util.registryGetStringValue(   
+                WinReg.HKEY_LOCAL_MACHINE, path, vField);
+            browsers = browsers + "Internet Explorer " + version + "\n";
             
+            //Google Chrome
+            String wowNode = isSystem64Bit() ? "Wow6432Node\\" : "";
+            try{
+                path = "SOFTWARE\\" + wowNode + "Google\\Update\\Clients";
+                String key[] = Advapi32Util.registryGetKeys(
+                    WinReg.HKEY_LOCAL_MACHINE, path);
+                for (String key1 : key) {
+                    
+                    try {
+                        String name = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "name");
+                        if(name.toLowerCase().equals("google chrome")){
+                            version = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "pv");
+                            browsers = browsers + "Google Chrome " + version + "\n";
+                        }
+                    }catch (Exception e){}
+                }
+            } catch(Exception e){}
+            
+            // Mozilla Firefox
+            try{
+                version = Advapi32Util.registryGetStringValue( 
+                    WinReg.HKEY_LOCAL_MACHINE, "SOFTWARE\\" + wowNode + "Mozilla\\Mozilla Firefox", "CurrentVersion");
+                browsers = browsers + "Mozilla Firefox " + version + "\n";
+
+            } catch(Exception e){}
         }
         else if(getOs().toLowerCase().contains("osx")){ //???
             
