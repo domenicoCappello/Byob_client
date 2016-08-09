@@ -22,8 +22,6 @@ import java.util.logging.Logger;
  * @author diomenik
  */
 public class Tools {
-
-    String[] winReg = {""};
     
     public static String getOs(){
         return System.getProperty("os.name");
@@ -39,16 +37,12 @@ public class Tools {
         if(getOs().toLowerCase().contains("linux")){
             String tmp;
             tmp = linuxTermOut("google-chrome --version");
-//            System.out.println(tmp);
             browsers = browsers + tmp + "\n";
             tmp = linuxTermOut("firefox --version");
-//            System.out.println(tmp);
             browsers = browsers + tmp + "\n";
             tmp = "Opera ".concat(linuxTermOut("opera --version"));
-//            System.out.println(tmp);
             browsers = browsers + tmp + "\n";
             tmp = linuxTermOut("chromium-browser --version");
-//            System.out.println(tmp);
             browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
         }
@@ -58,7 +52,6 @@ public class Tools {
             String vField = getOs().toLowerCase().equals("windows 8")? "svcVersion" : "Version";
             String version = Advapi32Util.registryGetStringValue(   
                 WinReg.HKEY_LOCAL_MACHINE, path, vField);
-//            System.out.printf("Internet Explorer %s\n", version);
             browsers = browsers + "Internet Explorer " + version + "\n";
             
             //Google Chrome
@@ -73,7 +66,6 @@ public class Tools {
                         String name = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "name");
                         if(name.toLowerCase().equals("google chrome")){
                             version = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "pv");
-//                            System.out.printf("Google Chrome %s\n", version);
                             browsers = browsers + "Google Chrome " + version + "\n";
                         }
                     }catch (Exception e){}
@@ -84,7 +76,6 @@ public class Tools {
             try{
                 version = Advapi32Util.registryGetStringValue( 
                     WinReg.HKEY_LOCAL_MACHINE, "SOFTWARE\\" + wowNode + "Mozilla\\Mozilla Firefox", "CurrentVersion");
-//                System.out.printf("Mozilla Firefox %s\n", version);
                 browsers = browsers + "Mozilla Firefox " + version + "\n";
 
             } catch(Exception e){}
