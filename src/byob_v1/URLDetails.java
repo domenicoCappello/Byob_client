@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
 import java.time.DayOfWeek;
@@ -10,24 +5,32 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 /**
- *  TODO
+ *  The class contains the parameters that each bot uses during the contact.
  *  @author Cappello, Nazio
  */
 public class URLDetails {
     
+    // Unique identifier of the bot
     String idBot;
+    // URL - TO DO è un array
     private String URL;
+    // Minimum time of contact
     private int minWaitTime;
+    // Max time of contact
     private int maxWaitTime;
+    // Number of contacts to the URL
     private long contactsNum;
+    // Sleep Condition
     private String sleepMode;   // xy, x = O/E/'' : Odd/Even day of the week, y = A/P/'' : AM/PM hour of the day
+    // User-Agent string
     private String userAgent;
-    
+    // Proxy Hostname 
     public static String proxyIp = "";
+    // Proxy Port
     public static int proxyPort = 0;
     
     /**
-    Constructor.
+    * Constructor.
     */
     URLDetails() {}
     
@@ -58,7 +61,7 @@ public class URLDetails {
     
     @Override
     /**
-    *   Function to string conversion.
+    *   The function returns a string conversion.
     *   @return string with host's details.
     */
     public String toString(){
@@ -67,6 +70,10 @@ public class URLDetails {
         return ret;
     }
     
+    /**
+     * 
+     * @return 
+     */
     public boolean sleepMode(){
         LocalDate date  = LocalDate.now();
         DayOfWeek dow   = date.getDayOfWeek();

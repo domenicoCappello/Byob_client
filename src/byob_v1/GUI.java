@@ -1,6 +1,6 @@
 package byob_v1;
 
-import java.awt.Component;
+import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,24 +8,31 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.KeyboardFocusManager;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.HashMap;
+import javax.swing.AbstractButton;
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -34,24 +41,22 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * enabled/disabled.
  * @author Cappello - Nazio
  */
-public final class GUI extends javax.swing.JFrame {
+public final class GUI extends javax.swing.JFrame{
 
     // List of user's params JTextField 
     List<JTextField> textParam = new ArrayList<>();
     // List of labels in which help to users can be provided
     List<JLabel> helpLabel = new ArrayList<>();
-    // List of available conditions
-    List<JCheckBox> condition = new ArrayList<>();
     // Map of available sleep condition
-    HashMap<String, Integer> conditionMap = new HashMap<String, Integer>();
+    HashMap<String, Integer> conditionMap = new HashMap<>();
     // Sleep conditions
     String[] conditionLabel = {
     "0 - Even days",
     "1 - Odd days",
-    "2 - Weekends",
-    "3 - Sunlight",
-    "4 - Moonlight",
-    "5 - NoStop"
+    "2 - Seven days",
+    "3 - AM",
+    "4 - PM",
+    "5 - 24 hours"
     };
     // Help strings to show to user
     String[] helpLabelText = {
@@ -88,6 +93,10 @@ public final class GUI extends javax.swing.JFrame {
         textParam.add(jTextField5);
         textParam.add(jTextField6);
         textParam.add(jTextField7);
+        jTextArea1.setEditable(false);
+        jTextArea2.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, null);
+        jTextArea2.setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, null);
+        //jTextArea2.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "none");
         ButtonGroup group = new ButtonGroup();
         group.add(jRadioButton1);
         group.add(jRadioButton2);
@@ -129,6 +138,7 @@ public final class GUI extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -197,6 +207,7 @@ public final class GUI extends javax.swing.JFrame {
         });
 
         jButton7.setText("Open");
+        jButton7.setEnabled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -205,6 +216,7 @@ public final class GUI extends javax.swing.JFrame {
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setEnabled(false);
         jScrollPane2.setViewportView(jTextArea2);
 
         jTextArea1.setColumns(20);
@@ -232,24 +244,18 @@ public final class GUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(429, 429, 429)
-                        .addComponent(jButton4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton7)
+                                .addGap(81, 81, 81)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,15 +276,25 @@ public final class GUI extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton1))
+                            .addComponent(jScrollPane1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton2)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,11 +307,11 @@ public final class GUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -370,12 +386,17 @@ public final class GUI extends javax.swing.JFrame {
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
+        jButton3.setText("Launch");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,7 +405,9 @@ public final class GUI extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
         );
 
         pack();
@@ -438,53 +461,79 @@ public final class GUI extends javax.swing.JFrame {
         }
         System.out.println("Extracting parameters.");
         try {
-            Parser.writeConfigurationFile(fileToSave,extractData());
+            Parser.writeConfigurationFile(fileToSave, extractData());
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jTextField1.setText("");
         for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setText("");
         jTextArea1.setText("");
+        jTextArea2.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         final JFrame parent = new JFrame();
-        parent.setLayout(new GridLayout(1,1));
-        final JPanel panelCheckbox = new JPanel();
-        JButton button = new JButton("Add items");
-        panelCheckbox.setLayout(new BoxLayout(panelCheckbox, BoxLayout.Y_AXIS));
-        for(int i=0; i<condition.size(); i++)
-            panelCheckbox.add(condition.get((i)));
-        panelCheckbox.add(button);
-        parent.add(panelCheckbox);
+        final JPanel top = new JPanel();
+        final JPanel top1 = new JPanel();
+        final JPanel bottom = new JPanel();
+        JButton okButton = new JButton("Ok");
+        top.setLayout(new GridLayout(1,0));
+        top1.setLayout(new GridLayout(1,0));
+        bottom.setLayout(new GridLayout(1,0));
+        top.setBorder(new TitledBorder(BorderFactory.createTitledBorder("Days")));
+        top1.setBorder(new TitledBorder(BorderFactory.createTitledBorder("Hours")));
+        bottom.add(okButton);
+        parent.setLayout(new GridLayout(0,1));
+        //List<ButtonGroup> group = new ArrayList<>();
+        final ButtonGroup group = new ButtonGroup();
+        final ButtonGroup group1 = new ButtonGroup();
+        final List<JRadioButton> sxRadio = new ArrayList<>();
+        final List<JRadioButton> dxRadio = new ArrayList<>();
+        int numberOfChoice = 3;
+        int maxChoice = (conditionLabel.length)/numberOfChoice;
+        for(int i=0; i < conditionLabel.length; i++){
+            int flag = (i < maxChoice ? 0 : 1);
+            switch(flag)    
+            {
+                case 0:
+                    sxRadio.add(new JRadioButton(conditionLabel[i]));
+                    group.add(sxRadio.get(i));
+                    top.add(sxRadio.get(i));
+                    break;
+                case 1:
+                    dxRadio.add(new JRadioButton(conditionLabel[i]));
+                group1.add(dxRadio.get(i%3));
+                top1.add(dxRadio.get(i%3));
+                    break;
+            }
+        }
+        parent.add(top);
+        parent.add(top1);
+        parent.add(bottom, BorderLayout.CENTER);
         parent.pack();
 
         final Toolkit toolkit = Toolkit.getDefaultToolkit();
         final Dimension screenSize = toolkit.getScreenSize();
         final int x = (screenSize.width - parent.getWidth()) / 2;
         final int y = (screenSize.height - parent.getHeight()) / 2;
+                 
+        final String[] choice = new String[maxChoice];
         parent.setLocation(x, y);
         parent.setVisible(true);
 
-        button.addActionListener(new ActionListener() {
+        okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                List<JCheckBox> checkboxes = new ArrayList<>();
-
-                for( Component comp : panelCheckbox.getComponents()) {
-                    if( comp instanceof JCheckBox)
-                    if(((JCheckBox) comp).isSelected())
-                    checkboxes.add( (JCheckBox)comp );
-                }
-                for(int i=0; i<checkboxes.size(); i++ ) 
-                    sleepCondition += conditionMap.get((
-                        checkboxes.get(i).getText())).toString()+";";
+                // TO DO - Sistemare
+                choice[0] = conditionMap.get(getSelectedButtonText(group)).toString();//group.getSelection().getActionCommand();
+                choice[1] = conditionMap.get(getSelectedButtonText(group1)).toString();//group1.getSelection().getActionCommand();
+                sleepCondition = String.join("; ", choice);
                 jTextField5.setText(sleepCondition);
             }
+
         } );
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -492,22 +541,22 @@ public final class GUI extends javax.swing.JFrame {
         jTextArea1.setText("");
         String[] params = extractData();
         StringBuilder sb = new StringBuilder();
-        String[] url = jTextArea2.getText().split("\n");
-        sb.append("*");
-        for (String param : url) {
-            sb.append(param).append("; ");
-        }
+//        String[] url = jTextArea2.getText().split("\n");
+//        sb.append("*");
+//        for (String param : url) {
+//            sb.append(param).append("; ");
+//        }
         for (String param : params) {
-            sb.append("\n").append(param).append(";");
+            sb.append(param).append("\n");
         }
         jTextArea1.setText(sb.toString());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         if(!evt.getActionCommand().equals("on"))
-        disableEnable(false);
+            disableEnable(false);
         else
-        disableEnable(true);
+            disableEnable(true);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -546,11 +595,26 @@ public final class GUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUI().setVisible(true);
             }
         });
     }
+    
+      public String getSelectedButtonText(ButtonGroup buttonGroup) {
+        for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+
+            if (button.isSelected()) {
+                return button.getText();
+            }
+        }
+
+        return null;
+    }
+    
+
     
     /**
      * The method sets/removes help's border and tooltip from each jTextField.
@@ -576,6 +640,7 @@ public final class GUI extends javax.swing.JFrame {
     
     /**
      * The method enables/disables components of the GUI.
+     * @param flag enable/disable element
      */
     public void disableEnable(boolean flag) {
         jButton1.setEnabled(flag);
@@ -583,11 +648,13 @@ public final class GUI extends javax.swing.JFrame {
         jButton2.setEnabled(!flag);
         jButton4.setEnabled(!flag);
         jButton5.setEnabled(!flag);
+        jButton7.setEnabled(!flag);
+        jTextArea1.setEnabled(!flag);
         jTextArea2.setEnabled(!flag);
         jToggleButton1.setEnabled(!flag);
         for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setEnabled(!flag);
-        for(int i=0; i < textParam.size(); i++)
+        for(int i=0; i < helpLabel.size(); i++)
             helpLabel.get(i).setEnabled(!flag);     
     }
     
@@ -597,7 +664,6 @@ public final class GUI extends javax.swing.JFrame {
     public void addConditions() {
          for(int i = 0; i < conditionLabel.length; i++) {
             conditionMap.put(conditionLabel[i],i);
-            condition.add(new JCheckBox(conditionLabel[i]));
         }     
     }
     
@@ -606,11 +672,15 @@ public final class GUI extends javax.swing.JFrame {
      * @return Array of the parameters
      */
     private String[] extractData() {
-        
-        String[] params = new String[textParam.size()];
+        String[] url = jTextArea2.getText().replace(" ","").split("\n");
+        String urlParam = "*" +
+                String.join(";", Arrays.asList(url)) +
+                "*";
+        String[] params = new String[textParam.size()+1];
+        params[0] = urlParam;
         for(int i = 0; i < textParam.size() ; i++) {
-            params[i] = textParam.get(i).getText();
-            System.out.println(i + ": "+params[i]);
+            params[i+1] = textParam.get(i).getText().equals("") ?
+                    "-;" : textParam.get(i).getText()+";";
         } 
         return params;
     }
@@ -618,6 +688,7 @@ public final class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
