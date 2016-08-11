@@ -26,8 +26,8 @@ public class Byob_v1 {
     final static ByobSingleton byobWrapper = ByobSingleton.getInstance();
    
     public static void main(String[] args) throws IOException {
-//        GUI frame = new GUI();
-//        frame.setVisible(true); //or whatever the method is in jframe.class
+        GUI frame = new GUI();
+        frame.setVisible(true); //or whatever the method is in jframe.class
 //        Parser parser = new Parser(FILE_CONF_PATH);
 //        try {
 //            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
@@ -36,7 +36,7 @@ public class Byob_v1 {
 //            byobWrapper.myLogger.severe("Parser I/O exception");
 //        }
         
-        System.out.printf(Tools.getBrowsers());
+//        System.out.printf(Tools.getBrowsers());
 
         
 //        Tools.getBrowsers();
