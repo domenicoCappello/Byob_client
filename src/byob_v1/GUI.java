@@ -492,7 +492,7 @@ public final class GUI extends javax.swing.JFrame{
         final ButtonGroup group1 = new ButtonGroup();
         final List<JRadioButton> sxRadio = new ArrayList<>();
         final List<JRadioButton> dxRadio = new ArrayList<>();
-        int numberOfChoice = 3;
+        int numberOfChoice = 2;
         int maxChoice = (conditionLabel.length)/numberOfChoice;
         for(int i=0; i < conditionLabel.length; i++){
             int flag = (i < maxChoice ? 0 : 1);
@@ -503,7 +503,7 @@ public final class GUI extends javax.swing.JFrame{
                     group.add(sxRadio.get(i));
                     top.add(sxRadio.get(i));
                     break;
-                case 1:
+                case 1:;
                     dxRadio.add(new JRadioButton(conditionLabel[i]));
                 group1.add(dxRadio.get(i%3));
                 top1.add(dxRadio.get(i%3));
@@ -514,22 +514,22 @@ public final class GUI extends javax.swing.JFrame{
         parent.add(top1);
         parent.add(bottom, BorderLayout.CENTER);
         parent.pack();
-
         final Toolkit toolkit = Toolkit.getDefaultToolkit();
         final Dimension screenSize = toolkit.getScreenSize();
         final int x = (screenSize.width - parent.getWidth()) / 2;
         final int y = (screenSize.height - parent.getHeight()) / 2;
                  
         final String[] choice = new String[maxChoice];
+        for(int i=0; i<maxChoice; i++)
+            choice[i] = "";
         parent.setLocation(x, y);
         parent.setVisible(true);
 
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TO DO - Sistemare
-                choice[0] = conditionMap.get(getSelectedButtonText(group)).toString();//group.getSelection().getActionCommand();
-                choice[1] = conditionMap.get(getSelectedButtonText(group1)).toString();//group1.getSelection().getActionCommand();
+                choice[0] = conditionMap.get(getSelectedButtonText(group)).toString();
+                choice[1] = conditionMap.get(getSelectedButtonText(group1)).toString();
                 sleepCondition = String.join("; ", choice);
                 jTextField5.setText(sleepCondition);
             }
