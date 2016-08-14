@@ -1,5 +1,6 @@
 package byob_v1;
 
+import static byob_v1.Tools.BYOB_WRAPPER;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +43,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Cappello - Nazio
  */
 public final class GUI extends javax.swing.JFrame{
+    
+    String fileConfPath;
 
     // List of user's params JTextField 
     List<JTextField> textParam = new ArrayList<>();
@@ -387,6 +390,11 @@ public final class GUI extends javax.swing.JFrame{
         );
 
         jButton3.setText("Launch");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -429,9 +437,10 @@ public final class GUI extends javax.swing.JFrame{
         {
             File selectedFile = fileChooser.getSelectedFile();
             File file = new File(selectedFile.getName());
-            String path = file.getAbsolutePath();
-            jTextField1.setText(path);
+            fileConfPath = file.getAbsolutePath();
+            jTextField1.setText(fileConfPath);
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -568,6 +577,17 @@ public final class GUI extends javax.swing.JFrame{
         helpLegend();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.out.println("Launch!");
+         Parser parser = new Parser(fileConfPath);
+        try {
+            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+            Tools.schedule(taskList);
+        } catch (IOException ex) {
+            BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * Auto-generated NetBeans' main for the GUI.
      * @param args command line arguments
@@ -672,7 +692,7 @@ public final class GUI extends javax.swing.JFrame{
      * @return Array of the parameters
      */
     private String[] extractData() {
-        String[] url = jTextArea2.getText().replace(" ","").split("\n");
+        String[] url = jTextArea2.getText().replace(" ","").split("\n");    //Perche' array di url?
         String urlParam = "*" +
                 String.join(";", Arrays.asList(url)) +
                 "*";
@@ -680,7 +700,7 @@ public final class GUI extends javax.swing.JFrame{
         params[0] = urlParam;
         for(int i = 0; i < textParam.size() ; i++) {
             params[i+1] = textParam.get(i).getText().equals("") ?
-                    "-;" : textParam.get(i).getText()+";";
+                    "-;" : textParam.get(i).getText()+";";          //Nuova convenzione?
         } 
         return params;
     }

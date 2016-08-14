@@ -84,7 +84,7 @@ public class Parser {
         BufferedWriter bw = new BufferedWriter(fw);
 	for (int i = 0; i < params.length; i++) {
 		bw.write(params[i]);
-                bw.newLine();
+                bw.newLine();           //Nuova convenzione? Da cambiare in lettura?
 	}
 	
         bw.close();

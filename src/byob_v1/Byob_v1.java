@@ -21,11 +21,8 @@ public class Byob_v1 {
     /**
      * @param args the command line arguments
      */
-    
-    final static String FILE_CONF_PATH = "conf.txt";
-    final static ByobSingleton byobWrapper = ByobSingleton.getInstance();
-   
-    public static void main(String[] args) throws IOException {
+       
+    public static void main(String[] args){
         GUI frame = new GUI();
         frame.setVisible(true); //or whatever the method is in jframe.class
 //        Parser parser = new Parser(FILE_CONF_PATH);
@@ -45,12 +42,6 @@ public class Byob_v1 {
 //            // sleep and write to C&C (?)
 //        }
         
-    }
-    
-    public static void schedule(ArrayList <URLDetails> task){
-        for(int i = 0; i < task.size(); i++){
-            byobWrapper.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
-        }
     }
     
 }

@@ -14,6 +14,8 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,6 +24,14 @@ import java.util.logging.Logger;
  * @author diomenik
  */
 public class Tools {
+    
+    final static ByobSingleton BYOB_WRAPPER = ByobSingleton.getInstance();
+    
+        public static void schedule(ArrayList <URLDetails> task){
+        for(int i = 0; i < task.size(); i++){
+            BYOB_WRAPPER.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
+        }
+    }
     
     public static String getOs(){
         return System.getProperty("os.name");
