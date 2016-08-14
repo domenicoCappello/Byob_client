@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  *
  * @author diomenik
  */
-public class Tools {
+public class Tools { 
     
     final static ByobSingleton BYOB_WRAPPER = ByobSingleton.getInstance();
     
