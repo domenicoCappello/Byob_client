@@ -11,7 +11,7 @@ import java.util.Calendar;
 public class URLDetails {
     
     // Unique identifier of the bot
-    String idBot;
+    String idBot;                       // Perche' identificatore bot e' in URLDetails?
     // URL - TO DO è un array
     private String URL;
     // Minimum time of contact
@@ -28,6 +28,8 @@ public class URLDetails {
     public static String proxyIp = "";
     // Proxy Port
     public static int proxyPort = 0;
+    
+    public static final int NUM_FIELDS = 6;
     
     /**
     * Constructor.

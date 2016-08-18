@@ -3,6 +3,7 @@ package byob_v1;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class Parser {
     Constructor.
     */
    public Parser(){
-     FILE_NAME = "C:\\input.txt";
+     FILE_NAME = "conf.txt";
      ENCODING = StandardCharsets.UTF_8;
     }
   
@@ -53,20 +54,28 @@ public class Parser {
    @param fileName full name of an existing, readable .txt file.
      * @return Variables' list of values
      * @throws java.io.IOException
+     * @throws java.io.FileNotFoundException
   */
-  public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException {
+  public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
+    
     BufferedReader br = new BufferedReader(new FileReader(fileName));
     ArrayList<URLDetails> configuration = new ArrayList<>();
-    for(int i=0; i < countLines(fileName); i++)
-    {   
-        String line = br.readLine();
-        if (line != null)
-        {
-            String[] detail = splitString(line, ";");
-            if (detail.length >= 5) 
-                configuration.add(convertParam(detail));
-        }
+    String url;
+    while ((url = br.readLine()) != null) {
+      if(!url.contains("*")){
+          System.err.println("Error in configuration file, aborting");
+          System.exit(-1);
+      }
+      String contact = splitString(url,"*")[1] + ";";
+      String line;
+      for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
+          if ((line = br.readLine()) != null)
+            contact = contact + line;
+      }
+      String[] detail = splitString(contact, ";");
+      configuration.add(convertParam(detail));
     }
+    
     br.close();    
     return configuration;
   }
@@ -130,7 +139,7 @@ public class Parser {
     */
     private static URLDetails convertParam(String[] params) {
         URLDetails detail = null;
-        if(params.length >= 5) {
+        if(params.length == URLDetails.NUM_FIELDS) {
             String _URL = params[0];
             int _minTime = Integer.parseInt(params[1]);
             int _maxTime = Integer.parseInt(params[2]);
