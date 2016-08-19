@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.MessageFormat;
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -27,6 +29,8 @@ import javax.swing.AbstractButton;
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFormattedTextField.AbstractFormatterFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -35,6 +39,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 
 /**
  * The class creates and manages anything who's connected to the Graphic User 
@@ -200,7 +206,13 @@ public final class GUI extends javax.swing.JFrame{
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        try{
+            MaskFormatter formatter = new MaskFormatter("##########");
+            formatter.setValidCharacters("0123456789");
+            jFormattedTextField3 = new javax.swing.JFormattedTextField(formatter);
+        } catch (ParseException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jFormattedTextField4 = new javax.swing.JFormattedTextField();
@@ -267,26 +279,32 @@ public final class GUI extends javax.swing.JFrame{
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel1.setText("URL");
         jLabel1.setEnabled(false);
         jLabel1.setOpaque(true);
 
-        jLabel2.setText("Contact Time");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel2.setText("Contact Time (ms)");
         jLabel2.setEnabled(false);
         jLabel2.setOpaque(true);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel3.setText("# contacts");
         jLabel3.setEnabled(false);
         jLabel3.setOpaque(true);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel4.setText("Sleep Condition");
         jLabel4.setEnabled(false);
         jLabel4.setOpaque(true);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel5.setText("User-Agent");
         jLabel5.setEnabled(false);
         jLabel5.setOpaque(true);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel6.setText("Proxy");
         jLabel6.setEnabled(false);
         jLabel6.setOpaque(true);
@@ -348,9 +366,19 @@ public final class GUI extends javax.swing.JFrame{
 
         jRadioButton3.setText("Interval");
         jRadioButton3.setEnabled(false);
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         jRadioButton4.setText("Fixed");
         jRadioButton4.setEnabled(false);
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         jFormattedTextField4.setEnabled(false);
 
@@ -405,9 +433,9 @@ public final class GUI extends javax.swing.JFrame{
                                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jRadioButton2))
+                            .addComponent(jRadioButton2)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -648,8 +676,9 @@ public final class GUI extends javax.swing.JFrame{
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         if(!evt.getActionCommand().equals("on"))
             disableEnable(false);
-        else
+        else {
             disableEnable(true);
+            formatContactTime();}
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -685,6 +714,30 @@ public final class GUI extends javax.swing.JFrame{
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        formatContactTime();
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        formatContactTime();
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void formatContactTime(){
+        MaskFormatter formatter;
+            try {
+                if(jRadioButton3.isSelected())
+                    formatter = new MaskFormatter("########## - ##########");
+                else
+                    formatter = new MaskFormatter("##########");
+                formatter.setValidCharacters("0123456789");
+                AbstractFormatterFactory f = new DefaultFormatterFactory(formatter);
+                jFormattedTextField3.setFormatterFactory(f);
+                jFormattedTextField3.setText("");
+            } catch (ParseException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
         for (String param : params) {
@@ -769,7 +822,7 @@ public final class GUI extends javax.swing.JFrame{
         jTextArea1.setEnabled(!flag);
         jToggleButton1.setEnabled(!flag);
         jRadioButton3.setEnabled(!flag);
-        jRadioButton3.setSelected(true);
+        jRadioButton4.setSelected(true);
         jRadioButton4.setEnabled(!flag);
         
         for(int i=0; i < textParam.size(); i++)
@@ -777,6 +830,7 @@ public final class GUI extends javax.swing.JFrame{
             textParam.get(i).setEnabled(!flag);
             configurationLabel.get(i).setEnabled(!flag);    
         }
+        
     }
     
     /**
