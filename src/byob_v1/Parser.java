@@ -86,15 +86,17 @@ public class Parser {
      * @param command   command to be run
      * @return output from the command line
      */
-    public static void writeConfigurationFile(File fileToWrite, String[] params) throws IOException {
+    public static void writeConfigurationFile(File fileToWrite, String[][] params, int columns) throws IOException {
         if (!fileToWrite.exists())
 	    fileToWrite.createNewFile();
         FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath());
         BufferedWriter bw = new BufferedWriter(fw);
 	for (int i = 0; i < params.length; i++) {
-		bw.write(params[i]);
+            for (int j = 0; j < columns; j++) {
+		bw.write(params[i][j]);
                 bw.newLine();           //Nuova convenzione? Da cambiare in lettura?
-	}
+            }
+        }
 	
         bw.close();
         fw.close();
