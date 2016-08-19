@@ -70,10 +70,10 @@ public final class GUI extends javax.swing.JFrame{
     String[] conditionLetter = {
     "E",
     "O",
-    "D",
+    "",
     "A",
     "P",
-    "H"
+    ""
     };
     // Help strings to show to user
     String[] helpText = {
