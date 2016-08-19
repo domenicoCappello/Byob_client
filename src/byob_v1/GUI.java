@@ -570,7 +570,6 @@ public final class GUI extends javax.swing.JFrame{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         clearFields();
-        jButton4sdf.setEnabled(false);
         jButton5.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
