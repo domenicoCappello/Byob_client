@@ -23,8 +23,8 @@ public class Byob_v1 {
      */
        
     public static void main(String[] args){
-//        GUI frame = new GUI();
-//        frame.setVisible(true); //or whatever the method is in jframe.class
+        GUI frame = new GUI();
+        frame.setVisible(true); //or whatever the method is in jframe.class
 
         String file = "guiconf.txt";
         Parser parser = new Parser(file);
