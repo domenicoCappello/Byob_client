@@ -633,7 +633,7 @@ public final class GUI extends javax.swing.JFrame{
                     break;
                 case 1:
                     dxRadio.add(new JRadioButton(conditionLabel[i]));
-                    dxRadio.get(i%3).isSelected();
+                    dxRadio.get(i%3).setSelected(true);
                     group1.add(dxRadio.get(i%3));
                     top1.add(dxRadio.get(i%3));
                     break;
@@ -661,6 +661,7 @@ public final class GUI extends javax.swing.JFrame{
                 choice[1] = conditionMap.get(getSelectedButtonText(group1));
                 sleepCondition = String.join("; ", choice);
                 jFormattedTextField5.setText(sleepCondition);
+                parent.setVisible(false);
             }
 
         } );
