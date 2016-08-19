@@ -1,6 +1,2 @@
-ago 19, 2016 6:12:43 PM byob_v1.ByobTask run
+ago 19, 2016 7:38:09 PM byob_v1.ByobTask run
 GRAVE: http://www.google.com, contactsNum: 3, sleepMode: , userAgent: UA
-ago 19, 2016 6:12:45 PM byob_v1.ByobTask run
-GRAVE: http://www.google.com, contactsNum: 2, sleepMode: , userAgent: UA
-ago 19, 2016 6:12:47 PM byob_v1.ByobTask run
-GRAVE: http://www.google.com, contactsNum: 1, sleepMode: , userAgent: UA

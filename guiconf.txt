@@ -1,3 +1,4 @@
+$web-proxy.ind.abc.com:8080
 *http://www.google.com*
 2;
 2;

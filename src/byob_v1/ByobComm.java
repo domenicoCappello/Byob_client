@@ -40,7 +40,7 @@ public class ByobComm {
     static int httpGet(String url, String userAgent, String proxyIp, int proxyPort) {
         
         String charset = "UTF-8"; 
-        
+
         HttpURLConnection connection;
         try {
             if(proxyPort > 0){
