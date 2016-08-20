@@ -23,18 +23,18 @@ public class Byob_v1 {
      */
        
     public static void main(String[] args){
-//        GUI frame = new GUI();
-//        frame.setVisible(true); //or whatever the method is in jframe.class
+        GUI frame = new GUI();
+        frame.setVisible(true); //or whatever the method is in jframe.class
 
-        String file = "guiconf.txt";
-        Parser parser = new Parser(file);
-        try {
-            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
-            Tools.schedule(taskList);
-        } catch (IOException ex) {
-            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
-        }
-        while(true);
+//        String file = "guiconf.txt";
+//        Parser parser = new Parser(file);
+//        try {
+//            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+//            Tools.schedule(taskList);
+//        } catch (IOException ex) {
+//            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
+//        }
+//        while(true);
         
 //        System.out.printf(Tools.getBrowsers());
 
