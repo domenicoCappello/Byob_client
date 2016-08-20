@@ -174,11 +174,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jFormattedTextField7" max="32767" attributes="0"/>
+                                  <Component id="jFormattedTextField8" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel7" min="-2" pref="11" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextField8" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <Component id="jFormattedTextField9" min="-2" pref="112" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -190,8 +190,12 @@
                                       </Group>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jFormattedTextField3" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                              <Component id="jFormattedTextField3" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jFormattedTextField4" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                               <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
@@ -203,10 +207,10 @@
                                           </Group>
                                           <Component id="jFormattedTextField2" min="-2" pref="349" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jFormattedTextField6" alignment="0" min="-2" pref="349" max="-2" attributes="0"/>
+                                      <Component id="jFormattedTextField7" alignment="0" min="-2" pref="349" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jFormattedTextField5" alignment="0" pref="206" max="32767" attributes="0"/>
-                                          <Component id="jFormattedTextField4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jFormattedTextField6" alignment="0" pref="225" max="32767" attributes="0"/>
+                                          <Component id="jFormattedTextField5" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
@@ -242,29 +246,31 @@
                       <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jFormattedTextField4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jFormattedTextField5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField6" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jFormattedTextField6" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="5" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jFormattedTextField7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jFormattedTextField8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jFormattedTextField9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
@@ -411,10 +417,11 @@
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField3ActionPerformed"/>
+          </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="} catch (ParseException ex) {&#xa;                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);&#xa;            }"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;MaskFormatter formatter = new MaskFormatter(&quot;##########&quot;);&#xa;formatter.setValidCharacters(&quot;0123456789&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField()"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRadioButton3">
@@ -435,43 +442,40 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField4">
-          <Properties>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="}&#xa;catch (ParseException ex) {&#xa;                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);&#xa;}"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;MaskFormatter formatter = new MaskFormatter(&quot;##########&quot;);&#xa;formatter.setValidCharacters(&quot;0123456789&quot;);"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField5">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField5ActionPerformed"/>
-          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField6">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField6ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField7">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField7ActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="} catch (ParseException ex) {&#xa;                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);&#xa;            }"/>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="try{&#xa;MaskFormatter formatter = new MaskFormatter(&quot;###.###.###.###&quot;);&#xa;formatter.setValidCharacters(&quot;0123456789&quot;);&#xa;formatter.setOverwriteMode(false);"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField8">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField8ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(ipFormatter)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String _255 = &quot;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)&quot;;&#xa;Pattern p = Pattern.compile( &quot;^(?:&quot; + _255 + &quot;\\.){3}&quot; + _255 + &quot;$&quot;);&#xa;RegexFormatter ipFormatter = new RegexFormatter(p);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField9">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -509,6 +513,28 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField4">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jFormattedTextField4ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance())"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="10" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

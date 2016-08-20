@@ -42,6 +42,12 @@ import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import javax.swing.text.DefaultFormatter;
+import java.text.ParseException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+import javax.swing.text.NumberFormatter;
 
 /**
  * The class creates and manages anything who's connected to the Graphic User 
@@ -80,6 +86,7 @@ public final class GUI extends javax.swing.JFrame{
     String[] helpText = {
     "<html>URL to contact <BR>i.e. http://www.facebook.com</html>",
     "<html>Specify for how long the URL must be contacted</html>",
+    "<html>Specify for how long the URL must be contacted</html>",
     "<html>Number of times the URL must be contacted</html>",
     "<html>Define when the bot should operate and when it should sleep</html>",
     "<html>Personalize User-Agent <BR>i.e. Mozilla/3.0 (OS/2; U)</html>",
@@ -90,17 +97,17 @@ public final class GUI extends javax.swing.JFrame{
     String[] defaultValue = {
     "www.google.it",
     "6000",
+    "10000",
     "100",
     "EA",
     "Mozilla/3.0",
-    "10.0.0.1",
-    "1600"
+    "",
+    ""
     };
     // Variable for sleep conditions
     String sleepCondition = "";
     // Help aspect of the labels' border
     Border helpBorder = BorderFactory.createMatteBorder(1, 5, 1, 1, Color.red);
-    
     /**
      * Constructor. 
      * It creates new form GUI, it initiates components and creates Lists to
@@ -116,6 +123,7 @@ public final class GUI extends javax.swing.JFrame{
         configurationLabel.add(jLabel5);
         configurationLabel.add(jLabel6);
         configurationLabel.add(jLabel7);
+        configurationLabel.add(jLabel8);
         textParam.add(jFormattedTextField2);
         textParam.add(jFormattedTextField3);
         textParam.add(jFormattedTextField4);
@@ -123,10 +131,18 @@ public final class GUI extends javax.swing.JFrame{
         textParam.add(jFormattedTextField6);
         textParam.add(jFormattedTextField7);
         textParam.add(jFormattedTextField8);
+        textParam.add(jFormattedTextField9);
         
         //jTextArea1.setEditable(false);
         //jTextArea1.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, null);
         //jTextArea1.setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, null);
+        
+        NumberFormat a = NumberFormat.getNumberInstance();
+        NumberFormatter b = new NumberFormatter(a);
+        DefaultFormatterFactory c = new DefaultFormatterFactory(b);
+        jFormattedTextField3.setFormatterFactory(c);
+        jFormattedTextField4.setFormatterFactory(c);
+        jFormattedTextField5.setFormatterFactory(c);
         
         jTextArea1.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -177,6 +193,17 @@ public final class GUI extends javax.swing.JFrame{
             }
         });
         
+        jFormattedTextField4.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent event) {
+                String min = jFormattedTextField3.getText().equals("") ?
+                        "0" : jFormattedTextField3.getText();
+                String max = jFormattedTextField4.getText();
+                if (Integer.parseInt(min) < Integer.parseInt(max))
+                    jFormattedTextField4.setText("");
+            }
+        });
+        
         ButtonGroup mainGroup = new ButtonGroup();
         mainGroup.add(jRadioButton1);
         mainGroup.add(jRadioButton2);
@@ -215,39 +242,24 @@ public final class GUI extends javax.swing.JFrame{
         jTextArea1 = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        try{
-            MaskFormatter formatter = new MaskFormatter("##########");
-            formatter.setValidCharacters("0123456789");
-            jFormattedTextField3 = new javax.swing.JFormattedTextField(formatter);
-        } catch (ParseException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        jFormattedTextField3 = new javax.swing.JFormattedTextField();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        try{
-            MaskFormatter formatter = new MaskFormatter("##########");
-            formatter.setValidCharacters("0123456789");
-            jFormattedTextField4 = new javax.swing.JFormattedTextField(formatter);
-        }
-        catch (ParseException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
         jFormattedTextField5 = new javax.swing.JFormattedTextField();
         jFormattedTextField6 = new javax.swing.JFormattedTextField();
-        try{
-            MaskFormatter formatter = new MaskFormatter("###.###.###.###");
-            formatter.setValidCharacters("0123456789");
-            formatter.setOverwriteMode(false);
-            jFormattedTextField7 = new javax.swing.JFormattedTextField(formatter);
-        } catch (ParseException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        jFormattedTextField7 = new javax.swing.JFormattedTextField();
+        String _255 = "(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+        Pattern p = Pattern.compile( "^(?:" + _255 + "\\.){3}" + _255 + "$");
+        RegexFormatter ipFormatter = new RegexFormatter(p);
+        jFormattedTextField8 = new javax.swing.JFormattedTextField(ipFormatter);
         NumberFormat portFormat = NumberFormat.getInstance();
-        jFormattedTextField8 = new javax.swing.JFormattedTextField(portFormat);
+        jFormattedTextField9 = new javax.swing.JFormattedTextField(portFormat);
         jLabel7 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton6 = new javax.swing.JButton();
+        jFormattedTextField4 = new javax.swing.JFormattedTextField(NumberFormat.getNumberInstance());
+        jLabel8 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -382,6 +394,11 @@ public final class GUI extends javax.swing.JFrame{
         jFormattedTextField2.setEnabled(false);
 
         jFormattedTextField3.setEnabled(false);
+        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField3ActionPerformed(evt);
+            }
+        });
 
         jRadioButton3.setText("Interval");
         jRadioButton3.setEnabled(false);
@@ -399,25 +416,25 @@ public final class GUI extends javax.swing.JFrame{
             }
         });
 
-        jFormattedTextField4.setEnabled(false);
-
         jFormattedTextField5.setEnabled(false);
-        jFormattedTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField5ActionPerformed(evt);
-            }
-        });
 
         jFormattedTextField6.setEnabled(false);
-
-        jFormattedTextField7.setEnabled(false);
-        jFormattedTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jFormattedTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField7ActionPerformed(evt);
+                jFormattedTextField6ActionPerformed(evt);
             }
         });
 
+        jFormattedTextField7.setEnabled(false);
+
         jFormattedTextField8.setEnabled(false);
+        jFormattedTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField8ActionPerformed(evt);
+            }
+        });
+
+        jFormattedTextField9.setEnabled(false);
 
         jLabel7.setText(":");
         jLabel7.setEnabled(false);
@@ -439,6 +456,19 @@ public final class GUI extends javax.swing.JFrame{
                 jButton6ActionPerformed(evt);
             }
         });
+
+        jFormattedTextField4.setEnabled(false);
+        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField4ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel8.setText("-");
+        jLabel8.setEnabled(false);
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel8.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -473,11 +503,11 @@ public final class GUI extends javax.swing.JFrame{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jFormattedTextField7)
+                                .addComponent(jFormattedTextField8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(1, 1, 1)
-                                .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jFormattedTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(9, 9, 9))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,8 +517,12 @@ public final class GUI extends javax.swing.JFrame{
                                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jFormattedTextField3)
-                                            .addGap(29, 29, 29)
+                                            .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel8)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(10, 10, 10)
                                             .addComponent(jRadioButton4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jRadioButton3))
@@ -497,10 +531,10 @@ public final class GUI extends javax.swing.JFrame{
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jToggleButton1))
                                         .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jFormattedTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                        .addComponent(jFormattedTextField4, javax.swing.GroupLayout.Alignment.LEADING)))
+                                        .addComponent(jFormattedTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                        .addComponent(jFormattedTextField5, javax.swing.GroupLayout.Alignment.LEADING)))
                                 .addGap(0, 6, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -524,26 +558,28 @@ public final class GUI extends javax.swing.JFrame{
                     .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton4)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
@@ -614,34 +650,41 @@ public final class GUI extends javax.swing.JFrame{
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         JFrame parentFrame = new JFrame();
-        boolean flag = true;
         int dialogButton = JOptionPane.YES_NO_OPTION;
+        boolean flag = true;
+        boolean exit = false;
         File fileToSave = null;
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
         fileChooser.setFileFilter(filter);
         fileChooser.setDialogTitle("Specify a file to save");
 
-        while(flag)
-        {
+        while(!exit){
             int userSelection = fileChooser.showSaveDialog(parentFrame);
             if (userSelection == JFileChooser.APPROVE_OPTION) {
                 fileToSave = fileChooser.getSelectedFile();
                 int dialogResult = JOptionPane.showConfirmDialog (null, "Is the name correct?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION) {
                     flag = false;
+                    exit = true;
                     if (!fileToSave.getName().contains(".txt"))
                         fileToSave = new File(fileToSave.toString() + ".txt");
                 }
                 else
+                {
                     flag = true;
+                    exit = false;
+                }
             }
         }
-        System.out.println("Extracting parameters.");
-        try {
-            Parser.writeConfigurationFile(fileToSave, extractDataFromTextArea(), textParam.size());
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        if(!flag)
+        {
+            System.out.println("Extracting parameters.");
+            try {
+                Parser.writeConfigurationFile(fileToSave, extractDataFromTextArea(), textParam.size());
+            } catch (IOException ex) {
+                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -709,8 +752,8 @@ public final class GUI extends javax.swing.JFrame{
                 choice[0] = conditionMap.get(getSelectedButtonText(group));
                 choice[1] = conditionMap.get(getSelectedButtonText(group1));
                 sleepCondition = String.join("", choice);
-                jFormattedTextField5.setText(sleepCondition+";");
-                jFormattedTextField5.setEnabled(true);
+                jFormattedTextField6.setText(sleepCondition+";");
+                jFormattedTextField6.setEnabled(true);
                 parent.setVisible(false);   
             }
 
@@ -742,9 +785,9 @@ public final class GUI extends javax.swing.JFrame{
         helpLegend();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void jFormattedTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField5ActionPerformed
+    private void jFormattedTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField5ActionPerformed
+    }//GEN-LAST:event_jFormattedTextField6ActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
@@ -756,8 +799,8 @@ public final class GUI extends javax.swing.JFrame{
         if(params[0].contains("$"))
         {
             String[] proxy = params[0].replace("$", "").split(":");
-            jFormattedTextField7.setText(proxy[0]);
-            jFormattedTextField8.setText(proxy[1]);
+            jFormattedTextField8.setText(proxy[0]);
+            jFormattedTextField9.setText(proxy[1]);
             params = Arrays.copyOfRange(params, 1, params.length);
         }
         for(int i=0; i < textParam.size()-2; i++)
@@ -770,41 +813,51 @@ public final class GUI extends javax.swing.JFrame{
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         if(!evt.getActionCommand().equals("on"))
-            formatContactTime();
+            jFormattedTextField4.setEnabled(true);
+            //formatContactTime();
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         if(!evt.getActionCommand().equals("on"))
-            formatContactTime();
+            jFormattedTextField4.setEnabled(false);
+            //formatContactTime();
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
-    private void jFormattedTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField7ActionPerformed
+    private void jFormattedTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField7ActionPerformed
+    }//GEN-LAST:event_jFormattedTextField8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void formatContactTime(){
-        MaskFormatter formatter;
-            try {
-                if(jRadioButton3.isSelected())
-                    formatter = new MaskFormatter("########## - ##########");
-                else
-                    formatter = new MaskFormatter("##########");
-                formatter.setValidCharacters("0123456789");
-                AbstractFormatterFactory f = new DefaultFormatterFactory(formatter);
-                jFormattedTextField3.setFormatterFactory(f);
-                jFormattedTextField3.setText("");
-            } catch (ParseException ex) {
-                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
+    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
+
+    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
+
+//    private void formatContactTime(){
+//        MaskFormatter formatter;
+//            try {
+//                if(jRadioButton3.isSelected())
+//                    formatter = new MaskFormatter("########## - ##########");
+//                else
+//                    formatter = new MaskFormatter("##########");
+//                formatter.setValidCharacters("0123456789");
+//                AbstractFormatterFactory f = new DefaultFormatterFactory(formatter);
+//                jFormattedTextField3.setFormatterFactory(f);
+//                jFormattedTextField3.setText("");
+//            } catch (ParseException ex) {
+//                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//    }
     
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
-        if(!jTextArea1.getText().contains(("$")))
+        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].toString().equals("") && !params[params.length-1].toString().equals(""))
             sb.append("$").
                 append(params[params.length-2]).
                 append(":").
@@ -892,7 +945,7 @@ public final class GUI extends javax.swing.JFrame{
         jTextArea1.setEnabled(!flag);
         jToggleButton1.setEnabled(!flag);
         jRadioButton3.setEnabled(!flag);
-        jRadioButton4.setSelected(true);
+        jRadioButton3.setSelected(true);
         jRadioButton4.setEnabled(!flag);
         
         for(int i=0; i < textParam.size(); i++)
@@ -901,7 +954,7 @@ public final class GUI extends javax.swing.JFrame{
             configurationLabel.get(i).setEnabled(!flag);    
         }
         
-        jFormattedTextField5.setEnabled(flag);
+        jFormattedTextField6.setEnabled(flag);
         
     }
     
@@ -955,6 +1008,7 @@ public final class GUI extends javax.swing.JFrame{
     private javax.swing.JFormattedTextField jFormattedTextField6;
     private javax.swing.JFormattedTextField jFormattedTextField7;
     private javax.swing.JFormattedTextField jFormattedTextField8;
+    private javax.swing.JFormattedTextField jFormattedTextField9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -962,6 +1016,7 @@ public final class GUI extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -975,4 +1030,55 @@ public final class GUI extends javax.swing.JFrame{
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
+    
+    public class RegexFormatter extends DefaultFormatter {
+    private Pattern pattern;
+    private Matcher matcher;
+
+    public RegexFormatter() {
+        super();
+    }
+
+    public RegexFormatter(String pattern) throws PatternSyntaxException {
+        this();
+        setPattern(Pattern.compile(pattern));
+    }
+
+    public RegexFormatter(Pattern pattern) {
+        this();
+        setPattern(pattern);
+    }
+
+    public void setPattern(Pattern pattern) {
+        this.pattern = pattern;
+    }
+
+    public Pattern getPattern() {
+        return pattern;
+    }
+
+    protected void setMatcher(Matcher matcher) {
+        this.matcher = matcher;
+    }
+
+    protected Matcher getMatcher() {
+        return matcher;
+    }
+
+    public Object stringToValue(String text) throws ParseException {
+        Pattern pattern = getPattern();
+
+        if (pattern != null) {
+            Matcher matcher = pattern.matcher(text);
+
+            if (matcher.matches()) {
+                setMatcher(matcher);
+                return super.stringToValue(text);
+            }
+            throw new ParseException("Pattern did not match", 0);
+        }
+        return text;
+    }
+}
+
 }
