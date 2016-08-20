@@ -68,8 +68,7 @@ public class Parser {
             first = false;
             if (url.charAt(0) == '$'){
                 String[] proxyDet = splitString(url.substring(1), ":");
-                URLDetails.proxyIp = proxyDet[0];
-                URLDetails.proxyPort = Integer.parseInt(proxyDet[1]);
+                URLDetails.setProxy(proxyDet[0], Integer.parseInt(proxyDet[1]));
                 System.out.println(proxyDet[0] + ":" + proxyDet[1]);
                 continue;
             }

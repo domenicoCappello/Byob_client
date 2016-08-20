@@ -56,9 +56,11 @@ public class URLDetails {
     }  
     
     
-    public void setProxy(String ip, int port){
+    public static void setProxy(String ip, int port){
         proxyIp = ip;
         proxyPort = port;
+        ByobSingleton.getInstance().myLogger.severe("Setting up proxy: " + proxyIp + 
+                            " : " + proxyPort);
     }
     
     @Override

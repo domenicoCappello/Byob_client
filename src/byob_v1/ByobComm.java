@@ -15,6 +15,8 @@ import java.util.logging.Logger;
  */
 public class ByobComm {
     
+    public static Boolean waitForResponse = false;
+    
     /**
     * Costructor.
     */
@@ -55,7 +57,7 @@ public class ByobComm {
                 connection.setRequestProperty("User-Agent", userAgent);
             
 //            System.out.println(connection.getResponseMessage());
-            int ret = connection.getResponseCode();
+            int ret = waitForResponse ? connection.getResponseCode() : 0;
             connection.disconnect();
             return ret;
             
