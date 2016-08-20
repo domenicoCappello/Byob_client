@@ -61,19 +61,35 @@ public class Parser {
     BufferedReader br = new BufferedReader(new FileReader(fileName));
     ArrayList<URLDetails> configuration = new ArrayList<>();
     String url;
+    Boolean first = true;
     while ((url = br.readLine()) != null) {
-      if(!url.contains("*")){
+        /**Search at the beginning of the configuration file for proxy setup*/
+        if (first){
+            first = false;
+            if (url.charAt(0) == '$'){
+                String[] proxyDet = splitString(url.substring(1), ":");
+                URLDetails.proxyIp = proxyDet[0];
+                URLDetails.proxyPort = Integer.parseInt(proxyDet[1]);
+                System.out.println(proxyDet[0] + ":" + proxyDet[1]);
+                continue;
+            }
+        }
+        /**Check URL identification char*/
+        if(!url.contains("*")){
           System.err.println("Error in configuration file, aborting");
           System.exit(-1);
-      }
-      String contact = splitString(url,"*")[1] + ";";
-      String line;
-      for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
-          if ((line = br.readLine()) != null)
-            contact = contact + line;
-      }
-      String[] detail = splitString(contact, ";");
-      configuration.add(convertParam(detail));
+        }
+        /**Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent")*/
+        String contact = splitString(url,"*")[1] + ";";
+        String line;
+        for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
+            if ((line = br.readLine()) != null)
+              contact = contact + line;
+        }
+        /**Build detail string array*/
+        String[] detail = splitString(contact, ";");
+        /**Build URLDetails obj and add to configuration arrayList*/
+        configuration.add(convertParam(detail));
     }
     
     br.close();    
