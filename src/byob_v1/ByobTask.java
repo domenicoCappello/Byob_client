@@ -39,9 +39,10 @@ public class ByobTask implements Runnable {
         } else {        
             ByobSingleton.getInstance().myLogger.severe(contact.toString());
             System.out.println("Contacting " + contact.getURL() + " : " + contact.getContactsNum() + " more times");
-            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), URLDetails.proxyIp, URLDetails.proxyPort);
+            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
+                       URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
             contact.decreaseContactNum(); 
-            if(ByobComm.waitForResponse){
+            if(contact.waitForResponse){
                 String res = contact.getURL() + " returned: " + code;
                 System.out.println(res);
                 ByobSingleton.getInstance().myLogger.severe(res);

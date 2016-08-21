@@ -15,8 +15,6 @@ import java.util.logging.Logger;
  */
 public class ByobComm {
     
-    public static Boolean waitForResponse = false;
-    
     /**
     * Costructor.
     */
@@ -24,12 +22,12 @@ public class ByobComm {
     
     static int httpGet(String url){
         
-        return httpGet(url, "", "", -1);
+        return httpGet(url, "", "", -1, false);
     }
     
     static int httpGet(String url, String userAgent){
         
-        return httpGet(url, userAgent, "", -1);
+        return httpGet(url, userAgent, "", -1, false);
     }
     
     /**
@@ -39,7 +37,7 @@ public class ByobComm {
     * @exception IOException
     * @return
     */
-    static int httpGet(String url, String userAgent, String proxyIp, int proxyPort) {
+    static int httpGet(String url, String userAgent, String proxyIp, int proxyPort, Boolean waitForResponse) {
         
         String charset = "UTF-8"; 
 

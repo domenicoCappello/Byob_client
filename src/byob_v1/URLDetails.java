@@ -12,6 +12,8 @@ public class URLDetails {
     
     // Unique identifier of the bot
     String idBot;                       // Perche' identificatore bot e' in URLDetails?
+    /** Whether or not wait for server response*/
+    public Boolean waitForResponse = false;
     // URL - TO DO è un array
     private String URL;
     // Minimum time of contact

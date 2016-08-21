@@ -27,7 +27,6 @@ public class Byob_v1 {
         frame.setVisible(true); //or whatever the method is in jframe.class
 
 //        String file = "guiconf.txt";
-//        ByobComm.waitForResponse = true;    //Wait for response to the http request
 //        Parser parser = new Parser(file);
 //        try {
 //            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
