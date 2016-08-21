@@ -32,6 +32,23 @@ public class Tools {
             BYOB_WRAPPER.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
         }
     }
+        
+    public static Boolean checkIPv4String(String ip){
+        String[] tokens = ip.split("\\.");
+        if (tokens.length != 4){
+            return false;
+        }
+        for (String tok : tokens){
+            int i = Integer.parseInt(tok);
+            if (i < 0 || i > 255)
+                return false;
+        }
+        return true;
+    }
+    
+    public static Boolean checkPort(int port){
+        return (port >= 1025 && port <= 65535);
+    }
     
     public static String getOs(){
         return System.getProperty("os.name");
@@ -130,7 +147,6 @@ public class Tools {
         }
 
         catch(IOException e) {
-            e.printStackTrace();
         }
         
         return cmdOutput;
@@ -142,7 +158,7 @@ public class Tools {
      * @return unique ID of the bot
      */
     public String idGeneration() {
-        String hardware = "";
+        String hardware;
         String command = "";
         switch(getOs().toUpperCase()){
             case "LINUX":
@@ -171,9 +187,9 @@ public class Tools {
     public static String hashFunction(String hw) {
         
         byte[] bytesMsg = null;
-        byte[] bytesDigest = null;
+        byte[] bytesDigest;
         MessageDigest md = null;
-        String hashText = "";
+        String hashText;
         
         try {
             bytesMsg = hw.getBytes("UTF-8");
