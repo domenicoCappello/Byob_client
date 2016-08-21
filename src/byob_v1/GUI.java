@@ -195,12 +195,17 @@ public final class GUI extends javax.swing.JFrame{
         
         jFormattedTextField4.addKeyListener(new KeyAdapter() {
             @Override
-            public void keyReleased(KeyEvent event) {
-                String min = jFormattedTextField3.getText().equals("") ?
-                        "0" : jFormattedTextField3.getText();
-                String max = jFormattedTextField4.getText();
-                if (Integer.parseInt(min) < Integer.parseInt(max))
-                    jFormattedTextField4.setText("");
+            public void keyReleased(KeyEvent event) throws NumberFormatException{
+                if(!jFormattedTextField4.getText().equals(""))
+                {
+                    String min = jFormattedTextField3.getText().equals("") ?
+                            "0" : jFormattedTextField3.getText();
+                    System.out.println("-"+min+"-");
+                    String max = jFormattedTextField4.getText();
+
+                    if (Integer.parseInt(min) > Integer.parseInt(max))
+                        jFormattedTextField4.setText("");
+                }
             }
         });
         
