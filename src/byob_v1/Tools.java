@@ -39,9 +39,14 @@ public class Tools {
             return false;
         }
         for (String tok : tokens){
-            int i = Integer.parseInt(tok);
-            if (i < 0 || i > 255)
+            try{
+                int i = Integer.parseInt(tok);
+                if (i < 0 || i > 255)
+                    return false;
+                
+            } catch (NumberFormatException e){
                 return false;
+            }
         }
         return true;
     }
