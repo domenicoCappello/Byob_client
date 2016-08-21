@@ -99,7 +99,7 @@ public final class GUI extends javax.swing.JFrame{
     "6000",
     "10000",
     "100",
-    "EA",
+    "",
     "Mozilla/3.0",
     "",
     ""
@@ -660,6 +660,16 @@ public final class GUI extends javax.swing.JFrame{
         fileChooser.setDialogTitle("Specify a file to save");
 
         while(!exit){
+            
+            /**Check selected proxy syntax*/
+//            String ip = "";
+//            int port = 0;
+//            if(!Tools.checkIPv4String(ip) || !Tools.checkPort(port)){
+//                JOptionPane.showMessageDialog (null, "Invalid Proxy format (IP : port)",
+//                        "Warning", JOptionPane.ERROR_MESSAGE);
+//                return;
+//            }
+            
             int userSelection = fileChooser.showSaveDialog(parentFrame);
             if (userSelection == JFileChooser.CANCEL_OPTION)
                 exit = true;
@@ -671,6 +681,9 @@ public final class GUI extends javax.swing.JFrame{
                     exit = true;
                     if (!fileToSave.getName().contains(".txt"))
                         fileToSave = new File(fileToSave.toString() + ".txt");
+                    /**Update fileConfPath*/
+                    //fileConfPath = fileToSave.getAbsolutePath();
+                    //jButton7.setEnabled(true);
                 }
                 else
                 {
@@ -831,7 +844,14 @@ public final class GUI extends javax.swing.JFrame{
     }//GEN-LAST:event_jFormattedTextField8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+
+        Parser parser = new Parser(fileConfPath);
+        try {
+            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+            Tools.schedule(taskList);
+        } catch (IOException ex) {
+            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
