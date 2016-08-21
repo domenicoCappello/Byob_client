@@ -661,6 +661,8 @@ public final class GUI extends javax.swing.JFrame{
 
         while(!exit){
             int userSelection = fileChooser.showSaveDialog(parentFrame);
+            if (userSelection == JFileChooser.CANCEL_OPTION)
+                exit = true;
             if (userSelection == JFileChooser.APPROVE_OPTION) {
                 fileToSave = fileChooser.getSelectedFile();
                 int dialogResult = JOptionPane.showConfirmDialog (null, "Is the name correct?","Warning",dialogButton);
@@ -676,6 +678,7 @@ public final class GUI extends javax.swing.JFrame{
                     exit = false;
                 }
             }
+             
         }
         if(!flag)
         {
