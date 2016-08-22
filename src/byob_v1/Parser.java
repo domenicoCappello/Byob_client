@@ -98,23 +98,22 @@ public class Parser {
   /**
      * The function runs a command on the host's command line and captures
      * the result fromthe console.
-     * @param command   command to be run
-     * @return output from the command line
+     * @param fileToWrite
+     * @param params
+     * @param columns
+     * @throws java.io.IOException
      */
-    public static void writeConfigurationFile(File fileToWrite, String[][] params, int columns) throws IOException {
+    public static void writeConfigurationFile(File fileToWrite, String[] params, int columns) throws IOException {
         if (!fileToWrite.exists())
 	    fileToWrite.createNewFile();
-        FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath());
-        BufferedWriter bw = new BufferedWriter(fw);
-	for (int i = 0; i < params.length; i++) {
-            for (int j = 0; j < columns; j++) {
-		bw.write(params[i][j]);
+        try (FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath()); 
+                BufferedWriter bw = new BufferedWriter(fw)) {
+            for (String param : params) {
+                bw.write(param);
                 bw.newLine();           //Nuova convenzione? Da cambiare in lettura?
-            }
+            }       
         }
-	
-        bw.close();
-        fw.close();
+        System.out.println("Extraction finished.");
      }
   
     /**

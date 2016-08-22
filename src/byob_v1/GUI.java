@@ -707,7 +707,7 @@ public final class GUI extends javax.swing.JFrame{
         {
             System.out.println("Extracting parameters.");
             try {
-                Parser.writeConfigurationFile(fileToSave, extractDataFromTextArea(), textParam.size());
+                Parser.writeConfigurationFile(fileToSave, jTextArea1.getText().split("\n"), textParam.size());
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -778,7 +778,7 @@ public final class GUI extends javax.swing.JFrame{
                 choice[0] = conditionMap.get(getSelectedButtonText(group));
                 choice[1] = conditionMap.get(getSelectedButtonText(group1));
                 sleepCondition = String.join("", choice);
-                jFormattedTextField6.setText(sleepCondition+";");
+                jFormattedTextField6.setText(sleepCondition);
                 jFormattedTextField6.setEnabled(true);
                 parent.setVisible(false);   
             }
@@ -1011,21 +1011,25 @@ public final class GUI extends javax.swing.JFrame{
     private String[] extractData() {
         String[] params = new String[textParam.size()];
         for(int i = 0; i < textParam.size() ; i++) {
-            if(!params[0].contains("http"))
-                    params[0] = "http://"+params[0];
-            params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
+            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("http"))
+                    params[0] = "http://"+textParam.get(i).getText();
+            else
+                params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
                     defaultValue[i] : textParam.get(i).getText();  
         } 
         return params;
     }
     
     private String[][] extractDataFromTextArea() {
-        String[] textArea = jTextArea1.getText().split(";\n");
-        int rows = textArea.length / textParam.size();
+        String[] textArea = jTextArea1.getText().split("\n");
+        int rows = textArea.length / (!textArea[0].contains("$") ? 
+                (textParam.size()-2) :
+                (textParam.size()-1));
         int columns = textParam.size();
+        System.out.println(rows+"-"+columns);
         String[][] params = new String[rows][columns];
         for(int i = 0; i < rows ; i++) {
-            for(int j = 0; j < columns ; j++) 
+            for(int j = 0; j < columns ; j++)
                 params[i][j] = textArea[(i*columns)+j];
         }
         return params;
