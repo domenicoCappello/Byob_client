@@ -397,6 +397,11 @@ public final class GUI extends javax.swing.JFrame{
         });
 
         jFormattedTextField2.setEnabled(false);
+        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField2ActionPerformed(evt);
+            }
+        });
 
         jFormattedTextField3.setEnabled(false);
         jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -867,6 +872,10 @@ public final class GUI extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField4ActionPerformed
 
+    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+
 //    private void formatContactTime(){
 //        MaskFormatter formatter;
 //            try {
@@ -1002,6 +1011,8 @@ public final class GUI extends javax.swing.JFrame{
     private String[] extractData() {
         String[] params = new String[textParam.size()];
         for(int i = 0; i < textParam.size() ; i++) {
+            if(!params[0].contains("http"))
+                    params[0] = "http://"+params[0];
             params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
                     defaultValue[i] : textParam.get(i).getText();  
         } 
