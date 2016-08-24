@@ -787,10 +787,24 @@ public final class GUI extends javax.swing.JFrame{
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String[] params = extractData();
-        writeTextArea(params);
-        for(int i=0; i < textParam.size(); i++)
-            textParam.get(i).setText("");
+        List<String> warning = Tools.warningMessage(extractData(false));
+        if(warning!=null)
+        {
+            final JFrame parent = new JFrame();
+            int choice = JOptionPane.showConfirmDialog(parent, String.join("", warning), "Error", JOptionPane.YES_NO_OPTION);
+            parent.pack();
+            parent.setVisible(true);
+            if(choice == JOptionPane.YES_OPTION){
+                writeTextArea(extractData(true));
+                for(int i=0; i < textParam.size(); i++)
+                    textParam.get(i).setText("");
+                parent.dispose();
+            }
+            else {
+                parent.dispose();
+                JOptionPane.showMessageDialog(null, "Parameters must be modified manually.");
+            }
+        } 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -1024,14 +1038,15 @@ public final class GUI extends javax.swing.JFrame{
      * The function returns the data of the jFormattedTextFields.
      * @return Array of the parameters
      */
-    private String[] extractData() {
+    private String[] extractData(boolean standard) {
         String[] params = new String[textParam.size()];
         for(int i = 0; i < textParam.size() ; i++) {
             if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("http"))
-                    params[0] = "http://"+textParam.get(i).getText();
+                    params[0] = standard ? defaultValue[i] : "http://"+textParam.get(i).getText();
             else
-                params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
-                    defaultValue[i] : textParam.get(i).getText();  
+                params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
+                //params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
+                //    defaultValue[i] : textParam.get(i).getText();  
         } 
         return params;
     }
