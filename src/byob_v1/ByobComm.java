@@ -70,4 +70,19 @@ public class ByobComm {
         }
         
     }
+    
+    static boolean URLResponse(String url) {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+            int response = connection.getResponseCode();
+            connection.disconnect();
+            return response != -1;
+        } catch (MalformedURLException ex) {
+            //Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } catch (IOException ex) {
+            //Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }
