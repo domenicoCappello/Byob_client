@@ -15,6 +15,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,8 +52,51 @@ public class Tools {
         return true;
     }
     
-    public static Boolean checkPort(int port){
-        return (port >= 1025 && port <= 65535);
+    public static Boolean checkPort(String port){
+        if(!checkNumber(port))
+            return false;
+        return (Integer.parseInt(port) >= 1025 && Integer.parseInt(port) <= 65535);
+    }
+    
+    public static Boolean checkNumber(String number){
+        char[] charArray = number.toCharArray();
+        if(number.equals(""))
+            return false;
+        for(char c: charArray)
+            if(!Character.isDigit(c))
+                return false;
+        return true;
+    }
+    
+    public static Boolean checkInterval(String min, String max){
+        if(!checkNumber(min) || !checkNumber(max))
+            return false;
+        return Integer.parseInt(min) <= Integer.parseInt(max);
+    }
+    
+    public List<String> warningMessage(String[] params){
+        List<String> warning = new ArrayList<>(); 
+        warning.add("Fix the following parameters:\n");
+        if(false) // 
+            warning.add("- URL not valid;\n");
+        if(!checkNumber(params[1]))
+            if(params[2].equals("-"))
+                warning.add("- Contact time value not valid;\n");
+            else
+                warning.add("- Minimum contact time value not valid;\n");
+        if(!checkNumber(params[2]))
+            if(!params[2].equals("-") || !params[2].equals("-"))
+                warning.add("- Maximum contact time value not valid;\n");
+        if(!checkNumber(params[3]))
+            warning.add("- Number of contacts not valid;\n");
+        if(!checkIPv4String(params[6]))
+            warning.add("- Proxy IP not valid;\n");
+        if(!checkPort(params[7]))
+            warning.add("- Proxy port not valid;\n");
+        
+        return (warning.size() == 1 ? 
+                null : 
+                warning);
     }
     
     public static String getOs(){
@@ -135,7 +179,7 @@ public class Tools {
     
     /**
      * The function runs a command on the host's command line and captures
-     * the result fromthe console.
+     * the result from the console.
      * @param command   command to be run
      * @return output from the command line
      */
@@ -186,7 +230,7 @@ public class Tools {
     
     /**
      * The function returns the MD5 Checksum of a string.
-     * @param hw the string youwant to compute the checksum of
+     * @param hw the string you want to compute the checksum of
      * @returnthe checksum of the string
      */
     public static String hashFunction(String hw) {
