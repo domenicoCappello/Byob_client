@@ -74,11 +74,11 @@ public class Tools {
         return Integer.parseInt(min) <= Integer.parseInt(max);
     }
     
-    public List<String> warningMessage(String[] params){
+    public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
         warning.add("Fix the following parameters:\n");
-        if(false) // 
-            warning.add("- URL not valid;\n");
+        if(!ByobComm.URLResponse(params[0])) // 
+            warning.add("- Tried to contact URL but there is no response;\n");
         if(!checkNumber(params[1]))
             if(params[2].equals("-"))
                 warning.add("- Contact time value not valid;\n");
@@ -93,10 +93,12 @@ public class Tools {
             warning.add("- Proxy IP not valid;\n");
         if(!checkPort(params[7]))
             warning.add("- Proxy port not valid;\n");
-        
-        return (warning.size() == 1 ? 
-                null : 
-                warning);
+        if(warning.size() == 1)
+            return null;
+        else {
+            warning.add("do you want to use default settings where data is missing?");
+            return warning;
+        }
     }
     
     public static String getOs(){
