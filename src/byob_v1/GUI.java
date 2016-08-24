@@ -436,6 +436,11 @@ public final class GUI extends javax.swing.JFrame{
         });
 
         jFormattedTextField7.setEnabled(false);
+        jFormattedTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField7ActionPerformed(evt);
+            }
+        });
 
         jFormattedTextField8.setEnabled(false);
         jFormattedTextField8.addActionListener(new java.awt.event.ActionListener() {
@@ -654,6 +659,7 @@ public final class GUI extends javax.swing.JFrame{
             File file = new File(selectedFile.getName());
             fileConfPath = file.getAbsolutePath();
             jFormattedTextField1.setText(fileConfPath);
+            jButton7.setEnabled(true);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -692,8 +698,8 @@ public final class GUI extends javax.swing.JFrame{
                     if (!fileToSave.getName().contains(".txt"))
                         fileToSave = new File(fileToSave.toString() + ".txt");
                     /**Update fileConfPath*/
-                    //fileConfPath = fileToSave.getAbsolutePath();
-                    //jButton7.setEnabled(true);
+                    fileConfPath = fileToSave.getAbsolutePath();
+                    jButton7.setEnabled(true);
                 }
                 else
                 {
@@ -787,6 +793,8 @@ public final class GUI extends javax.swing.JFrame{
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        for (int i = 0; i < textParam.size(); i++)
+            System.out.println(textParam.get(i).getText());
         List<String> warning = Tools.warningMessage(extractData(false));
         if(warning!=null)
         {
@@ -845,7 +853,8 @@ public final class GUI extends javax.swing.JFrame{
         }
         for(int i=0; i < textParam.size()-2; i++) {
             if (params[i].equals("-"))
-                params[i] = ""; 
+                params[i] = "";
+//                params[i] = (i == 2)? params[1] : ""; /** Fixed interval -> maxTime = minTime */
             textParam.get(i).setText(params[i]);
         }
         List textArea = Arrays.asList(params).subList(textParam.size()-2, params.length);
@@ -906,6 +915,10 @@ public final class GUI extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField2ActionPerformed
 
+    private void jFormattedTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField7ActionPerformed
+
 //    private void formatContactTime(){
 //        MaskFormatter formatter;
 //            try {
@@ -930,7 +943,11 @@ public final class GUI extends javax.swing.JFrame{
                 append(":").
                 append(params[params.length-1]).
                 append("\n");
-        for(int i=0; i < params.length-2; i++){
+        for(int i=0; i < params.length-2; i++){ 
+            /**Gestione fixed interval */
+//            if(i == 2 && params[2].contains("-")){
+//                params[2] = params[1];
+//            }
             sb.append(params[i]).append("\n");
         }
         jTextArea1.append(sb.toString());
@@ -1048,6 +1065,9 @@ public final class GUI extends javax.swing.JFrame{
                 //params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
                 //    defaultValue[i] : textParam.get(i).getText();  
         } 
+        if(params[2].equals("")) /**Fix minTime = maxTime ...*/
+            params[2] = params[1];
+        System.out.println(params[2]);
         return params;
     }
     

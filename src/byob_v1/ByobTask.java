@@ -51,7 +51,7 @@ public class ByobTask implements Runnable {
             if(contact.getContactsNum() > 0){
                 double randomInterval = contact.getMinWaitTime() + 
                          (contact.getMaxWaitTime() - contact.getMinWaitTime()) * random.nextDouble();
-                ses.schedule(this, (long)(randomInterval*1000), TimeUnit.MILLISECONDS);
+                ses.schedule(this, (long)randomInterval, TimeUnit.MILLISECONDS);
             }
         }
     }  

@@ -20,14 +20,14 @@ public class ByobComm {
     */
     ByobComm(){}
     
-    static int httpGet(String url){
+    static int httpGet(String url, Boolean waitForResponse){
         
-        return httpGet(url, "", "", -1, false);
+        return httpGet(url, "", "", -1, waitForResponse);
     }
     
-    static int httpGet(String url, String userAgent){
+    static int httpGet(String url, String userAgent, Boolean waitForResponse){
         
-        return httpGet(url, userAgent, "", -1, false);
+        return httpGet(url, userAgent, "", -1, waitForResponse);
     }
     
     /**
@@ -72,6 +72,7 @@ public class ByobComm {
     }
     
     static boolean URLResponse(String url) {
+//        return httpGet(url, Boolean.TRUE) != -1;
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             int response = connection.getResponseCode();
