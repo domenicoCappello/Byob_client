@@ -193,21 +193,21 @@ public final class GUI extends javax.swing.JFrame{
             }
         });
         
-        jFormattedTextField4.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent event) throws NumberFormatException{
-                if(!jFormattedTextField4.getText().equals(""))
-                {
-                    String min = jFormattedTextField3.getText().equals("") ?
-                            "0" : jFormattedTextField3.getText();
-                    System.out.println("-"+min+"-");
-                    String max = jFormattedTextField4.getText();
-
-                    if (Integer.parseInt(min) > Integer.parseInt(max))
-                        jFormattedTextField4.setText("");
-                }
-            }
-        });
+//        jFormattedTextField4.addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyReleased(KeyEvent event) throws NumberFormatException{
+//                if(!jFormattedTextField4.getText().equals(""))
+//                {
+//                    String min = jFormattedTextField3.getText().equals("") ?
+//                            "0" : jFormattedTextField3.getText();
+//                    System.out.println("-"+min+"-");
+//                    String max = jFormattedTextField4.getText();
+//
+//                    if (Integer.parseInt(min) > Integer.parseInt(max))
+//                        jFormattedTextField4.setText("");
+//                }
+//            }
+//        });
         
         ButtonGroup mainGroup = new ButtonGroup();
         mainGroup.add(jRadioButton1);
@@ -829,24 +829,40 @@ public final class GUI extends javax.swing.JFrame{
             jFormattedTextField9.setText(proxy[1]);
             params = Arrays.copyOfRange(params, 1, params.length);
         }
-        for(int i=0; i < textParam.size()-2; i++)
+        for(int i=0; i < textParam.size()-2; i++) {
+            if (params[i].equals("-"))
+                params[i] = ""; 
             textParam.get(i).setText(params[i]);
+        }
         List textArea = Arrays.asList(params).subList(textParam.size()-2, params.length);
 
         for(int i=0; i < textArea.size(); i++)
             jTextArea1.append(textArea.get(i).toString()+"\n");
+        
+        if(!jFormattedTextField4.isEnabled())
+            jFormattedTextField4.setText("");
+            
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         if(!evt.getActionCommand().equals("on"))
+        {
             jFormattedTextField4.setEnabled(true);
-            //formatContactTime();
+            if(jTextArea1.getText().length() != 0)
+            if(!Tools.checkNumber(jFormattedTextField3.getText()))
+                defaultValue[2] = "";
+            else
+                defaultValue[2] = ""+(Integer.parseInt(jFormattedTextField3.getText())+10);     
+        }
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         if(!evt.getActionCommand().equals("on"))
+        {
             jFormattedTextField4.setEnabled(false);
-            //formatContactTime();
+            jFormattedTextField4.setText("");
+            defaultValue[2] = "-";
+        }
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jFormattedTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField8ActionPerformed
