@@ -1083,7 +1083,7 @@ public final class GUI extends javax.swing.JFrame{
 //                params[i][j] = textArea[(i*columns)+j];
 //        }
 //        return params;
-    }
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
