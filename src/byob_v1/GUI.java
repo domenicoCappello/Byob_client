@@ -68,10 +68,10 @@ public final class GUI extends javax.swing.JFrame{
     String[] conditionLabel = {
     "Even days",
     "Odd days",
-    "Seven days",
+    "Never",
     "AM",
     "PM",
-    "24 hours"
+    "Never"
     };
     // Mapping of the Sleep conditions
     String[] conditionLetter = {
@@ -1065,25 +1065,24 @@ public final class GUI extends javax.swing.JFrame{
                 params[i] = standard  && textParam.get(i).getText().equals("") ? 
                         defaultValue[i] : textParam.get(i).getText();
         } 
-        if(params[2].equals("")) /**Fix minTime = maxTime ...*/
+        if(params[2].equals("-")) /**Fix minTime = maxTime ...*/
             params[2] = params[1];
-        System.out.println(params[2]);
         return params;
     }
     
-    private String[][] extractDataFromTextArea() {
-        String[] textArea = jTextArea1.getText().split("\n");
-        int rows = textArea.length / (!textArea[0].contains("$") ? 
-                (textParam.size()-2) :
-                (textParam.size()-1));
-        int columns = textParam.size();
-        System.out.println(rows+"-"+columns);
-        String[][] params = new String[rows][columns];
-        for(int i = 0; i < rows ; i++) {
-            for(int j = 0; j < columns ; j++)
-                params[i][j] = textArea[(i*columns)+j];
-        }
-        return params;
+//    private String[][] extractDataFromTextArea() {
+//        String[] textArea = jTextArea1.getText().split("\n");
+//        int rows = textArea.length / (!textArea[0].contains("$") ? 
+//                (textParam.size()-2) :
+//                (textParam.size()-1));
+//        int columns = textParam.size();
+//        System.out.println(rows+"-"+columns);
+//        String[][] params = new String[rows][columns];
+//        for(int i = 0; i < rows ; i++) {
+//            for(int j = 0; j < columns ; j++)
+//                params[i][j] = textArea[(i*columns)+j];
+//        }
+//        return params;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
