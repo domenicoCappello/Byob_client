@@ -138,6 +138,7 @@ public final class GUI extends javax.swing.JFrame{
         //jTextArea1.setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, null);
         
         NumberFormat a = NumberFormat.getNumberInstance();
+        a.setGroupingUsed(false);
         NumberFormatter b = new NumberFormatter(a);
         DefaultFormatterFactory c = new DefaultFormatterFactory(b);
         jFormattedTextField3.setFormatterFactory(c);
@@ -1044,9 +1045,8 @@ public final class GUI extends javax.swing.JFrame{
             if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("http"))
                     params[0] = standard ? defaultValue[i] : "http://"+textParam.get(i).getText();
             else
-                params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
-                //params[i] = textParam.get(i).getText().equals("") || textParam.get(i).getText().contains(" ") ?
-                //    defaultValue[i] : textParam.get(i).getText();  
+                params[i] = standard  && textParam.get(i).getText().equals("") ? 
+                        defaultValue[i] : textParam.get(i).getText();
         } 
         return params;
     }
