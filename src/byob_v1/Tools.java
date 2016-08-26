@@ -107,18 +107,18 @@ public class Tools {
 //        if(!ByobComm.URLResponse(params[0])) // 
 //            warning.add("- Tried to contact URL but there is no response;\n");
 //        if(!checkNumber(params[1]))
-            if(params[2].equals("-"))
-                warning.add("- Contact time value not valid;\n");
-            else
-                warning.add("- Minimum contact time value not valid;\n");
+        if(params[2].equals("-"))
+            warning.add("- Contact time value not valid;\n");
+//            else
+//                warning.add("- Minimum contact time value not valid;\n");
         if(!checkNumber(params[2]))
             if(!params[2].equals("-") || !params[2].equals("-"))
                 warning.add("- Maximum contact time value not valid;\n");
         if(!checkNumber(params[3]))
             warning.add("- Number of contacts not valid;\n");
-        if(!checkIPv4String(params[6]))
+        if(!params[6].equals("") && !checkIPv4String(params[6]))
             warning.add("- Proxy IP not valid;\n");
-        if(!checkPort(params[7]))
+        if(!params[7].equals("") && !checkPort(params[7]))
             warning.add("- Proxy port not valid;\n");
         if(warning.size() == 1)
             return null;

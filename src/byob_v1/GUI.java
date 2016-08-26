@@ -738,6 +738,11 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        
+        /**if maxTime is void then maxTime = minTime*/
+        if (textParam.get(2).getText().equals(""))
+            textParam.get(2).setText(textParam.get(1).getText());
+        /**Print to console*/
         for (int i = 0; i < textParam.size(); i++)
             System.out.println(textParam.get(i).getText());
         List<String> warning = Tools.warningMessage(extractData(false));
