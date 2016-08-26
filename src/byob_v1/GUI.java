@@ -952,7 +952,7 @@ public final class GUI extends javax.swing.JFrame {
         String[] params = new String[textParam.size()];
         for(int i = 0; i < textParam.size() ; i++) {
             if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("http"))
-                    params[0] = standard ? defaultValue[i] : "http://"+textParam.get(i).getText();
+                    params[i] = standard ? "*"+defaultValue[i] : "*http://"+textParam.get(i).getText();
             else
                 params[i] = standard  && textParam.get(i).getText().equals("") ? 
                         defaultValue[i] : textParam.get(i).getText();
