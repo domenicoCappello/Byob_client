@@ -14,15 +14,12 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.KeyboardFocusManager;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.text.MessageFormat;
 import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -30,8 +27,6 @@ import javax.swing.AbstractButton;
 import javax.swing.JTextField;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JFormattedTextField.AbstractFormatterFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -41,7 +36,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.MaskFormatter;
 import javax.swing.text.DefaultFormatter;
 import java.text.ParseException;
 import java.util.regex.Matcher;
@@ -50,20 +44,25 @@ import java.util.regex.PatternSyntaxException;
 import javax.swing.text.NumberFormatter;
 
 /**
- * The class creates and manages anything who's connected to the Graphic User 
+ * Class creates and manages anything who's connected to the Graphic User 
  * Interface: components, their visibility, their aspects and their being 
  * enabled/disabled.
  * @author Cappello - Nazio
  */
-public final class GUI extends javax.swing.JFrame{
+public final class GUI extends javax.swing.JFrame {
+    
     //Configuration file's Path 
     String fileConfPath;
+    
     // List of user's params JTextField 
     List<JTextField> textParam = new ArrayList<>();
+    
     // List of labels in which help to users can be provided
     List<JLabel> configurationLabel = new ArrayList<>();
+    
     // Map of available sleep condition
     HashMap<String, String> conditionMap = new HashMap<>();
+    
     // Sleep conditions
     String[] conditionLabel = {
     "Even days",
@@ -71,8 +70,8 @@ public final class GUI extends javax.swing.JFrame{
     "Never",
     "AM",
     "PM",
-    "Never"
-    };
+    "Never" };
+    
     // Mapping of the Sleep conditions
     String[] conditionLetter = {
     "E",
@@ -80,8 +79,8 @@ public final class GUI extends javax.swing.JFrame{
     "",
     "A",
     "P",
-    ""
-    };
+    "" };
+    
     // Help strings to show to user
     String[] helpText = {
     "<html>URL to contact <BR>i.e. http://www.facebook.com</html>",
@@ -91,8 +90,8 @@ public final class GUI extends javax.swing.JFrame{
     "<html>Define when the bot should operate and when it should sleep</html>",
     "<html>Personalize User-Agent <BR>i.e. Mozilla/3.0 (OS/2; U)</html>",
     "<html>Define the IP of the proxy <BR>i.e 10.0.0.1</html>",
-    "<html>Define the port of the proxy in range [1025, 65535]<BR>i.e 80</html>"
-    };
+    "<html>Define the port of the proxy in range [1025, 65535]<BR>i.e 80</html>" };
+    
     // Default Values
     String[] defaultValue = {
     "www.google.it",
@@ -102,15 +101,17 @@ public final class GUI extends javax.swing.JFrame{
     "",
     "Mozilla/3.0",
     "",
-    ""
-    };
+    "" };
+    
     // Variable for sleep conditions
     String sleepCondition = "";
+    
     // Help aspect of the labels' border
     Border helpBorder = BorderFactory.createMatteBorder(1, 5, 1, 1, Color.red);
+    
     /**
      * Constructor. 
-     * It creates new form GUI, it initiates components and creates Lists to
+     * It creates new form GUI, it initiates components and creates lists to
      * represent the set of components.
      */
     public GUI() {
@@ -132,10 +133,6 @@ public final class GUI extends javax.swing.JFrame{
         textParam.add(jFormattedTextField7);
         textParam.add(jFormattedTextField8);
         textParam.add(jFormattedTextField9);
-        
-        //jTextArea1.setEditable(false);
-        //jTextArea1.setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS, null);
-        //jTextArea1.setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS, null);
         
         NumberFormat a = NumberFormat.getNumberInstance();
         a.setGroupingUsed(false);
@@ -194,22 +191,6 @@ public final class GUI extends javax.swing.JFrame{
             }
         });
         
-//        jFormattedTextField4.addKeyListener(new KeyAdapter() {
-//            @Override
-//            public void keyReleased(KeyEvent event) throws NumberFormatException{
-//                if(!jFormattedTextField4.getText().equals(""))
-//                {
-//                    String min = jFormattedTextField3.getText().equals("") ?
-//                            "0" : jFormattedTextField3.getText();
-//                    System.out.println("-"+min+"-");
-//                    String max = jFormattedTextField4.getText();
-//
-//                    if (Integer.parseInt(min) > Integer.parseInt(max))
-//                        jFormattedTextField4.setText("");
-//                }
-//            }
-//        });
-        
         ButtonGroup mainGroup = new ButtonGroup();
         mainGroup.add(jRadioButton1);
         mainGroup.add(jRadioButton2);
@@ -220,7 +201,7 @@ public final class GUI extends javax.swing.JFrame{
     }
 
     /**
-     * This method is called from within the constructor to initialize the form.
+     * Method's called from within the constructor to initialize the form.
      * The content of this method is always regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
@@ -289,12 +270,6 @@ public final class GUI extends javax.swing.JFrame{
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
             }
         });
 
@@ -398,18 +373,8 @@ public final class GUI extends javax.swing.JFrame{
         });
 
         jFormattedTextField2.setEnabled(false);
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
-            }
-        });
 
         jFormattedTextField3.setEnabled(false);
-        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField3ActionPerformed(evt);
-            }
-        });
 
         jRadioButton3.setText("Interval");
         jRadioButton3.setEnabled(false);
@@ -430,25 +395,10 @@ public final class GUI extends javax.swing.JFrame{
         jFormattedTextField5.setEnabled(false);
 
         jFormattedTextField6.setEnabled(false);
-        jFormattedTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField6ActionPerformed(evt);
-            }
-        });
 
         jFormattedTextField7.setEnabled(false);
-        jFormattedTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField7ActionPerformed(evt);
-            }
-        });
 
         jFormattedTextField8.setEnabled(false);
-        jFormattedTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField8ActionPerformed(evt);
-            }
-        });
 
         jFormattedTextField9.setEnabled(false);
 
@@ -474,11 +424,6 @@ public final class GUI extends javax.swing.JFrame{
         });
 
         jFormattedTextField4.setEnabled(false);
-        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField4ActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("-");
@@ -662,7 +607,6 @@ public final class GUI extends javax.swing.JFrame{
             jFormattedTextField1.setText(fileConfPath);
             jButton7.setEnabled(true);
         }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -819,10 +763,8 @@ public final class GUI extends javax.swing.JFrame{
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         if(!evt.getActionCommand().equals("on"))
             disableEnable(false);
-        else {
+        else
             disableEnable(true);
-            //formatContactTime();
-        }
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -830,23 +772,13 @@ public final class GUI extends javax.swing.JFrame{
             jToggleButton1.setText("Disable Help");
         else
             jToggleButton1.setText("Enable Help");
-        
         helpLegend();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jFormattedTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField6ActionPerformed
-
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String[] params = jTextArea1.getText().split("\n");
         clearFields();
-        if(params[0].contains("$"))
-        {
+        if(params[0].contains("$")) {
             String[] proxy = params[0].replace("$", "").split(":");
             jFormattedTextField8.setText(proxy[0]);
             jFormattedTextField9.setText(proxy[1]);
@@ -854,8 +786,7 @@ public final class GUI extends javax.swing.JFrame{
         }
         for(int i=0; i < textParam.size()-2; i++) {
             if (params[i].equals("-"))
-                params[i] = "";
-//                params[i] = (i == 2)? params[1] : ""; /** Fixed interval -> maxTime = minTime */
+                params[i] = params[i-1];
             textParam.get(i).setText(params[i]);
         }
         List textArea = Arrays.asList(params).subList(textParam.size()-2, params.length);
@@ -864,13 +795,11 @@ public final class GUI extends javax.swing.JFrame{
             jTextArea1.append(textArea.get(i).toString()+"\n");
         
         if(!jFormattedTextField4.isEnabled())
-            jFormattedTextField4.setText("");
-            
+            jFormattedTextField4.setText("");      
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        if(!evt.getActionCommand().equals("on"))
-        {
+        if(!evt.getActionCommand().equals("on")) {
             jFormattedTextField4.setEnabled(true);
             if(jTextArea1.getText().length() != 0)
             if(!Tools.checkNumber(jFormattedTextField3.getText()))
@@ -881,17 +810,12 @@ public final class GUI extends javax.swing.JFrame{
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        if(!evt.getActionCommand().equals("on"))
-        {
+        if(!evt.getActionCommand().equals("on")) {
             jFormattedTextField4.setEnabled(false);
             jFormattedTextField4.setText("");
-            defaultValue[2] = "-";
+            defaultValue[2] = defaultValue[1];
         }
     }//GEN-LAST:event_jRadioButton4ActionPerformed
-
-    private void jFormattedTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
@@ -900,41 +824,9 @@ public final class GUI extends javax.swing.JFrame{
             ArrayList <URLDetails> taskList = parser.readConfigurationFile();
             Tools.schedule(taskList);
         } catch (IOException ex) {
-            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
+            ByobSingleton.myLogger.severe("Parser I/O exception");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
-
-    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
-
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
-
-    private void jFormattedTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField7ActionPerformed
-
-//    private void formatContactTime(){
-//        MaskFormatter formatter;
-//            try {
-//                if(jRadioButton3.isSelected())
-//                    formatter = new MaskFormatter("########## - ##########");
-//                else
-//                    formatter = new MaskFormatter("##########");
-//                formatter.setValidCharacters("0123456789");
-//                AbstractFormatterFactory f = new DefaultFormatterFactory(formatter);
-//                jFormattedTextField3.setFormatterFactory(f);
-//                jFormattedTextField3.setText("");
-//            } catch (ParseException ex) {
-//                Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//    }
     
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
@@ -954,6 +846,9 @@ public final class GUI extends javax.swing.JFrame{
         jTextArea1.append(sb.toString());
     }
     
+    /**
+     *  Method clears the user's input fields.
+     */
     public void clearFields(){
         for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setText("");
@@ -1009,7 +904,7 @@ public final class GUI extends javax.swing.JFrame{
 
     
     /**
-     * The method sets/removes help's border and tooltip from each jFormattedTextField.
+     *  The method sets/removes help's border and tooltip from each jFormattedTextField.
      */
     public void helpLegend() {
             for(int i=0; i < textParam.size(); i++) {
@@ -1019,8 +914,8 @@ public final class GUI extends javax.swing.JFrame{
     }
     
     /**
-     * The method enables/disables components of the GUI.
-     * @param flag enable/disable element
+     *  Method enables/disables components of the GUI.
+     *  @param flag enable/disable element
      */
     public void disableEnable(boolean flag) {
         jButton1.setEnabled(flag);
@@ -1033,27 +928,24 @@ public final class GUI extends javax.swing.JFrame{
         jRadioButton3.setSelected(true);
         jRadioButton4.setEnabled(!flag);
         
-        for(int i=0; i < textParam.size(); i++)
-        {
+        for(int i=0; i < textParam.size(); i++) {
             textParam.get(i).setEnabled(!flag);
             configurationLabel.get(i).setEnabled(!flag);    
         }
         
-        jFormattedTextField6.setEnabled(flag);
-        
+        jFormattedTextField6.setEnabled(flag);   
     }
     
     /**
-     * The method enables/disables components of the GUI.
+     *  Method enables/disables components of the GUI.
      */
     public void addConditions() {
-         for(int i = 0; i < conditionLabel.length; i++) {
-            conditionMap.put(conditionLabel[i],conditionLetter[i]);
-        }     
+         for(int i = 0; i < conditionLabel.length; i++)
+            conditionMap.put(conditionLabel[i],conditionLetter[i]);    
     }
     
     /**
-     * The function returns the data of the jFormattedTextFields.
+     *  Function returns the data of the user's input field.
      * @return Array of the parameters
      */
     private String[] extractData(boolean standard) {
@@ -1065,25 +957,10 @@ public final class GUI extends javax.swing.JFrame{
                 params[i] = standard  && textParam.get(i).getText().equals("") ? 
                         defaultValue[i] : textParam.get(i).getText();
         } 
-        if(params[2].equals("-")) /**Fix minTime = maxTime ...*/
+        if(params[2].equals("-"))
             params[2] = params[1];
         return params;
     }
-    
-//    private String[][] extractDataFromTextArea() {
-//        String[] textArea = jTextArea1.getText().split("\n");
-//        int rows = textArea.length / (!textArea[0].contains("$") ? 
-//                (textParam.size()-2) :
-//                (textParam.size()-1));
-//        int columns = textParam.size();
-//        System.out.println(rows+"-"+columns);
-//        String[][] params = new String[rows][columns];
-//        for(int i = 0; i < rows ; i++) {
-//            for(int j = 0; j < columns ; j++)
-//                params[i][j] = textArea[(i*columns)+j];
-//        }
-//        return params;
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -1124,54 +1001,94 @@ public final class GUI extends javax.swing.JFrame{
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
     
-    public class RegexFormatter extends DefaultFormatter {
-    private Pattern pattern;
-    private Matcher matcher;
+    /**
+     *  Class is used to format proxy's IP address input field
+     */
+    public final class RegexFormatter extends DefaultFormatter {
+        
+        //  IP Address Pattern
+        private Pattern pattern;
+        
+        // Matcher on sequence by interpreting the Pattern
+        private Matcher matcher;
 
-    public RegexFormatter() {
-        super();
-    }
-
-    public RegexFormatter(String pattern) throws PatternSyntaxException {
-        this();
-        setPattern(Pattern.compile(pattern));
-    }
-
-    public RegexFormatter(Pattern pattern) {
-        this();
-        setPattern(pattern);
-    }
-
-    public void setPattern(Pattern pattern) {
-        this.pattern = pattern;
-    }
-
-    public Pattern getPattern() {
-        return pattern;
-    }
-
-    protected void setMatcher(Matcher matcher) {
-        this.matcher = matcher;
-    }
-
-    protected Matcher getMatcher() {
-        return matcher;
-    }
-
-    public Object stringToValue(String text) throws ParseException {
-        Pattern pattern = getPattern();
-
-        if (pattern != null) {
-            Matcher matcher = pattern.matcher(text);
-
-            if (matcher.matches()) {
-                setMatcher(matcher);
-                return super.stringToValue(text);
-            }
-            throw new ParseException("Pattern did not match", 0);
+        /**
+         * Constructor.
+         */ 
+        public RegexFormatter() {
+            super();
         }
-        return text;
-    }
-}
 
+        /**
+         * Constructor.
+         * @param pattern String of the pattern to set
+         */
+        public RegexFormatter(String pattern) throws PatternSyntaxException {
+            this();
+            setPattern(Pattern.compile(pattern));
+        }
+
+        /**
+         * Constructor.
+         * @param pattern Pattern to set
+         */
+        public RegexFormatter(Pattern pattern) {
+            this();
+            setPattern(pattern);
+        }
+
+        /**
+         *  Method sets Pattern in the RegexFormat object.
+         *  @param pattern Pattern to set
+         */
+        public void setPattern(Pattern pattern) {
+            this.pattern = pattern;
+        }
+
+        /**
+         *  Function gets Pattern of the object.
+         *  @return Pattern
+         */
+        public Pattern getPattern() {
+            return pattern;
+        }
+
+        /**
+         *  Method sets the Matcher.
+         * @param matcher Matcher on the Pattern
+        */
+        protected void setMatcher(Matcher matcher) {
+            this.matcher = matcher;
+        }
+
+        /**
+         *  Function gets the Matcher of the object.
+         *  @return Matcher on the Pattern
+         */
+        protected Matcher getMatcher() {
+            return matcher;
+        }
+
+        /**
+         *  Function returns the string value of the object.
+         *  @param text Matcher's string text
+         *  @return object's string value
+         *  @throws ParseException 
+         */
+        @Override
+        public Object stringToValue(String text) throws ParseException {
+            Pattern p = getPattern();
+
+            if (p != null) {
+                Matcher match = p.matcher(text);
+
+                if (match.matches()) {
+                    setMatcher(match);
+                    return super.stringToValue(text);
+                }
+                throw new ParseException("Pattern did not match", 0);
+            }
+            return text;
+        }
+    }
 }
