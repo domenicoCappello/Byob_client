@@ -32,15 +32,17 @@ public class ByobComm {
     
     /**
     * TODO
-    * @param url string with the URL of the site to contact.
+    * @param url String of site's URL to contact.
+    * @param userAgent String with the URL of the site to contact.
+    * @param proxyIp Proxy's IP address.
+    * @param proxyPort Proxy's port number.
+    * @param waitForResponse Choice to wait for a response from url or not.
     * @exception MalformedURLException
     * @exception IOException
-    * @return
+    * @return Response code from the URL (-1 if it is Malformed, -2 for Input Error)
     */
-    static int httpGet(String url, String userAgent, String proxyIp, int proxyPort, Boolean waitForResponse) {
-        
+    static int httpGet(String url, String userAgent, String proxyIp, int proxyPort, Boolean waitForResponse) {  
         String charset = "UTF-8"; 
-
         HttpURLConnection connection;
         try {
             if(proxyPort > 0){
@@ -54,7 +56,6 @@ public class ByobComm {
             if(!userAgent.isEmpty())
                 connection.setRequestProperty("User-Agent", userAgent);
             
-//            System.out.println(connection.getResponseMessage());
             int ret = waitForResponse ? connection.getResponseCode() : 0;
             connection.disconnect();
             return ret;
@@ -65,14 +66,18 @@ public class ByobComm {
             
         } catch (IOException ex) {
             Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
-            return -2;
-            
-        }
-        
+            return -2; 
+        }   
     }
     
+    /**
+    * TODO
+    * @param url String of site's URL to contact.
+    * @exception MalformedURLException
+    * @exception IOException
+    * @return Boolean if the URL answers or not.
+    */
     static boolean URLResponse(String url) {
-//        return httpGet(url, Boolean.TRUE) != -1;
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             int response = connection.getResponseCode();

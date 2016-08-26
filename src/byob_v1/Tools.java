@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
 
 import com.sun.jna.platform.win32.Advapi32Util;
@@ -22,18 +17,28 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author diomenik
+ *  @author Cappello - Nazio
  */
 public class Tools { 
     
+    // Scheduler's instance
     final static ByobSingleton BYOB_WRAPPER = ByobSingleton.getInstance();
     
-        public static void schedule(ArrayList <URLDetails> task){
-        for(int i = 0; i < task.size(); i++){
-            BYOB_WRAPPER.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
+    /**
+     *  Method schedules the contact's parameters. 
+     *  @param task List of the contacts to do
+     */
+    public static void schedule(ArrayList <URLDetails> task) {
+        for(int i = 0; i < task.size(); i++) {
+            ByobSingleton.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
         }
     }
         
+    /**
+     *  Functions returns the correctness of IPv4 address. 
+     *  @param ip   String of the IP address
+     *  @return     True if correct, false otherwise
+     */
     public static Boolean checkIPv4String(String ip){
         String[] tokens = ip.split("\\.");
         if (tokens.length != 4){
@@ -52,12 +57,22 @@ public class Tools {
         return true;
     }
     
+    /**
+     *  Functions returns the correctness of a port number. 
+     *  @param port  String of the port 
+     *  @return     True if correct, false otherwise
+     */
     public static Boolean checkPort(String port){
         if(!checkNumber(port))
             return false;
         return (Integer.parseInt(port) >= 1025 && Integer.parseInt(port) <= 65535);
     }
     
+    /**
+     *  Functions returns the correctness of a number. 
+     *  @param port  String of the number 
+     *  @return     True if correct, false otherwise
+     */
     public static Boolean checkNumber(String number){
         char[] charArray = number.toCharArray();
         if(number.equals(""))
@@ -68,12 +83,24 @@ public class Tools {
         return true;
     }
     
+    /**
+     *  Functions returns the correctness of a number interval. 
+     *  @param min  String of the left endpoint
+     *  @param max  String of the right endpoint
+     *  @return     True if correct, false otherwise
+     */
     public static Boolean checkInterval(String min, String max){
         if(!checkNumber(min) || !checkNumber(max))
             return false;
         return Integer.parseInt(min) <= Integer.parseInt(max);
     }
     
+    /**
+     *  Function creates a List of warning message to show to the user in case 
+     *  of input errors.
+     *  @param params   User's Input parameters
+     *  @return     Warning messages list
+     */
     public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
         warning.add("Fix the following parameters:\n");
@@ -101,14 +128,27 @@ public class Tools {
         }
     }
     
+    /**
+     *  Function gets machine's operating system.
+     *  @return Operating system
+     */
     public static String getOs(){
         return System.getProperty("os.name");
     }
     
+    /**
+     *  Function returns system's architecture.
+     *  @return true if it is x64, false otherwise
+     */
     public static boolean isSystem64Bit(){
         return System.getProperty("os.arch").contains("64");
     }
     
+    /**
+     *  Function gets machine's installed browsers.
+     *  (Supported browsers: Chrome, Firefox, Opera, Chromium, Internet Explorer)
+     *  @return String of the installed browsers
+     */
     public static String getBrowsers(){
         
         String browsers = "";
@@ -124,7 +164,8 @@ public class Tools {
             browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
         }
-        else if(getOs().toLowerCase().contains("windows")){
+        else if(getOs().toLowerCase().contains("windows")) {
+            
             // IE
             String path = "SOFTWARE\\Microsoft\\Internet Explorer";
             String vField = getOs().toLowerCase().equals("windows 8")? "svcVersion" : "Version";
@@ -166,6 +207,11 @@ public class Tools {
         return browsers;
     }
     
+    /**
+     *  Function creates a linux bash and returns its output.
+     *  @param cmd  Command to launch
+     *  @return     Command's result
+     */
     private static String linuxTermOut(String cmd){
         String[] args = new String[] {"/bin/bash", "-c", cmd};
             String out = "";
@@ -180,10 +226,10 @@ public class Tools {
     }
     
     /**
-     * The function runs a command on the host's command line and captures
-     * the result from the console.
-     * @param command   command to be run
-     * @return output from the command line
+     *  Function runs a Windows command on the host's command line and captures
+     *  the result from the console.
+     *  @param command   command to be run
+     *  @return output from the command line
      */
     public static String runCmd(String command) {
         String cmdOutput = "";
@@ -192,21 +238,20 @@ public class Tools {
         try {
             Process _process = Runtime.getRuntime().exec(command);
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(_process.getInputStream()));
-            while((_string = stdInput.readLine()) != null) {
+            while((_string = stdInput.readLine()) != null)
                 cmdOutput += _string+"\n";
-            }
         }
 
         catch(IOException e) {
         }
         
         return cmdOutput;
-        }
+    }
     
     /**
-     * Th function returns a unique bot id using a hash of the host hardware
-     * information. 
-     * @return unique ID of the bot
+     *  Function returns a unique bot id using a hash of the host hardware
+     *  information and other ones. 
+     *  @return Unique ID of the bot
      */
     public String idGeneration() {
         String hardware;
@@ -231,10 +276,11 @@ public class Tools {
     }
     
     /**
-     * The function returns the MD5 Checksum of a string.
-     * @param hw the string you want to compute the checksum of
-     * @returnthe checksum of the string
+     * Function returns the MD5 Checksum of a string.
+     * @param hw String to compute the checksum of
+     * @return Checksum of the string
      */
+    @SuppressWarnings("null")
     public static String hashFunction(String hw) {
         
         byte[] bytesMsg = null;
@@ -244,18 +290,15 @@ public class Tools {
         
         try {
             bytesMsg = hw.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch(UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        
         try {
             md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
-        catch(NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        
+
         bytesDigest = md.digest(bytesMsg);
         hashText = (new BigInteger(1, bytesDigest)).toString(16);
         while(hashText.length() < 32) {
@@ -264,4 +307,4 @@ public class Tools {
         
         return hashText;
     }
-    }
+}

@@ -9,9 +9,14 @@ import java.util.concurrent.TimeUnit;
  * @author Cappello, Nazio
  */
 public class ByobTask implements Runnable {
-
+    
+    // Task scheduler's instance
     ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
+    
+    // Contact parameters
     URLDetails contact;
+    
+    // Random number
     private static final Random random = new Random();
     
     /**
@@ -25,16 +30,13 @@ public class ByobTask implements Runnable {
     @Override
     public void run() {
         
-        if(contact.sleepMode()){
+        if(contact.sleepMode()) {
             int minTimeRestInterval = 30; //Minutes
             int maxTimeRestInterval = 45; //Minutes
             long randomInterval = minTimeRestInterval + 
                     random.nextInt(maxTimeRestInterval - minTimeRestInterval + 1);
             System.out.println("Check sleep condition for " + contact.getURL() + 
                     " in " + randomInterval + " minutes");
-//            ByobSingleton.getInstance().myLogger.severe("Contacting "  
-//                   + contact.getURL() + " in " + randomInterval + " minutes");
-            
             ses.schedule(this, randomInterval, TimeUnit.MINUTES);
         } else {        
             ByobSingleton.getInstance().myLogger.severe(contact.toString());
@@ -45,7 +47,7 @@ public class ByobTask implements Runnable {
             if(contact.waitForResponse){
                 String res = contact.getURL() + " returned: " + code;
                 System.out.println(res);
-                ByobSingleton.getInstance().myLogger.severe(res);
+                ByobSingleton.myLogger.severe(res);
             }
 
             if(contact.getContactsNum() > 0){

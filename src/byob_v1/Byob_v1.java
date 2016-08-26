@@ -1,15 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byob_v1;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-import com.sun.jna.platform.win32.Advapi32Util;
-import com.sun.jna.platform.win32.WinReg;
 
 
 /**
@@ -19,12 +8,11 @@ import com.sun.jna.platform.win32.WinReg;
 public class Byob_v1 {
 
     /**
-     * @param args the command line arguments
-     */
-       
+     * @param args Command line arguments
+     */     
     public static void main(String[] args){
         GUI frame = new GUI();
-        frame.setVisible(true); //or whatever the method is in jframe.class
+        frame.setVisible(true);
 
 //        String file = "guiconf.txt";
 //        Parser parser = new Parser(file);

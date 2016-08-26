@@ -1,9 +1,6 @@
 package byob_v1;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.GregorianCalendar;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.FileHandler;
@@ -17,18 +14,23 @@ import java.util.logging.SimpleFormatter;
  */
 public class ByobSingleton {
     
+    // Singleton's instance
     private static ByobSingleton instance = null;
+    
+    // Hierarchy of Loggers
     public static final Logger myLogger = Logger.getLogger("BYOB");
+    
+    // Schedulation of tasks to run
     public static final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
  
     /**
-    * Costructor.
+    * Constructor.
     */
     public ByobSingleton() {}
         
     /**
-    * Fuction that gets the instance of the singleton.
-    * @return instance Singleton's obecjt instance
+    * Function gets the instance of the singleton.
+    * @return Singleton's object instance
     */
     public static ByobSingleton getInstance() {
       if(instance == null) {
@@ -39,7 +41,7 @@ public class ByobSingleton {
     }
     
     /**
-    * Method that creates and initializes the Log file.
+    * Method creates and initializes the Log file.
     * @exception IOException
     * @exception SecurityException
     */

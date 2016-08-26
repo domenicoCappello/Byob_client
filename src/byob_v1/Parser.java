@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -24,7 +23,7 @@ public class Parser {
     static Charset ENCODING;
   
     /**
-    Constructor.
+     * Constructor.
     */
    public Parser(){
      FILE_NAME = "conf.txt";
@@ -32,8 +31,8 @@ public class Parser {
     }
   
     /**
-     Constructor.
-     @param fileName full name of an existing, readable textfile.
+     * Constructor.
+     * @param fileName full name of an existing, readable text file.
      */
     public Parser(String fileName){
       FILE_NAME = fileName;
@@ -41,7 +40,7 @@ public class Parser {
     }
   
     /**
-    Function returns an list of array with hosts' informations.
+    * Function returns an list of array with hosts' informations.
     * @exception IOException in case of reading's problem.
     * @return hosts' informations.
     */
@@ -50,11 +49,11 @@ public class Parser {
     }
   
   /**
-   Function returns configuration values of a file.
-   @param fileName full name of an existing, readable .txt file.
-     * @return Variables' list of values
-     * @throws java.io.IOException
-     * @throws java.io.FileNotFoundException
+   * Function returns configuration values of a file.
+   * @param fileName full name of an existing, readable .txt file.
+   * @return Variables' list of values
+   * @throws java.io.IOException
+   * @throws java.io.FileNotFoundException
   */
   public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
     
@@ -63,7 +62,8 @@ public class Parser {
     String url;
     Boolean first = true;
     while ((url = br.readLine()) != null) {
-        /**Search at the beginning of the configuration file for proxy setup*/
+        
+        //Search at the beginning of the configuration file for proxy setup
         if (first){
             first = false;
             if (url.charAt(0) == '$'){
@@ -73,21 +73,25 @@ public class Parser {
                 continue;
             }
         }
-        /**Check URL identification char*/
+        
+        //Check URL identification char
         if(!url.contains("*")){
           System.err.println("Error in configuration file, aborting");
           System.exit(-1);
         }
-        /**Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent")*/
+        
+        // Build the contact string ("URL minT maxT numC sleepC userAgent")
         String contact = splitString(url,"*")[1] + ";";
         String line;
         for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
             if ((line = br.readLine()) != null)
               contact = contact + line;
         }
-        /**Build detail string array*/
+        
+        //Build detail string array
         String[] detail = splitString(contact, ";");
-        /**Build URLDetails obj and add to configuration arrayList*/
+        
+        // Build URLDetails obj and add to configuration arrayList
         configuration.add(convertParam(detail));
     }
     
@@ -96,8 +100,8 @@ public class Parser {
   }
   
   /**
-     * The function runs a command on the host's command line and captures
-     * the result fromthe console.
+     * Function runs a command on the host's command line and captures
+     * the result from the console.
      * @param fileToWrite
      * @param params
      * @param columns
@@ -110,36 +114,31 @@ public class Parser {
                 BufferedWriter bw = new BufferedWriter(fw)) {
             for (String param : params) {
                 bw.write(param);
-                bw.newLine();           //Nuova convenzione? Da cambiare in lettura?
+                bw.newLine();
             }       
         }
-        System.out.println("Extraction finished.");
      }
   
     /**
      * Function returns number of lines of a file.
-     * @param fileName full name of an existing, readable .txt file.
+     * @param fileName full name of an existing, readable text file.
      * @return  Number of Lines
      * @throws IOException
      */
+    @SuppressWarnings("empty-statement")
     public static int countLines(String fileName) throws IOException{
-        LineNumberReader reader = null;
-        try {
-            reader = new LineNumberReader(new FileReader(fileName));
+        try (LineNumberReader reader = new LineNumberReader(new FileReader(fileName))) {
             while ((reader.readLine()) != null);
             return reader.getLineNumber();
         } catch (Exception ex) {
             return -1;
-        } finally { 
-            if(reader != null) 
-                reader.close();
         }
     }
     
     /**
-     *  Function returns an array of a String splitted on a deliiter.
-     *  @param toBeParsed string who needs parsing
-     *  @param delimeter symbol for splitting @param toBeParsed 
+     *  Function returns an array of a splitted String on a delimiter.
+     *  @param toBeParsed string who needs parsing 
+     *  @param delimiter string to split
      *  @return Array of splitted Strings
      */
     public static String[] splitString(String toBeParsed, String delimiter){
@@ -151,7 +150,7 @@ public class Parser {
     /**
     *   Function returns an URLDetails object with the configuration parameters.
     *   @param params Array of parameters
-    *   @return host's details.
+    *   @return Host's details.
     */
     private static URLDetails convertParam(String[] params) {
         URLDetails detail = null;
@@ -161,15 +160,18 @@ public class Parser {
             int _maxTime = Integer.parseInt(params[2]);
             long _contactsNum = Long.parseLong(params[3]);
             String _sleepMode = params[4];
-            String _userAgent = params[5];
-               
+            String _userAgent = params[5]; 
             detail = new URLDetails(_URL, _minTime, _maxTime, _contactsNum, _sleepMode, _userAgent);
-            //System.out.println(detail.getURL());
         }
         return detail;
     }
     
-     public boolean validateIPAddress( String ipAddress ) { 
+    /**
+    *   Function returns boolean connected to validation of an IP address.
+    *   @param ipAddress String of the IP address
+    *   @return True if correct, false otherwise
+    */
+    public boolean validateIPAddress( String ipAddress ) { 
         String[] tokens = ipAddress.split("\\."); 
         if (tokens.length != 4) 
              return false; 
