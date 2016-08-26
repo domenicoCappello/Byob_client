@@ -104,9 +104,9 @@ public class Tools {
     public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
         warning.add("Fix the following parameters:\n");
-        if(!ByobComm.URLResponse(params[0])) // 
-            warning.add("- Tried to contact URL but there is no response;\n");
-        if(!checkNumber(params[1]))
+//        if(!ByobComm.URLResponse(params[0])) // 
+//            warning.add("- Tried to contact URL but there is no response;\n");
+//        if(!checkNumber(params[1]))
             if(params[2].equals("-"))
                 warning.add("- Contact time value not valid;\n");
             else

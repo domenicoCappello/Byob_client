@@ -94,7 +94,7 @@ public final class GUI extends javax.swing.JFrame {
     
     // Default Values
     String[] defaultValue = {
-    "www.google.it",
+    "http://www.google.it",
     "6000",
     "10000",
     "100",
@@ -751,6 +751,7 @@ public final class GUI extends javax.swing.JFrame {
                 writeTextArea(extractData(true));
                 for(int i=0; i < textParam.size(); i++)
                     textParam.get(i).setText("");
+                jFormattedTextField2.setText("http://");
                 parent.dispose();
             }
             else {
@@ -932,7 +933,7 @@ public final class GUI extends javax.swing.JFrame {
             textParam.get(i).setEnabled(!flag);
             configurationLabel.get(i).setEnabled(!flag);    
         }
-        
+        jFormattedTextField2.setText(flag ? "" : "http://");
         jFormattedTextField6.setEnabled(flag);   
     }
     
@@ -951,11 +952,16 @@ public final class GUI extends javax.swing.JFrame {
     private String[] extractData(boolean standard) {
         String[] params = new String[textParam.size()];
         for(int i = 0; i < textParam.size() ; i++) {
-            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("http"))
-                    params[i] = standard ? "*"+defaultValue[i] : "*http://"+textParam.get(i).getText();
+            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("www"))
+                if(standard)
+                    params[i] = defaultValue[i];
+                else
+                    params[i] = textParam.get(i).getText();
             else
                 params[i] = standard  && textParam.get(i).getText().equals("") ? 
                         defaultValue[i] : textParam.get(i).getText();
+            if(i==0)
+                params[i] = "*"+params[i];
         } 
         if(params[2].equals("-"))
             params[2] = params[1];
