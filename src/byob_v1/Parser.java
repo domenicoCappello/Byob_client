@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 
 /**
@@ -56,7 +57,7 @@ public class Parser {
    * @throws java.io.FileNotFoundException
   */
   public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
-    
+  
     BufferedReader br = new BufferedReader(new FileReader(fileName));
     ArrayList<URLDetails> configuration = new ArrayList<>();
     String url;
@@ -80,12 +81,12 @@ public class Parser {
           System.exit(-1);
         }
         
-        // Build the contact string ("URL minT maxT numC sleepC userAgent")
-        String contact = splitString(url,"*")[1] + ";";
+        // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
+        String contact = url.substring(1) + ";";
         String line;
         for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
             if ((line = br.readLine()) != null)
-              contact = contact + line;
+              contact = contact + line + ";";
         }
         
         //Build detail string array

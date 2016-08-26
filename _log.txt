@@ -1,0 +1,4 @@
+ago 26, 2016 11:55:54 AM byob_v1.ByobTask run
+GRAVE: www.google.it, contactsNum: 2, sleepMode: , userAgent: aaa
+ago 26, 2016 11:55:58 AM byob_v1.ByobTask run
+GRAVE: www.google.it, contactsNum: 1, sleepMode: , userAgent: aaa
