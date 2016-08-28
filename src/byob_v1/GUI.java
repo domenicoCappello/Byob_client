@@ -94,7 +94,7 @@ public final class GUI extends javax.swing.JFrame {
     
     // Default Values
     String[] defaultValue = {
-    "http://www.google.it",
+    "*http://www.google.it",
     "6000",
     "10000",
     "100",
@@ -315,17 +315,17 @@ public final class GUI extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel4.setText("Sleep Condition");
+        jLabel4.setText("Sleep Condition (opt.)");
         jLabel4.setEnabled(false);
         jLabel4.setOpaque(true);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel5.setText("User-Agent");
+        jLabel5.setText("User-Agent (opt.)");
         jLabel5.setEnabled(false);
         jLabel5.setOpaque(true);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel6.setText("Proxy");
+        jLabel6.setText("Proxy (opt.)");
         jLabel6.setEnabled(false);
         jLabel6.setOpaque(true);
 
@@ -443,24 +443,19 @@ public final class GUI extends javax.swing.JFrame {
                         .addComponent(jScrollPane1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(81, 81, 81)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(jRadioButton2)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jRadioButton2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(69, 69, 69)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -493,9 +488,12 @@ public final class GUI extends javax.swing.JFrame {
                                             .addComponent(jToggleButton1))
                                         .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jFormattedTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                        .addComponent(jFormattedTextField5, javax.swing.GroupLayout.Alignment.LEADING)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jFormattedTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                            .addComponent(jFormattedTextField5, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton3)))
                                 .addGap(0, 6, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -738,13 +736,6 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
-        /**if maxTime is void then maxTime = minTime*/
-        if (textParam.get(2).getText().equals(""))
-            textParam.get(2).setText(textParam.get(1).getText());
-        /**Print to console*/
-        for (int i = 0; i < textParam.size(); i++)
-            System.out.println(textParam.get(i).getText());
         List<String> warning = Tools.warningMessage(extractData(false));
         if(warning!=null)
         {
@@ -808,10 +799,10 @@ public final class GUI extends javax.swing.JFrame {
         if(!evt.getActionCommand().equals("on")) {
             jFormattedTextField4.setEnabled(true);
             if(jTextArea1.getText().length() != 0)
-            if(!Tools.checkNumber(jFormattedTextField3.getText()))
-                defaultValue[2] = "";
-            else
-                defaultValue[2] = ""+(Integer.parseInt(jFormattedTextField3.getText())+10);     
+                if(!Tools.checkNumber(jFormattedTextField3.getText()))
+                    defaultValue[2] = "10000";
+                else
+                    defaultValue[2] = ""+(Integer.parseInt(jFormattedTextField3.getText())+10);     
         }
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
@@ -952,24 +943,49 @@ public final class GUI extends javax.swing.JFrame {
     
     /**
      *  Function returns the data of the user's input field.
-     * @return Array of the parameters
+     *  @return Array of the parameters
      */
     private String[] extractData(boolean standard) {
-        String[] params = new String[textParam.size()];
+        String[] params = new String[textParam.size()];   
         for(int i = 0; i < textParam.size() ; i++) {
-            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("www"))
-                if(standard)
-                    params[i] = defaultValue[i];
-                else
-                    params[i] = textParam.get(i).getText();
-            else
-                params[i] = standard  && textParam.get(i).getText().equals("") ? 
-                        defaultValue[i] : textParam.get(i).getText();
-            if(i==0)
-                params[i] = "*"+params[i];
+            switch (i) {
+                    case 0:
+                        if(!textParam.get(i).getText().equals(""))
+                            params[i] = "*"+textParam.get(i).getText();
+                        else
+                            params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
+                        break;
+                        
+                    case 2:
+                            if(jFormattedTextField4.isEnabled()) {
+                                params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
+                            } else {
+                                params[i] = standard ? defaultValue[i] : "-";
+                            }
+//                            params[i] = jFormattedTextField4.isEnabled() ? (standard ? defaultValue[i] : textParam.get(i).getText()) : "-";
+//                            if(standard && params[i].equals("-"))
+//                                params[i] = defaultValue[i];
+                        break;
+                        
+                    default:
+                        params[i] = standard  && textParam.get(i).getText().equals("") ? 
+                            defaultValue[i] : textParam.get(i).getText();
+                        break;
+                        
+            }
+//            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("www"))
+//                if(standard)
+//                    params[i] = defaultValue[i];
+//                else
+//                    params[i] = textParam.get(i).getText();
+//            else
+//                params[i] = standard  && textParam.get(i).getText().equals("") ? 
+//                        defaultValue[i] : textParam.get(i).getText();
+//            if(i==0)
+//                params[i] = "*"+params[i];
         } 
-        if(params[2].equals("-"))
-            params[2] = params[1];
+//        if(params[2].equals("-"))
+//            params[2] = params[1];
         return params;
     }
 

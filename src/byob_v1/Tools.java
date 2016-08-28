@@ -70,7 +70,7 @@ public class Tools {
     
     /**
      *  Functions returns the correctness of a number. 
-     *  @param port  String of the number 
+     *  @param number  String of the number 
      *  @return     True if correct, false otherwise
      */
     public static Boolean checkNumber(String number){
@@ -106,13 +106,13 @@ public class Tools {
         warning.add("Fix the following parameters:\n");
 //        if(!ByobComm.URLResponse(params[0])) // 
 //            warning.add("- Tried to contact URL but there is no response;\n");
-//        if(!checkNumber(params[1]))
-        if(params[2].equals("-"))
-            warning.add("- Contact time value not valid;\n");
-//            else
-//                warning.add("- Minimum contact time value not valid;\n");
+       if(!checkNumber(params[1]))
+            if(params[2].equals("-"))
+                warning.add("- Contact time value not valid;\n");
+            else
+                warning.add("- Minimum contact time value not valid;\n");
         if(!checkNumber(params[2]))
-            if(!params[2].equals("-") || !params[2].equals("-"))
+            if(!params[2].equals("-"))
                 warning.add("- Maximum contact time value not valid;\n");
         if(!checkNumber(params[3]))
             warning.add("- Number of contacts not valid;\n");
