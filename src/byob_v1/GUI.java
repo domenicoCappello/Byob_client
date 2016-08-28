@@ -736,7 +736,8 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        List<String> warning = Tools.warningMessage(extractData(false));
+        String[] params = extractData(false);
+        List<String> warning = Tools.warningMessage(params);
         if(warning!=null)
         {
             final JFrame parent = new JFrame();
@@ -755,6 +756,8 @@ public final class GUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Parameters must be modified manually.");
             }
         } 
+        else
+            writeTextArea(params);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
