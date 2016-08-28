@@ -853,6 +853,7 @@ public final class GUI extends javax.swing.JFrame {
         for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setText("");
         jTextArea1.setText("");
+        jFormattedTextField2.setText("http://");
     }
     
     /**
