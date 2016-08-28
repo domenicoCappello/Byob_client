@@ -656,7 +656,7 @@ public final class GUI extends javax.swing.JFrame {
         {
             System.out.println("Extracting parameters.");
             try {
-                Parser.writeConfigurationFile(fileToSave, jTextArea1.getText().split("\n"), textParam.size());
+                Parser.writeConfigurationFile(fileToSave, jTextArea1.getText().split("\n", -1), textParam.size());
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }

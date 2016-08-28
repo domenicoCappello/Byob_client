@@ -62,6 +62,7 @@ public class Parser {
     ArrayList<URLDetails> configuration = new ArrayList<>();
     String url;
     Boolean first = true;
+    String delim = ";";
     while ((url = br.readLine()) != null) {
         
         //Search at the beginning of the configuration file for proxy setup
@@ -82,20 +83,25 @@ public class Parser {
         }
         
         // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
-        String contact = url.substring(1) + ";";
+        String contact = url.substring(1);
         String line;
         for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
             if ((line = br.readLine()) != null)
-              contact = contact + line + ";";
+              contact = contact + delim + line;
         }
         
         //Build detail string array
-        String[] detail = splitString(contact, ";");
+        String[] detail = splitString(contact, delim);
         
         // Build URLDetails obj and add to configuration arrayList
-        configuration.add(convertParam(detail));
+        URLDetails det = convertParam(detail);
+        if(det == null){
+            String logError = "Parser error: " + url + " can't be processed";
+            ByobSingleton.getInstance().myLogger.severe(logError);
+        }
+        else
+            configuration.add(det);
     }
-    
     br.close();    
     return configuration;
   }
@@ -113,10 +119,12 @@ public class Parser {
 	    fileToWrite.createNewFile();
         try (FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath()); 
                 BufferedWriter bw = new BufferedWriter(fw)) {
-            for (String param : params) {
+            for (int i = 0; i < params.length; i++) {
+                String param = params[i];
                 bw.write(param);
-                bw.newLine();
-            }       
+                if (i < params.length - 1)
+                    bw.newLine();
+            }      
         }
      }
   
@@ -144,7 +152,7 @@ public class Parser {
      */
     public static String[] splitString(String toBeParsed, String delimiter){
         delimiter = "["+delimiter+"]";
-        String[] tokens = toBeParsed.split(delimiter);
+        String[] tokens = toBeParsed.split(delimiter, -1);
         return tokens;
     }
     

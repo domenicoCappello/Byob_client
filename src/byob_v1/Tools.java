@@ -31,6 +31,7 @@ public class Tools {
     public static void schedule(ArrayList <URLDetails> task) {
         for(int i = 0; i < task.size(); i++) {
             ByobSingleton.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
+//            System.out.println(task.get(i).getURL());
         }
     }
         

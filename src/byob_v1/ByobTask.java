@@ -39,7 +39,7 @@ public class ByobTask implements Runnable {
                     " in " + randomInterval + " minutes");
             ses.schedule(this, randomInterval, TimeUnit.MINUTES);
         } else {        
-            ByobSingleton.getInstance().myLogger.severe(contact.toString());
+            ByobSingleton.getInstance().myLogger.fine(contact.toString());
             System.out.println("Contacting " + contact.getURL() + " : " + contact.getContactsNum() + " more times");
             int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
                        URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
@@ -47,7 +47,7 @@ public class ByobTask implements Runnable {
             if(contact.waitForResponse){
                 String res = contact.getURL() + " returned: " + code;
                 System.out.println(res);
-                ByobSingleton.myLogger.severe(res);
+                ByobSingleton.getInstance().myLogger.fine(res);
             }
 
             if(contact.getContactsNum() > 0){

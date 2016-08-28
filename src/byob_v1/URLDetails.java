@@ -75,7 +75,7 @@ public class URLDetails {
     public static void setProxy(String ip, int port){
         proxyIp = ip;
         proxyPort = port;
-        ByobSingleton.getInstance().myLogger.severe("Setting up proxy: " + proxyIp + 
+        ByobSingleton.getInstance().myLogger.fine("Setting up proxy: " + proxyIp + 
                             " : " + proxyPort);
     }
     
