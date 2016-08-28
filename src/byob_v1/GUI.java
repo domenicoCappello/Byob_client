@@ -664,7 +664,7 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        clearFields();
+        clearFields(true);
         jButton5.setEnabled(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -746,9 +746,7 @@ public final class GUI extends javax.swing.JFrame {
             parent.setVisible(true);
             if(choice == JOptionPane.YES_OPTION){
                 writeTextArea(extractData(true));
-                for(int i=0; i < textParam.size(); i++)
-                    textParam.get(i).setText("");
-                jFormattedTextField2.setText("http://");
+                clearFields(false);
                 parent.dispose();
             }
             else {
@@ -756,8 +754,10 @@ public final class GUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Parameters must be modified manually.");
             }
         } 
-        else
+        else {
             writeTextArea(params);
+            clearFields(false);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -777,7 +777,7 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String[] params = jTextArea1.getText().split("\n");
-        clearFields();
+        clearFields(true);
         if(params[0].contains("$")) {
             String[] proxy = params[0].replace("$", "").split(":");
             jFormattedTextField8.setText(proxy[0]);
@@ -848,12 +848,14 @@ public final class GUI extends javax.swing.JFrame {
     
     /**
      *  Method clears the user's input fields.
+     *  @param area if true clears jTextArea, false otherwise.
      */
-    public void clearFields(){
+    public void clearFields(boolean area){
         for(int i=0; i < textParam.size(); i++)
             textParam.get(i).setText("");
-        jTextArea1.setText("");
         jFormattedTextField2.setText("http://");
+        if(area)
+            jTextArea1.setText("");
     }
     
     /**
@@ -964,7 +966,7 @@ public final class GUI extends javax.swing.JFrame {
                             if(jFormattedTextField4.isEnabled()) {
                                 params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
                             } else {
-                                params[i] = standard ? defaultValue[i] : "-";
+                                params[i] = standard ? defaultValue[i] : textParam.get(i-1).getText();
                             }
 //                            params[i] = jFormattedTextField4.isEnabled() ? (standard ? defaultValue[i] : textParam.get(i).getText()) : "-";
 //                            if(standard && params[i].equals("-"))
