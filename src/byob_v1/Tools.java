@@ -117,10 +117,10 @@ public class Tools {
                 warning.add("- Maximum contact time value not valid;\n");
         if(!checkNumber(params[3]))
             warning.add("- Number of contacts not valid;\n");
-        if(!params[6].equals("") && !checkIPv4String(params[6]))
+        if(!params[6].equals(" ") && !checkIPv4String(params[6]))
             warning.add("- Proxy IP not valid;\n");
-        if(!params[7].equals("") && !checkPort(params[7]))
-            warning.add("- Proxy port not valid;\n");
+        if(!params[7].equals(" ") && !checkPort(params[7]))
+            warning.add("- Proxy port not valid (choose one between 1025 and 65525);\n");
         if(warning.size() == 1)
             return null;
         else {

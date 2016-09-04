@@ -41,6 +41,7 @@ import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+import javax.swing.JFormattedTextField;
 import javax.swing.text.NumberFormatter;
 
 /**
@@ -98,10 +99,10 @@ public final class GUI extends javax.swing.JFrame {
     "6000",
     "10000",
     "100",
-    "",
+    " ",
     "Mozilla/3.0",
-    "",
-    "" };
+    " ",
+    " " };
     
     // Variable for sleep conditions
     String sleepCondition = "";
@@ -141,6 +142,7 @@ public final class GUI extends javax.swing.JFrame {
         jFormattedTextField3.setFormatterFactory(c);
         jFormattedTextField4.setFormatterFactory(c);
         jFormattedTextField5.setFormatterFactory(c);
+        jFormattedTextField9.setFormatterFactory(c);
         
         jTextArea1.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -239,8 +241,7 @@ public final class GUI extends javax.swing.JFrame {
         Pattern p = Pattern.compile( "^(?:" + _255 + "\\.){3}" + _255 + "$");
         RegexFormatter ipFormatter = new RegexFormatter(p);
         jFormattedTextField8 = new javax.swing.JFormattedTextField(ipFormatter);
-        NumberFormat portFormat = NumberFormat.getInstance();
-        jFormattedTextField9 = new javax.swing.JFormattedTextField(portFormat);
+        jFormattedTextField9 = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -424,6 +425,11 @@ public final class GUI extends javax.swing.JFrame {
         });
 
         jFormattedTextField4.setEnabled(false);
+        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField4ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("-");
@@ -840,10 +846,14 @@ public final class GUI extends javax.swing.JFrame {
             ByobSingleton.myLogger.severe("Parser I/O exception");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
     
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
-        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].toString().equals("") && !params[params.length-1].toString().equals(""))
+        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].equals(" ") && !params[params.length-1].equals(" "))
             sb.append("$").
                 append(params[params.length-2]).
                 append(":").
@@ -969,7 +979,7 @@ public final class GUI extends javax.swing.JFrame {
         for(int i = 0; i < textParam.size() ; i++) {
             switch (i) {
                     case 0:
-                        if(!textParam.get(i).getText().equals(""))
+                        if(!textParam.get(i).getText().equals("http://"))
                             params[i] = "*"+textParam.get(i).getText();
                         else
                             params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
@@ -981,30 +991,15 @@ public final class GUI extends javax.swing.JFrame {
                             } else {
                                 params[i] = standard ? defaultValue[i] : textParam.get(i-1).getText();
                             }
-//                            params[i] = jFormattedTextField4.isEnabled() ? (standard ? defaultValue[i] : textParam.get(i).getText()) : "-";
-//                            if(standard && params[i].equals("-"))
-//                                params[i] = defaultValue[i];
                         break;
                         
                     default:
                         params[i] = standard  && textParam.get(i).getText().equals("") ? 
-                            defaultValue[i] : textParam.get(i).getText();
+                            defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
                         break;
                         
             }
-//            if(i == 0 && !textParam.get(i).getText().equals("") && !textParam.get(i).getText().contains("www"))
-//                if(standard)
-//                    params[i] = defaultValue[i];
-//                else
-//                    params[i] = textParam.get(i).getText();
-//            else
-//                params[i] = standard  && textParam.get(i).getText().equals("") ? 
-//                        defaultValue[i] : textParam.get(i).getText();
-//            if(i==0)
-//                params[i] = "*"+params[i];
         } 
-//        if(params[2].equals("-"))
-//            params[2] = params[1];
         return params;
     }
 
