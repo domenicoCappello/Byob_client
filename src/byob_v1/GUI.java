@@ -17,6 +17,8 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
@@ -137,11 +139,25 @@ public final class GUI extends javax.swing.JFrame {
         NumberFormat a = NumberFormat.getNumberInstance();
         a.setGroupingUsed(false);
         NumberFormatter b = new NumberFormatter(a);
+        //b.setAllowsInvalid(false);
+        //b.setCommitsOnValidEdit(true);
         DefaultFormatterFactory c = new DefaultFormatterFactory(b);
         jFormattedTextField3.setFormatterFactory(c);
         jFormattedTextField4.setFormatterFactory(c);
         jFormattedTextField5.setFormatterFactory(c);
         jFormattedTextField9.setFormatterFactory(c);
+        
+//        jFormattedTextField4.addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyReleased(KeyEvent event) {
+//                String min = jFormattedTextField3.getText().equals("") ?
+//                        "0" : jFormattedTextField3.getText();
+//                jFormattedTextField3.setText(min);
+//                String max = jFormattedTextField4.getText();
+//                if (Integer.parseInt(min) < Integer.parseInt(max))
+//                    jFormattedTextField4.setText("");
+//            }
+//        });
         
         jTextArea1.getDocument().addDocumentListener(new DocumentListener() {
             @Override
