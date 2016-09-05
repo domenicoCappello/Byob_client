@@ -41,14 +41,13 @@ import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-import javax.swing.JFormattedTextField;
 import javax.swing.text.NumberFormatter;
 
 /**
  * Class creates and manages anything who's connected to the Graphic User 
  * Interface: components, their visibility, their aspects and their being 
  * enabled/disabled.
- * @author Cappello - Nazio
+ * @author Cappello, Nazio
  */
 public final class GUI extends javax.swing.JFrame {
     
@@ -802,10 +801,6 @@ public final class GUI extends javax.swing.JFrame {
                     jFormattedTextField4.setEnabled(true);
                 }
             }
-                    
-                    
-//            if (params[i].equals("-"))
-//                params[i] = params[i-1];
             textParam.get(i).setText(params[i]);
         }
         List textArea = Arrays.asList(params).subList(textParam.size()-2, params.length);
@@ -860,10 +855,6 @@ public final class GUI extends javax.swing.JFrame {
                 append(params[params.length-1]).
                 append("\n");
         for(int i=0; i < params.length-2; i++){ 
-            /**Gestione fixed interval */
-//            if(i == 2 && params[2].contains("-")){
-//                params[2] = params[1];
-//            }
             sb.append(params[i]).append("\n");
         }
         jTextArea1.append(sb.toString());

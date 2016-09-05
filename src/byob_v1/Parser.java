@@ -10,12 +10,11 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.ArrayList;
 
 /**
- * The class manages every aspect of the configuration file: creation and reading of it,
- * string splitting and parameters conversions.
+ * Class manages every aspect of the configuration file like its creation and reading,
+ * its splitting and its parameter conversions.
  * @author Cappello, Nazio
  */
 public class Parser {

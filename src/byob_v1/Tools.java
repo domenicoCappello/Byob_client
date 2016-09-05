@@ -16,8 +16,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- *  @author Cappello - Nazio
+ *  Class contains many useful functions who were not supposed to belong to any other class.
+ *  @author Cappello,Nazio
  */
 public class Tools { 
     
@@ -105,8 +105,6 @@ public class Tools {
     public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
         warning.add("Fix the following parameters:\n");
-//        if(!ByobComm.URLResponse(params[0])) // 
-//            warning.add("- Tried to contact URL but there is no response;\n");
        if(!checkNumber(params[1]))
             if(params[2].equals("-"))
                 warning.add("- Contact time value not valid;\n");
@@ -124,7 +122,7 @@ public class Tools {
         if(warning.size() == 1)
             return null;
         else {
-            warning.add("do you want to use default settings where data is missing?");
+            warning.add("Do you want to use default settings where data is missing?");
             return warning;
         }
     }

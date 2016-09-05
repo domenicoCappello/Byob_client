@@ -2,15 +2,13 @@ package byob_v1;
 
 
 /**
- *
- * @author diomenik
+ *  Class contains the main method who invokes the GUI and invokes parsing method
+ *  to extract the user configuration parameters.
+ *  @author Cappello, Nazio
  */
 public class Byob_v1 {
 
-    /**
-     * @param args Command line arguments
-     */     
-    public static void main(String[] args){
+    public static void main(){
         GUI frame = new GUI();
         frame.setVisible(true);
 

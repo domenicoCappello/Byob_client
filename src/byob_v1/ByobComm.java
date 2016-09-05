@@ -10,8 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * TODO
- * @author Cappello - Nazio
+ * Class is responsible for anything concerning the GET method of HTTP and its response.
+ * @author Cappello, Nazio
  */
 public class ByobComm {
     
@@ -31,7 +31,7 @@ public class ByobComm {
     }
     
     /**
-    * TODO
+    * Function returns the response code of the HTTP's GET method.
     * @param url String of site's URL to contact.
     * @param userAgent String with the URL of the site to contact.
     * @param proxyIp Proxy's IP address.
@@ -72,7 +72,7 @@ public class ByobComm {
     }
     
     /**
-    * TODO
+    * Function returns true if there's a response code from the contacted URL.
     * @param url String of site's URL to contact.
     * @exception MalformedURLException
     * @exception IOException
@@ -85,10 +85,10 @@ public class ByobComm {
             connection.disconnect();
             return true;
         } catch (MalformedURLException ex) {
-            //Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         } catch (IOException ex) {
-            //Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }

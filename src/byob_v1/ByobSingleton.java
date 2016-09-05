@@ -9,8 +9,9 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- * TODO
- * @author Cappello, Nazio
+ *  Class's a singleton. 
+ *  It manages every aspect of the Log functionality and of the schedling.
+ *  @author Cappello, Nazio
  */
 public class ByobSingleton {
     
