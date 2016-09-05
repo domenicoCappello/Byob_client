@@ -11,7 +11,7 @@ import java.util.Calendar;
 public class URLDetails {
     
     // Unique identifier of the bot
-    String idBot;                       // Perche' identificatore bot e' in URLDetails?
+    String idBot;             
     
     // Whether or not wait for server response
     public Boolean waitForResponse = false;
