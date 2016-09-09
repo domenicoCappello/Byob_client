@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jcp.xml.dsig.internal.dom.Utils;
 
 /**
  *  Class contains many useful functions who were not supposed to belong to any other class.
@@ -154,13 +155,19 @@ public class Tools {
         if(getOs().toLowerCase().contains("linux")){
             String tmp;
             tmp = linuxTermOut("google-chrome --version");
-            browsers = browsers + tmp + "\n";
+            if (tmp != null)
+                browsers = browsers + tmp + "\n";
             tmp = linuxTermOut("firefox --version");
-            browsers = browsers + tmp + "\n";
-            tmp = "Opera ".concat(linuxTermOut("opera --version"));
-            browsers = browsers + tmp + "\n";
+            if (tmp != null)
+                browsers = browsers + tmp + "\n";
+            String opVer = linuxTermOut("opera --version");
+            if (opVer != null){
+                tmp = "Opera " + linuxTermOut("opera --version");
+                browsers = browsers + tmp + "\n";
+            }
             tmp = linuxTermOut("chromium-browser --version");
-            browsers = browsers + tmp + "\n";
+            if (tmp != null)
+                browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
         }
         else if(getOs().toLowerCase().contains("windows")) {
@@ -199,11 +206,44 @@ public class Tools {
             } catch(Exception e){}
         }
         else if(getOs().toLowerCase().contains("osx")){ //???
-            
+            String tmp;
+            tmp = macProfilerTermOut("Google Chrome");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Firefox");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Opera");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Safari");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
         }
-        else
+        else {
             browsers = "Unrecognized OS";
+            
+            String tmp;
+            tmp = macProfilerTermOut("Google Chrome");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Firefox");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Opera");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+            tmp = macProfilerTermOut("Safari");
+            if (tmp != null)
+                browsers = browsers + tmp + "\n\n";
+        }
         return browsers;
+    }
+    
+    private static String macProfilerTermOut(String programName){
+        String cmd1 = "system_profiler SPSoftwareDataType | grep \"";
+        String cmd3 = ":\" -A 3";
+        return linuxTermOut(cmd1 + programName + cmd3);
     }
     
     /**
@@ -214,7 +254,7 @@ public class Tools {
     private static String linuxTermOut(String cmd){
         String[] args = new String[] {"/bin/bash", "-c", cmd};
             String out = "";
-            try {
+            try {//Boscaiola rossa + crudo, 
                 Process proc = new ProcessBuilder(args).start();
                 BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
                 out = br.readLine();
