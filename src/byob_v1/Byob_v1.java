@@ -1,5 +1,8 @@
 package byob_v1;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 
 /**
  *  Class contains the main method who invokes the GUI and invokes parsing method
@@ -8,11 +11,17 @@ package byob_v1;
  */
 public class Byob_v1 {
 
-    public static void main(){
+    public static void main(String[] args) {
+
         GUI frame = new GUI();
         frame.setVisible(true);
 
-//        String file = "guiconf.txt";
+//        try{
+//            ByobComm.asyncHttpGet("www.google.com", "", "", 0);
+//        } catch(Exception e){
+//            
+//        }
+//        String file = "proconf.txt";//"geppconf2.txt";
 //        Parser parser = new Parser(file);
 //        try {
 //            ArrayList <URLDetails> taskList = parser.readConfigurationFile();

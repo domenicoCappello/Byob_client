@@ -14,10 +14,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jcp.xml.dsig.internal.dom.Utils;
 
 /**
- *  Class contains many useful functions who were not supposed to belong to any other class.
+ *  Class contains many useful functions not supposed to belong to any other class.
  *  @author Cappello,Nazio
  */
 public class Tools { 
@@ -205,7 +204,7 @@ public class Tools {
 
             } catch(Exception e){}
         }
-        else if(getOs().toLowerCase().contains("osx")){ //???
+        else if(getOs().toLowerCase().contains("mac")){
             String tmp;
             tmp = macProfilerTermOut("Google Chrome");
             if (tmp != null)
@@ -254,7 +253,7 @@ public class Tools {
     private static String linuxTermOut(String cmd){
         String[] args = new String[] {"/bin/bash", "-c", cmd};
             String out = "";
-            try {//Boscaiola rossa + crudo, 
+            try {
                 Process proc = new ProcessBuilder(args).start();
                 BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
                 out = br.readLine();

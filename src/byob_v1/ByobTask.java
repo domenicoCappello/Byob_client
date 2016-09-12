@@ -39,21 +39,34 @@ public class ByobTask implements Runnable {
                     " in " + randomInterval + " minutes");
             ses.schedule(this, randomInterval, TimeUnit.MINUTES);
         } else {        
+            /**Synchronized*/
+            if (contact.decreaseContactNum() < 0) 
+                return; 
+            else if(contact.getContactsNum() > 0){
+                double randomInterval = contact.getMinWaitTime() + 
+                         (contact.getMaxWaitTime() - contact.getMinWaitTime()) * random.nextDouble();
+                ses.schedule(this, (long)randomInterval, TimeUnit.MILLISECONDS);
+            }
+            
             ByobSingleton.getInstance().myLogger.fine(contact.toString());
             System.out.println("Contacting " + contact.getURL() + " : " + contact.getContactsNum() + " more times");
-            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
-                       URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
-            contact.decreaseContactNum(); 
+
+//            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
+//                       URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
+            
+            try{
+                ByobComm.asyncHttpGet(contact.getURL(), contact.getUserAgent(), 
+                       URLDetails.proxyIp, URLDetails.proxyPort);
+            } catch(Exception e){
+                System.err.println("Exception in asyncHttpGet");
+                return;
+            }
+            int code = 0;
+            
             if(contact.waitForResponse){
                 String res = contact.getURL() + " returned: " + code;
                 System.out.println(res);
                 ByobSingleton.getInstance().myLogger.fine(res);
-            }
-
-            if(contact.getContactsNum() > 0){
-                double randomInterval = contact.getMinWaitTime() + 
-                         (contact.getMaxWaitTime() - contact.getMinWaitTime()) * random.nextDouble();
-                ses.schedule(this, (long)randomInterval, TimeUnit.MILLISECONDS);
             }
         }
     }  

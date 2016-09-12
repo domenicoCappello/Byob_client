@@ -14,7 +14,7 @@ public class URLDetails {
     String idBot;             
     
     // Whether or not wait for server response
-    public Boolean waitForResponse = false;
+    public Boolean waitForResponse = true;
     
     // URL - TO DO è un array
     private String URL;
@@ -230,9 +230,11 @@ public class URLDetails {
     
     /**
      * Method decreases URL's number of contact.
+     * @return contactsNum
      */
-    public void decreaseContactNum(){
+    public long decreaseContactNum(){
         contactsNum = contactsNum - 1;
+        return contactsNum;
     }
     
     /**
