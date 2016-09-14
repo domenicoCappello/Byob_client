@@ -14,7 +14,7 @@ public class URLDetails {
     String idBot;             
     
     // Whether or not wait for server response
-    public Boolean waitForResponse = true;
+    public Boolean waitForResponse = false;
     
     // URL - TO DO è un array
     private String URL;

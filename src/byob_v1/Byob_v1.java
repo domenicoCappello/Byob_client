@@ -24,7 +24,7 @@ public class Byob_v1 {
         frame.setLocation(x, y);
         frame.setVisible(true);
 
-//        String file = "geppconf2.txt";
+//        String file = "local.txt";
 //        Parser parser = new Parser(file);
 //        try {
 //            ArrayList <URLDetails> taskList = parser.readConfigurationFile();

@@ -168,6 +168,7 @@ public class Tools {
             if (tmp != null)
                 browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
+            browsers = macProfilerTermOut("ppp");
         }
         else if(getOs().toLowerCase().contains("windows")) {
             
@@ -205,44 +206,54 @@ public class Tools {
             } catch(Exception e){}
         }
         else if(getOs().toLowerCase().contains("mac")){
-            String tmp;
-            tmp = macProfilerTermOut("Google Chrome");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Firefox");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Opera");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Safari");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
+            
+            linuxTermOut("system_profiler SPSoftwareDataType > info.txt");
+            browsers = macProfilerTermOut("info.txt");
+            
         }
         else {
-            browsers = "Unrecognized OS";
+            browsers = "Unrecognized OS\n";
             
-            String tmp;
-            tmp = macProfilerTermOut("Google Chrome");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Firefox");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Opera");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
-            tmp = macProfilerTermOut("Safari");
-            if (tmp != null)
-                browsers = browsers + tmp + "\n\n";
+            linuxTermOut("system_profiler SPSoftwareDataType > info.txt");
+            browsers = browsers + macProfilerTermOut("info.txt");
         }
         return browsers;
     }
     
-    private static String macProfilerTermOut(String programName){
-        String cmd1 = "system_profiler SPSoftwareDataType | grep \"";
-        String cmd3 = ":\" -A 3";
-        return linuxTermOut(cmd1 + programName + cmd3);
+    
+    private static String macProfilerTermOut(String file){
+        String[] args = new String[] {"/bin/bash", "-c", "grep", 
+                                        "-e", "Google","ppp"};//,
+//                                        "-e", "\"Firefox:\"",
+//                                        "-e", "\"Opera:\"",
+//                                        "-e", "\"Safari:\"",
+//                                        "-A", "2", "ppp"};
+//        String cmd = "grep -e \"Google Chrome:\" -e \"Firefox:\" "
+//                        + "-e \"Opera:\" -e \"Safari:\" -A 2 " + file; 
+//        System.out.println(cmd);
+        String str = linuxTermOut(args);
+//        if (str == null) return null;
+//        String[] tok = str.split("[-]+");
+//        String ret = "";
+//        for(int i = 0; i < tok.length; i++){
+//            System.out.println(tok[i]);
+//            String[] toktok = tok[i].split("[\n]+");
+//            System.out.println(toktok[0]);
+////            ret = ret + toktok[0] + toktok[1] + "\n\n"; 
+//        }
+        return str;
+    }
+    
+    private static String linuxTermOut(String[] args){
+        String out = "";
+        try {
+            Process proc = new ProcessBuilder(args).start();
+            BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+            out = br.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return out;
     }
     
     /**

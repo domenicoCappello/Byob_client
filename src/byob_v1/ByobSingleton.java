@@ -22,8 +22,8 @@ public class ByobSingleton {
     public static final Logger myLogger = Logger.getLogger("BYOB");
     
     // Schedulation of tasks to run
-//    public static final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
-    public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(100);
+    public static final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+//    public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(1000);
  
     /**
     * Constructor.

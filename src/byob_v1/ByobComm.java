@@ -85,12 +85,14 @@ public class ByobComm {
             } else {
                 connection = (HttpURLConnection) new URL(url).openConnection();
             }
+            connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept-Charset", charset);
             
             if(!userAgent.isEmpty())
                 connection.setRequestProperty("User-Agent", userAgent);
             else
                 connection.setRequestProperty("User-Agent", "");
+            connection.connect();
             int ret = waitForResponse ? connection.getResponseCode() : 0;
             connection.disconnect();
             return ret;
