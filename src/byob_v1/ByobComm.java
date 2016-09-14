@@ -6,17 +6,8 @@ import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.URL;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.asynchttpclient.AsyncCompletionHandler;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.AsyncHttpClientConfig;
-import org.asynchttpclient.DefaultAsyncHttpClient;
-import org.asynchttpclient.DefaultAsyncHttpClientConfig;
-import org.asynchttpclient.Response;
-import org.asynchttpclient.proxy.ProxyServer;
 
 /**
  * Class is responsible for anything concerning the GET method of HTTP and its response.
@@ -39,39 +30,39 @@ public class ByobComm {
         return httpGet(url, userAgent, "", -1, waitForResponse);
     }
     
-    static void asyncHttpGet(String url, String userAgent, String proxyIp, int proxyPort) throws InterruptedException, ExecutionException{
-    
-        AsyncHttpClient asyncHttpClient;
-        if(proxyPort > 0){
-            AsyncHttpClientConfig cf = new DefaultAsyncHttpClientConfig.Builder()
-                .setProxyServer(new ProxyServer.Builder(proxyIp, proxyPort)).build();
-
-            asyncHttpClient = new DefaultAsyncHttpClient(cf);
-        } else {
-            asyncHttpClient = new DefaultAsyncHttpClient();
-        }
-
-
-        Future<Integer> f = asyncHttpClient.prepareGet(url).execute(
-            new AsyncCompletionHandler<Integer>(){
-
-            @Override
-            public Integer onCompleted(Response response) throws Exception{
-                // Do something with the Response
-                System.out.println(response.getStatusCode());
-                return response.getStatusCode();
-            }
-
-            @Override
-            public void onThrowable(Throwable t){
-                // Something wrong happened.
-            }
-
-        });
-
-        System.out.println(f.get());
-    
-}
+//    static void asyncHttpGet(String url, String userAgent, String proxyIp, int proxyPort) throws InterruptedException, ExecutionException{
+//    
+//        AsyncHttpClient asyncHttpClient;
+//        if(proxyPort > 0){
+//            AsyncHttpClientConfig cf = new DefaultAsyncHttpClientConfig.Builder()
+//                .setProxyServer(new ProxyServer.Builder(proxyIp, proxyPort)).build();
+//
+//            asyncHttpClient = new DefaultAsyncHttpClient(cf);
+//        } else {
+//            asyncHttpClient = new DefaultAsyncHttpClient();
+//        }
+//
+//
+//        Future<Integer> f = asyncHttpClient.prepareGet(url).execute(
+//            new AsyncCompletionHandler<Integer>(){
+//
+//            @Override
+//            public Integer onCompleted(Response response) throws Exception{
+//                // Do something with the Response
+//                System.out.println(response.getStatusCode());
+//                return response.getStatusCode();
+//            }
+//
+//            @Override
+//            public void onThrowable(Throwable t){
+//                // Something wrong happened.
+//            }
+//
+//        });
+//
+//        System.out.println(f.get());
+//    
+//}
     
     /**
     * Function returns the response code of the HTTP's GET method.
@@ -94,22 +85,24 @@ public class ByobComm {
             } else {
                 connection = (HttpURLConnection) new URL(url).openConnection();
             }
+            connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept-Charset", charset);
             
             if(!userAgent.isEmpty())
                 connection.setRequestProperty("User-Agent", userAgent);
             else
                 connection.setRequestProperty("User-Agent", "");
+            connection.connect();
             int ret = waitForResponse ? connection.getResponseCode() : 0;
             connection.disconnect();
             return ret;
             
         } catch (MalformedURLException ex) {
-            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            ByobSingleton.getInstance().myLogger.severe("MalformedURLException");
             return -1;
             
         } catch (IOException ex) {
-            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
+            ByobSingleton.getInstance().myLogger.severe("IOException");
             return -2; 
         }   
     }

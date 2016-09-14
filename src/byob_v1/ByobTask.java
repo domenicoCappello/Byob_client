@@ -51,17 +51,9 @@ public class ByobTask implements Runnable {
             ByobSingleton.getInstance().myLogger.fine(contact.toString());
             System.out.println("Contacting " + contact.getURL() + " : " + contact.getContactsNum() + " more times");
 
-//            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
-//                       URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
+            int code = ByobComm.httpGet(contact.getURL(), contact.getUserAgent(), 
+                       URLDetails.proxyIp, URLDetails.proxyPort, contact.waitForResponse);
             
-            try{
-                ByobComm.asyncHttpGet(contact.getURL(), contact.getUserAgent(), 
-                       URLDetails.proxyIp, URLDetails.proxyPort);
-            } catch(Exception e){
-                System.err.println("Exception in asyncHttpGet");
-                return;
-            }
-            int code = 0;
             
             if(contact.waitForResponse){
                 String res = contact.getURL() + " returned: " + code;

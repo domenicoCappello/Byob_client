@@ -24,12 +24,7 @@ public class Byob_v1 {
         frame.setLocation(x, y);
         frame.setVisible(true);
 
-//        try{
-//            ByobComm.asyncHttpGet("www.google.com", "", "", 0);
-//        } catch(Exception e){
-//            
-//        }
-//        String file = "proconf.txt";//"geppconf2.txt";
+//        String file = "local.txt";
 //        Parser parser = new Parser(file);
 //        try {
 //            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
