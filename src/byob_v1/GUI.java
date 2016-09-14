@@ -973,7 +973,7 @@ public final class GUI extends javax.swing.JFrame {
             configurationLabel.get(i).setEnabled(!flag);    
         }
         jFormattedTextField2.setText(flag ? "" : "http://");
-        jFormattedTextField6.setEnabled(flag);   
+        jFormattedTextField6.setEnabled(false);   
     }
     
     /**
