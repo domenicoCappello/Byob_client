@@ -664,7 +664,7 @@ public final class GUI extends javax.swing.JFrame {
                     flag = false;
                     exit = true;
                     if (!fileToSave.getName().contains(".txt"))
-                        fileToSave = new File(fileToSave.toString() + ".txt");
+                        fileToSave = new File((fileToSave.toString() + ".txt"));
                     /**Update fileConfPath*/
                     fileConfPath = fileToSave.getAbsolutePath();
                     jButton7.setEnabled(true);
