@@ -839,7 +839,7 @@ public final class GUI extends javax.swing.JFrame {
         if(!evt.getActionCommand().equals("on")) {
             jFormattedTextField4.setEnabled(true);
             if(jTextArea1.getText().length() != 0)
-                if(!Tools.checkNumber(jFormattedTextField3.getText()))
+                if(!Parser.checkNumber(jFormattedTextField3.getText()))
                     defaultValue[2] = "10000";
                 else
                     defaultValue[2] = ""+(Integer.parseInt(jFormattedTextField3.getText())+10);     

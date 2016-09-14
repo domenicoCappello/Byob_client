@@ -36,67 +36,6 @@ public class Tools {
     }
         
     /**
-     *  Functions returns the correctness of IPv4 address. 
-     *  @param ip   String of the IP address
-     *  @return     True if correct, false otherwise
-     */
-    public static Boolean checkIPv4String(String ip){
-        String[] tokens = ip.split("\\.");
-        if (tokens.length != 4){
-            return false;
-        }
-        for (String tok : tokens){
-            try{
-                int i = Integer.parseInt(tok);
-                if (i < 0 || i > 255)
-                    return false;
-                
-            } catch (NumberFormatException e){
-                return false;
-            }
-        }
-        return true;
-    }
-    
-    /**
-     *  Functions returns the correctness of a port number. 
-     *  @param port  String of the port 
-     *  @return     True if correct, false otherwise
-     */
-    public static Boolean checkPort(String port){
-        if(!checkNumber(port))
-            return false;
-        return (Integer.parseInt(port) >= 1025 && Integer.parseInt(port) <= 65535);
-    }
-    
-    /**
-     *  Functions returns the correctness of a number. 
-     *  @param number  String of the number 
-     *  @return     True if correct, false otherwise
-     */
-    public static Boolean checkNumber(String number){
-        char[] charArray = number.toCharArray();
-        if(number.equals(""))
-            return false;
-        for(char c: charArray)
-            if(!Character.isDigit(c))
-                return false;
-        return true;
-    }
-    
-    /**
-     *  Functions returns the correctness of a number interval. 
-     *  @param min  String of the left endpoint
-     *  @param max  String of the right endpoint
-     *  @return     True if correct, false otherwise
-     */
-    public static Boolean checkInterval(String min, String max){
-        if(!checkNumber(min) || !checkNumber(max))
-            return false;
-        return Integer.parseInt(min) <= Integer.parseInt(max);
-    }
-    
-    /**
      *  Function creates a List of warning message to show to the user in case 
      *  of input errors.
      *  @param params   User's Input parameters
@@ -105,19 +44,19 @@ public class Tools {
     public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
         warning.add("Fix the following parameters:\n");
-       if(!checkNumber(params[1]))
+       if(!Parser.checkNumber(params[1]))
             if(params[2].equals("-"))
                 warning.add("- Contact time value not valid;\n");
             else
                 warning.add("- Minimum contact time value not valid;\n");
-        if(!checkNumber(params[2]))
+        if(!Parser.checkNumber(params[2]))
             if(!params[2].equals("-"))
                 warning.add("- Maximum contact time value not valid;\n");
-        if(!checkNumber(params[3]))
+        if(!Parser.checkNumber(params[3]))
             warning.add("- Number of contacts not valid;\n");
-        if(!params[6].equals(" ") && !checkIPv4String(params[6]))
+        if(!params[6].equals(" ") && !Parser.checkIPv4String(params[6]))
             warning.add("- Proxy IP not valid;\n");
-        if(!params[7].equals(" ") && !checkPort(params[7]))
+        if(!params[7].equals(" ") && !Parser.checkPort(params[7]))
             warning.add("- Proxy port not valid (choose one between 1025 and 65525);\n");
         if(warning.size() == 1)
             return null;
