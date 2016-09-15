@@ -1,0 +1,28 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}Introduzione}{1}
+\contentsline {section}{\numberline {1.1}Premessa}{1}
+\contentsline {section}{\numberline {1.2}HTTP Botnet}{2}
+\contentsline {section}{\numberline {1.3}Obiettivo}{3}
+\contentsline {section}{\numberline {1.4}Struttura della relazione}{4}
+\contentsline {chapter}{\numberline {2}Stato dell'arte}{5}
+\contentsline {section}{\numberline {2.1}Punti cardine}{5}
+\contentsline {subsection}{\numberline {2.1.1}HTTP}{5}
+\contentsline {subsection}{\numberline {2.1.2}Singleton Pattern}{6}
+\contentsline {subsection}{\numberline {2.1.3}Schedulatore}{7}
+\contentsline {subsection}{\numberline {2.1.4}ID dei bot e MD5}{7}
+\contentsline {subsection}{\numberline {2.1.5}Parsing}{8}
+\contentsline {subsection}{\numberline {2.1.6}Multi-piattaforma}{8}
+\contentsline {section}{\numberline {2.2}Piattaforma di sviluppo, Swing, Awt}{9}
+\contentsline {section}{\numberline {2.3}Build your own botnet}{9}
+\contentsline {subsection}{\numberline {2.3.1}Struttura del progetto}{9}
+\contentsline {subsection}{\numberline {2.3.2}ByobComm}{11}
+\contentsline {subsection}{\numberline {2.3.3}ByobSingleton}{11}
+\contentsline {subsection}{\numberline {2.3.4}ByobTask}{11}
+\contentsline {subsection}{\numberline {2.3.5}Byob\_v1}{11}
+\contentsline {subsection}{\numberline {2.3.6}GUI}{11}
+\contentsline {paragraph}{GUI user-friendly}{16}
+\contentsline {subsection}{\numberline {2.3.7}Parser}{16}
+\contentsline {subsection}{\numberline {2.3.8}Tools}{17}
+\contentsline {paragraph}{Browsers}{18}
+\contentsline {subsection}{\numberline {2.3.9}URLDetails}{18}
