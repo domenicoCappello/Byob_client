@@ -108,6 +108,7 @@ public class Tools {
                 browsers = browsers + tmp + "\n";
             //Scrivi tutto su browsers
             browsers = macProfilerTermOut("ppp");
+            System.out.println("HERE");
         }
         else if(getOs().toLowerCase().contains("windows")) {
             
@@ -161,36 +162,32 @@ public class Tools {
     
     
     private static String macProfilerTermOut(String file){
-        String[] args = new String[] {"/bin/bash", "-c", "grep", 
-                                        "-e", "Google","ppp"};//,
-//                                        "-e", "\"Firefox:\"",
-//                                        "-e", "\"Opera:\"",
-//                                        "-e", "\"Safari:\"",
-//                                        "-A", "2", "ppp"};
+        String[] args = new String[] {"/bin/bash", "-c", "grep -e \"Google Chrome:\""
+                + " -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" "
+                + "-A 2 mac_profile.txt"};
 //        String cmd = "grep -e \"Google Chrome:\" -e \"Firefox:\" "
 //                        + "-e \"Opera:\" -e \"Safari:\" -A 2 " + file; 
 //        System.out.println(cmd);
+        System.out.println("byob_v1.Tools.macProfilerTermOut()");
         String str = linuxTermOut(args);
-//        if (str == null) return null;
-//        String[] tok = str.split("[-]+");
-//        String ret = "";
-//        for(int i = 0; i < tok.length; i++){
-//            System.out.println(tok[i]);
-//            String[] toktok = tok[i].split("[\n]+");
-//            System.out.println(toktok[0]);
-////            ret = ret + toktok[0] + toktok[1] + "\n\n"; 
-//        }
+        str = str.replace("\n", "").replace("--", "\n");
         return str;
     }
     
     private static String linuxTermOut(String[] args){
         String out = "";
+        String tmp;
         try {
-            Process proc = new ProcessBuilder(args).start();
+            Process proc = Runtime.getRuntime().exec(args);
             BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-            out = br.readLine();
+//            proc.waitFor();
+            while((tmp = br.readLine()) != null){
+                out = out + tmp + "\n";
+            }
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (InterruptedException e){
+//            System.err.println("Interrupted process " + args[0]);
         }
         return out;
     }
@@ -250,7 +247,7 @@ public class Tools {
                 command = "lshw | grep -e serial";
                 break;
                 
-            case "OSX":
+            case "MAC":
                 command = "ifconfig en0 | grep ether";
                 break;
                 

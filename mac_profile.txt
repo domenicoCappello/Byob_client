@@ -1,0 +1,4049 @@
+Applications:
+
+    Terminale:
+
+      Version: 2.6.1
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Terminal.app
+
+    Firefox:
+
+      Version: 48.0.2
+      Obtained from: Identified Developer
+      Last Modified: 24/08/16, 11:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Mozilla Corporation, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Firefox.app
+      Get Info String: Firefox 48.0.2
+
+    Opera:
+
+      Version: 39,0
+      Obtained from: Identified Developer
+      Last Modified: 14/09/16, 14:46
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Opera Software ASA (UL7F34E7DN), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Opera.app
+      Get Info String: Opera 39.0, Copyright © 2012-2013, Opera Software.
+
+    Installazione di Opera:
+
+      Version: 1,0
+      Obtained from: Identified Developer
+      Last Modified: 02/09/16, 11:11
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Opera Software ASA (UL7F34E7DN), Developer ID Certification Authority, Apple Root CA
+      Location: /Users/Matteo/Downloads/Opera Installer.app
+
+    App Store:
+
+      Version: 2,1
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/App Store.app
+
+    Microsoft Word:
+
+      Version: 15,18
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Microsoft Corporation (UBF8T346G9), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Microsoft Word.app
+      Get Info String: 15.18 (160109), © 2015 Microsoft Corporation. All rights reserved.
+
+    Contatti:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Contacts.app
+
+    FaceTime:
+
+      Version: 3,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/FaceTime.app
+
+    Kodi:
+
+      Version: 16.1.
+      Obtained from: Unknown
+      Last Modified: 24/04/16, 11:56
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Applications/Kodi.app
+      Get Info String: 16.1.
+
+    Monitoraggio Attività:
+
+      Version: 10,11
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Activity Monitor.app
+      Get Info String: 10.11, Copyright © 2000-2015 Apple Inc.
+
+    Preferenze di Sistema:
+
+      Version: 14,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/System Preferences.app
+
+    Messaggi:
+
+      Version: 9,2
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Messages.app
+
+    Aperture:
+
+      Version: 3,6
+      Obtained from: Mac App Store
+      Last Modified: 01/01/14, 00:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Aperture.app
+      Get Info String: Aperture 3.6, Copyright 2005-2014 Apple Inc.
+
+    iTunes:
+
+      Version: 12.5.1
+      Obtained from: Apple
+      Last Modified: 13/09/16, 19:15
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/iTunes.app
+      Get Info String: iTunes 12.5.1.21, © 2000–2016 Apple Inc. All rights reserved.
+
+    AppleMobileDeviceHelper:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 13/09/16, 19:15
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/AppleMobileDeviceHelper.app
+
+    AppleMobileSync:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 13/09/16, 19:15
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/AppleMobileSync.app
+
+    Mail:
+
+      Version: 9,3
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Mail.app
+
+    Safari:
+
+      Version: 9.1.3
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Safari.app
+      Get Info String: 9.1.3, Copyright © 2003-2016 Apple Inc.
+
+    Franz:
+
+      Version: 4.0.4
+      Obtained from: Identified Developer
+      Last Modified: 06/09/16, 16:44
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Stefan Malzner (TAC9P63ANZ), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Franz.app
+
+    Microsoft Excel:
+
+      Version: 15,18
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Microsoft Corporation (UBF8T346G9), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Microsoft Excel.app
+      Get Info String: 15.18 (160109), © 2015 Microsoft Corporation. All rights reserved.
+
+    Anteprima:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Preview.app
+      Get Info String: 8.1, Copyright 2002-2015 Apple Inc.
+
+    Adobe Flash Player Install Manager:
+
+      Version: 23.0.0.162
+      Obtained from: Identified Developer
+      Last Modified: 13/09/16, 17:25
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Flash Player Install Manager.app
+
+    Gemini 2:
+
+      Version: 2.1.2
+      Obtained from: Mac App Store
+      Last Modified: 29/05/16, 12:51
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Gemini 2.app
+
+    Mappe:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Maps.app
+
+    Foto:
+
+      Version: 1,5
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Photos.app
+
+    The Unarchiver:
+
+      Version: 3.11.1
+      Obtained from: Mac App Store
+      Last Modified: 12/06/16, 12:27
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/The Unarchiver.app
+
+    iBooks:
+
+      Version: 1,5
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/iBooks.app
+
+    Adobe Acrobat:
+
+      Version: 15.017.20053
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Acrobat DC/Adobe Acrobat.app
+      Get Info String: Adobe Acrobat X 15.017.20053, ©1984 -2016 Adobe Systems Incorporated. All rights reserved.
+
+    Acrobat Distiller:
+
+      Version: 15.017.20050
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Acrobat DC/Acrobat Distiller.app
+      Get Info String: Acrobat Distiller™ 15.017.20050, ©1984 -2016 Adobe Systems Incorporated. All rights reserved.
+
+    Utility Compressione:
+
+      Version: 10,10
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Archive Utility.app
+
+    TextEdit:
+
+      Version: 1,11
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/TextEdit.app
+
+    xf-acrodc2015:
+
+      Version: 1,0
+      Obtained from: Unknown
+      Last Modified: 16/06/15, 22:30
+      Kind: Intel
+      64-Bit (Intel): No
+      Location: /Users/Matteo/Downloads/Adobe Acrobat Pro DC 2015.010.20056/Adobe Acrobat Pro DC 2015 [K]/xFORCE KG 2015/xf-acrodc2015.app
+
+    Calendario:
+
+      Version: 8,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Calendar.app
+
+    Installer:
+
+      Version: 6.2.0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Installer.app
+
+    adobe_licutil:
+
+      Version: 9.0.0.316
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Acrobat DC Helper Frameworks/adobe_oobelib/adobe_licutil.app
+
+    Spotify:
+
+      Version: 1.0.37.150.gad02a02e
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 15:34
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Spotify (2FNC3A47ZF), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Spotify.app
+
+    uTorrent:
+
+      Version: 1.8.7
+      Obtained from: Identified Developer
+      Last Modified: 22/10/08, 08:36
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: BitTorrent, Inc (SNBT6M4A7T), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/uTorrent.app
+
+    Note:
+
+      Version: 4,2
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Notes.app
+
+    Microsoft PowerPoint:
+
+      Version: 15,18
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Microsoft Corporation (UBF8T346G9), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Microsoft PowerPoint.app
+      Get Info String: 15.18 (160109), © 2015 Microsoft Corporation. All rights reserved.
+
+    Save as Adobe PDF:
+
+      Version: 1,2
+      Obtained from: Unknown
+      Last Modified: 12/09/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Library/PDF Services/Save as Adobe PDF.app
+
+    Acrobat Update Helper:
+
+      Version: 1 . 0 . 12
+      Obtained from: Identified Developer
+      Last Modified: 21/06/16, 08:30
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/ARMDC/Application/Acrobat Update Helper.app
+      Get Info String: 1 . 0 . 12, ©2009-2015 Adobe Systems Incorporated. All rights reserved.
+
+    Adobe Desktop Service:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Adobe Desktop Common/ADS/Adobe Desktop Service.app
+
+    crash_report_sender:
+
+      Version: 1,0
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Adobe Desktop Common/CEF/Chromium Embedded Framework.framework/Resources/crash_report_sender.app
+
+    Adobe CEF Helper:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Adobe Desktop Common/HEX/Adobe CEF Helper.app
+
+    Adobe CEF Helper NP:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Adobe Desktop Common/HEX/Adobe CEF Helper NP.app
+
+    Adobe CEF Helper EH:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Adobe Desktop Common/HEX/Adobe CEF Helper EH.app
+
+    CCXProcess:
+
+      Version: 1.3.0-237
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/CCXProcess/CCXProcess.app
+
+    Uninstaller:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/HDCore/Uninstaller.app
+      Get Info String: Adobe UnInstaller 3.8.0.310, Copyright 2009-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Install:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/HDCore/Install.app
+
+    Adobe Application Updater:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/AppsPanel/Updater/Adobe Application Updater.app
+
+    Core Sync:
+
+      Version: 2.2.0.256
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app
+
+    CCLibrary:
+
+      Version: 2.6.10-838
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/CCLibrary/CCLibrary.app
+
+    ACCFinderBundleLoader:
+
+      Version: 2.2.0.256
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/CoreSyncExtension/ACCFinderBundleLoader.app
+
+    CreativeCloud(URIHandler):
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/Utils/CreativeCloud(URIHandler).app
+      Get Info String: CreativeCloud(URIHandler) 3.8.0.310, Copyright 2013-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Creative Cloud Uninstaller:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/Utils/Creative Cloud Uninstaller.app
+
+    Creative Cloud Installer:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/Utils/Creative Cloud Installer.app
+
+    Creative Cloud:
+
+      Version: 3.8.0.310
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app
+
+    adobe_licutil:
+
+      Version: 10.0.0.34
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/P7/adobe_licutil.app
+
+    AASIapp:
+
+      Version: 10.0.0.40
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/P7/AASIapp.app
+
+    AAM Registration Notifier:
+
+      Version: 10.0.0.40
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/P7/AAM Registration Notifier.app
+
+    LogTransport2:
+
+      Version: 2.1.2.1652
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/UWA/LogTransport2.app
+      Get Info String: Copyright 2008-10 Adobe Systems Incorporated. All rights reserved.
+
+    AAM Updates Notifier:
+
+      Version: 9.0.0.281
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/UWA/AAM Updates Notifier.app
+      Get Info String: Adobe Application Manager Updates Notifier 9.0.0.281, © 2009-2015 Adobe Systems Incorporated and its licensors. All rights reserved.
+
+    adobe_licutil:
+
+      Version: 7.0.1.109
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/P6/adobe_licutil.app
+
+    AAM Registration Notifier:
+
+      Version: 7.0.0.485
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/P6/AAM Registration Notifier.app
+
+    adobe_licutil:
+
+      Version: Adobe License Utility 2.0.0.10 (BuildVersion: 2.0; BuildDate: Tue Jul 05 2011 18:00:00)
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/LWA/adobe_licutil.app
+      Get Info String: 2.0.0.10 (BuildVersion: 2.0; BuildDate: Tue Jul 05 2011 18:00:00) Copyright 2010-2011 Adobe Systems Incorporated. All rights reserved.
+
+    AAM Registration Notifier:
+
+      Version: 3.0.64.0
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/LWA/AAM Registration Notifier.app
+      Get Info String: Adobe Application Manager Registration Notifier 3.0.64.0, Copyright 2009-2011 Adobe Systems Incorporated. All rights reserved.
+
+    AdobeIPCBroker:
+
+      Version: 5.2.0.49
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/IPC/AdobeIPCBroker.app
+      Get Info String: 5.2.0.49 Copyright 2015, Adobe Systems Incorporated. All rights reserved.
+
+    Setup:
+
+      Version: 5.0.65.0
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/DWA/Setup.app
+      Get Info String: 5.0.65.0, "© 2005-2012 Adobe Systems Incorporated and its licensors. All rights reserved."
+
+    Setup:
+
+      Version: 9.0.0.65
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/DECore/Setup.app
+      Get Info String: 9.0.0.65, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    Uninstall Product:
+
+      Version: 9.0.0.65
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/DECore/DE6/resources/uninstall/Uninstall Product.app
+      Get Info String: 9.0.0.65, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    Uninstall Product:
+
+      Version: 5.0.65.0
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/DECore/DE5/resources/uninstall/Uninstall Product.app
+      Get Info String: 5.0.65.0, "© 2005-2012 Adobe Systems Incorporated and its licensors. All rights reserved."
+
+    Setup:
+
+      Version: 9.0.0.65
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/D6/Setup.app
+      Get Info String: 9.0.0.65, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    Adobe Application Manager:
+
+      Version: 10.0.0.49
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/core/Adobe Application Manager.app
+      Get Info String: Adobe Application Manager 10.0.0.49, Copyright 2009-2015 Adobe Systems Incorporated. All rights reserved.
+
+    AAMLauncherUtil:
+
+      Version: 10.0.0.49
+      Obtained from: Identified Developer
+      Last Modified: 12/09/16, 14:35
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/core/AAMLauncherUtil.app
+      Get Info String: Adobe Application Manager 10.0.0.49, Copyright 2013-2015 Adobe Systems Incorporated. All rights reserved.
+
+    AdobeGCClient:
+
+      Version: 2.5.0.75
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Adobe Application Manager/AdobeGCClient/AdobeGCClient.app
+
+    Adobe Photoshop CC 2015:
+
+      Version: 16.1.2
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:44
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Photoshop CC 2015/Adobe Photoshop CC 2015.app
+      Get Info String: 16.1.2 (20160113.r.355 2016/01/13:23:59:59)
+
+    MATLAB_R2015b:
+
+      Version: 8.6.0
+      Obtained from: Unknown
+      Last Modified: 11/09/16, 12:05
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Applications/MATLAB_R2015b.app
+
+    Utility Disco:
+
+      Version: 15,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Disk Utility.app
+
+    Acquisizione Immagine:
+
+      Version: 6,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Image Capture.app
+
+    CleanMyMac 3 Scheduler:
+
+      Version: 1,0
+      Obtained from: Identified Developer
+      Last Modified: 28/01/16, 18:01
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: MacPaw Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Users/Matteo/Library/Application Support/CleanMyMac 3/CleanMyMac 3 Scheduler.app
+
+    CleanMyMac 3:
+
+      Version: 3.3.1
+      Obtained from: Unknown
+      Last Modified: 28/01/16, 18:01
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: The Shark, The Shark CA
+      Location: /Applications/CleanMyMac 3.app
+      Get Info String: CleanMyMac 3, Copyright 2008-2016 MacPaw Inc.
+
+    Skype:
+
+      Version: 7,29
+      Obtained from: Identified Developer
+      Last Modified: 31/05/16, 11:05
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Skype, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Skype.app
+
+    Adobe Lightroom:
+
+      Version: Adobe Lightroom [1060496]
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 16:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Lightroom/Adobe Lightroom.app
+
+    Noiseless:
+
+      Version: 1.3.0
+      Obtained from: Mac App Store
+      Last Modified: 21/12/15, 09:22
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Noiseless.app
+
+    Intensify:
+
+      Version: 1.2.1
+      Obtained from: Mac App Store
+      Last Modified: 23/10/15, 22:34
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Intensify.app
+
+    Tonality Pro:
+
+      Version: 1.2.0
+      Obtained from: Identified Developer
+      Last Modified: 10/06/15, 14:46
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: macphun.com, LLC, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Tonality Pro.app
+
+    DxOOpticsProLiteForPhotos:
+
+      Version: 1.2.1
+      Obtained from: Mac App Store
+      Last Modified: 10/09/16, 12:47
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/DxOOpticsProLiteForPhotos.app
+      Get Info String: DxO OpticsPro for DxO ONE build 28
+
+    HP Utility:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HP Utility.app
+      Get Info String: HP Utility 5.29.3, © Copyright 2005-2015 HP Development Company, L.P.
+
+    HP Email Alerts:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HP Utility.app/Contents/Applications/HP Email Alerts.app
+      Get Info String: HP Email Alerts, © Copyright 2011-2015 HP Development Company, L.P.
+
+    HP Product Research Manager:
+
+      Version: 10.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HPPU Plugins/ProductImprovementStudy.hptask/Contents/Helpers/HP Product Research Manager.app
+
+    HP Device Monitor Manager:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Frameworks/HPDeviceMonitoring.framework/Versions/1.0/Helpers/HP Device Monitor Manager.app
+
+    hpdot4d:
+
+      Version: 4.14.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Frameworks/HPDeviceModel.framework/Versions/4.0/Runtime/hpdot4d.app
+      Get Info String: hpdot4d 4.14.3, © Copyright 2005-2015 HP Development Company, L.P.
+
+    HP Scanner 3:
+
+      Version: 4.9.2
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/HP Scanner 3.app
+      Get Info String: © Copyright 2011-2015 HP Development Company, L.P.
+
+    ScanEventHandler:
+
+      Version: 1.3.1
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/Handlers/ScanEventHandler.app
+      Get Info String: © Copyright 2013-2015 HP Development Company, L.P.
+
+    LegacyScanEventHandler:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HP Utility.app/Contents/Applications/LegacyScanEventHandler.app
+      Get Info String: Legacy Scan Event Handler 5.29.3, © Copyright 2014-2015 HP Development Company, L.P.
+
+    HP Event Status:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HP Utility.app/Contents/Applications/HP Event Status.app
+      Get Info String: HP Event Status 5.29.3, © Copyright 2013-2015 HP Development Company, L.P.
+
+    HP Alerts:
+
+      Version: 5.29.3
+      Obtained from: Identified Developer
+      Last Modified: 10/09/16, 11:53
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Utilities/HP Utility.app/Contents/Applications/HP Alerts.app
+      Get Info String: HP Alerts, © Copyright 2010-2015 HP Development Company, L.P.
+
+    1Password 6:
+
+      Version: 6.3.2
+      Obtained from: Identified Developer
+      Last Modified: 10/08/16, 21:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Agilebits Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/1Password 6.app
+
+    PluginProcess:
+
+      Version: 11601
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/WebKit.framework/Versions/A/PluginProcess.app
+      Get Info String: 11601.7.8, Copyright 2003-2016 Apple Inc.
+
+    NetworkProcess:
+
+      Version: 11601
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/WebKit.framework/Versions/A/NetworkProcess.app
+      Get Info String: 11601.7.8, Copyright 2003-2016 Apple Inc.
+
+    DatabaseProcess:
+
+      Version: 11601
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/WebKit.framework/Versions/A/DatabaseProcess.app
+      Get Info String: 11601.7.8, Copyright 2003-2016 Apple Inc.
+
+    WebKitPluginHost:
+
+      Version: 11601
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebKitLegacy.framework/Versions/A/WebKitPluginHost.app
+
+    WebProcess:
+
+      Version: 11601
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/WebKit.framework/Versions/A/WebProcess.app
+      Get Info String: 11601.7.8, Copyright 2003-2016 Apple Inc.
+
+    MiniTerm:
+
+      Version: 1,9
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /usr/libexec/MiniTerm.app
+      Get Info String: Terminal window application for PPP
+
+    Spotlight:
+
+      Version: 3,0
+      Obtained from: Apple
+      Last Modified: 29/08/15, 04:39
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Services/Spotlight.service
+
+    SpotlightNetHelper:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/ParsecUI.framework/Versions/A/Support/SpotlightNetHelper.app
+
+    ScreenSaverEngine:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+
+    Impostazione Assistita:
+
+      Version: 10,10
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Setup Assistant.app
+
+    Spotlight:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Spotlight.app
+
+    ReportPanic:
+
+      Version: 10,11
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ReportPanic.app
+
+    Problem Reporter:
+
+      Version: 10,11
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Problem Reporter.app
+
+    OBEXAgent:
+
+      Version: 4.4.6
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/OBEXAgent.app
+      Get Info String: 4.4.6, Copyright © 2002-2016 Apple Inc. All rights reserved.
+
+    BluetoothUIServer:
+
+      Version: 4.4.6
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/BluetoothUIServer.app
+      Get Info String: 4.4.6, Copyright © 2002-2016 Apple Inc. All rights reserved.
+
+    Impostazione Assistita Bluetooth:
+
+      Version: 4.4.6
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Bluetooth Setup Assistant.app
+      Get Info String: 4.4.6, Copyright © 2002-2016 Apple Inc. All rights reserved.
+
+    Utility RAID:
+
+      Version: 4,0
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/RAID Utility.app
+      Get Info String: RAID Utility 3.0 (404), Copyright © 2007-2013 Apple Inc.
+
+    System Image Utility:
+
+      Version: 10.11.6
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/System Image Utility.app
+
+    Scambio File Bluetooth:
+
+      Version: 4.4.6
+      Obtained from: Apple
+      Last Modified: 08/09/16, 14:33
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Bluetooth File Exchange.app
+      Get Info String: 4.4.6, Copyright © 2002-2016 Apple Inc. All rights reserved.
+
+    Dropbox:
+
+      Version: 9.4.49
+      Obtained from: Identified Developer
+      Last Modified: 08/09/16, 12:54
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Dropbox, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Dropbox.app
+
+    AdobeGCClient:
+
+      Version: 3.1.0.343
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/AdobeGCClient/AdobeGCClient.app
+
+    VLC:
+
+      Version: 2.2.2
+      Obtained from: Identified Developer
+      Last Modified: 20/01/16, 20:05
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: VideoLAN, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/VLC.app
+      Get Info String: Copyright © 1996-2016 the VideoLAN team
+
+    Scacchi:
+
+      Version: 3,13
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Chess.app
+      Get Info String: 3.13, Copyright 2003-2015 Apple Inc.
+
+    Libro Font:
+
+      Version: 6,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Font Book.app
+      Get Info String: 6.0, Copyright © 2003–2015 Apple Inc.
+
+    Google Chrome:
+
+      Version: 51.0.2704.84
+      Obtained from: Identified Developer
+      Last Modified: 04/06/16, 03:05
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Google Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Google Chrome.app
+
+    Officejet 4500 G510g-m:
+
+      Version: 11,4
+      Obtained from: Unknown
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Printers/Officejet 4500 G510g-m.app
+
+    QuickTime Player:
+
+      Version: 10,4
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/QuickTime Player.app
+      Get Info String: 10.4, Copyright © 2009-2014 Apple Inc. All Rights Reserved.
+
+    Dungeons2:
+
+      Version: Unity Player version 5.1.3p3
+      Obtained from: Unknown
+      Last Modified: 01/01/15, 13:37
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Downloads/Dungeons.2.A.Game.of.Winter.MacOSX-ACTiVATED.www.GamesTorrents.com/Dungeons.2.A.Game.of.Winter/Dungeons2.app
+      Get Info String: Unity Player version 5.1.3p3 (f0a33a6ef422). (c) 2015 Unity Technologies ApS. All rights reserved.
+
+    Adobe Illustrator CC 2015:
+
+      Version: 20.0.0
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Adobe Illustrator.app
+      Get Info String: 20.0.0, Copyright © 1987-2016 Adobe Systems Inc.  All rights reserved.
+
+    iStat Menus Updater:
+
+      Version: 5,11
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 20:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Marc Edwards, Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/iStat Menus 5/iStat Menus Updater.app
+
+    ILST_20_0_0:
+
+      Version: 3.7.0.271
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/ILST_20_0_0.app
+      Get Info String: Adobe UnInstaller 3.7.0.271, Copyright 2009-2016 Adobe Systems Incorporated. All rights reserved.
+
+    COCM_1_0_32:
+
+      Version: 3.7.0.271
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/COCM_1_0_32.app
+      Get Info String: Adobe UnInstaller 3.7.0.271, Copyright 2009-2016 Adobe Systems Incorporated. All rights reserved.
+
+    CORE_1_0_32:
+
+      Version: 3.7.0.271
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/CORE_1_0_32.app
+      Get Info String: Adobe UnInstaller 3.7.0.271, Copyright 2009-2016 Adobe Systems Incorporated. All rights reserved.
+
+    CORG_1_0_32:
+
+      Version: 3.7.0.271
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:15
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/CORG_1_0_32.app
+      Get Info String: Adobe UnInstaller 3.7.0.271, Copyright 2009-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Web Gallery:
+
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Scripting.localized/Sample Scripts.localized/AppleScript.localized/Web Gallery.localized/Web Gallery.app
+
+    Export Flash Animation:
+
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Scripting.localized/Sample Scripts.localized/AppleScript.localized/Export Flash Animation.localized/Export Flash Animation.app
+
+    Contact Sheets:
+
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Scripting.localized/Sample Scripts.localized/AppleScript.localized/Contact Sheet Demo.localized/Contact Sheets.app
+
+    Make Calendar:
+
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Scripting.localized/Sample Scripts.localized/AppleScript.localized/Calendar.localized/Make Calendar.app
+
+    Analyze Documents:
+
+      Obtained from: Identified Developer
+      Last Modified: 24/07/16, 11:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Illustrator CC 2015.3/Scripting.localized/Sample Scripts.localized/AppleScript.localized/Analyze Documents.localized/Analyze Documents.app
+
+    soagent:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/MessagesKit.framework/Versions/A/Resources/soagent.app
+
+    IMTransferAgent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/IMTransferServices.framework/IMTransferAgent.app
+
+    imagent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/IMCore.framework/imagent.app
+
+    IDSRemoteURLConnectionAgent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSRemoteURLConnectionAgent.app
+
+    identityservicesd:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app
+
+    ParentalControls:
+
+      Version: 4,1
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/Resources/ParentalControls.app
+      Get Info String: 2.0, Copyright Apple Inc. 2007-2009
+
+    DiskImages UI Agent:
+
+      Version: 10.11.4
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/Resources/DiskImages UI Agent.app
+
+    storeuid:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Resources/storeuid.app
+
+    LaterAgent:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Resources/LaterAgent.app
+
+    iCloud Drive:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/Versions/A/Resources/iCloud Drive.app
+
+    iCloudUserNotificationsd:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/Resources/iCloudUserNotificationsd.app
+
+    Simulatore widget:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/NotificationCenter.framework/Versions/A/Resources/Widget Simulator.app
+
+    IMServicePlugInAgent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/IMServicePlugIn.framework/IMServicePlugInAgent.app
+
+    PrinterProxy:
+
+      Version: 11,4
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PrinterProxy.app
+
+    SpeechSynthesisServer:
+
+      Version: 5.4.12
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesisServer.app
+
+    ManagedClient:
+
+      Version: 8,2
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ManagedClient.app
+
+    FontRegistryUIAgent:
+
+      Version: 81,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/FontRegistryUIAgent.app
+      Get Info String: Copyright © 2008-2013 Apple Inc.
+
+    AddressBookSync:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookSync.app
+
+    AddressBookSourceSync:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookSourceSync.app
+
+    AddressBookManager:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookManager.app
+
+    ABAssistantService:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/ABAssistantService.app
+
+    Wi-Fi:
+
+      Version: 11,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/WiFiAgent.app
+
+    Aggiornamento Software:
+
+      Version: 6
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Software Update.app
+      Get Info String: Software Update version 4.0, Copyright © 2000-2009, Apple Inc. All rights reserved.
+
+    Assistente Certificato:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Certificate Assistant.app
+
+    rcd:
+
+      Version: 327,6
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/rcd.app
+      Get Info String: 327,6
+
+    Centro Notifiche:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/NotificationCenter.app
+
+    Keychain Circle Notification:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Keychain Circle Notification.app
+
+    Install in Progress:
+
+      Version: 3,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Install in Progress.app
+
+    Install Command Line Developer Tools:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Install Command Line Developer Tools.app
+
+    FirmwareUpdateHelper:
+
+      Version: 3
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/FirmwareUpdateHelper.app
+
+    EscrowSecurityAlert:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/EscrowSecurityAlert.app
+
+    CoreServicesUIAgent:
+
+      Version: 145,1
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/CoreServicesUIAgent.app
+      Get Info String: Copyright © 2009 Apple Inc.
+
+    CoreLocationAgent:
+
+      Version: 1.486,12
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/CoreLocationAgent.app
+      Get Info String: Copyright © 2013 Apple Inc.
+
+    Agente Foto:
+
+      Version: 1,5
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/cloudphotosd.app
+
+    Captive Network Assistant:
+
+      Version: 4,1
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Captive Network Assistant.app
+
+    AppDownloadLauncher:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AppDownloadLauncher.app
+
+    AirPlayUIAgent:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AirPlayUIAgent.app
+
+    AddressBookUrlForwarder:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AddressBookUrlForwarder.app
+
+    Utility AirPort:
+
+      Version: 6.3.6
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/AirPort Utility.app
+      Get Info String: 6.3.6, Copyright 2001 -2015 Apple Inc.
+
+    Accesso Portachiavi:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Keychain Access.app
+
+    Configurazione MIDI Audio:
+
+      Version: 3.0.6
+      Obtained from: Apple
+      Last Modified: 24/07/16, 10:23
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Audio MIDI Setup.app
+      Get Info String: 3.0.6, Copyright 2002-2014 Apple, Inc.
+
+    Diagnosi Wireless:
+
+      Version: 5,1
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Wireless Diagnostics.app
+
+    MRT:
+
+      Version: 1,9
+      Obtained from: Apple
+      Last Modified: 10/07/16, 00:40
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/MRT.app
+
+    Caffeine:
+
+      Version: 1.1.1
+      Obtained from: Mac App Store
+      Last Modified: 18/06/16, 13:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Caffeine.app
+
+    Subsurface:
+
+      Version: 4.5.3
+      Obtained from: Identified Developer
+      Last Modified: 15/12/15, 01:56
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Dirk Hohndel, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Subsurface.app
+      Get Info String: Subsurface
+
+    MetalSlug:
+
+      Version: 1,0
+      Obtained from: Identified Developer
+      Last Modified: 30/11/15, 18:39
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Humble Bundle, Inc. (77Q78WLBRL), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/MetalSlug.app
+
+    Game Center:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Game Center.app
+
+    iStat Menus:
+
+      Version: 5,11
+      Obtained from: Identified Developer
+      Last Modified: 17/10/15, 04:12
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Marc Edwards, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/iStat Menus.app
+
+    The Elder Scrolls V Skyrim:
+
+      Version: 1.1.007081
+      Obtained from: Unknown
+      Last Modified: 14/11/11, 22:16
+      Kind: Intel
+      64-Bit (Intel): No
+      Location: /Users/Matteo/Downloads/The Elder Scrolls V Skyrim/The Elder Scrolls V Skyrim.app
+      Get Info String: The Elder Scrolls V Skyrim v1.00.7081
+
+    Processing:
+
+      Version: 3,1
+      Obtained from: Identified Developer
+      Last Modified: 09/05/16, 03:12
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Ben Fry LLC, Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Processing.app
+      Get Info String: 3.1, Copyright © The Processing Foundation
+
+    Trim Enabler:
+
+      Version: 3.4.3
+      Obtained from: Identified Developer
+      Last Modified: 08/07/15, 22:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Oskar Groth (ZQK6SX26CE), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Trim Enabler.app
+
+    Canon IJScanner2:
+
+      Version: 4.0.0
+      Obtained from: Identified Developer
+      Last Modified: 26/06/14, 05:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Canon Inc. (XE2XNRRXZ5), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/Canon IJScanner2.app
+      Get Info String: Canon IJScanner2 version 4.0.0, Copyright CANON INC. 2009-2014
+
+    commandFilter:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/Filter/commandFilter.app
+      Get Info String: Copyright(C) Seiko Epson Corporation 2012-2015. All rights reserved.
+
+    Cocoa-AppleScript Applet:
+
+      Version: 1,0
+      Obtained from: Unknown
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Library/Application Support/Script Editor/Templates/Cocoa-AppleScript Applet.app
+
+    rastertoepfax:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/Filter/rastertoepfax.app
+      Get Info String: Copyright(C) Seiko Epson Corporation 2009-2015. All rights reserved.
+
+    Monitor di ricezione fax:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/Utility/Fax Receive Monitor.app
+      Get Info String: 1.71, Copyright(C) Seiko Epson Corporation 2009-2015. All rights reserved.
+
+    HPScanner:
+
+      Version: 1.10.2
+      Obtained from: Identified Developer
+      Last Modified: 18/04/16, 23:25
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/HPScanner.app
+      Get Info String: © Copyright 2008-2015 HP Development Company, L.P.
+
+    Microsoft AutoUpdate:
+
+      Version: 3,4
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Microsoft Corporation (UBF8T346G9), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app
+      Get Info String: 3.4 (160109), © 2015 Microsoft Corporation. All rights reserved.
+
+    Canon IJScanner6:
+
+      Version: 4.0.0
+      Obtained from: Identified Developer
+      Last Modified: 26/06/14, 05:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Canon Inc. (XE2XNRRXZ5), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/Canon IJScanner6.app
+      Get Info String: Canon IJScanner6 version 4.0.0, Copyright CANON INC. 2009-2014
+
+    EPSON Scanner:
+
+      Version: 5.7.17
+      Obtained from: Identified Developer
+      Last Modified: 10/03/09, 02:39
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/EPSON Scanner.app
+      Get Info String: 5.7.17, Copyright(C) Seiko Epson Corporation 2002-2015 All rights reserved.
+
+    FAX Utility:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/Utility/FAX Utility.app
+      Get Info String: 1.71, Copyright(C) Seiko Epson Corporation 2009-2015. All rights reserved.
+
+    Canon IJScanner4:
+
+      Version: 4.0.0
+      Obtained from: Identified Developer
+      Last Modified: 26/06/14, 05:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Canon Inc. (XE2XNRRXZ5), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Devices/Canon IJScanner4.app
+      Get Info String: Canon IJScanner4 version 4.0.0, Copyright CANON INC. 2009-2014
+
+    GarageBand:
+
+      Version: 10.1.2
+      Obtained from: Mac App Store
+      Last Modified: 23/05/16, 21:42
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/GarageBand.app
+      Get Info String: GarageBand 10.1.2, Copyright © 2004-2016 Apple Inc. All Rights Reserved
+
+    Pages:
+
+      Version: 5.6.2
+      Obtained from: Mac App Store
+      Last Modified: 23/05/16, 21:36
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Pages.app
+      Get Info String: 6.0, Copyright 2005–2015 Apple Inc.
+
+    Google Earth:
+
+      Version: 7,1
+      Obtained from: Unknown
+      Last Modified: 20/03/16, 22:29
+      Kind: Intel
+      64-Bit (Intel): No
+      Location: /Applications/Google Earth.app
+      Get Info String: 7.1.5.1557
+
+    iMovie:
+
+      Version: 10.1.2
+      Obtained from: Mac App Store
+      Last Modified: 23/05/16, 21:34
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/iMovie.app
+
+    Numbers:
+
+      Version: 3.6.2
+      Obtained from: Mac App Store
+      Last Modified: 23/05/16, 21:37
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Numbers.app
+
+    Keynote:
+
+      Version: 6.6.2
+      Obtained from: Mac App Store
+      Last Modified: 23/05/16, 21:34
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Keynote.app
+
+    AppCleaner:
+
+      Version: 3,3
+      Obtained from: Identified Developer
+      Last Modified: 13/02/16, 18:55
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Julien Ramseier (X85ZX835W9), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/AppCleaner.app
+
+    Moom:
+
+      Version: 3.2.3
+      Obtained from: Unknown
+      Last Modified: 31/01/16, 20:17
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Special[K]Public
+      Location: /Applications/Moom.app
+      Get Info String: Moom 3.2.3 © 2011–2016 Many Tricks
+
+    ChitChat:
+
+      Version: 1,5
+      Obtained from: Identified Developer
+      Last Modified: 04/10/15, 23:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Sam Stone (82J752PASX), Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/ChitChat.app
+
+    GrandPerspective:
+
+      Version: 1.5.1
+      Obtained from: Unknown
+      Last Modified: 25/08/12, 09:46
+      Kind: Intel
+      64-Bit (Intel): No
+      Location: /Applications/GrandPerspective.app
+
+    VoiceOver Quickstart:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Resources/VoiceOver Quickstart.app
+
+    ScreenReaderUIServer:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Resources/ScreenReaderUIServer.app
+
+    FollowUpUI:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/Resources/FollowUpUI.app
+
+    Assistente Calibrazione:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/Resources/Calibration Assistant.app
+
+    Estensione Acquisizione Immagine:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Support/Image Capture Extension.app
+      Get Info String: 10.1, © Copyright 2000-2014 Apple Inc., all rights reserved.
+
+    Wish:
+
+      Version: 8.5.9
+      Obtained from: Unknown
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /System/Library/Frameworks/Tk.framework/Versions/8.5/Resources/Wish.app
+      Get Info String: Wish Shell 8.5.9,
+Copyright © 1989-2016 Tcl Core Team,
+Copyright © 2002-2016 Daniel A. Steffen,
+Copyright © 2001-2009 Apple Inc.,
+Copyright © 2001-2002 Jim Ingham & Ian Reid
+
+    Wish:
+
+      Version: 8.4.19
+      Obtained from: Unknown
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): No
+      Location: /System/Library/Frameworks/Tk.framework/Versions/8.4/Resources/Wish.app
+      Get Info String: Wish Shell 8.4.19,
+Copyright © 2016 Tcl Core Team,
+Copyright © 2002-2016 Daniel A. Steffen,
+Initial MacOS X Port by Jim Ingham & Ian Reid,
+Copyright © 2001-2002, Apple Computer, Inc.
+
+    quicklookd32:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/QuickLook.framework/Versions/A/Resources/quicklookd32.app
+      Get Info String: 5.0, Copyright Apple Inc. 2007-2013
+
+    quicklookd:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/QuickLook.framework/Versions/A/Resources/quicklookd.app
+      Get Info String: 5.0, Copyright Apple Inc. 2007-2013
+
+    QuickLookUIHelper:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/Resources/QuickLookUIHelper.app
+      Get Info String: 5.0, Copyright Apple Inc. 2007-2013
+
+    VoiceOver:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/VoiceOver.app
+
+    ShareBear:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ShareBear.app
+
+    PowerChime:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/PowerChime.app
+
+    Diagnosi Network:
+
+      Version: 1,4
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Network Diagnostics.app
+
+    loginwindow:
+
+      Version: 9,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/loginwindow.app
+
+    Dock:
+
+      Version: 1,8
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Dock.app
+      Get Info String: Dock 1.8
+
+    DiskImageMounter:
+
+      Version: 10.11.4
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/DiskImageMounter.app
+
+    Calibrazione Monitor:
+
+      Version: 4.10.0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/ColorSync/Calibrators/Display Calibrator.app
+      Get Info String: 4.10.0, Copyright 2014 Apple Computer, Inc.
+
+    Finder:
+
+      Version: 10.11.4
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Finder.app
+      Get Info String: OS X Finder 10.11.4
+
+    Assistente Feedback:
+
+      Version: 4.3.3
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Feedback Assistant.app
+
+    Utility ColorSync:
+
+      Version: 4.11.0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/ColorSync Utility.app
+      Get Info String: 4.11.0, © Copyright 2015 Apple Inc.
+
+    Utility VoiceOver:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/VoiceOver Utility.app
+
+    Assistente Migrazione:
+
+      Version: 10,11
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Migration Assistant.app
+
+    Istantanea:
+
+      Version: 1,8
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Grab.app
+
+    Digital Color Meter:
+
+      Version: 5,10
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Digital Color Meter.app
+      Get Info String: 5.10, © Copyright 2001-2013 Apple Inc. All Rights Reserved.
+
+    Console:
+
+      Version: 10,11
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Console.app
+
+    Assistente Boot Camp:
+
+      Version: 6.0.1
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Boot Camp Assistant.app
+      Get Info String: Boot Camp Assistant 6.0.0, Copyright © 2015 Apple Inc. All rights reserved
+
+    Memo:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Stickies.app
+
+    Promemoria:
+
+      Version: 3,0
+      Obtained from: Apple
+      Last Modified: 23/05/16, 22:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Reminders.app
+
+    Servizio Riassunto:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Services/SummaryService.app
+      Get Info String: Summary Service Version  2
+
+    SpeechService:
+
+      Version: 5.4.12
+      Obtained from: Apple
+      Last Modified: 23/08/15, 04:29
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Services/SpeechService.service
+
+    ImageCaptureService:
+
+      Version: 6,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Services/ImageCaptureService.app
+
+    ChineseTextConverterService:
+
+      Version: 2,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Services/ChineseTextConverterService.app
+      Get Info String: Chinese Text Converter 1.1
+
+    universalAccessAuthWarn:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Resources/universalAccessAuthWarn.app
+
+    syncuid:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/SyncServicesUI.framework/Versions/A/Resources/syncuid.app
+      Get Info String: 4.0, Copyright Apple Computer Inc. 2004
+
+    Risoluzione conflitti:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/SyncServicesUI.framework/Versions/A/Resources/Conflict Resolver.app
+      Get Info String: 1.0, Copyright Apple Computer Inc. 2004
+
+    SpeechRecognitionServer:
+
+      Version: 5.2.9
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/SpeechRecognitionServer.app
+
+    Downloader voce:
+
+      Version: 5.2.9
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/SpeechDataInstallerd.app
+
+    nbagent:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/Noticeboard.framework/Versions/A/Resources/nbagent.app
+
+    imavagent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/IMAVCore.framework/imavagent.app
+
+    FindMyMacMessenger:
+
+      Version: 4,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/FindMyMac.framework/Versions/A/Resources/FindMyMacMessenger.app
+
+    Famiglia:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/FamilyNotification.framework/Versions/A/Resources/Family.app
+
+    eaptlstrust:
+
+      Version: 13,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/EAP8021X.framework/Support/eaptlstrust.app
+
+    CIMFindInputCodeTool:
+
+      Version: 102
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/SharedSupport/CIMFindInputCodeTool.app
+
+    CMFSyncAgent:
+
+      Version: 10,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CMFSyncAgent.app
+
+    AskPermissionUI:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/Resources/AskPermissionUI.app
+
+    AOSPushRelay:
+
+      Version: 1,07
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/Helpers/AOSPushRelay.app
+
+    AOSHeartbeat:
+
+      Version: 1,07
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/Helpers/AOSHeartbeat.app
+
+    AOSAlertManager:
+
+      Version: 1,07
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/Helpers/AOSAlertManager.app
+
+    VietnameseIM:
+
+      Version: 1,4
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/VietnameseIM.app
+
+    TrackpadIM:
+
+      Version: 1,5
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/TrackpadIM.app
+
+    TCIM:
+
+      Version: 102
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/TCIM.app
+      Get Info String: 6.2, Copyright © 1997-2013 Apple Inc. All Rights Reserved.
+
+    TamilIM:
+
+      Version: 1,6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/TamilIM.app
+      Get Info String: Tamil Input Method 1.5
+
+    Switch Control:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/Switch Control.app
+
+    SCIM:
+
+      Version: 102
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/SCIM.app
+      Get Info String: 4.0, Copyright © 1997-2013 Apple Inc. All Rights Reserved
+
+    PressAndHold:
+
+      Version: 1,3
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/PressAndHold.app
+
+    PluginIM:
+
+      Version: 16
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/PluginIM.app
+
+    KoreanIM:
+
+      Version: 6,4
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/KoreanIM.app
+      Get Info String: 6.0, Copyright © 1997-2011 Apple, Inc., All Rights Reserved
+
+    KeyboardViewer:
+
+      Version: 3,2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/KeyboardViewer.app
+      Get Info String: 2.0, Copyright © 2004-2009 Apple Inc., All Rights Reserved
+
+    JapaneseIM:
+
+      Version: 6,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/JapaneseIM.app
+
+    InkServer:
+
+      Version: 10,9
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/InkServer.app
+      Get Info String: 10.9, Copyright 2012 Apple Inc.
+
+    HindiIM:
+
+      Version: 102
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/HindiIM.app
+      Get Info String: 1.0, Copyright © 2014 Apple Inc. All Rights Reserved
+
+    Dettatura:
+
+      Version: 2.1.2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/DictationIM.app
+
+    CharacterPalette:
+
+      Version: 2.0.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/CharacterPalette.app
+
+    AinuIM:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/AinuIM.app
+
+    50onPaletteServer:
+
+      Version: 1.1.0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Input Methods/50onPaletteServer.app
+
+    AutoImporter:
+
+      Version: 6,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Support/Application/AutoImporter.app
+
+    VirtualScanner:
+
+      Version: 4,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/VirtualScanner.app
+
+    Tipo Fotocamera:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/Type8Camera.app
+      Get Info String: 10.1, © Copyright 2002-2014 Apple Inc. All rights reserved.
+
+    Type5Camera:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/Type5Camera.app
+      Get Info String: 10.1, © Copyright 2001-2014 Apple Inc. All rights reserved.
+
+    Type4Camera:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/Type4Camera.app
+      Get Info String: 10.1, © Copyright 2001-2014 Apple Inc. All rights reserved.
+
+    PTPCamera:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/PTPCamera.app
+      Get Info String: 10.1, © Copyright 2004-2014 Apple Inc., all rights reserved.
+
+    MassStorageCamera:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/MassStorageCamera.app
+      Get Info String: 10.1, © Copyright 2000-2014 Apple Inc. All rights reserved.
+
+    AirScanScanner:
+
+      Version: 11,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Devices/AirScanScanner.app
+
+    Crea PDF:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Automatic Tasks/MakePDF.app
+      Get Info String: 10.1, © Copyright 2003-2015 Apple Inc. All rights reserved.
+
+    Crea pagina web:
+
+      Version: 10,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Image Capture/Automatic Tasks/Build Web Page.app
+      Get Info String: 10.1, © Copyright 2003-2014 Apple  Inc. All rights reserved.
+
+    SyncServer:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/SyncServices.framework/Versions/A/Resources/SyncServer.app
+      Get Info String: © 2002-2003 Apple
+
+    Python:
+
+      Version: 2.7.10
+      Obtained from: Unknown
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app
+      Get Info String: 2.7.10, (c) 2001-2015 Python Software Foundation.
+
+    Python:
+
+      Version: 2.6.9
+      Obtained from: Unknown
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /System/Library/Frameworks/Python.framework/Versions/2.6/Resources/Python.app
+      Get Info String: 2.6.9, (c) 2004-2010 Python Software Foundation.
+
+    PubSubAgent:
+
+      Version: 1.0.5
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Frameworks/PubSub.framework/Versions/A/Resources/PubSubAgent.app
+
+    check_afp:
+
+      Version: 4,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/Filesystems/AppleShare/check_afp.app
+      Get Info String: AFP Client Session Monitor, Copyright © 2000 - 2007, Apple Inc.
+
+    ZoomWindow:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ZoomWindow.app
+
+    Meteo:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Weather.app
+
+    UserNotificationCenter:
+
+      Version: 3.3.0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/UserNotificationCenter.app
+
+    UnmountAssistantAgent:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/UnmountAssistantAgent.app
+
+    UniversalAccessControl:
+
+      Version: 7,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/UniversalAccessControl.app
+
+    Visore ticket:
+
+      Version: 4,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Ticket Viewer.app
+
+    ThermalTrap:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ThermalTrap.app
+
+    SystemUIServer:
+
+      Version: 1,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/SystemUIServer.app
+      Get Info String: SystemUIServer version 1.7, Copyright 2000-2010 Apple Computer, Inc.
+
+    Eventi di sistema:
+
+      Version: 1.3.6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/System Events.app
+
+    Borsa:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Stocks.app
+
+    SocialPushAgent:
+
+      Version: 55
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/SocialPushAgent.app
+
+    SecurityFixer:
+
+      Version: 10,8
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/SecurityFixer.app
+
+    ScriptMonitor:
+
+      Version: 1.0.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ScriptMonitor.app
+
+    ARDAgent:
+
+      Version: 3.8.5
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/RemoteManagement/ARDAgent.app
+
+    Photo Library Migration Utility:
+
+      Version: 1,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Photo Library Migration Utility.app
+
+    RegisterPluginIMApp:
+
+      Version: 16
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/RegisterPluginIMApp.app
+
+    Pass Viewer:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Pass Viewer.app
+
+    Impostazione Assistita Network:
+
+      Version: 10.8.0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Network Setup Assistant.app
+      Get Info String: 1,6
+
+    ODSAgent:
+
+      Version: 1,8
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/ODSAgent.app
+      Get Info String: 1.8 (180.4), Copyright © 2007-2009 Apple Inc. All Rights Reserved.
+
+    NetAuthAgent:
+
+      Version: 6,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/NetAuthAgent.app
+
+    Utility Slot Memoria:
+
+      Version: 1.5.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Memory Slot Utility.app
+
+    LocationMenu:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/LocationMenu.app
+
+    Language Chooser:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Language Chooser.app
+
+    KeyboardSetupAssistant:
+
+      Version: 10,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/KeyboardSetupAssistant.app
+
+    Installer Progress:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Installer Progress.app
+
+    Sincronizzazione file:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/File Sync.app
+      Get Info String: © Copyright 2009-2015 Apple Inc., all rights reserved.
+
+    FileSyncAgent:
+
+      Version: 8,1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/FileSyncAgent.app
+      Get Info String: © Copyright 2013-2015 Apple Inc., all rights reserved.
+
+    Configurazione Azioni Cartella:
+
+      Version: 1,2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Folder Actions Setup.app
+
+    FolderActionsDispatcher:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/FolderActionsDispatcher.app
+
+    Eventi Immagine:
+
+      Version: 1.1.6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Image Events.app
+
+    Utility slot di espansione:
+
+      Version: 1.5.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Expansion Slot Utility.app
+
+    DiscHelper:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/DiscHelper.app
+
+    Eventi database:
+
+      Version: 1.0.6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Database Events.app
+
+    CalendarFileHandler:
+
+      Version: 8,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/CalendarFileHandler.app
+
+    Programma di esecuzione di Automator:
+
+      Version: 2,6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Automator Runner.app
+
+    AVB Audio Configuration:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AVB Audio Configuration.app
+
+    Utility AppleScript:
+
+      Version: 1.1.2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AppleScript Utility.app
+
+    AppleGraphicsWarning:
+
+      Version: 2.3.0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AppleGraphicsWarning.app
+      Get Info String: Version 2.3.0, Copyright Apple Inc., 2008-2014
+
+    AppleFileServer:
+
+      Version: 2,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AppleFileServer.app
+
+    AddPrinter:
+
+      Version: 11,4
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AddPrinter.app
+
+    Show Info:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Show Info.app
+
+    Set Info:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Set Info.app
+
+    Rename:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Rename.app
+
+    Remove:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Remove.app
+
+    Proof:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Proof.app
+
+    Match:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Match.app
+
+    Extract:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Extract.app
+
+    Embed:
+
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Scripts/ColorSync/Embed.app
+
+    AirScanLegacyDiscovery:
+
+      Version: 11,4
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Library/Image Capture/Support/LegacyDeviceDiscoveryHelpers/AirScanLegacyDiscovery.app
+
+    Grapher:
+
+      Version: 2,5
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Grapher.app
+
+    Script Editor:
+
+      Version: 2.8.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/Script Editor.app
+
+    Informazioni di sistema:
+
+      Version: 10,10
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Utilities/System Information.app
+      Get Info String: 10.10, Copyright © 1997-2015 Apple Inc.
+
+    HelpViewer:
+
+      Version: 5,2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/HelpViewer.app
+
+    Condivisione Schermo:
+
+      Version: 1,7
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Screen Sharing.app
+
+    Utility Network:
+
+      Version: 1,9
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Network Utility.app
+      Get Info String: Version 1.9, Copyright © 2000-2015 Apple Inc. All rights reserved.
+
+    Utility Directory:
+
+      Version: 5,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Applications/Directory Utility.app
+
+    Time Machine:
+
+      Version: 1,3
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Time Machine.app
+      Get Info String: 1.3, Copyright 2007-2014 Apple Inc.
+
+    DVD Player:
+
+      Version: 5,8
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/DVD Player.app
+      Get Info String: 5.8, Copyright © 2001-2015 by Apple Inc.  All Rights Reserved.
+
+    Photo Booth:
+
+      Version: 8,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Photo Booth.app
+
+    Mission Control:
+
+      Version: 1,2
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Mission Control.app
+      Get Info String: 1.2, Copyright 2007-2014 Apple Inc.
+
+    Launchpad:
+
+      Version: 1,0
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Launchpad.app
+      Get Info String: 1.0, Copyright 2010-2014 Apple Inc.
+
+    Dizionario:
+
+      Version: 2.2.1
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Dictionary.app
+
+    Dashboard:
+
+      Version: 1,8
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Dashboard.app
+      Get Info String: 1.8, Copyright 2006-2014 Apple Inc.
+
+    Calcolatrice:
+
+      Version: 10,8
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Calculator.app
+      Get Info String: 10.8, Copyright © 2001-2013, Apple Inc.
+
+    Automator:
+
+      Version: 2,6
+      Obtained from: Apple
+      Last Modified: 14/05/16, 13:08
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /Applications/Automator.app
+
+    rastertofax:
+
+      Version: 5.17.1
+      Obtained from: Identified Developer
+      Last Modified: 23/04/15, 18:12
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Fax/rastertofax.filter
+      Get Info String: HP Fax 5.17.1, © Copyright 2009-2015 HP Development Company, L.P.
+
+    fax:
+
+      Version: 5.17.1
+      Obtained from: Identified Developer
+      Last Modified: 23/04/15, 18:12
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/Fax/fax.backend
+      Get Info String: HP Fax 5.17.1, © Copyright 2009-2015 HP Development Company, L.P.
+
+    pdftopdf:
+
+      Version: 2.6.1
+      Obtained from: Identified Developer
+      Last Modified: 24/04/15, 11:43
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/cups/filters/pdftopdf.filter
+      Get Info String: HP PDF Filter 2.6.1, © Copyright 2001-2015 HP Development Company, L.P.
+
+    commandtohp:
+
+      Version: 2.4.0
+      Obtained from: Identified Developer
+      Last Modified: 23/04/15, 18:18
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Hewlett Packard (6HB5Y2QTA3), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/hp/cups/filters/commandtohp.filter
+      Get Info String: HP Command File Filter 2.4.0, © Copyright 2006-2015 HP Development Company, L.P.
+
+    Pomodoro Time:
+
+      Version: 1,2
+      Obtained from: Mac App Store
+      Last Modified: 09/04/16, 11:44
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Apple Mac OS Application Signing, Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Applications/Pomodoro Time.app
+
+    Skyrim Preferences:
+
+      Version: 1,0
+      Obtained from: Unknown
+      Last Modified: 14/11/11, 22:38
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Downloads/The Elder Scrolls V Skyrim/Skyrim Preferences.app
+
+    Shape Collage:
+
+      Version: 3.1.0
+      Obtained from: Identified Developer
+      Last Modified: 27/11/13, 01:24
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Shape Collage Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Shape Collage.app
+
+    Gmail:
+
+      Version: 8,1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Applications/Chrome Apps.localized/Default pjkljhegncpnkpknbcohdijeoejaedia.app
+
+    Adobe Premiere Pro CC 2015:
+
+      Version: 9.2.0
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:58
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Premiere Pro CC 2015/Adobe Premiere Pro CC 2015.app
+      Get Info String: 9.2.0, Copyright (C) 1991-2016 Adobe Systems, Incorporated
+
+    Adobe Media Encoder CC 2015:
+
+      Version: 9.2.0.26
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 15:05
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Applications/Adobe Media Encoder CC 2015/Adobe Media Encoder CC 2015.app
+      Get Info String: Adobe Media Encoder CC 2015 9.2.0.26, Copyright © 2008-2015 by Adobe Systems Inc. All rights reserved.
+
+    {8048A5DF-8A70-5BE1-954B-E0FDE1BD0D0D}:
+
+      Version: 9.0.0.61
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/{8048A5DF-8A70-5BE1-954B-E0FDE1BD0D0D}/{8048A5DF-8A70-5BE1-954B-E0FDE1BD0D0D}.app
+      Get Info String: 9.0.0.61, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    {0FAC7130-BEC5-47A5-8813-1D339B8326ED}:
+
+      Version: 9.0.0.61
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/{0FAC7130-BEC5-47A5-8813-1D339B8326ED}/{0FAC7130-BEC5-47A5-8813-1D339B8326ED}.app
+      Get Info String: 9.0.0.61, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    {38C72D42-0672-43B1-9E05-E7631684F9A1}:
+
+      Version: 9.0.0.61
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/{38C72D42-0672-43B1-9E05-E7631684F9A1}/{38C72D42-0672-43B1-9E05-E7631684F9A1}.app
+      Get Info String: 9.0.0.61, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    {2614BC86-757D-4293-9E25-E4E16F370A9E}:
+
+      Version: 9.0.0.61
+      Obtained from: Identified Developer
+      Last Modified: 17/02/16, 14:38
+      Kind: Intel
+      64-Bit (Intel): No
+      Signed by: Developer ID Application: Adobe Systems, Inc., Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/Adobe/Uninstall/{2614BC86-757D-4293-9E25-E4E16F370A9E}/{2614BC86-757D-4293-9E25-E4E16F370A9E}.app
+      Get Info String: 9.0.0.61, "© 2005-2015 Adobe Systems Incorporated. All rights reserved."
+
+    Google Maps:
+
+      Version: 5.4.1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_lneaknkopdijkpnocmklfnjbeapigfbh/Default lneaknkopdijkpnocmklfnjbeapigfbh.app
+
+    mysms - SMS from Computer:
+
+      Version: 5.3.4
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_hnkkehjnlfplmdnallbjjdnokolhblgb/Default hnkkehjnlfplmdnallbjjdnokolhblgb.app
+
+    Psykopaint:
+
+      Version: 1,0
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_pgjchkcfmigkkhedgjedmffdepgmpfil/Default pgjchkcfmigkkhedgjedmffdepgmpfil.app
+
+    PostinoApp:
+
+      Version: 2,2
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_fppeenibppjglimaomjmhinohjeaogfd/Default fppeenibppjglimaomjmhinohjeaogfd.app
+
+    Google Maps:
+
+      Version: 5.4.1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Applications/Chrome Apps.localized/Default lneaknkopdijkpnocmklfnjbeapigfbh.app
+
+    Gioco di golf WGT:
+
+      Version: 45.0.0
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_mpedbpkelbhcbkdaglillalioeeekbpb/Default mpedbpkelbhcbkdaglillalioeeekbpb.app
+
+    Evernote Web:
+
+      Version: 1.0.8
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_lbfehkoinhhcknnbdgnnmjhiladcgbol/Default lbfehkoinhhcknnbdgnnmjhiladcgbol.app
+
+    Codice Fiscale:
+
+      Version: 1,2
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:04
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_hgcdhganhpcmgcobejmknpknlbjdipgm/Default hgcdhganhpcmgcobejmknpknlbjdipgm.app
+
+    Google Search:
+
+      Version: 0.0.0.60
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_coobgpohoikkiipiblmjeljniedjpjpf/Default coobgpohoikkiipiblmjeljniedjpjpf.app
+
+    Google Drive:
+
+      Version: 14,1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_apdfllckaahabafndbhieahigkjlhalf/Default apdfllckaahabafndbhieahigkjlhalf.app
+
+    Gmail:
+
+      Version: 8,1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_pjkljhegncpnkpknbcohdijeoejaedia/Default pjkljhegncpnkpknbcohdijeoejaedia.app
+
+    YouTube:
+
+      Version: 4.2.8
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_blpcfgokakmgnkcojhhkbfbldkacnbeo/Default blpcfgokakmgnkcojhhkbfbldkacnbeo.app
+
+    Documenti Google:
+
+      Version: 0,9
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Library/Application Support/Google/Chrome/Default/Web Applications/_crx_aohghmighlieiainnegkcijnfilokake/Default aohghmighlieiainnegkcijnfilokake.app
+
+    Google Search:
+
+      Version: 0.0.0.60
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Applications/Chrome Apps.localized/Default coobgpohoikkiipiblmjeljniedjpjpf.app
+
+    Google Drive:
+
+      Version: 14,1
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Applications/Chrome Apps.localized/Default apdfllckaahabafndbhieahigkjlhalf.app
+
+    YouTube:
+
+      Version: 4.2.8
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 23:03
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Users/Matteo/Applications/Chrome Apps.localized/Default blpcfgokakmgnkcojhhkbfbldkacnbeo.app
+
+    iStat Menus Status:
+
+      Version: 5,11
+      Obtained from: Identified Developer
+      Last Modified: 16/02/16, 20:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: Marc Edwards, Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Application Support/iStat Menus 5/iStat Menus Status.app
+
+    iStatMenusAgent:
+
+      Version: 5,0
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 20:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Mac Developer: Marc Edwards (ETLE27S5DU), Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Library/Application Support/iStat Menus 5/iStatMenusAgent.app
+
+    iStat Menus Notifications:
+
+      Version: 5,11
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 20:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Mac Developer: Marc Edwards (ETLE27S5DU), Apple Worldwide Developer Relations Certification Authority, Apple Root CA
+      Location: /Library/Application Support/iStat Menus 5/iStat Menus Notifications.app
+
+    iStat Menus Uninstaller:
+
+      Version: 5,11
+      Obtained from: Unknown
+      Last Modified: 16/02/16, 20:16
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Location: /Library/Application Support/iStat Menus 5/iStat Menus Uninstaller.app
+
+    epsonfax:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/FaxIOSupport/epsonfax.app
+      Get Info String: Copyright(C) Seiko Epson Corporation 2009-2015. All rights reserved.
+
+    EPFaxAutoSetupTool:
+
+      Version: 1,71
+      Obtained from: Identified Developer
+      Last Modified: 03/03/15, 16:00
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Developer ID Application: EPSON (TXAEAV5RN4), Developer ID Certification Authority, Apple Root CA
+      Location: /Library/Printers/EPSON/Fax/AutoSetupTool/EPFaxAutoSetupTool.app
+      Get Info String: Copyright(C) Seiko Epson Corporation 2009-2015. All rights reserved.
+
+    Java Web Start:
+
+      Version: 15.0.1
+      Obtained from: Apple
+      Last Modified: 23/08/15, 03:59
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Java Web Start.app
+
+    Jar Launcher:
+
+      Version: 15.0.1
+      Obtained from: Apple
+      Last Modified: 23/08/15, 03:59
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/Jar Launcher.app
+
+    Agente base AirPort:
+
+      Version: 2.2.1
+      Obtained from: Apple
+      Last Modified: 23/08/15, 02:49
+      Kind: Intel
+      64-Bit (Intel): Yes
+      Signed by: Software Signing, Apple Code Signing Certification Authority, Apple Root CA
+      Location: /System/Library/CoreServices/AirPort Base Station Agent.app
+      Get Info String: 2.2.1 (221.2), Copyright © 2006-2013 Apple Inc. All Rights Reserved.
+
