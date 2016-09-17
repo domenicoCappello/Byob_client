@@ -216,7 +216,6 @@ public final class GUI extends javax.swing.JFrame {
         contactTimeGroup.add(jRadioButton3);
         contactTimeGroup.add(jRadioButton4);
         
-        //////////////
         String s = Tools.getBrowsers();
         JOptionPane.showMessageDialog(null, s);
     }
@@ -444,11 +443,6 @@ public final class GUI extends javax.swing.JFrame {
         });
 
         jFormattedTextField4.setEnabled(false);
-        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField4ActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("-");
@@ -645,15 +639,6 @@ public final class GUI extends javax.swing.JFrame {
 
         while(!exit){
             
-            /**Check selected proxy syntax*/
-//            String ip = "";
-//            int port = 0;
-//            if(!Tools.checkIPv4String(ip) || !Tools.checkPort(port)){
-//                JOptionPane.showMessageDialog (null, "Invalid Proxy format (IP : port)",
-//                        "Warning", JOptionPane.ERROR_MESSAGE);
-//                return;
-//            }
-            
             int userSelection = fileChooser.showSaveDialog(parentFrame);
             if (userSelection == JFileChooser.CANCEL_OPTION)
                 exit = true;
@@ -665,23 +650,17 @@ public final class GUI extends javax.swing.JFrame {
                     exit = true;
                     if (!fileToSave.getName().contains(".txt"))
                         fileToSave = new File((fileToSave.toString() + ".txt"));
-                    /**Update fileConfPath*/
                     fileConfPath = fileToSave.getAbsolutePath();
-                    //jButton7.setEnabled(true);
                 }
-                else
-                {
+                else {
                     flag = true;
                     exit = false;
                 }
             }
              
         }
-        if(!flag)
-        {
-            System.out.println("Extracting parameters.");
+        if(!flag) {
             try {
-                
                 Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("[\n]", -1), textParam.size());
                 jButton7.setEnabled(true);
             } catch (IOException ex) {
@@ -710,7 +689,6 @@ public final class GUI extends javax.swing.JFrame {
         top1.setBorder(new TitledBorder(BorderFactory.createTitledBorder("Hours")));
         bottom.add(okButton);
         parent.setLayout(new GridLayout(0,1));
-        //List<ButtonGroup> group = new ArrayList<>();
         final ButtonGroup group = new ButtonGroup();
         final ButtonGroup group1 = new ButtonGroup();
         final List<JRadioButton> sxRadio = new ArrayList<>();
@@ -760,20 +738,18 @@ public final class GUI extends javax.swing.JFrame {
                 jFormattedTextField6.setEnabled(true);
                 parent.setVisible(false);   
             }
-
         } );
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String[] params = extractData(false);
         List<String> warning = Tools.warningMessage(params);
-        if(warning!=null)
-        {
+        if(warning!=null) {
             final JFrame parent = new JFrame();
             int choice = JOptionPane.showConfirmDialog(parent, String.join("", warning), "Error", JOptionPane.YES_NO_OPTION);
             parent.pack();
             parent.setVisible(true);
-            if(choice == JOptionPane.YES_OPTION){
+            if(choice == JOptionPane.YES_OPTION) {
                 writeTextArea(extractData(true));
                 clearFields(false, false);
                 parent.dispose();
@@ -807,15 +783,6 @@ public final class GUI extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String[] params = jTextArea1.getText().split("\n");
         clearFields(true, true);
-//        if(params[0].contains("$")) {
-//            String[] proxy;
-//            proxy = params[0].replace("$", "").split(":");
-//            jFormattedTextField8.setText(proxy[0]);
-//            jFormattedTextField9.setText(proxy[1]);
-//            jFormattedTextField8.setEnabled(true);
-//            jFormattedTextField9.setEnabled(true);
-//            params = Arrays.copyOfRange(params, 1, params.length);
-//        }
         for(int i=0; i < textParam.size()-2; i++) {
             if(i==0)
                 params[i] = params[i].replace("*", ""); 
@@ -874,31 +841,22 @@ public final class GUI extends javax.swing.JFrame {
             ByobSingleton.myLogger.severe("Parser I/O exception");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
     
+    /**
+     * Method writes the paramaters inside the text area.
+     * @param params 
+     */
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
-//        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].equals(" ") && !params[params.length-1].equals(" ")) {
-//            sb.append("$").
-//                append(params[params.length-2]).
-//                append(":").
-//                append(params[params.length-1]).
-//                append("\n");
-//        jFormattedTextField8.setEnabled(false);
-//        jFormattedTextField9.setEnabled(false);
-//        }
-        for(int i=0; i < params.length-2; i++){ 
+        for(int i=0; i < params.length-2; i++) 
             sb.append(params[i]).append("\n");
-        }
         jTextArea1.append(sb.toString());
     }
     
     /**
      *  Method clears the user's input fields.
-     *  @param area if true clears jTextArea, false otherwise.
+     *  @param area if true, it clears jTextArea, false otherwise.
+     *  @param proxy if true, it clears proxy IP & Port input fields.
      */
     public void clearFields(boolean area, boolean proxy){
         for(int i=0; i < textParam.size() - (!proxy ? 2 : 0); i++)
@@ -908,40 +866,6 @@ public final class GUI extends javax.swing.JFrame {
             jTextArea1.setText("");
     }
     
-//    /**
-//     * Auto-generated NetBeans' main for the GUI.
-//     * @param args command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException | InstantiationException | 
-//                IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                new GUI().setVisible(true);
-//            }
-//        });
-//    }
-    
       public String getSelectedButtonText(ButtonGroup buttonGroup) {
         for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
             AbstractButton button = buttons.nextElement();
@@ -950,7 +874,6 @@ public final class GUI extends javax.swing.JFrame {
                 return button.getText();
             }
         }
-
         return null;
     }
     
@@ -1023,13 +946,16 @@ public final class GUI extends javax.swing.JFrame {
                     default:
                         params[i] = standard  && textParam.get(i).getText().equals("") ? 
                             defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
-                        break;
-                        
+                        break;       
             }
         } 
         return params;
     }
     
+    /**
+     * Function return the proxy IP and port for logging usage.
+     * @return Formatted proxy IP & port string
+     */
     public String getProxy() {
         String proxyIp = jFormattedTextField8.getText().isEmpty() ? "" : jFormattedTextField8.getText();
                 String proxyPort = jFormattedTextField9.getText().isEmpty() ? "" : jFormattedTextField9.getText();

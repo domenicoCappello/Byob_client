@@ -41,7 +41,6 @@ public class ByobComm {
      * @return 
      */
     static int httpGet(String url, String userAgent, Boolean waitForResponse){
-        
         return httpGet(url, userAgent, "", -1, waitForResponse);
     }
     
@@ -84,31 +83,7 @@ public class ByobComm {
             
         } catch (IOException ex) {
             ByobSingleton.getInstance().myLogger.severe("IOException");
-            System.out.println(proxyIp + " : " + proxyPort);
-            ex.printStackTrace();
             return -2; 
         }   
-    }
-    
-    /**
-    * Function returns true if there's a response code from the contacted URL.
-    * @param url String of site's URL to contact.
-    * @exception MalformedURLException
-    * @exception IOException
-    * @return Boolean if the URL answers or not.
-    */
-    static boolean URLResponse(String url) {
-        try {
-            HttpURLConnection connection = (HttpURLConnection) new URL(url.replace("*", "")).openConnection();
-            int response = connection.getResponseCode();
-            connection.disconnect();
-            return true;
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        } catch (IOException ex) {
-            Logger.getLogger(ByobComm.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
     }
 }

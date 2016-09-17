@@ -2,13 +2,10 @@ package byob_v1;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.IOException;
-import java.util.ArrayList;
-
 
 /**
- *  Class contains the main method who invokes the GUI and invokes parsing method
- *  to extract the user configuration parameters.
+ *  Class contains the main method that writes OS & browser's information file
+ *  and invokes the GUI.
  *  @author Cappello, Nazio
  */
 public class Byob_v1 {
