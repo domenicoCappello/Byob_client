@@ -20,49 +20,30 @@ public class ByobComm {
     */
     ByobComm(){}
     
+    /**
+     * httpGet performs a http connection to the url and eventually waits 
+     * for the server response
+     * @param url String of the URL to contact
+     * @param waitForResponse Whether or not wait for the server response
+     * @return Response code from the URL (-1 if it is Malformed, -2 for Input Error)
+     */
     static int httpGet(String url, Boolean waitForResponse){
         
         return httpGet(url, "", "", -1, waitForResponse);
     }
     
+    /**
+     * httpGet performs a http connection (using the user agent userAgent) 
+     * to the url and eventually waits for the server response
+     * @param url
+     * @param userAgent
+     * @param waitForResponse
+     * @return 
+     */
     static int httpGet(String url, String userAgent, Boolean waitForResponse){
         
         return httpGet(url, userAgent, "", -1, waitForResponse);
     }
-    
-//    static void asyncHttpGet(String url, String userAgent, String proxyIp, int proxyPort) throws InterruptedException, ExecutionException{
-//    
-//        AsyncHttpClient asyncHttpClient;
-//        if(proxyPort > 0){
-//            AsyncHttpClientConfig cf = new DefaultAsyncHttpClientConfig.Builder()
-//                .setProxyServer(new ProxyServer.Builder(proxyIp, proxyPort)).build();
-//
-//            asyncHttpClient = new DefaultAsyncHttpClient(cf);
-//        } else {
-//            asyncHttpClient = new DefaultAsyncHttpClient();
-//        }
-//
-//
-//        Future<Integer> f = asyncHttpClient.prepareGet(url).execute(
-//            new AsyncCompletionHandler<Integer>(){
-//
-//            @Override
-//            public Integer onCompleted(Response response) throws Exception{
-//                // Do something with the Response
-//                System.out.println(response.getStatusCode());
-//                return response.getStatusCode();
-//            }
-//
-//            @Override
-//            public void onThrowable(Throwable t){
-//                // Something wrong happened.
-//            }
-//
-//        });
-//
-//        System.out.println(f.get());
-//    
-//}
     
     /**
     * Function returns the response code of the HTTP's GET method.
@@ -73,7 +54,7 @@ public class ByobComm {
     * @param waitForResponse Choice to wait for a response from url or not.
     * @exception MalformedURLException
     * @exception IOException
-    * @return Response code from the URL (-1 if it is Malformed, -2 for Input Error)
+    * @return Response code from the URL (-1 if it is Malformed, -2 for I/O Exc)
     */
     static int httpGet(String url, String userAgent, String proxyIp, int proxyPort, Boolean waitForResponse) {  
         String charset = "UTF-8"; 
