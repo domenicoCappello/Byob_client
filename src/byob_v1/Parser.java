@@ -11,7 +11,6 @@ import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.logging.Level;
 
 /**
  * Class manages every aspect of the configuration file like its creation and reading,
@@ -20,8 +19,13 @@ import java.util.logging.Level;
  */
 public class Parser {
     
+    // Name of the file
     static String FILE_NAME;
+    
+    // Encoding of the file
     static Charset ENCODING;
+    
+    // Tags for the parameters' log file
     static String[] tags = {
         "url ",
         "minT",
@@ -57,64 +61,65 @@ public class Parser {
         return readConfigurationFile(FILE_NAME);
     }
   
-  /**
-   * Function returns configuration values of a file.
-   * @param fileName full name of an existing, readable .txt file.
-   * @return Variables' list of values
-   * @throws java.io.IOException
-   * @throws java.io.FileNotFoundException
-  */
-  public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
-  
-    BufferedReader br = new BufferedReader(new FileReader(fileName));
-    ArrayList<URLDetails> configuration = new ArrayList<>();
-    String url;
-    Boolean first = true;
-    String delim = ";";
-    while ((url = br.readLine()) != null) {
-        
-        //Search at the beginning of the configuration file for proxy setup
-        if (first){
-            first = false;
-            if (url.charAt(0) == '$'){
-                String[] proxyDet = splitString(url.substring(1), ":");
-                URLDetails.setProxy(proxyDet[0], Integer.parseInt(proxyDet[1]));
-                System.out.println(proxyDet[0] + ":" + proxyDet[1]);
-                continue;
+    /**
+    * Function returns configuration values of a file.
+    * @param fileName full name of an existing, readable .txt file.
+    * @return Variables' list of values
+    * @throws java.io.IOException
+    * @throws java.io.FileNotFoundException
+    */
+    public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
+
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        ArrayList<URLDetails> configuration = new ArrayList<>();
+        String url;
+        Boolean first = true;
+        String delim = ";";
+        while ((url = br.readLine()) != null) {
+
+            //Search at the beginning of the configuration file for proxy setup
+            if (first){
+                first = false;
+                if (url.charAt(0) == '$'){
+                    String[] proxyDet = splitString(url.substring(1), ":");
+                    URLDetails.setProxy(proxyDet[0], Integer.parseInt(proxyDet[1]));
+                    System.out.println(proxyDet[0] + ":" + proxyDet[1]);
+                    continue;
+                }
             }
+
+            //Check URL identification char
+            if(!url.contains("*")){
+                System.err.println("Error in configuration file, aborting");
+                System.exit(-1);
+            }
+
+            // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
+            String contact = url.substring(1);
+            String line;
+            for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
+                if ((line = br.readLine()) != null)
+                   contact = contact + delim + line;
+            }
+
+            //Build detail string array
+            String[] detail = splitString(contact, delim);
+
+            // Build URLDetails obj and add to configuration arrayList
+            URLDetails det = convertParam(detail);
+            if(det == null){
+                String logError = "Parser error: " + url + " can't be processed";
+                ByobSingleton.getInstance().myLogger.severe(logError);
+            }
+            else
+                configuration.add(det);
         }
         
-        //Check URL identification char
-        if(!url.contains("*")){
-          System.err.println("Error in configuration file, aborting");
-          System.exit(-1);
-        }
-        
-        // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
-        String contact = url.substring(1);
-        String line;
-        for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
-            if ((line = br.readLine()) != null)
-              contact = contact + delim + line;
-        }
-        
-        //Build detail string array
-        String[] detail = splitString(contact, delim);
-        
-        // Build URLDetails obj and add to configuration arrayList
-        URLDetails det = convertParam(detail);
-        if(det == null){
-            String logError = "Parser error: " + url + " can't be processed";
-            ByobSingleton.getInstance().myLogger.severe(logError);
-        }
-        else
-            configuration.add(det);
+        br.close();    
+        return configuration;
     }
-    br.close();    
-    return configuration;
-  }
   
-  /**
+    /**
      * Function runs a command on the host's command line and captures
      * the result from the console.
      * @param fileToWrite
@@ -136,6 +141,11 @@ public class Parser {
         }
      }
     
+    /**
+     * Method writes the configuration parameters inside the log file.
+     * @param proxy Proxy IP & port
+     * @param params Configuration parameters    
+     */
     public static void writeParamsFile(String proxy, String[] params) {    
         String delimiter = "----------------------------------";
         StringBuilder sb = new StringBuilder();
