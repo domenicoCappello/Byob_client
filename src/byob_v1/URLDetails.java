@@ -28,8 +28,10 @@ public class URLDetails {
     // Number of contacts to the URL
     private long contactsNum;
     
-    // Sleep Condition
-    private String sleepMode;   // xy, x = O/E/'' : Odd/Even day of the week, y = A/P/'' : AM/PM hour of the day
+    // Sleep Condition xy
+    // x = O/E/'' : Odd/Even day of the week 
+    // y = A/P/'' : AM/PM hour of the day
+    private String sleepMode;   
     
     // User-Agent string
     private String userAgent;
