@@ -37,6 +37,10 @@ public class Tools {
         }
     }
     
+    /**
+     * Method writes the OS and installed browsers' information in a file.
+     * @param fileName Name of the file to be written
+     */
     public static void writeInfoFile(String fileName){
         
         File file = new File(fileName);
@@ -172,7 +176,11 @@ public class Tools {
         return browsers;
     }
     
-    
+    /**
+     * Function runs an instruction in MAC OS' command line.
+     * @param file  name of the file
+     * @return output of the instruction
+     */
     private static String macProfilerTermOut(String file){
         String[] args = new String[] {"/bin/bash", "-c", "grep -e \"Google Chrome:\""
                 + " -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" "
