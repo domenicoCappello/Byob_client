@@ -40,8 +40,8 @@ public class Tools {
     public static void writeInfoFile(String fileName){
         
         File file = new File(fileName);
-        String text = getOs() + " " +
-                      System.getProperty("os.arch") + "\n\n" + 
+        String text = "OS: " + getOs() + " " +
+                      System.getProperty("os.arch") + "\n" + 
                       "Installed Browsers: \n" +
                       getBrowsers();
         

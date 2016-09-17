@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Byob_v1 {
 
     public static void main(String[] args) {
-
+        Tools.writeInfoFile("browsers.txt");
         GUI frame = new GUI();
         final Toolkit toolkit = Toolkit.getDefaultToolkit();
         final Dimension screenSize = toolkit.getScreenSize();
@@ -23,8 +23,6 @@ public class Byob_v1 {
         frame.setTitle("BYOB v_1");
         frame.setLocation(x, y);
         frame.setVisible(true);
-//        Tools.writeInfoFile("browsers.txt");
-
 //        String file = "geppconf2.txt";
 //        Parser parser = new Parser(file);
 //        try {
@@ -33,17 +31,7 @@ public class Byob_v1 {
 //        } catch (IOException ex) {
 //            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
 //        }
-//        while(true);
-        
-//        System.out.printf(Tools.getBrowsers());
-
-        
-//        Tools.getBrowsers();
-        
-//        while(byobWrapper.ses.isTerminated()){
-//            // sleep and write to C&C (?)
-//        }
-        
+//        while(true);   
     }
     
 }
