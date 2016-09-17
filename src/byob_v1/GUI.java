@@ -667,7 +667,7 @@ public final class GUI extends javax.swing.JFrame {
                         fileToSave = new File((fileToSave.toString() + ".txt"));
                     /**Update fileConfPath*/
                     fileConfPath = fileToSave.getAbsolutePath();
-                    jButton7.setEnabled(true);
+                    //jButton7.setEnabled(true);
                 }
                 else
                 {
@@ -681,7 +681,9 @@ public final class GUI extends javax.swing.JFrame {
         {
             System.out.println("Extracting parameters.");
             try {
-                Parser.writeConfigurationFile(fileToSave, jTextArea1.getText().split("\n", -1), textParam.size());
+                
+                Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("[\n]", -1), textParam.size());
+                jButton7.setEnabled(true);
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -689,8 +691,10 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        clearFields(true);
+        clearFields(true, false);
         jButton5.setEnabled(false);
+        jFormattedTextField8.setEnabled(true);
+        jFormattedTextField8.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -771,7 +775,7 @@ public final class GUI extends javax.swing.JFrame {
             parent.setVisible(true);
             if(choice == JOptionPane.YES_OPTION){
                 writeTextArea(extractData(true));
-                clearFields(false);
+                clearFields(false, false);
                 parent.dispose();
             }
             else {
@@ -781,7 +785,7 @@ public final class GUI extends javax.swing.JFrame {
         } 
         else {
             writeTextArea(params);
-            clearFields(false);
+            clearFields(false, false);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -802,14 +806,16 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         String[] params = jTextArea1.getText().split("\n");
-        clearFields(true);
-        if(params[0].contains("$")) {
-            String[] proxy;
-            proxy = params[0].replace("$", "").split(":");
-            jFormattedTextField8.setText(proxy[0]);
-            jFormattedTextField9.setText(proxy[1]);
-            params = Arrays.copyOfRange(params, 1, params.length);
-        }
+        clearFields(true, true);
+//        if(params[0].contains("$")) {
+//            String[] proxy;
+//            proxy = params[0].replace("$", "").split(":");
+//            jFormattedTextField8.setText(proxy[0]);
+//            jFormattedTextField9.setText(proxy[1]);
+//            jFormattedTextField8.setEnabled(true);
+//            jFormattedTextField9.setEnabled(true);
+//            params = Arrays.copyOfRange(params, 1, params.length);
+//        }
         for(int i=0; i < textParam.size()-2; i++) {
             if(i==0)
                 params[i] = params[i].replace("*", ""); 
@@ -855,7 +861,11 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
+        if(jRadioButton1.isSelected())
+            System.out.println("DA FARE");
+        if(jRadioButton2.isSelected())
+            Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
+        
         Parser parser = new Parser(fileConfPath);
         try {
             ArrayList <URLDetails> taskList = parser.readConfigurationFile();
@@ -871,12 +881,15 @@ public final class GUI extends javax.swing.JFrame {
     
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
-        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].equals(" ") && !params[params.length-1].equals(" "))
-            sb.append("$").
-                append(params[params.length-2]).
-                append(":").
-                append(params[params.length-1]).
-                append("\n");
+//        if(!jTextArea1.getText().contains(("$")) && !params[params.length-2].equals(" ") && !params[params.length-1].equals(" ")) {
+//            sb.append("$").
+//                append(params[params.length-2]).
+//                append(":").
+//                append(params[params.length-1]).
+//                append("\n");
+//        jFormattedTextField8.setEnabled(false);
+//        jFormattedTextField9.setEnabled(false);
+//        }
         for(int i=0; i < params.length-2; i++){ 
             sb.append(params[i]).append("\n");
         }
@@ -887,8 +900,8 @@ public final class GUI extends javax.swing.JFrame {
      *  Method clears the user's input fields.
      *  @param area if true clears jTextArea, false otherwise.
      */
-    public void clearFields(boolean area){
-        for(int i=0; i < textParam.size(); i++)
+    public void clearFields(boolean area, boolean proxy){
+        for(int i=0; i < textParam.size() - (!proxy ? 2 : 0); i++)
             textParam.get(i).setText("");
         jFormattedTextField2.setText("http://");
         if(area)
@@ -1015,6 +1028,14 @@ public final class GUI extends javax.swing.JFrame {
             }
         } 
         return params;
+    }
+    
+    public String getProxy() {
+        String proxyIp = jFormattedTextField8.getText().isEmpty() ? "" : jFormattedTextField8.getText();
+                String proxyPort = jFormattedTextField9.getText().isEmpty() ? "" : jFormattedTextField9.getText();
+                return (proxyIp.isEmpty() || proxyPort.isEmpty()) ? 
+                        "\n" : 
+                        "$" + proxyIp + ":" + proxyPort + "\n";
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

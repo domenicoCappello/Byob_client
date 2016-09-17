@@ -11,6 +11,7 @@ import java.io.LineNumberReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 /**
  * Class manages every aspect of the configuration file like its creation and reading,
@@ -21,7 +22,15 @@ public class Parser {
     
     static String FILE_NAME;
     static Charset ENCODING;
-  
+    static String[] tags = {
+        "url ",
+        "minT",
+        "manT",
+        "numC",
+        "sleC",
+        "usAg"
+    };
+    
     /**
      * Constructor.
     */
@@ -126,7 +135,23 @@ public class Parser {
             }      
         }
      }
-  
+    
+    public static void writeParamsFile(String proxy, String[] params) {    
+        String delimiter = "----------------------------------";
+        StringBuilder sb = new StringBuilder();
+        if(!proxy.isEmpty()) 
+            sb.append("\nProxy: ").append(proxy.replace("$", ""));
+        for (int i = 0; i < params.length-1; i++) {
+            if(i%tags.length==0) {
+                sb.append(delimiter).append("\n");
+                params[i] = params[i].replace("*", "");
+            }
+                
+            sb.append(tags[i%tags.length]).append(": ").append(params[i]).append("\n");     
+        }
+        ByobSingleton.myLogger.info(sb.toString());     
+     }
+    
     /**
      * Function returns number of lines of a file.
      * @param fileName full name of an existing, readable text file.
