@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class ByobTask implements Runnable {
     
     // Task scheduler's instance
-    ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
+    final ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
     
     // Contact parameters
     URLDetails contact;
@@ -35,9 +35,13 @@ public class ByobTask implements Runnable {
             int maxTimeRestInterval = 45; //Minutes
             long randomInterval = minTimeRestInterval + 
                     random.nextInt(maxTimeRestInterval - minTimeRestInterval + 1);
-            System.out.println("Check sleep condition for " + contact.getURL() + 
-                    " in " + randomInterval + " minutes");
-            ses.schedule(this, randomInterval, TimeUnit.MINUTES);
+            String msg = "Check sleep condition for " + contact.getURL() + 
+                    " in " + randomInterval + " minutes";
+            System.out.println(msg);
+            ByobSingleton.getInstance().myLogger.fine(msg);
+            synchronized(ses){
+                ses.schedule(this, randomInterval, TimeUnit.MINUTES);
+            }
         } else {        
             /**Synchronized*/
             if (contact.decreaseContactNum() < 0) 
@@ -45,7 +49,9 @@ public class ByobTask implements Runnable {
             else if(contact.getContactsNum() > 0){
                 double randomInterval = contact.getMinWaitTime() + 
                          (contact.getMaxWaitTime() - contact.getMinWaitTime()) * random.nextDouble();
-                ses.schedule(this, (long)randomInterval, TimeUnit.MILLISECONDS);
+                synchronized(ses){
+                    ses.schedule(this, (long)randomInterval, TimeUnit.MILLISECONDS);
+                }
             }
             
             ByobSingleton.getInstance().myLogger.fine(contact.toString());

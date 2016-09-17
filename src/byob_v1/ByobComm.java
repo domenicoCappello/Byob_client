@@ -103,6 +103,8 @@ public class ByobComm {
             
         } catch (IOException ex) {
             ByobSingleton.getInstance().myLogger.severe("IOException");
+            System.out.println(proxyIp + " : " + proxyPort);
+            ex.printStackTrace();
             return -2; 
         }   
     }

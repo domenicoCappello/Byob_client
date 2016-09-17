@@ -232,7 +232,7 @@ public class URLDetails {
      * Method decreases URL's number of contact.
      * @return contactsNum
      */
-    public long decreaseContactNum(){
+    public synchronized long decreaseContactNum(){
         contactsNum = contactsNum - 1;
         return contactsNum;
     }
