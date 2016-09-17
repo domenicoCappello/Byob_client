@@ -15,14 +15,15 @@ public class Byob_v1 {
 
     public static void main(String[] args) {
 
-        GUI frame = new GUI();
-        final Toolkit toolkit = Toolkit.getDefaultToolkit();
-        final Dimension screenSize = toolkit.getScreenSize();
-        int x = (screenSize.width - frame.getWidth()) / 2;
-        int y = (screenSize.height - frame.getHeight()) / 2;
-        frame.setTitle("BYOB v_1");
-        frame.setLocation(x, y);
-        frame.setVisible(true);
+//        GUI frame = new GUI();
+//        final Toolkit toolkit = Toolkit.getDefaultToolkit();
+//        final Dimension screenSize = toolkit.getScreenSize();
+//        int x = (screenSize.width - frame.getWidth()) / 2;
+//        int y = (screenSize.height - frame.getHeight()) / 2;
+//        frame.setTitle("BYOB v_1");
+//        frame.setLocation(x, y);
+//        frame.setVisible(true);
+        Tools.writeInfoFile("browsers.txt");
 
 //        String file = "local.txt";
 //        Parser parser = new Parser(file);

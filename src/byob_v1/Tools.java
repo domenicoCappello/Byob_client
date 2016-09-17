@@ -3,8 +3,11 @@ package byob_v1;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -31,7 +34,21 @@ public class Tools {
     public static void schedule(ArrayList <URLDetails> task) {
         for(int i = 0; i < task.size(); i++) {
             ByobSingleton.ses.schedule(new ByobTask(task.get(i)), 0, TimeUnit.MILLISECONDS);
-//            System.out.println(task.get(i).getURL());
+        }
+    }
+    
+    public static void writeInfoFile(String fileName){
+        
+        File file = new File(fileName);
+        String text = getOs() + " " +
+                      System.getProperty("os.arch") + "\n\n" + 
+                      "Installed Browsers: \n" +
+                      getBrowsers();
+        
+        try(  PrintWriter out = new PrintWriter(file)  ){
+            out.println( text );
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
         
@@ -90,7 +107,8 @@ public class Tools {
     public static String getBrowsers(){
         
         String browsers = "";
-        if(getOs().toLowerCase().contains("linux")){
+        String os = getOs().toLowerCase();
+        if(os.contains("linux")){
             String tmp;
             tmp = linuxTermOut("google-chrome --version");
             if (tmp != null)
@@ -106,11 +124,8 @@ public class Tools {
             tmp = linuxTermOut("chromium-browser --version");
             if (tmp != null)
                 browsers = browsers + tmp + "\n";
-            //Scrivi tutto su browsers
-            browsers = macProfilerTermOut("ppp");
-            System.out.println("HERE");
         }
-        else if(getOs().toLowerCase().contains("windows")) {
+        else if(os.contains("windows")) {
             
             // IE
             String path = "SOFTWARE\\Microsoft\\Internet Explorer";
@@ -145,17 +160,14 @@ public class Tools {
 
             } catch(Exception e){}
         }
-        else if(getOs().toLowerCase().contains("mac")){
+        else if(os.contains("mac")){
             
-            linuxTermOut("system_profiler SPSoftwareDataType > info.txt");
-            browsers = macProfilerTermOut("info.txt");
+            linuxTermOut("system_profiler SPSoftwareDataType > mac_profile.txt");
+            browsers = macProfilerTermOut("mac_profile.txt");
             
         }
         else {
             browsers = "Unrecognized OS\n";
-            
-            linuxTermOut("system_profiler SPSoftwareDataType > info.txt");
-            browsers = browsers + macProfilerTermOut("info.txt");
         }
         return browsers;
     }
@@ -164,30 +176,32 @@ public class Tools {
     private static String macProfilerTermOut(String file){
         String[] args = new String[] {"/bin/bash", "-c", "grep -e \"Google Chrome:\""
                 + " -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" "
-                + "-A 2 mac_profile.txt"};
-//        String cmd = "grep -e \"Google Chrome:\" -e \"Firefox:\" "
-//                        + "-e \"Opera:\" -e \"Safari:\" -A 2 " + file; 
-//        System.out.println(cmd);
-        System.out.println("byob_v1.Tools.macProfilerTermOut()");
+                + "-A 2 " + file};
+
         String str = linuxTermOut(args);
         str = str.replace("\n", "").replace("--", "\n");
         return str;
     }
     
+     /**
+     *  Function creates a linux bash and returns its output.
+     *  @param args  Command to launch
+     *  @return     Command's result
+     */
     private static String linuxTermOut(String[] args){
         String out = "";
         String tmp;
         try {
             Process proc = Runtime.getRuntime().exec(args);
             BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-//            proc.waitFor();
+            proc.waitFor();
             while((tmp = br.readLine()) != null){
                 out = out + tmp + "\n";
             }
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (InterruptedException e){
-//            System.err.println("Interrupted process " + args[0]);
+        } catch (InterruptedException e){
+            System.err.println("Interrupted process " + args[0]);
         }
         return out;
     }
