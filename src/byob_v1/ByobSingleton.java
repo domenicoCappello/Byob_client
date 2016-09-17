@@ -9,26 +9,26 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- *  Class's a singleton. 
+ *  Singleton class 
  *  It manages every aspect of the Log functionality and of the schedling.
  *  @author Cappello, Nazio
  */
 public class ByobSingleton {
     
-    // Singleton's instance
+    // Singleton instance
     private static ByobSingleton instance = null;
     
-    // Hierarchy of Loggers
+    // Logger class
     public static final Logger myLogger = Logger.getLogger("BYOB");
     
-    // Schedulation of tasks to run
+    // Scheduler Executor Service
 //    public static final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
     public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(1000);
  
     /**
     * Constructor.
     */
-    public ByobSingleton() {}
+    private ByobSingleton() {}
         
     /**
     * Function gets the instance of the singleton.

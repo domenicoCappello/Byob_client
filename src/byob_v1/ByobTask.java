@@ -10,13 +10,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class ByobTask implements Runnable {
     
-    // Task scheduler's instance
+    // Scheduler Executor Service
     final ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
     
     // Contact parameters
     URLDetails contact;
     
-    // Random number
+    // Random number generator
     private static final Random random = new Random();
     
     /**

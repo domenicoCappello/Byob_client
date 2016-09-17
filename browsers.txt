@@ -1,6 +1,6 @@
-Linux amd64
-
+OS: Windows 10 amd64
 Installed Browsers: 
-Google Chrome 53.0.2785.116 
-Mozilla Firefox 48.0
+Internet Explorer 9.11.14393.0
+Google Chrome 53.0.2785.116
+Mozilla Firefox 48.0.2 (x86 it)
 
