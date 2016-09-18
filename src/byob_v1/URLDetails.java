@@ -11,30 +11,30 @@ import java.util.Calendar;
 public class URLDetails {
     
     // Unique identifier of the bot
-    String idBot;             
+    String idBot = "";             
     
     // Whether or not wait for server response
     public Boolean waitForResponse = false;
     
-    // URL - TO DO è un array
-    private String URL;
+    // URL to be contacted
+    private String URL = "";
     
     // Minimum time of contact
-    private int minWaitTime;
+    private int minWaitTime = 0;
     
     // Max time of contact
-    private int maxWaitTime;
+    private int maxWaitTime = 0;
     
     // Number of contacts to the URL
-    private long contactsNum;
+    private long contactsNum = 0;
     
     // Sleep Condition xy
     // x = O/E/'' : Odd/Even day of the week 
     // y = A/P/'' : AM/PM hour of the day
-    private String sleepMode;   
+    private String sleepMode = "";   
     
     // User-Agent string
-    private String userAgent;
+    private String userAgent = "";
     
     // Proxy Hostname 
     public static String proxyIp = "";
@@ -228,6 +228,14 @@ public class URLDetails {
      */
     public String getUserAgent() {
         return userAgent;
+    }
+    
+    /**
+     *  Function returns the user-agent.
+     *  @return user-agent     
+     */
+    public String getProxy() {
+        return proxyIp + ":" + proxyPort;
     }
     
     /**

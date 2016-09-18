@@ -70,8 +70,8 @@ public class Parser {
     */
     public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
 
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
         ArrayList<URLDetails> configuration = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
         String url;
         Boolean first = true;
         String delim = ";";
@@ -159,6 +159,30 @@ public class Parser {
                 
             sb.append(tags[i%tags.length]).append(": ").append(params[i]).append("\n");     
         }
+        ByobSingleton.myLogger.info(sb.toString());     
+     }
+    
+    /**
+     * Method writes the configuration parameters inside the log file.
+     * 
+     * @param taskList
+     */
+    public static void writeParamsFile(ArrayList <URLDetails> taskList) {    
+        String delimiter = "----------------------------------";
+        StringBuilder sb = new StringBuilder();
+        if(!taskList.get(0).getProxy().isEmpty()) 
+            sb.append("\nProxy: ").append(taskList.get(0).getProxy()).append("\n");
+        for (int i = 0; i < taskList.size(); i++) {
+            URLDetails task = taskList.get(i);
+            sb.append(delimiter).append("\n");
+            sb.append("url : ").append(task.getURL()).append("\n");
+            sb.append("minT: ").append(task.getMinWaitTime()).append("\n");
+            sb.append("manT: ").append(task.getMaxWaitTime()).append("\n");
+            sb.append("numC: ").append(task.getContactsNum()).append("\n");
+            sb.append("sleC: ").append(task.getSleepMode()).append("\n");
+            sb.append("usAg: ").append(task.getUserAgent()).append("\n");
+        }
+                   
         ByobSingleton.myLogger.info(sb.toString());     
      }
     

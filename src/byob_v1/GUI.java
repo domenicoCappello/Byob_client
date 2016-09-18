@@ -17,8 +17,6 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputMethodEvent;
-import java.awt.event.InputMethodListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.NumberFormat;
@@ -828,14 +826,15 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if(jRadioButton1.isSelected())
-            System.out.println("DA FARE");
+        
         if(jRadioButton2.isSelected())
             Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
         
         Parser parser = new Parser(fileConfPath);
         try {
             ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+            if(jRadioButton1.isSelected()) 
+                Parser.writeParamsFile(taskList);
             Tools.schedule(taskList);
         } catch (IOException ex) {
             ByobSingleton.myLogger.severe("Parser I/O exception");
