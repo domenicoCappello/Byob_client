@@ -1,0 +1,33 @@
+\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Premessa}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{HTTP Botnet}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Obiettivo}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Struttura della relazione}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Stato dell'arte}{}% 6
+\BOOKMARK [1][-]{section.2.1}{Punti cardine}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{HTTP}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.2}{Singleton Pattern}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.3}{Schedulatore}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.4}{ID dei bot e MD5}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.5}{Parsing}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.6}{Multi-piattaforma}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Piattaforma di sviluppo, Swing, Awt}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Build your own botnet}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{Struttura del progetto}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{ByobComm}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.3}{ByobSingleton}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.4}{ByobTask}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.5}{Byob\137v1}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.6}{GUI}{section.2.3}% 21
+\BOOKMARK [2][-]{subsection.2.3.7}{Parser}{section.2.3}% 22
+\BOOKMARK [2][-]{subsection.2.3.8}{Tools}{section.2.3}% 23
+\BOOKMARK [2][-]{subsection.2.3.9}{URLDetails}{section.2.3}% 24
+\BOOKMARK [0][-]{chapter.3}{Implementazione}{}% 25
+\BOOKMARK [1][-]{section.3.1}{Avvio iniziale}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.1.1}{Informazioni di sistema}{section.3.1}% 27
+\BOOKMARK [1][-]{section.3.2}{File di configurazione}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.2.1}{Immissione e scrittura}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.2}{Lettura e caricamento}{section.3.2}% 30
+\BOOKMARK [1][-]{section.3.3}{Lancio}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.1}{Schedulazione dei task}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.2}{Comunicazione HTTP}{section.3.3}% 33

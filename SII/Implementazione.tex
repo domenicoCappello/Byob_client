@@ -27,7 +27,7 @@ public class Byob_v1 {
 }
 \end{lstlisting}
 
-\subsection{Informazioni di sistema}
+\section{Informazioni di sistema}
 
 Il sistema operativo in esecuzione sulla macchina \`{e} restituito dalla funzione \textit{Tools.getOs()}.
 
@@ -48,18 +48,18 @@ public static String getBrowsers(){
 	String browsers = "";
 	String os = getOs().toLowerCase();
 	if(os.contains("linux")){
-		...
+		[...]
 	} else if(os.contains("windows")){
-		...
+		[...]
 	} else if(os.contains("mac")){
-		...
+		[...]
 	} else {
 		/**Couldn't recognize OS*/
 	}
 	return browsers;
 \end{lstlisting}
 
-\subsubsection{Linux}
+\subsection{Linux}
 I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
 \begin{itemize}
 	\item Google Chrome
@@ -67,17 +67,92 @@ I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
 	\item Opera
 	\item Chromium
 \end{itemize}
-Per identificare l'eventuale versione installata di ogni browser, viene avviato un altro processo che esegue la \textit{bash} ed invoca ogni 
+Per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la \textit{bash} invocando il programma relativo ad ogni browser con il parametro -\textit{-version}.
 
-\subsubsection{Windows}
-Scelta browser, lettura file di registro mediante libreria esterna, listato.
-Impicci Chrome
+\vspace{0.5cm}
+\begin{lstlisting}
+	[...]
+	String tmp = linuxTermOut("firefox --version");
+	[...]
 
-\subsubsection{Mac osx}
-Invocazione bash, scelta browser, uso del system\_profiler e file mac\_profile.txt
+private static String linuxTermOut(String cmd){
+    String[] args = new String[] {"/bin/bash", "-c", cmd};
+    String out = "";
+    try {
+	    Process proc = new ProcessBuilder(args).start();
+	    BufferedReader br = new BufferedReader(
+	    new InputStreamReader(proc.getInputStream()));
+	    out = br.readLine();
+    } catch (IOException ex) {
+	    [...]
+    }
+    return out;
+   }
+\end{lstlisting}
+
+\subsection{Windows}
+I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
+\begin{itemize}
+	\item Internet Explorer
+	\item Google Chrome
+	\item Mozilla Firefox
+\end{itemize}
+Per individuare in modo sistematico le versioni installate, si \`{e} scelto di interrogare il registro di sistema di Windows.
+Ci\`{o} \`{e} stato possibile grazie all'utilizzo di una libreria esterna, la
+\textit{Java Native Access}\footnote{https://github.com/java-native-access/jna\#readme}, in cui il package \textit{com.sun.jna.platform.win32.Advapi32Util} offre un'interfaccia semplice e immediata per l'accesso e la manipolazione dei registri di sistema.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+[...]
+String path = "SOFTWARE\\Microsoft\\Internet Explorer";
+String vField = getOs().toLowerCase().equals("windows 8")? "svcVersion" : 	 "Version";
+String version = Advapi32Util.registryGetStringValue(   
+WinReg.HKEY_LOCAL_MACHINE, path, vField);
+[...]
+\end{lstlisting}
+
+\subsection{Mac osx}
+I browser ritenuti pi\`{u} comuni in ambiente \textit{Mac Osx} sono stati:
+\begin{itemize}
+	\item Google Chrome
+	\item Mozilla Firefox
+	\item Opera
+	\item Safari
+\end{itemize}
+Come per \textit{Linux}, per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la shell di sistema avviando il programma \textit{system\_profiler} con parametro \textit{SPSoftwareDataType}. L'output offerto dal profiler di sistema contiene al suo interno tutto il software installato sulla macchina, compreso numero di versione e autori. 
+Tutte le informazioni vengono salvate all'interno del file \textit{mac\_profile.txt}, da cui successivamente vengono estratte le versioni relative al software cercato.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+[...]
+linuxTermOut("system_profiler SPSoftwareDataType > mac_profile.txt");
+[...]
+String[] args = new String[] {"/bin/bash", "-c", "grep 
+-e \"Google Chrome:\" -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" 
+-A 2 mac_profiler.txt"};
+String str = linuxTermOut(args);
+\end{lstlisting}
 
 \section{File di configurazione}
-File un botto fico, fa impostare tante belle cose (url, intervallo, etc.) Definito da -> Listato: proxy, url etc.
+Il file di configurazione permette di impostare i parametri principali delle comunicazioni da effettuare verso l'esterno.
+Per ogni contatto \`{e} necessario definire una URL, la periodicit\`{a} di contatto (che pu\`{o} essere fissa o scelta randomicamente in un intervallo pre-impostato), il numero massimo dei contatti da effettuare.
+\`{E} inoltre possibile impostare un proxy tramite il quale effettuare le connessioni, uno \textit{user agent} differente da quello di default ed un set di condizione sotto le quali non viene effettuata la connessione alla URL specificata.
+
+Il file di configurazione consiste in un file di testo formattato nel seguente modo:
+
+\vspace{0.5cm}
+\begin{lstlisting}
+	$proxy_ip:proxy_port /**Opzionale*/
+	*URL_1
+	minimo_intervallo_di_contatto
+	massimo_intervallo_di_contatto
+	numero_di_contatti_effettuabili
+	condizioni_di_sleep
+	user_agent
+	*URL_2
+	[...]
+\end{lstlisting}
+
 
 \subsection{Immissione e scrittura}
 Campi formato GUI, textbox e impicci con popup e tasti push e pull
@@ -86,14 +161,125 @@ Campi formato GUI, textbox e impicci con popup e tasti push e pull
 Checkbox, popup e lettura file.
 Popolamento arraylist di URLDetails
 
+\vspace{0.5cm}
+\begin{lstlisting}
+Parser parser = new Parser(fileConfPath);
+try {
+	ArrayList <URLDetails> taskList = parser.readConfigurationFile();
+	Tools.schedule(taskList);
+} catch (IOException ex) {
+	ByobSingleton.myLogger.severe("Parser I/O exception");
+}
+\end{lstlisting}
+
+
 \section{Lancio}
-Si parte.
+Dopo aver selezionato un file di configurazione, cliccando sul tasto \textit{Launch} viene eseguita la parte principale del progetto.
+L'ArrayList di \textit{URLDetails} viene passato alla funzione \textit{Tools.schedule(ArrayList<URLDetails> task)} che, per ogni elemento estratto dall'ArrayList, crea un'istanza della classe \textit{ByobTask} (che implementa l'interfaccia \textit{Runnable}) e ne richiede la schedulazione allo \textit{Scheduler Executor Service}.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+public static void schedule(ArrayList <URLDetails> task) {
+    for(int i = 0; i < task.size(); i++) {
+	    ByobSingleton.ses.schedule(new ByobTask(task.get(i)), 0,
+			    TimeUnit.MILLISECONDS);
+    }
+}
+\end{lstlisting}
+
 
 \subsection{Schedulazione dei task}
-Listato ByobTask
+ByobTask rappresenta il singolo task che deve essere eseguito dallo scheduler; ogni task \`{e} legato ad una connessione, ovvero ad un'istanza di \textit{URLDetails}, che contiene tutti i dettagli delle comunicazioni da effettuare.
+Nel metodo \textit{run()}, che viene sovrascritto dalla classe, vengono dapprima controllate le condizioni di \textit{sleep}: 
+se una di queste risulta verificata il task viene ri-schedulato dopo un intervallo che va da 30 a 45 minuti, al termine dei quali viene effettuato nuovamente il check delle condizioni;
+se nessuna condizione \`{e} verificata, allora viene decrementato il numero di contatti ancora da effettuare, viene ri-schedulato il task in esame ed eventualmente viene inviata una GET http alla URL target.
+I dettagli del contatto avvenuto sono scritti sul file di log, cos\`{\i} come l'eventuale risposta (qualora specificato) da parte del server.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+public class ByobTask implements Runnable {
+
+final static ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
+URLDetails contact;
+[...]
+
+   @Override
+   public void run() {
+   
+	   if(contact.sleepMode()) {
+		   /**Sleep mode: try again in 30/45 minutes */
+		   int minTimeRestInterval = 30; //Minutes
+		   int maxTimeRestInterval = 45; //Minutes
+		   long randomInterval = minTimeRestInterval + 
+		   random.nextInt(maxTimeRestInterval - minTimeRestInterval + 1);
+		   [...]
+		   synchronized(ses){
+			   ses.schedule(this, randomInterval, TimeUnit.MINUTES);
+		   }
+	   } else {        
+		   /**Synchronized function*/
+		   if (contact.decreaseContactNum() < 0) 
+			   return; 
+		   else if(contact.getContactsNum() > 0){
+			   [...]
+			   synchronized(ses){
+				   ses.schedule(this, (long)randomInterval,
+				    TimeUnit.MILLISECONDS);
+			   }
+		   }
+		   /**Write to log file*/
+		   [...]
+		   int code = ByobComm.httpGet(contact.getURL(),
+		    contact.getUserAgent(), URLDetails.proxyIp, 
+		    URLDetails.proxyPort, contact.waitForResponse);
+	       [...]
+	   }
+	}
+}
+\end{lstlisting}
 
 \subsection{Comunicazione HTTP}
-listato ByobComm, waitForResponse opzionale, sincronizzazione.
+I contatti (http GET) sono effettuati tramite chiamata a una funzione statica della classe \textit{ByobComm}.
+Il metodo \textit{httpGet([...])} permette di specificare, oltre alla URL da contattare, anche uno user agent personalizzato, l'indirizzo ip e la porta di un server proxy che si desidera utilizzare.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+static int httpGet(String url, String userAgent, String proxyIp, 
+					int proxyPort, Boolean waitForResponse) {  
+    String charset = "UTF-8"; 
+    HttpURLConnection connection;
+    try {
+	    if(proxyPort > 0){
+		    Proxy proxy = new Proxy(Proxy.Type.HTTP, 
+			    new InetSocketAddress(proxyIp, proxyPort));
+		    connection = (HttpURLConnection) 
+			    new URL(url).openConnection(proxy);
+	    } else {
+		    connection = (HttpURLConnection) new URL(url).openConnection();
+	    }
+	    connection.setRequestMethod("GET");
+	    connection.setRequestProperty("Accept-Charset", charset);
+	    
+	    if(!userAgent.isEmpty())
+		    connection.setRequestProperty("User-Agent", userAgent);
+	    else
+		    connection.setRequestProperty("User-Agent", "");
+	    connection.connect();
+	    int ret = waitForResponse ? connection.getResponseCode() : 0;
+	    connection.disconnect();
+	    return ret;
+	    
+    } catch (MalformedURLException ex) {
+	    ByobSingleton.getInstance().myLogger.severe("MalformedURLException");
+	    return -1;
+    
+    } catch (IOException ex) {
+	    ByobSingleton.getInstance().myLogger.severe("IOException");
+	    return -2; 
+    }   
+}
+\end{lstlisting} 
+
 
 
 

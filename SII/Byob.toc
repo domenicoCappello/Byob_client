@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {1.2}HTTP Botnet}{2}
 \contentsline {section}{\numberline {1.3}Obiettivo}{3}
 \contentsline {section}{\numberline {1.4}Struttura della relazione}{4}
-\contentsline {chapter}{\numberline {2}Stato dell'arte}{5}
+\contentsline {chapter}{\numberline {2}Panoramica del progetto}{5}
 \contentsline {section}{\numberline {2.1}Punti cardine}{5}
 \contentsline {subsection}{\numberline {2.1.1}HTTP}{5}
 \contentsline {subsection}{\numberline {2.1.2}Singleton Pattern}{6}
@@ -27,13 +27,13 @@
 \contentsline {subsection}{\numberline {2.3.9}URLDetails}{20}
 \contentsline {chapter}{\numberline {3}Implementazione}{21}
 \contentsline {section}{\numberline {3.1}Avvio iniziale}{21}
-\contentsline {subsection}{\numberline {3.1.1}Informazioni di sistema}{22}
-\contentsline {subsubsection}{Linux}{22}
-\contentsline {subsubsection}{Windows}{23}
-\contentsline {subsubsection}{Mac osx}{23}
-\contentsline {section}{\numberline {3.2}File di configurazione}{23}
-\contentsline {subsection}{\numberline {3.2.1}Immissione e scrittura}{23}
-\contentsline {subsection}{\numberline {3.2.2}Lettura e caricamento}{23}
-\contentsline {section}{\numberline {3.3}Lancio}{23}
-\contentsline {subsection}{\numberline {3.3.1}Schedulazione dei task}{23}
-\contentsline {subsection}{\numberline {3.3.2}Comunicazione HTTP}{23}
+\contentsline {section}{\numberline {3.2}Informazioni di sistema}{22}
+\contentsline {subsection}{\numberline {3.2.1}Linux}{22}
+\contentsline {subsection}{\numberline {3.2.2}Windows}{23}
+\contentsline {subsection}{\numberline {3.2.3}Mac osx}{24}
+\contentsline {section}{\numberline {3.3}File di configurazione}{25}
+\contentsline {subsection}{\numberline {3.3.1}Immissione e scrittura}{25}
+\contentsline {subsection}{\numberline {3.3.2}Lettura e caricamento}{25}
+\contentsline {section}{\numberline {3.4}Lancio}{26}
+\contentsline {subsection}{\numberline {3.4.1}Schedulazione dei task}{26}
+\contentsline {subsection}{\numberline {3.4.2}Comunicazione HTTP}{28}
