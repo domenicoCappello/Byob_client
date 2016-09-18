@@ -1,10 +1,99 @@
 \chapter{Implementazione}
 \label{chap:implementazione}
-\begin{minipage}{12cm}\textit{Tocca raccontaje un po' de cazzate}
+\begin{minipage}{12cm}\textit{Sono di seguito presentati dettagli riguardanti l'implementazione dei passi principali eseguiti dal programma in esame. }
 \end{minipage}
 
+\section{Avvio iniziale}
+All'avvio dell'applicazione, viene visualizzata la schermata principale di configurazione; vengono inoltre raccolte e scritte sul file \textit{sys\_info.txt} informazioni riguardanti il sistema operativo della macchina e le versioni dei browser installati.
 
+\vspace{0.5cm}
+\begin{lstlisting}[caption=Funzione main,captionpos=b]
+public class Byob_v1 {
 
+	public static void main(String[] args) {
+		/**Start the GUI*/
+		GUI frame = new GUI();
+		final Toolkit toolkit = Toolkit.getDefaultToolkit();
+		final Dimension screenSize = toolkit.getScreenSize();
+		int x = (screenSize.width - frame.getWidth()) / 2;
+		int y = (screenSize.height - frame.getHeight()) / 2;
+		frame.setTitle("BYOB v_1");
+		frame.setLocation(x, y);
+		frame.setVisible(true);
+		/**Gather system informations and write them on sys_info.txt*/
+		Tools.writeInfoFile("sys_info.txt");
+	}
+
+}
+\end{lstlisting}
+
+\subsection{Informazioni di sistema}
+
+Il sistema operativo in esecuzione sulla macchina \`{e} restituito dalla funzione \textit{Tools.getOs()}.
+
+\vspace{0.5cm}
+\begin{lstlisting}
+    public static String getOs(){
+	    return System.getProperty("os.name");
+    }
+\end{lstlisting}
+
+Per riuscire ad identificare i browser installati, sono state adottate strategie differenti per ogni sistema operativo individuato;
+la funzione \textit{Tools.getBrowsers()} invoca \textit{Tools.getOs()} e distingue le azioni da intraprendere:
+
+\vspace{0.5cm}
+\begin{lstlisting}
+public static String getBrowsers(){
+
+	String browsers = "";
+	String os = getOs().toLowerCase();
+	if(os.contains("linux")){
+		...
+	} else if(os.contains("windows")){
+		...
+	} else if(os.contains("mac")){
+		...
+	} else {
+		/**Couldn't recognize OS*/
+	}
+	return browsers;
+\end{lstlisting}
+
+\subsubsection{Linux}
+I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
+\begin{itemize}
+	\item Google Chrome
+	\item Mozilla Firefox
+	\item Opera
+	\item Chromium
+\end{itemize}
+Per identificare l'eventuale versione installata di ogni browser, viene avviato un altro processo che esegue la \textit{bash} ed invoca ogni 
+
+\subsubsection{Windows}
+Scelta browser, lettura file di registro mediante libreria esterna, listato.
+Impicci Chrome
+
+\subsubsection{Mac osx}
+Invocazione bash, scelta browser, uso del system\_profiler e file mac\_profile.txt
+
+\section{File di configurazione}
+File un botto fico, fa impostare tante belle cose (url, intervallo, etc.) Definito da -> Listato: proxy, url etc.
+
+\subsection{Immissione e scrittura}
+Campi formato GUI, textbox e impicci con popup e tasti push e pull
+
+\subsection{Lettura e caricamento}
+Checkbox, popup e lettura file.
+Popolamento arraylist di URLDetails
+
+\section{Lancio}
+Si parte.
+
+\subsection{Schedulazione dei task}
+Listato ByobTask
+
+\subsection{Comunicazione HTTP}
+listato ByobComm, waitForResponse opzionale, sincronizzazione.
 
 
 

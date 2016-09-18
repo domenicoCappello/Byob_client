@@ -10,7 +10,7 @@ import java.util.logging.SimpleFormatter;
 
 /**
  *  Singleton class 
- *  It manages every aspect of the Log functionality and of the schedling.
+ *  It manages every aspect of the Log functionality and of the scheduling.
  *  @author Cappello, Nazio
  */
 public class ByobSingleton {

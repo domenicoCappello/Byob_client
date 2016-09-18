@@ -25,3 +25,15 @@
 \contentsline {subsection}{\numberline {2.3.7}Parser}{18}
 \contentsline {subsection}{\numberline {2.3.8}Tools}{19}
 \contentsline {subsection}{\numberline {2.3.9}URLDetails}{20}
+\contentsline {chapter}{\numberline {3}Implementazione}{21}
+\contentsline {section}{\numberline {3.1}Avvio iniziale}{21}
+\contentsline {subsection}{\numberline {3.1.1}Informazioni di sistema}{22}
+\contentsline {subsubsection}{Linux}{22}
+\contentsline {subsubsection}{Windows}{23}
+\contentsline {subsubsection}{Mac osx}{23}
+\contentsline {section}{\numberline {3.2}File di configurazione}{23}
+\contentsline {subsection}{\numberline {3.2.1}Immissione e scrittura}{23}
+\contentsline {subsection}{\numberline {3.2.2}Lettura e caricamento}{23}
+\contentsline {section}{\numberline {3.3}Lancio}{23}
+\contentsline {subsection}{\numberline {3.3.1}Schedulazione dei task}{23}
+\contentsline {subsection}{\numberline {3.3.2}Comunicazione HTTP}{23}
