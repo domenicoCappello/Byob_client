@@ -170,8 +170,8 @@ public class Parser {
     public static void writeParamsFile(ArrayList <URLDetails> taskList) {    
         String delimiter = "----------------------------------";
         StringBuilder sb = new StringBuilder();
-        if(!taskList.get(0).getProxy().isEmpty()) 
-            sb.append("\nProxy: ").append(taskList.get(0).getProxy()).append("\n");
+            sb.append("\nProxy: ").append(!taskList.get(0).getProxy().equals(":0") ?
+                    taskList.get(0).getProxy()  : "" ).append("\n") ;
         for (int i = 0; i < taskList.size(); i++) {
             URLDetails task = taskList.get(i);
             sb.append(delimiter).append("\n");
