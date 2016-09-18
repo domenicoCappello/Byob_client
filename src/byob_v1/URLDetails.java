@@ -176,7 +176,7 @@ public class URLDetails {
 
     /**
     *   Method sets the sleep mode.
-    *   @param sleepMode
+    *   @param sleepMode    Chosen sleep condition
     */
     public void setSleepMode(String sleepMode) {
         this.sleepMode = sleepMode;

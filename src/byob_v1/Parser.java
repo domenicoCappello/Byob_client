@@ -65,8 +65,8 @@ public class Parser {
     * Function returns configuration values of a file.
     * @param fileName full name of an existing, readable .txt file.
     * @return Variables' list of values
-    * @throws java.io.IOException
-    * @throws java.io.FileNotFoundException
+    * @throws java.io.IOException Error in reading the file
+    * @throws java.io.FileNotFoundException Impossible to retrieve the file
     */
     public ArrayList<URLDetails> readConfigurationFile(String fileName) throws IOException, FileNotFoundException {
 
@@ -122,10 +122,10 @@ public class Parser {
     /**
      * Function runs a command on the host's command line and captures
      * the result from the console.
-     * @param fileToWrite
-     * @param params
-     * @param columns
-     * @throws java.io.IOException
+     * @param fileToWrite   File in which the program will write
+     * @param params    Configuration parameters to write
+     * @param columns   number of different contacts
+     * @throws java.io.IOException  Error in writing the file
      */
     public static void writeConfigurationFile(File fileToWrite, String[] params, int columns) throws IOException {
         if (!fileToWrite.exists())
@@ -143,7 +143,7 @@ public class Parser {
     
     /**
      * Method writes the configuration parameters inside the log file.
-     * @param proxy Proxy IP & port
+     * @param proxy Proxy IP and port
      * @param params Configuration parameters    
      */
     public static void writeParamsFile(String proxy, String[] params) {    
@@ -164,8 +164,7 @@ public class Parser {
     
     /**
      * Method writes the configuration parameters inside the log file.
-     * 
-     * @param taskList
+     * @param taskList  List of configuration parameters
      */
     public static void writeParamsFile(ArrayList <URLDetails> taskList) {    
         String delimiter = "----------------------------------";
@@ -190,7 +189,7 @@ public class Parser {
      * Function returns number of lines of a file.
      * @param fileName full name of an existing, readable text file.
      * @return  Number of Lines
-     * @throws IOException
+     * @throws IOException  Impossible to read the file
      */
     @SuppressWarnings("empty-statement")
     public static int countLines(String fileName) throws IOException{

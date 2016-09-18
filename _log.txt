@@ -1,0 +1,11 @@
+set 18, 2016 6:10:10 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: 
+Proxy: 
+----------------------------------
+url : http://xczxz<
+minT: 234
+manT: 3345
+numC: 6
+sleC:  
+usAg: sdfsdsd
+

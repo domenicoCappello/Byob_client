@@ -843,7 +843,7 @@ public final class GUI extends javax.swing.JFrame {
     
     /**
      * Method writes the paramaters inside the text area.
-     * @param params 
+     * @param params configuration parameters 
      */
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
@@ -855,7 +855,7 @@ public final class GUI extends javax.swing.JFrame {
     /**
      *  Method clears the user's input fields.
      *  @param area if true, it clears jTextArea, false otherwise.
-     *  @param proxy if true, it clears proxy IP & Port input fields.
+     *  @param proxy if true, it clears proxy IP and Port input fields.
      */
     public void clearFields(boolean area, boolean proxy){
         for(int i=0; i < textParam.size() - (!proxy ? 2 : 0); i++)
@@ -953,7 +953,7 @@ public final class GUI extends javax.swing.JFrame {
     
     /**
      * Function return the proxy IP and port for logging usage.
-     * @return Formatted proxy IP & port string
+     * @return Formatted proxy IP and port string
      */
     public String getProxy() {
         String proxyIp = jFormattedTextField8.getText().isEmpty() ? "" : jFormattedTextField8.getText();
@@ -1074,7 +1074,7 @@ public final class GUI extends javax.swing.JFrame {
          *  Function returns the string value of the object.
          *  @param text Matcher's string text
          *  @return object's string value
-         *  @throws ParseException 
+         *  @throws ParseException Impossible to correctly parse the string.
          */
         @Override
         public Object stringToValue(String text) throws ParseException {

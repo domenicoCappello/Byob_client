@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 /**
- *  Class contains the main method that writes OS & browser's information file
+ *  Class contains the main method that writes OS and browsers' information file
  *  and invokes the GUI.
  *  @author Cappello, Nazio
  */
