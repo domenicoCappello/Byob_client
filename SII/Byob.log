@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  19 SEP 2016 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  19 SEP 2016 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,21 +397,15 @@ Capitolo 1.
 File: ./imgs/botnet1999.jpg Graphic file (type jpg)
 
 <use ./imgs/botnet1999.jpg>
-Package pdftex.def Info: ./imgs/botnet1999.jpg used on input line 18.
+Package pdftex.def Info: ./imgs/botnet1999.jpg used on input line 17.
 (pdftex.def)             Requested size: 217.5pt x 105.53423pt.
- [2 <./imgs/botnet1999.jpg>] [3]) [4]
+ [2 <./imgs/botnet1999.jpg>]) [3]
 \openout2 = `StatoArte.aux'.
 
-
-(./StatoArte.tex
+ (./StatoArte.tex
 Capitolo 2.
-[5
-
-
-
-]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -423,14 +417,18 @@ ri-spon-de ad un cri-te-rio in-di-ca-to nell'\T1/cmr/m/it/12 header\T1/cmr/m/n/
 12 ; 
  []
 
-[6] [7] [8] [9] [10] [11] <./imgs/gui.png, id=70, 427.5975pt x 475.02469pt>
+[4
+
+
+
+] [5] [6] [7] [8] [9] [10] <./imgs/gui.png, id=67, 427.5975pt x 475.02469pt>
 File: ./imgs/gui.png Graphic file (type png)
 
 <use ./imgs/gui.png>
 Package pdftex.def Info: ./imgs/gui.png used on input line 114.
 (pdftex.def)             Requested size: 304.49867pt x 338.27014pt.
- [12]
-<./imgs/scelta1.png, id=74, 404.26031pt x 292.09125pt>
+ [11 <./imgs/gui.png>]
+<./imgs/scelta1.png, id=72, 404.26031pt x 292.09125pt>
 File: ./imgs/scelta1.png Graphic file (type png)
 
 <use ./imgs/scelta1.png>
@@ -441,47 +439,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-<./imgs/scelta11.png, id=75, 417.81094pt x 73.02281pt>
+[12 <./imgs/scelta1.png>]
+<./imgs/scelta11.png, id=77, 417.81094pt x 73.02281pt>
 File: ./imgs/scelta11.png Graphic file (type png)
 
 <use ./imgs/scelta11.png>
 Package pdftex.def Info: ./imgs/scelta11.png used on input line 138.
 (pdftex.def)             Requested size: 304.49867pt x 53.22151pt.
- [13 <./imgs/gui.png>]
-<./imgs/gui2.png, id=80, 427.5975pt x 475.02469pt>
+ <./imgs/gui2.png, id=78, 427.5975pt x 475.02469pt>
 File: ./imgs/gui2.png Graphic file (type png)
- <use ./imgs/gui2.png>
+
+<use ./imgs/gui2.png>
 Package pdftex.def Info: ./imgs/gui2.png used on input line 146.
 (pdftex.def)             Requested size: 304.49867pt x 338.27014pt.
-
-[14 <./imgs/scelta1.png> <./imgs/scelta11.png>]
-<./imgs/sleep.PNG, id=86, 213.79875pt x 149.8097pt>
+ [13 <./imgs/scelta11.png> <./imgs/gui2.png>]
+<./imgs/sleep.PNG, id=84, 213.79875pt x 149.8097pt>
 File: ./imgs/sleep.PNG Graphic file (type png)
  <use ./imgs/sleep.PNG>
 Package pdftex.def Info: ./imgs/sleep.PNG used on input line 165.
 (pdftex.def)             Requested size: 173.99734pt x 121.92122pt.
 
-[15 <./imgs/gui2.png>] <./imgs/textarea.png, id=91, 414.79968pt x 180.675pt>
+[14 <./imgs/sleep.PNG>] <./imgs/textarea.png, id=89, 414.79968pt x 180.675pt>
 File: ./imgs/textarea.png Graphic file (type png)
 
 <use ./imgs/textarea.png>
 Package pdftex.def Info: ./imgs/textarea.png used on input line 179.
 (pdftex.def)             Requested size: 261.00266pt x 113.68799pt.
- [16 <./imgs/sleep.PNG>]
-<./imgs/help.png, id=97, 422.32782pt x 205.5178pt>
+ <./imgs/help.png, id=90, 422.32782pt x 205.5178pt>
 File: ./imgs/help.png Graphic file (type png)
- <use ./imgs/help.png>
+
+<use ./imgs/help.png>
 Package pdftex.def Info: ./imgs/help.png used on input line 190.
 (pdftex.def)             Requested size: 304.49867pt x 148.18282pt.
-
-<./imgs/warning.png, id=98, 302.63063pt x 132.495pt>
+ <./imgs/warning.png, id=91, 302.63063pt x 132.495pt>
 File: ./imgs/warning.png Graphic file (type png)
- <use ./imgs/warning.png>
+
+<use ./imgs/warning.png>
 Package pdftex.def Info: ./imgs/warning.png used on input line 198.
 (pdftex.def)             Requested size: 261.00266pt x 114.27098pt.
-
-[17 <./imgs/textarea.png> <./imgs/help.png>] [18 <./imgs/warning.png>] [19])
-[20]
+ [15 <./imgs/textarea.png>] [16 <./imgs/help.png> <./imgs/warning.png>] [17]) [
+18]
 \openout2 = `Implementazione.aux'.
 
  (./Implementazione.tex
@@ -500,18 +497,18 @@ Overfull \hbox (12.87662pt too wide) in paragraph at lines 32--33
 e-sti-tui-to dal-la fun-zio-ne \T1/cmr/m/it/12 Tools.getOs()\T1/cmr/m/n/12 . 
  []
 
-[21
+[19
 
 
 
-] [22]
+] [20]
 Overfull \hbox (19.8709pt too wide) in paragraph at lines 100--103
 \T1/cmr/m/n/12 ester-na, la \T1/cmr/m/it/12 Ja-va Na-ti-ve Ac-cess[]\T1/cmr/m/n
 /12 , in cui il pac-ka-ge \T1/cmr/m/it/12 com.sun.jna.platform.win32.Advapi32Ut
 il
  []
 
-[23]
+[21]
 Overfull \hbox (68.0249pt too wide) in paragraph at lines 108--109
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][]
@@ -529,12 +526,12 @@ Overfull \hbox (9.2298pt too wide) in paragraph at lines 131--132
 [][][][][][][][][][][][][][][] 
  []
 
-[24]
+[22]
 Overfull \hbox (15.76259pt too wide) in paragraph at lines 168--169
 [][][][][][][][][][][][][][][][][] 
  []
 
-[25] [26]
+[23] [24]
 Overfull \hbox (61.49213pt too wide) in paragraph at lines 202--203
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -549,7 +546,7 @@ Overfull \hbox (9.2298pt too wide) in paragraph at lines 217--218
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[27]
+[25]
 Overfull \hbox (54.95934pt too wide) in paragraph at lines 258--259
 [][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -574,7 +571,7 @@ Overfull \hbox (2.697pt too wide) in paragraph at lines 277--278
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [28] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
+) [26] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
 (./Implementazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
@@ -603,10 +600,10 @@ k/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/diomenik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/diomenik/.texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Byob.pdf (31 pages, 346134 bytes).
+Output written on Byob.pdf (29 pages, 344389 bytes).
 PDF statistics:
- 726 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 719 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
