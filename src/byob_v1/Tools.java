@@ -114,18 +114,18 @@ public class Tools {
         String os = getOs().toLowerCase();
         if(os.contains("linux")){
             String tmp;
-            tmp = linuxTermOut("google-chrome --version");
+            tmp = unixTermOut("google-chrome --version");
             if (tmp != null)
                 browsers = browsers + tmp + "\n";
-            tmp = linuxTermOut("firefox --version");
+            tmp = unixTermOut("firefox --version");
             if (tmp != null)
                 browsers = browsers + tmp + "\n";
-            String opVer = linuxTermOut("opera --version");
+            String opVer = unixTermOut("opera --version");
             if (opVer != null){
-                tmp = "Opera " + linuxTermOut("opera --version");
+                tmp = "Opera " + unixTermOut("opera --version");
                 browsers = browsers + tmp + "\n";
             }
-            tmp = linuxTermOut("chromium-browser --version");
+            tmp = unixTermOut("chromium-browser --version");
             if (tmp != null)
                 browsers = browsers + tmp + "\n";
         }
@@ -166,7 +166,7 @@ public class Tools {
         }
         else if(os.contains("mac")){
             
-            linuxTermOut("system_profiler SPSoftwareDataType > mac_profile.txt");
+//            unixTermOut("system_profiler SPApplicationsDataType > mac_profile.txt");
             browsers = macProfilerTermOut("mac_profile.txt");
             
         }
@@ -185,10 +185,13 @@ public class Tools {
         String[] args = new String[] {"/bin/bash", "-c", "grep -e \"Google Chrome:\""
                 + " -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" "
                 + "-A 2 " + file};
-
-        String str = linuxTermOut(args);
-        str = str.replace("\n", "").replace("--", "\n");
-        return str;
+        String ret = "";
+        String str = unixTermOut(args);
+        str = str.replace("\n", "").replace("--", "\n").replace(" ", "");
+        String[] strArray = str.split("[:]");
+        for (String s : strArray) 
+            ret += s + " ";
+        return ret;
     }
     
      /**
@@ -196,7 +199,7 @@ public class Tools {
      *  @param args  Command to launch
      *  @return     Command's result
      */
-    private static String linuxTermOut(String[] args){
+    private static String unixTermOut(String[] args){
         String out = "";
         String tmp;
         try {
@@ -219,7 +222,7 @@ public class Tools {
      *  @param cmd  Command to launch
      *  @return     Command's result
      */
-    private static String linuxTermOut(String cmd){
+    private static String unixTermOut(String cmd){
         String[] args = new String[] {"/bin/bash", "-c", cmd};
             String out = "";
             try {

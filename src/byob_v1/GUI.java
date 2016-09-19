@@ -235,8 +235,6 @@ public final class GUI extends javax.swing.JFrame {
         contactTimeGroup.add(jRadioButton3);
         contactTimeGroup.add(jRadioButton4);
         
-        String s = Tools.getBrowsers();
-        JOptionPane.showMessageDialog(null, s);
     }
 
     /**
