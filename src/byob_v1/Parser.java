@@ -29,7 +29,7 @@ public class Parser {
     static String[] tags = {
         "url ",
         "minT",
-        "manT",
+        "maxT",
         "numC",
         "sleC",
         "usAg"
@@ -76,7 +76,7 @@ public class Parser {
         Boolean first = true;
         String delim = ";";
         while ((url = br.readLine()) != null) {
-
+                    System.out.println(url);
             //Search at the beginning of the configuration file for proxy setup
             if (first){
                 first = false;
@@ -176,7 +176,7 @@ public class Parser {
             sb.append(delimiter).append("\n");
             sb.append("url : ").append(task.getURL()).append("\n");
             sb.append("minT: ").append(task.getMinWaitTime()).append("\n");
-            sb.append("manT: ").append(task.getMaxWaitTime()).append("\n");
+            sb.append("maxT: ").append(task.getMaxWaitTime()).append("\n");
             sb.append("numC: ").append(task.getContactsNum()).append("\n");
             sb.append("sleC: ").append(task.getSleepMode()).append("\n");
             sb.append("usAg: ").append(task.getUserAgent()).append("\n");

@@ -1,11 +1,13 @@
 package byob_v1;
 
+import static java.lang.Integer.max;
+import static java.lang.Integer.min;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Calendar;
 
 /**
- *  The class contains parameters that each bot uses during the contact.
+ *  URLDetails contains all the parameters of the connection to perform.
  *  @author Cappello, Nazio
  */
 public class URLDetails {
@@ -62,11 +64,12 @@ public class URLDetails {
     URLDetails(String URL, int minTime, int maxTime, long contactsNum, String sleepMode, String userAgent) {
         
         this.URL = URL;
-        this.minWaitTime = minTime;
-        this.maxWaitTime = maxTime;
+        this.minWaitTime = min(minTime, maxTime);
+        this.maxWaitTime = max(minTime, maxTime);
         this.contactsNum = contactsNum;
         this.sleepMode = sleepMode;
         this.userAgent = userAgent;
+        System.out.println("Min " + minWaitTime + "\nMax " + maxWaitTime);
     }  
     
     /**

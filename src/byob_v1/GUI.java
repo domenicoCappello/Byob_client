@@ -1,5 +1,6 @@
 package byob_v1;
 
+import static com.sun.java.accessibility.util.SwingEventMonitor.addCaretListener;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +42,8 @@ import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.NumberFormatter;
 
 /**
@@ -145,38 +148,58 @@ public final class GUI extends javax.swing.JFrame {
         jFormattedTextField5.setFormatterFactory(c);
         jFormattedTextField9.setFormatterFactory(c);
         
-        jFormattedTextField3.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent event) {
-                if(jRadioButton3.isSelected()) {
-                    String min = jFormattedTextField3.getText();
-                    if(Parser.checkNumber(min))
-                        if(Integer.parseInt(min) < 0)
-                            jFormattedTextField3.setText("0");
-                        if(jFormattedTextField4.getText().equals("")) {
-                            int max = Integer.parseInt(min) + 1;
-                            jFormattedTextField4.setText(String.valueOf(max));
-                        }
-                    else if(Parser.checkNumber(min) && Parser.checkNumber(jFormattedTextField4.getText())) 
-                        if (Integer.parseInt(min) > Integer.parseInt(jFormattedTextField4.getText()))
-                            jFormattedTextField3.setText("");
-                }
-            }
-        });
+//        jFormattedTextField3.getDocument().addDocumentListener(new DocumentListener() {
+//            @Override
+//            public void insertUpdate(DocumentEvent e) {
+//                System.out.println("Insert");
+////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//
+//            @Override
+//            public void removeUpdate(DocumentEvent e) {
+//                System.out.println("Remove");
+////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//
+//            @Override
+//            public void changedUpdate(DocumentEvent e) {
+//                System.out.println("Change");
+////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//        });
         
-        jFormattedTextField4.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent event) {
-                String min = jFormattedTextField3.getText().equals("") ?
-                        "1" : jFormattedTextField3.getText();
-                String max = jFormattedTextField4.getText();
-                if(Parser.checkNumber(max))
-                    jFormattedTextField3.setText(min);
-                if(Parser.checkNumber(min) && Parser.checkNumber(max))
-                    if (Integer.parseInt(min) > Integer.parseInt(max))
-                        jFormattedTextField4.setText("");
-            }
-        });
+//        jFormattedTextField3.addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyReleased(KeyEvent event) {
+//                if(jRadioButton3.isSelected()) {
+//                    String min = jFormattedTextField3.getText();
+//                    if(Parser.checkNumber(min))
+//                        if(Integer.parseInt(min) < 0)
+//                            jFormattedTextField3.setText("0");
+//                        if(jFormattedTextField4.getText().equals("")) {
+//                            int max = Integer.parseInt(min) + 1;
+//                            jFormattedTextField4.setText(String.valueOf(max));
+//                        }
+//                    else if(Parser.checkNumber(min) && Parser.checkNumber(jFormattedTextField4.getText())) 
+//                        if (Integer.parseInt(min) > Integer.parseInt(jFormattedTextField4.getText()))
+//                            jFormattedTextField3.setText("");
+//                }
+//            }
+//        });
+        
+//        jFormattedTextField4.addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyReleased(KeyEvent event) {
+//                String min = jFormattedTextField3.getText().equals("") ?
+//                        "1" : jFormattedTextField3.getText();
+//                String max = jFormattedTextField4.getText();
+//                if(Parser.checkNumber(max))
+//                    jFormattedTextField3.setText(min);
+//                if(Parser.checkNumber(min) && Parser.checkNumber(max))
+//                    if (Integer.parseInt(min) > Integer.parseInt(max))
+//                        jFormattedTextField4.setText("");
+//            }
+//        });
         
         jTextArea1.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -411,6 +434,11 @@ public final class GUI extends javax.swing.JFrame {
         jFormattedTextField2.setEnabled(false);
 
         jFormattedTextField3.setEnabled(false);
+        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField3ActionPerformed(evt);
+            }
+        });
 
         jRadioButton3.setText("Interval");
         jRadioButton3.setEnabled(false);
@@ -460,6 +488,11 @@ public final class GUI extends javax.swing.JFrame {
         });
 
         jFormattedTextField4.setEnabled(false);
+        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField4ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("-");
@@ -509,9 +542,9 @@ public final class GUI extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -850,6 +883,7 @@ public final class GUI extends javax.swing.JFrame {
             Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
         
         Parser parser = new Parser(fileConfPath);
+        System.out.println(fileConfPath); 
         try {
             ArrayList <URLDetails> taskList = parser.readConfigurationFile();
             if(jRadioButton1.isSelected()) 
@@ -859,6 +893,14 @@ public final class GUI extends javax.swing.JFrame {
             ByobSingleton.myLogger.severe("Parser I/O exception");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
+
+    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
     
     /**
      * Method writes the paramaters inside the text area.
@@ -953,8 +995,25 @@ public final class GUI extends javax.swing.JFrame {
                             params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
                         break;
                         
+                    case 1:
+                        /** MinTime = min(minT, maxT)*/
+                        if(Integer.parseInt(textParam.get(i+1).getText()) >= 
+                                        Integer.parseInt(textParam.get(i).getText())){
+                            params[i] = standard  && textParam.get(i).getText().equals("") ? 
+                            defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
+
+                        } else {
+                            params[i] = standard  && textParam.get(i+1).getText().equals("") ? 
+                            defaultValue[i] : textParam.get(i+1).getText().equals("") ? " " : textParam.get(i+1).getText();
+                        }  
+                        break;
+                        
                     case 2:
-                            if(jFormattedTextField4.isEnabled()) {
+                        /** if(maxT exists) then MaxTime = max(minT, maxT)
+                            else MaxTime = MinTime*/
+                            if(jFormattedTextField4.isEnabled() && 
+                                        Integer.parseInt(textParam.get(i).getText()) >= 
+                                        Integer.parseInt(textParam.get(i-1).getText())) {
                                 params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
                             } else {
                                 params[i] = standard ? defaultValue[i] : textParam.get(i-1).getText();
@@ -978,7 +1037,7 @@ public final class GUI extends javax.swing.JFrame {
         String proxyIp = jFormattedTextField8.getText().isEmpty() ? "" : jFormattedTextField8.getText();
                 String proxyPort = jFormattedTextField9.getText().isEmpty() ? "" : jFormattedTextField9.getText();
                 return (proxyIp.isEmpty() || proxyPort.isEmpty()) ? 
-                        "\n" : 
+                        "" : 
                         "$" + proxyIp + ":" + proxyPort + "\n";
     }
 

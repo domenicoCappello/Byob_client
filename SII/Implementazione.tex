@@ -7,7 +7,7 @@
 All'avvio dell'applicazione, viene visualizzata la schermata principale di configurazione; vengono inoltre raccolte e scritte sul file \textit{sys\_info.txt} informazioni riguardanti il sistema operativo della macchina e le versioni dei browser installati.
 
 \vspace{0.5cm}
-\begin{lstlisting}[caption=Funzione main,captionpos=b]
+\begin{lstlisting}
 public class Byob_v1 {
 
 	public static void main(String[] args) {
@@ -72,10 +72,10 @@ Per identificare l'eventuale versione installata di ogni browser, viene avviato 
 \vspace{0.5cm}
 \begin{lstlisting}
 	[...]
-	String tmp = linuxTermOut("firefox --version");
+	String tmp = unixTermOut("firefox --version");
 	[...]
 
-private static String linuxTermOut(String cmd){
+private static String unixTermOut(String cmd){
     String[] args = new String[] {"/bin/bash", "-c", cmd};
     String out = "";
     try {
@@ -119,13 +119,13 @@ I browser ritenuti pi\`{u} comuni in ambiente \textit{Mac OSx} sono stati:
 	\item Opera
 	\item Safari
 \end{itemize}
-Come per \textit{Linux}, per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la shell di sistema avviando il programma \textit{system\_profiler} con parametro \textit{SPSoftwareDataType}. L'output offerto dal profiler di sistema contiene al suo interno tutto il software installato sulla macchina, compreso numero di versione e autori. 
+Come per \textit{Linux}, per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la shell di sistema avviando il programma \textit{system\_profiler} con parametro \textit{SPApplicationDataType}. L'output offerto dal profiler di sistema contiene al suo interno tutto il software installato sulla macchina, compreso numero di versione e autori. 
 Tutte le informazioni vengono salvate all'interno del file \textit{mac\_profile.txt}, da cui successivamente vengono estratte le versioni relative al software cercato.
 
 \vspace{0.5cm}
 \begin{lstlisting}
 [...]
-linuxTermOut("system_profiler SPSoftwareDataType > mac_profile.txt");
+linuxTermOut("system_profiler SPApplicationDataType > mac_profile.txt");
 [...]
 String[] args = new String[] {"/bin/bash", "-c", "grep 
 -e \"Google Chrome:\" -e \"Firefox:\" -e \"  Opera:\" -e \"Safari:\" 

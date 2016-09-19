@@ -20,17 +20,10 @@ public class Byob_v1 {
         frame.setTitle("BYOB v_1");
         frame.setLocation(x, y);
         frame.setVisible(true);
+        
         /**Gather system informations and write them on sys_info.txt*/
-        Tools.writeInfoFile("sys_info.txt");
-//        String file = "geppconf2.txt";
-//        Parser parser = new Parser(file);
-//        try {
-//            ArrayList <URLDetails> taskList = parser.readConfigurationFile();
-//            Tools.schedule(taskList);
-//        } catch (IOException ex) {
-//            Tools.BYOB_WRAPPER.myLogger.severe("Parser I/O exception");
-//        }
-//        while(true);   
+        Tools.writeInfoFile("Byob/sys_info.txt");
+        
     }
     
 }

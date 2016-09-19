@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Class is responsible for anything concerning the GET method of HTTP and its response.
+ * Class is responsible for anything concerning the http GET method and its response.
  * @author Cappello, Nazio
  */
 public class ByobComm {
@@ -82,7 +82,7 @@ public class ByobComm {
             return -1;
             
         } catch (IOException ex) {
-            ByobSingleton.getInstance().myLogger.severe("IOException");
+            ByobSingleton.getInstance().myLogger.severe("IOException: check URL");
             return -2; 
         }   
     }

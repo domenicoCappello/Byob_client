@@ -1,5 +1,6 @@
 package byob_v1;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -22,7 +23,7 @@ public class ByobSingleton {
     public static final Logger myLogger = Logger.getLogger("BYOB");
     
     // Scheduler Executor Service
-    public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(1000);
+    public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(30);
  
     /**
     * Constructor.
@@ -48,13 +49,16 @@ public class ByobSingleton {
     */
     private static void prepareLogger() {
         try {
-            FileHandler myFileHandler = new FileHandler("_log.txt");
+            File dir = new File("Byob");
+            if (!dir.exists()) dir.mkdir();
+            
+            FileHandler myFileHandler = new FileHandler("Byob/_log.txt", true);
             myFileHandler.setFormatter(new SimpleFormatter());
             myLogger.addHandler(myFileHandler);
             myLogger.setUseParentHandlers(false);
             myLogger.setLevel(Level.FINEST);
-        } catch (IOException | SecurityException ex) {
-            Logger.getLogger(ByobSingleton.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            System.err.println("PrepareLogger exception");
         }
     }    
 }
