@@ -32,7 +32,7 @@
 \contentsline {subsection}{\numberline {3.2.3}Mac OSx}{22}
 \contentsline {section}{\numberline {3.3}File di configurazione}{23}
 \contentsline {subsection}{\numberline {3.3.1}Immissione e scrittura}{23}
-\contentsline {subsection}{\numberline {3.3.2}Lettura e caricamento}{27}
-\contentsline {section}{\numberline {3.4}Lancio}{27}
-\contentsline {subsection}{\numberline {3.4.1}Schedulazione dei task}{28}
-\contentsline {subsection}{\numberline {3.4.2}Comunicazione HTTP}{29}
+\contentsline {subsection}{\numberline {3.3.2}Lettura e caricamento}{29}
+\contentsline {section}{\numberline {3.4}Lancio}{31}
+\contentsline {subsection}{\numberline {3.4.1}Schedulazione dei task}{32}
+\contentsline {subsection}{\numberline {3.4.2}Comunicazione HTTP}{33}

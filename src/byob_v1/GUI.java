@@ -943,16 +943,21 @@ public final class GUI extends javax.swing.JFrame {
                         break;
                         
                     case 1:
-                        /** MinTime = min(minT, maxT)*/
-                        if(Integer.parseInt(textParam.get(i+1).getText()) >= 
-                                        Integer.parseInt(textParam.get(i).getText())){
+                        if(jFormattedTextField4.isEnabled()){
+                            /** MinTime = min(minT, maxT)*/
+                            if(Integer.parseInt(textParam.get(i+1).getText()) >= 
+                                            Integer.parseInt(textParam.get(i).getText())){
+                                params[i] = standard  && textParam.get(i).getText().equals("") ? 
+                                defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
+
+                            } else {
+                                params[i] = standard  && textParam.get(i+1).getText().equals("") ? 
+                                defaultValue[i] : textParam.get(i+1).getText().equals("") ? " " : textParam.get(i+1).getText();
+                            }  
+                        } else {
                             params[i] = standard  && textParam.get(i).getText().equals("") ? 
                             defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
-
-                        } else {
-                            params[i] = standard  && textParam.get(i+1).getText().equals("") ? 
-                            defaultValue[i] : textParam.get(i+1).getText().equals("") ? " " : textParam.get(i+1).getText();
-                        }  
+                        }
                         break;
                         
                     case 2:

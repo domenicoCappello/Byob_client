@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  20 SEP 2016 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  20 SEP 2016 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -527,86 +527,137 @@ Overfull \hbox (9.2298pt too wide) in paragraph at lines 131--132
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 [23]
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 178--179
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 195--197
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][] 
  []
 
-[24] [25]
-Overfull \hbox (283.60703pt too wide) in paragraph at lines 207--208
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[25]
+Overfull \hbox (68.02492pt too wide) in paragraph at lines 272--274
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][] 
+ []
+
+[26]
+Overfull \hbox (48.42654pt too wide) in paragraph at lines 280--282
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+[27]
+Overfull \hbox (283.60703pt too wide) in paragraph at lines 317--319
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][] 
  []
 
 
-Overfull \hbox (2.697pt too wide) in paragraph at lines 210--211
+Overfull \hbox (2.697pt too wide) in paragraph at lines 323--325
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[26]
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 238--239
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+Overfull \hbox (2.697pt too wide) in paragraph at lines 367--369
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[29]
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 406--408
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[30]
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 445--446
 [][][][][][][][][][][][][][][][][] 
  []
 
-[27]
-Overfull \hbox (61.49213pt too wide) in paragraph at lines 272--273
+[31]
+Overfull \hbox (61.49213pt too wide) in paragraph at lines 479--480
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.89375pt too wide) in paragraph at lines 284--285
+Overfull \hbox (41.89375pt too wide) in paragraph at lines 491--492
 [][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (9.2298pt too wide) in paragraph at lines 287--288
+[32]
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 494--495
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[28]
-Overfull \hbox (54.95934pt too wide) in paragraph at lines 328--329
+[33]
+Overfull \hbox (54.95934pt too wide) in paragraph at lines 535--536
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[29]
-Overfull \hbox (2.697pt too wide) in paragraph at lines 334--335
+
+Overfull \hbox (2.697pt too wide) in paragraph at lines 541--542
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 338--339
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 545--546
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (68.02492pt too wide) in paragraph at lines 343--344
+Overfull \hbox (68.02492pt too wide) in paragraph at lines 550--551
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.697pt too wide) in paragraph at lines 347--348
+Overfull \hbox (2.697pt too wide) in paragraph at lines 554--555
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [30] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
+) [34] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
 (./Implementazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5928 strings out of 494942
- 76336 string characters out of 6180501
- 180304 words of memory out of 5000000
- 9043 multiletter control sequences out of 15000+600000
+ 5954 strings out of 494942
+ 76656 string characters out of 6180501
+ 181304 words of memory out of 5000000
+ 9069 multiletter control sequences out of 15000+600000
  24354 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,12n,44p,996b,1789s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,44p,1096b,1789s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </hom
 e/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/diomen
 ik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/diomenik/.texm
@@ -622,10 +673,10 @@ k/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/diomenik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/diomenik/.texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Byob.pdf (33 pages, 358393 bytes).
+Output written on Byob.pdf (37 pages, 368778 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 772 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

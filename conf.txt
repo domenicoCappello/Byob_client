@@ -1,0 +1,13 @@
+$112.65.88.173:8080
+*http://www.google.com
+200
+300
+50
+OA
+Mozilla Custom
+*http://www.lemedicine.org
+20
+300
+100
+O
+Custom 2
