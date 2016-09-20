@@ -147,60 +147,7 @@ public final class GUI extends javax.swing.JFrame {
         jFormattedTextField4.setFormatterFactory(c);
         jFormattedTextField5.setFormatterFactory(c);
         jFormattedTextField9.setFormatterFactory(c);
-        
-//        jFormattedTextField3.getDocument().addDocumentListener(new DocumentListener() {
-//            @Override
-//            public void insertUpdate(DocumentEvent e) {
-//                System.out.println("Insert");
-////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//            }
-//
-//            @Override
-//            public void removeUpdate(DocumentEvent e) {
-//                System.out.println("Remove");
-////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//            }
-//
-//            @Override
-//            public void changedUpdate(DocumentEvent e) {
-//                System.out.println("Change");
-////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//            }
-//        });
-        
-//        jFormattedTextField3.addKeyListener(new KeyAdapter() {
-//            @Override
-//            public void keyReleased(KeyEvent event) {
-//                if(jRadioButton3.isSelected()) {
-//                    String min = jFormattedTextField3.getText();
-//                    if(Parser.checkNumber(min))
-//                        if(Integer.parseInt(min) < 0)
-//                            jFormattedTextField3.setText("0");
-//                        if(jFormattedTextField4.getText().equals("")) {
-//                            int max = Integer.parseInt(min) + 1;
-//                            jFormattedTextField4.setText(String.valueOf(max));
-//                        }
-//                    else if(Parser.checkNumber(min) && Parser.checkNumber(jFormattedTextField4.getText())) 
-//                        if (Integer.parseInt(min) > Integer.parseInt(jFormattedTextField4.getText()))
-//                            jFormattedTextField3.setText("");
-//                }
-//            }
-//        });
-        
-//        jFormattedTextField4.addKeyListener(new KeyAdapter() {
-//            @Override
-//            public void keyReleased(KeyEvent event) {
-//                String min = jFormattedTextField3.getText().equals("") ?
-//                        "1" : jFormattedTextField3.getText();
-//                String max = jFormattedTextField4.getText();
-//                if(Parser.checkNumber(max))
-//                    jFormattedTextField3.setText(min);
-//                if(Parser.checkNumber(min) && Parser.checkNumber(max))
-//                    if (Integer.parseInt(min) > Integer.parseInt(max))
-//                        jFormattedTextField4.setText("");
-//            }
-//        });
-        
+                
         jTextArea1.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  19 SEP 2016 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  20 SEP 2016 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -527,64 +527,86 @@ Overfull \hbox (9.2298pt too wide) in paragraph at lines 131--132
  []
 
 [22]
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
+
+ []
+
+[23]
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 178--179
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+[24] [25]
+Overfull \hbox (283.60703pt too wide) in paragraph at lines 207--208
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][] 
+ []
+
+
+Overfull \hbox (2.697pt too wide) in paragraph at lines 210--211
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[26]
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 238--239
 [][][][][][][][][][][][][][][][][] 
  []
 
-[23] [24]
-Overfull \hbox (61.49213pt too wide) in paragraph at lines 202--203
+[27]
+Overfull \hbox (61.49213pt too wide) in paragraph at lines 272--273
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.89375pt too wide) in paragraph at lines 214--215
+Overfull \hbox (41.89375pt too wide) in paragraph at lines 284--285
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.2298pt too wide) in paragraph at lines 217--218
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 287--288
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[25]
-Overfull \hbox (54.95934pt too wide) in paragraph at lines 258--259
+[28]
+Overfull \hbox (54.95934pt too wide) in paragraph at lines 328--329
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (2.697pt too wide) in paragraph at lines 264--265
+[29]
+Overfull \hbox (2.697pt too wide) in paragraph at lines 334--335
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 268--269
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 338--339
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (68.02492pt too wide) in paragraph at lines 273--274
+Overfull \hbox (68.02492pt too wide) in paragraph at lines 343--344
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.697pt too wide) in paragraph at lines 277--278
+Overfull \hbox (2.697pt too wide) in paragraph at lines 347--348
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [26] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
+) [30] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
 (./Implementazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5903 strings out of 494942
- 76017 string characters out of 6180501
- 182304 words of memory out of 5000000
- 9018 multiletter control sequences out of 15000+600000
+ 5928 strings out of 494942
+ 76336 string characters out of 6180501
+ 180304 words of memory out of 5000000
+ 9043 multiletter control sequences out of 15000+600000
  24354 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,12n,44p,793b,1781s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,44p,996b,1789s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </hom
 e/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/diomen
 ik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/diomenik/.texm
@@ -600,10 +622,10 @@ k/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/diomenik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/diomenik/.texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Byob.pdf (29 pages, 344389 bytes).
+Output written on Byob.pdf (33 pages, 358393 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 752 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
