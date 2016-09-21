@@ -24,6 +24,8 @@ import java.util.logging.Logger;
  */
 public class Tools { 
     
+    static String cr = System.getProperty("line.separator");
+    
     // Scheduler's instance
     final static ByobSingleton BYOB_WRAPPER = ByobSingleton.getInstance();
     
@@ -45,8 +47,8 @@ public class Tools {
         
         File file = new File(fileName);
         String text = "OS: " + getOs() + " " +
-                      System.getProperty("os.arch") + "\n" + 
-                      "Installed Browsers: \n" +
+                      System.getProperty("os.arch") + cr + 
+                      "Installed Browsers: " + cr +
                       getBrowsers();
         
         try(  PrintWriter out = new PrintWriter(file)  ){
@@ -64,21 +66,21 @@ public class Tools {
      */
     public static List<String> warningMessage(String[] params){
         List<String> warning = new ArrayList<>(); 
-        warning.add("Fix the following parameters:\n");
+        warning.add("Fix the following parameters:" + cr);
        if(!Parser.checkNumber(params[1]))
             if(params[2].equals("-"))
-                warning.add("- Contact time value not valid;\n");
+                warning.add("- Contact time value not valid;"+cr);
             else
-                warning.add("- Minimum contact time value not valid;\n");
+                warning.add("- Minimum contact time value not valid;"+cr);
         if(!Parser.checkNumber(params[2]))
             if(!params[2].equals("-"))
-                warning.add("- Maximum contact time value not valid;\n");
+                warning.add("- Maximum contact time value not valid;"+cr);
         if(!Parser.checkNumber(params[3]))
-            warning.add("- Number of contacts not valid;\n");
+            warning.add("- Number of contacts not valid;"+cr);
         if(!params[6].equals(" ") && !Parser.checkIPv4String(params[6]))
-            warning.add("- Proxy IP not valid;\n");
+            warning.add("- Proxy IP not valid;"+cr);
         if(!params[7].equals(" ") && !Parser.checkPort(params[7]))
-            warning.add("- Proxy port not valid (choose one between 1025 and 65525);\n");
+            warning.add("- Proxy port not valid (choose one between 1025 and 65525);"+cr);
         if(warning.size() == 1)
             return null;
         else {
@@ -116,18 +118,18 @@ public class Tools {
             String tmp;
             tmp = unixTermOut("google-chrome --version");
             if (tmp != null)
-                browsers = browsers + tmp + "\n";
+                browsers = browsers + tmp + cr;
             tmp = unixTermOut("firefox --version");
             if (tmp != null)
-                browsers = browsers + tmp + "\n";
+                browsers = browsers + tmp + cr;
             String opVer = unixTermOut("opera --version");
             if (opVer != null){
                 tmp = "Opera " + unixTermOut("opera --version");
-                browsers = browsers + tmp + "\n";
+                browsers = browsers + tmp + cr;
             }
             tmp = unixTermOut("chromium-browser --version");
             if (tmp != null)
-                browsers = browsers + tmp + "\n";
+                browsers = browsers + tmp + cr;
         }
         else if(os.contains("windows")) {
             
@@ -136,7 +138,7 @@ public class Tools {
             String vField = getOs().toLowerCase().equals("windows 8")? "svcVersion" : "Version";
             String version = Advapi32Util.registryGetStringValue(   
                 WinReg.HKEY_LOCAL_MACHINE, path, vField);
-            browsers = browsers + "Internet Explorer " + version + "\n";
+            browsers = browsers + "Internet Explorer " + version + cr;
             
             //Google Chrome
             String wowNode = isSystem64Bit() ? "Wow6432Node\\" : "";
@@ -150,7 +152,7 @@ public class Tools {
                         String name = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "name");
                         if(name.toLowerCase().equals("google chrome")){
                             version = Advapi32Util.registryGetStringValue(WinReg.HKEY_LOCAL_MACHINE, path + "\\" + key1, "pv");
-                            browsers = browsers + "Google Chrome " + version + "\n";
+                            browsers = browsers + "Google Chrome " + version + cr;
                         }
                     }catch (Exception e){}
                 }
@@ -160,7 +162,7 @@ public class Tools {
             try{
                 version = Advapi32Util.registryGetStringValue( 
                     WinReg.HKEY_LOCAL_MACHINE, "SOFTWARE\\" + wowNode + "Mozilla\\Mozilla Firefox", "CurrentVersion");
-                browsers = browsers + "Mozilla Firefox " + version + "\n";
+                browsers = browsers + "Mozilla Firefox " + version + cr;
 
             } catch(Exception e){}
         }
@@ -171,7 +173,7 @@ public class Tools {
             
         }
         else {
-            browsers = "Unrecognized OS\n";
+            browsers = "Unrecognized OS"+cr;
         }
         return browsers;
     }
@@ -187,7 +189,7 @@ public class Tools {
                 + "-A 2 " + file};
         String ret = "";
         String str = unixTermOut(args);
-        str = str.replace("\n", "").replace("--", "\n").replace(" ", "");
+        str = str.replace(cr, "").replace("--", cr).replace(" ", "");
         String[] strArray = str.split("[:]");
         for (String s : strArray) 
             ret += s + " ";
@@ -207,7 +209,7 @@ public class Tools {
             BufferedReader br = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             proc.waitFor();
             while((tmp = br.readLine()) != null){
-                out = out + tmp + "\n";
+                out = out + tmp + cr;
             }
         } catch (IOException ex) {
             Logger.getLogger(Tools.class.getName()).log(Level.SEVERE, null, ex);
@@ -249,7 +251,7 @@ public class Tools {
             Process _process = Runtime.getRuntime().exec(command);
             BufferedReader stdInput = new BufferedReader(new InputStreamReader(_process.getInputStream()));
             while((_string = stdInput.readLine()) != null)
-                cmdOutput += _string+"\n";
+                cmdOutput += _string+cr;
         }
 
         catch(IOException e) {

@@ -1,6 +1,6 @@
 package byob_v1;
 
-import static com.sun.java.accessibility.util.SwingEventMonitor.addCaretListener;
+import static byob_v1.Tools.cr;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileNotFoundException;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -42,8 +43,6 @@ import java.text.ParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
-import javax.swing.event.CaretEvent;
-import javax.swing.event.CaretListener;
 import javax.swing.text.NumberFormatter;
 
 /**
@@ -616,8 +615,7 @@ public final class GUI extends javax.swing.JFrame {
         if (returnValue == JFileChooser.APPROVE_OPTION)
         {
             File selectedFile = fileChooser.getSelectedFile();
-            File file = new File(selectedFile.getName());
-            fileConfPath = file.getAbsolutePath();
+            fileConfPath = selectedFile.getAbsolutePath();
             jFormattedTextField1.setText(fileConfPath);
             jButton7.setEnabled(true);
         }
@@ -658,7 +656,7 @@ public final class GUI extends javax.swing.JFrame {
         }
         if(!flag) {
             try {
-                Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("[\n]", -1), textParam.size());
+                Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("["+cr+"]", 1), textParam.size());
                 jButton7.setEnabled(true);
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -740,6 +738,7 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String[] params = extractData(false);
+        System.out.println("Push: params.length " + params.length);
         List<String> warning = Tools.warningMessage(params);
         if(warning!=null) {
             final JFrame parent = new JFrame();
@@ -778,7 +777,7 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] params = jTextArea1.getText().split("\n");
+        String[] params = jTextArea1.getText().split(cr);
         clearFields(true, true);
         for(int i=0; i < textParam.size()-2; i++) {
             if(i==0)
@@ -799,7 +798,7 @@ public final class GUI extends javax.swing.JFrame {
         List textArea = Arrays.asList(params).subList(textParam.size()-2, params.length);
 
         for(int i=0; i < textArea.size(); i++)
-            jTextArea1.append(textArea.get(i).toString()+"\n");
+            jTextArea1.append(textArea.get(i).toString()+cr);
         
         if(!jFormattedTextField4.isEnabled())
             jFormattedTextField4.setText("");      
@@ -826,18 +825,28 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         
-        if(jRadioButton2.isSelected())
+        if(jRadioButton2.isSelected()){
+//            System.out.println(jTextArea1.getText());
+//            String[] l = jTextArea1.getText().split("[\n]", -1);
+//                System.out.println("HERE");
+//            System.out.println("Launch: l.length: "+ l.length);
+//            for(int i = 0; i < l.length;i++)
+//                System.out.println(l[i]);
             Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
+        }
         
         Parser parser = new Parser(fileConfPath);
-        System.out.println(fileConfPath); 
         try {
             ArrayList <URLDetails> taskList = parser.readConfigurationFile();
             if(jRadioButton1.isSelected()) 
                 Parser.writeParamsFile(taskList);
             Tools.schedule(taskList);
+        } catch (FileNotFoundException e){
+            ByobSingleton.myLogger.severe("Parser I/O exception");
+            System.out.println("readConfFile FEOF");
         } catch (IOException ex) {
             ByobSingleton.myLogger.severe("Parser I/O exception");
+            System.out.println("readConfFile IO");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -990,7 +999,7 @@ public final class GUI extends javax.swing.JFrame {
                 String proxyPort = jFormattedTextField9.getText().isEmpty() ? "" : jFormattedTextField9.getText();
                 return (proxyIp.isEmpty() || proxyPort.isEmpty()) ? 
                         "" : 
-                        "$" + proxyIp + ":" + proxyPort + "\n";
+                        "$" + proxyIp + ":" + proxyPort + cr;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
