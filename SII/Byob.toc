@@ -5,11 +5,11 @@
 \contentsline {section}{\numberline {1.2}HTTP Botnet}{2}
 \contentsline {section}{\numberline {1.3}Obiettivo}{3}
 \contentsline {chapter}{\numberline {2}Panoramica del progetto}{4}
-\contentsline {section}{\numberline {2.1}Componenti principali}{4}
-\contentsline {subsection}{\numberline {2.1.1}HTTP}{5}
+\contentsline {section}{\numberline {2.1}Punti cardine}{4}
+\contentsline {subsection}{\numberline {2.1.1}HTTP}{4}
 \contentsline {subsection}{\numberline {2.1.2}Singleton Pattern}{5}
-\contentsline {subsection}{\numberline {2.1.3}Scheduler}{6}
-\contentsline {subsection}{\numberline {2.1.4}ID dei bot e MD5}{7}
+\contentsline {subsection}{\numberline {2.1.3}Schedulatore}{6}
+\contentsline {subsection}{\numberline {2.1.4}ID dei bot e MD5}{6}
 \contentsline {subsection}{\numberline {2.1.5}Parsing}{7}
 \contentsline {subsection}{\numberline {2.1.6}Multi-piattaforma}{7}
 \contentsline {section}{\numberline {2.2}Piattaforma di sviluppo, Swing, Awt}{8}
@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.3.4}ByobTask}{10}
 \contentsline {subsection}{\numberline {2.3.5}Byob\_v1}{11}
 \contentsline {subsection}{\numberline {2.3.6}GUI}{11}
-\contentsline {paragraph}{GUI user-friendly}{16}
+\contentsline {paragraph}{GUI user-friendly}{15}
 \contentsline {subsection}{\numberline {2.3.7}Parser}{16}
 \contentsline {subsection}{\numberline {2.3.8}Tools}{17}
 \contentsline {subsection}{\numberline {2.3.9}URLDetails}{18}

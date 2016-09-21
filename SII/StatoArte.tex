@@ -1,66 +1,63 @@
 \chapter{Panoramica del progetto}
-\begin{minipage}{12cm}\textit{Nel capitolo verr\`{a} effettuata una breve introduzione alle componenti principali del progetto, verr\`{a} esposto il percorso di progettazione seguito per un suo corretto sviluppo, e illustrato l'utilizzo del software da parte dell'utente.}
+\begin{minipage}{12cm}\textit{Nel capitolo verr\`{a} effettuata una breve introduzione ai punti cardine del progetto, verr\`{a} esposto il percorso di progettazione seguito per un suo corretto sviluppo, e illustrato l'utilizzo del software da parte dell'utente.}
 \end{minipage}
 
 \vspace*{1cm}
-\section{Componenti principali}
-Le entit\`{a} principali presenti nel software realizzato sono un \textit{Parser}, con il ruolo di interpretare le informazioni contenute nel file di configurazione, uno \textit{Scheduler}, che ha il compito di garantire la corretta esecuzione dei task al termine delle rispettive scadenze, un protocollo di comunicazione (\textit{HTTP}) con cui interrogare le macchine specificate. Nello sviluppo dell'applicativo \textit{multi-piattaforma} \`{e} stato utilizzato il \textit{Singleton pattern}, per evitare la creazione di istanze multiple dello scheduler o del logger.
-In ottica di una futura integrazione del software in una rete di bot, sono state inserite funzioni per il calcolo di un ID univoco per ogni macchina appartenente alla rete controllata.
+\section{Punti cardine}
+In base ai requisiti richiesti, i punti cardine del progetto sono:
 
 \vspace*{0.5cm}
 \subsection{HTTP}
-\textbf{HTTP}, acronimo di \textit{hypertext transfer protocol}.
+\textbf{HTTP}, acronimo di \textit{hypertext transfer protocol}, costituisce il cuore delle azione intraprese dal singolo \textit{bot}.\\
 \`E un protocollo a livello applicativo utilizzato per la
-trasmissione di informazioni tramite un meccanismo di richiesta/risposta tra \textit{client} e \textit{server}. All'interno del messaggio di richiesta sono definiti diversi campi tra cui il tipo di
-richiesta (\textit{GET}, \textit{POST}) e lo \textit{UserAgent}, che identifica la tipologia di \textit{client} utilizzata.
-Il metodo \textit{GET} pu\`{o} essere utilizzato per effettuare una richiesta:
+trasmissione di informazioni tramite un meccanismo di richiesta/risposta tra \textit{client} e \textit{server}. All'interno del messaggio di richiesta sono definiti diversi campi tra cui, quelli a noi pi\`u tili, il tipo di
+richiesta (\textit{GET}, \textit{POST}) e lo \textit{UserAgent}, identificativo del tipo di \textit{client} utilizzato.
+Per il nostro scopo, il metodo "\textit{GET}" \`e usato per ottenere il contenuto della risorsa indicata come \textit{URI} (come pu\`o essere il contenuto di una pagina \textit{HTML}). Pu\`o essere:
 \begin{itemize}
-\item \textbf{assoluta}, senza ulteriori specificazioni sulla risorsa cercata;
-\item \textbf{condizionale}, se nell'\textit{header} del messaggio di richiesta sono presenti i campi \textit{If-Modified-Since}, \textit{If-Match}, etc.;
-\item \textbf{parziale}, quando la risorsa richiesta \`e una sottoparte di una risorsa memorizzata.
+\item \textbf{assoluto}, ossia quando la risorsa viene richiesta senza altre specificazioni;
+\item \textbf{condizionale}, ossia quando la risorsa corrisponde ad un criterio indicato nell'\textit{header};
+\item \textbf{parziale}, ossia quando la risorsa richiesta \`e una sottoparte di una risorsa memorizzata.
 \end{itemize}
-Nel software sono effettuate solo \textit{GET} assolute, e la scelta dello \textit{user-agent} \`{e} lasciata alla discrezione dell'utilizatore.
+Per quanto riguarda lo \textit{user-agent}, all'interno dell'\textit{header HTTP}, si hanno informazioni riguardanti il tipo di agente utente, cio\`e il tipo di \textit{browser} che sta effettuando la richiesta. Se modificato, permette ad un \textit{hacker} di diventare lo \textit{user-agent} che vuole, potendo cos\`i selezionare i \textit{payload} di software maligni sulla base del tipo di \textit{user-agent}. 
+Per il nostro scopo il metodo \textit{GET} \`e stato utilizzato come "assoluto" e si \`e messo a disposizione dell'utente la possibilit\`a di poter modificare lo \textit{user-agent} a proprio piacimento.
 
 \vspace*{0.5cm}
 \subsection{Singleton Pattern}
-In determinati contesti \`e necessario che venga istanziato un solo esemplare di una classe. Ad esempio: per evitare due riproduzioni audio contemporanee, sar\`{a} opportuno istanziare un riproduttore musicale una sola volta,
-uno \textit{spooler} di stampa dovrebbe tenere una coda unica anche se sono presenti pi\`{u} stampanti attive e
-il manager di un file system dovrebbe essere unico.
-
-Per garantire questa singola istanziazione \`{e} sufficiente rendere impossible l'utilizzo del costruttore della classe da parte del resto del codice, e fornire un metodo indiretto per ottenere una istanza (l'unica) di tale classe.
-Sono quindi possibili diverse soluzioni:
+In molte situazioni \`e necessario che venga istanziato un solo esemplare di una data classe. Per esempio: se si ha un riproduttore di file musicali sar\`a bene che esso venga istanziato una sola volta per non ritrovarsi due riproduzioni contemporanee; uno \textit{spooler} di stampa dovrebbe tenere una coda unica anche se ci sono pi\'u
+stampanti attive; il manager del file system dovrebbe essere unico, come pure una cache; ecc. Per garantire questa singola istanziazione basta rendere impossible l'uso del costrutto \textit{new} da parte del programma utente e di fornire un metodo indiretto per ottenere una istanza (l'unica) della classe.
+A tal fine occorre:
 \begin{itemize}
-\item dichiarare privato il costruttore, in modo che esso possa essere visto solo all'interno della classe Singleton;
+\item dichiarare privato il costruttore, in modo che esso possa essere visto solo dall'interno della classe Singleton e non dal programma utente (ci\`o rende impossibile l'istanziazione di un oggetto dall'esterno della classe Singleton);
 \item prevedere il metodo (pubblico) statico e cio\`e di classe, in modo che esso sia comunque visibile. Questo metodo deve istanziare un esemplare se ci\`o non \`e ancora accaduto, oppure restituire l'oggetto gi\'a istanziato in precedenza senza istanziare ulteriori esemplari.
 \end{itemize}
 Questa seconda scelta \`e quella applicata nel progetto per la creazione e gestione del \textit{logger} e la creazione di uno schedulatore di task.
 
 \vspace*{0.5cm}
-\subsection{Scheduler}
-Lo \textit{scheduler} ha il compito di garantire la corretta esecuzione dei task al termine delle rispettive scadenze.
-
-Nell'applicativo \`{e} stato utilizzato uno \textit{Scheduler Executor Service}, istanziato una sola volta mediante l'uso del \textit{Singleton pattern}; data la presenza di istruzioni bloccanti nei task da eseguire, \`{e} stato messo a disposizione dello scheduler un pool di $30$ \textit{thread}.
-
-La classe utilizzata permette la schedulazione di job periodici tramite la funzione \textit{scheduleAtFixedRate} ma, data la necessit\`{a} di schedulare task con rate non fissato, \`{e} stato deciso di effettuare le singole ri-schedulazioni utilizzando, la pi\`{u} semplice, funzione \textit{schedule}.
-
+\subsection{Schedulatore}
+Lo \textit{scheduler} \`e un componente chiave per l'applicazione. \\
+Grazie a questo, \`e stato possibile stabilire un ordinamento temporale per l'esecuzione delle azioni del singolo \textit{bot}, cos\`i come specificato dall'utente attraverso i parametri di configurazione. La sua implementazione \`e stata possibile attraverso la creazione di un \textit{executor} a singolo \textit{thread} che schedula comandi da eseguire dopo un certo ritardo o da eseguire periodicamente\footnote{Si noti che se il singolo \textit{thread} termina in maniera anomale durante l'esecuzione, uno nuovo prender\'a il suo posto, se necessario, per eseguire \textit{task} successivi.}. Valori di ritardi pari a 0 o negativi (ma non i periodi) sono trattati come richieste di esecuzione immediata. \\
+In sintedi, la schedulazione pu\`o essere cos\`i pensata: il \textit{thread} dello schedulatore assegna i \textit{task} a un \textit{thread} estratto da un \textit{pool}.
 
 \vspace*{0.5cm}
 \subsection{ID dei bot e MD5}
-In una rete reale, i \textit{bot} sono univocamente identificabili dal centro di comando e controllo:
-l'attaccante ha interesse nel conoscere il numero di \textit{bot} attivi per effettuare un attacco ad una data; questa informazione inoltre risulta fondamentale, a livello economico, se egli decide di vendere o affittare la \textit{botnet} ad un acquirente esterno. 
-
-Per garantire l'unicit\'a dell'identificativo di ogni bot, viene effettuato l'\textit{hash md5} delle informazioni riguardanti l'hardware della macchina e il sistema operativo in esecuzione.
+I \textit{bot} devono essere univocamente identificabili.\\ 
+Questo perch\`e il malintenzionata che vuole effettuare un attacco (per esempio, \textit{DDoS}) deve sapere quanti \textit{bot} ha a disposizione in un certo lasso di tempo. Inoltre, se il malintenzionato decide di affidare un gruppo di \textit{bot} ad un acquirente esterno (per esempio, per condurre una piccola e veloce campagna di \textit{spam}), mantenere un conteggio della potenza di attacco che possono essere offerti \`e necessario per accordarsi sul prezzo. Per garantire l'unicit\'a dell'identificativo di ciascuno, si \`e deciso di legare l'hardware della macchina al suo sistema operativo tramite\textit{checksum MD5} per ottenere una stringa a 32 caratteri che \`e utilizzata come identificativo.\\
+Si noti come questo \`e stato fatto per una integrazione con un futuro sviluppo del progetto.
 
 \vspace*{0.5cm}
 \subsection{Parsing}
-La corretta interpretazione del file di configurazione \`{e} garantita dal \textit{Parser} che, mediante la conoscenza del protocollo utilizzato per l'organizzazione delle informazioni e la manipolazione di oggetti di tipo stringa, genera dal file l'\textit{ArryList} dei task in attesa di esecuzione. 
+Per \textit{parsing} di una stringa di caratteri si intende l'analisi della stessa per trovare \textit{token}, oggetti o \textit{pattern} per crearne una struttura.\\
+Nel progetto era importante definire un \textit{pattern} per i parametri di configurazione, per rivelare la loro correttezza e capire se si trattasse di un campo facoltativo o meno, per poter cos\`i capire se la computazione dovesse fermarsi l\`i. Quanto detto \`e stato applicato sia in lettura, sia in scrittura: questo perch\`e i parametri di configurazione possono essere anche salvati su un file di testo.
 
-La classe \`{e} utilizzata anche per l'operazione di scrittura del file di configurazione a partire dai \textit{form} riempiti dall'utente nell'interfaccia principale dell'applicazione.
+%\vspace*{0.5cm}
+%\subsection{Multithreading}
+%Al fine di garantire la concorrenzialit\'a, vi \`e la necessit\'a di servire separatamente ogni \textit{GET}, scelta \`e stata dettata dall'importanza di ridurre il carico della piattaforma. D'altro canto, il %\textit{multithreading} presenta il problema degli accessi simultanei a variabili e segmenti di codice condivisi dai vari thread (zone critiche). In sporadici casi, questo ha causato dei problemi di corruzione della memoria di cui non \`e stato possibile risalire all'origine.
+%Il multithreading \`e stato utilizzato in questo modo: una volta presentata la richiesta, viene creato un nuovo thread, responsabile della richiesta, permettendo cos\`i al flusso principale di effettuarne altre. I thread sono creati tramite l'invocazione della funzione TODOTODOTODO.\\
 
 \vspace*{0.5cm}
 \subsection{Multi-piattaforma}
-Quando si parla di un programma multi-piattaforma si intende un programma in grado di funzionare correttamente su diversi sistemi operativi.\\
-Sono stati gestite quindi le funzionalit\`{a} dipendenti dalla piattaforma su cui l'applicativo \`{e} in esecuzione (come la generazione dell' ID univoco del bot o l'individuazione dei browser installati), differenziandone il comportamento sulla base del sistema operativo presente sulla macchina.
+Quando si parla di un programma multi-piattaforma si intende un programma che sia in grado di funzionare correttamente su diversi sistemi operativi.\\
+A tale fine, l'esecuzione di istruzioni "macchina-dipendenti" (come, per esempio, la generazione dell' ID del bot che dipende sia dall'hardware che dal sistema operativo) appariranno all'utente in maniera totalmente trasparente per sistemi operativi come OSX, Windows o Linux. 
 
 \vspace*{0.5cm}
 \section{Piattaforma di sviluppo, Swing, Awt}
@@ -69,7 +66,7 @@ NetBeans utilizza due componenti principali: la piattaforma, che comprende una s
 
 \vspace*{1cm}
 \section{Build your own botnet}
-In questa sezione sono presentati la struttura del progetto ed i principali casi d'uso dell'applicativo realizzato.
+Questa sezione tratta del programma e della sua architettura, nonch\`e delle scelte implementative rilevanti e dei casi d'uso principali.
 
 \vspace*{0.5cm}
 \subsection{Struttura del progetto}
@@ -77,11 +74,11 @@ Il progetto \`e composto da diverse classi:
 \begin{itemize}
 \item \textbf{ByobComm}, responsabile del metodo GET del protocollo HTTP;
 \item \textbf{ByobSingleton}, responsabile del \textit{log} delle azioni intraprese, delle informazioni della macchina dell'utente e dello \textit{scheduling} dei \textit{task} da effettuare;
-\item \textbf{ByobTask}, rappresenta il singolo task che deve essere posto in esecuzione dallo scheduler;
+\item \textbf{ByobTask}, implementa l'interfaccia \textit{Runnable} per il \textit{multithreading};
 \item \textbf{Byob\_v1}, avvia il programma e l'interfaccia grafica;
 \item \textbf{GUI}, responsabile di tutto quello che riguarda la creazione e gestione della \textit{Graphic User Interface} (quindi, componenti, loro visibilit\'a, loro aspetto e la loro abilitazione per l'uso);
-\item \textbf{Parser}, responsabile della creazione di file, lettura e scrittura dei parametri di configurazione inseriti dall'utente, nonch\`e del loro \textit{splitting} e della loro conversione nel giusto tipo di dato;
-\item \textbf{Tools}, contenente varie funzioni e metodi utili in diversi contesti;
+\item \textbf{Parser}, responsabile per la creazione di file, lettura e scrittura dei parametri di configurazione inseriti dall'utente, nonch\`e del loro \textit{splitting} e della loro conversione nel giusto tipo di dato;
+\item \textbf{Tools}, contenente varie funzioni e vari metodi che non appartenevano a nessun'altra classe;
 \item \textbf{URLDetails}, contenente i dati (parametri di configurazione) del singolo \textit{task} da effettuare.
 \end{itemize} 
 
