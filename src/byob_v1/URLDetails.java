@@ -69,7 +69,6 @@ public class URLDetails {
         this.contactsNum = contactsNum;
         this.sleepMode = sleepMode;
         this.userAgent = userAgent;
-        System.out.println("Min " + minWaitTime + "\nMax " + maxWaitTime);
     }  
     
     /**

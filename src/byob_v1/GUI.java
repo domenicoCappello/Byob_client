@@ -656,7 +656,7 @@ public final class GUI extends javax.swing.JFrame {
         }
         if(!flag) {
             try {
-                Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("["+cr+"]", 1), textParam.size());
+                Parser.writeConfigurationFile(fileToSave, (getProxy()+jTextArea1.getText()).split("[\n]", 1), textParam.size());
                 jButton7.setEnabled(true);
             } catch (IOException ex) {
                 Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -738,7 +738,6 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String[] params = extractData(false);
-        System.out.println("Push: params.length " + params.length);
         List<String> warning = Tools.warningMessage(params);
         if(warning!=null) {
             final JFrame parent = new JFrame();
@@ -826,12 +825,6 @@ public final class GUI extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         
         if(jRadioButton2.isSelected()){
-//            System.out.println(jTextArea1.getText());
-//            String[] l = jTextArea1.getText().split("[\n]", -1);
-//                System.out.println("HERE");
-//            System.out.println("Launch: l.length: "+ l.length);
-//            for(int i = 0; i < l.length;i++)
-//                System.out.println(l[i]);
             Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
         }
         
