@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  20 SEP 2016 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.18)  21 SEP 2016 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,138 +526,94 @@ Overfull \hbox (9.2298pt too wide) in paragraph at lines 131--132
 [][][][][][][][][][][][][][][] 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-[23]
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 195--197
+[22] [23]
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 177--178
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][] 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
-
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 216--217
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][] 
  []
 
 [25]
-Overfull \hbox (68.02492pt too wide) in paragraph at lines 272--274
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 219--220
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.697pt too wide) in paragraph at lines 227--228
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][] 
+][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [26]
-Overfull \hbox (48.42654pt too wide) in paragraph at lines 280--282
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
- []
-
-[27]
-Overfull \hbox (283.60703pt too wide) in paragraph at lines 317--319
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][] 
- []
-
-
-Overfull \hbox (2.697pt too wide) in paragraph at lines 323--325
+Overfull \hbox (2.697pt too wide) in paragraph at lines 250--251
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
-
- []
-
-
-Overfull \hbox (2.697pt too wide) in paragraph at lines 367--369
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[29]
-Overfull \hbox (9.2298pt too wide) in paragraph at lines 406--408
+[27]
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 307--308
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[30]
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 445--446
+
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 331--332
 [][][][][][][][][][][][][][][][][] 
  []
 
-[31]
-Overfull \hbox (61.49213pt too wide) in paragraph at lines 479--480
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (41.89375pt too wide) in paragraph at lines 491--492
+[28] [29]
+Overfull \hbox (41.89375pt too wide) in paragraph at lines 378--379
 [][][][][][][][][][][][][][][][] 
  []
 
-[32]
-Overfull \hbox (9.2298pt too wide) in paragraph at lines 494--495
+
+Overfull \hbox (9.2298pt too wide) in paragraph at lines 381--382
 [][][][][][][][][][][][][][][][][][][] 
  []
 
-[33]
-Overfull \hbox (54.95934pt too wide) in paragraph at lines 535--536
+[30]
+Overfull \hbox (54.95934pt too wide) in paragraph at lines 422--423
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.697pt too wide) in paragraph at lines 541--542
+Overfull \hbox (2.697pt too wide) in paragraph at lines 428--429
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.76259pt too wide) in paragraph at lines 545--546
+Overfull \hbox (15.76259pt too wide) in paragraph at lines 432--433
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (68.02492pt too wide) in paragraph at lines 550--551
+Overfull \hbox (68.02492pt too wide) in paragraph at lines 437--438
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.697pt too wide) in paragraph at lines 554--555
+Overfull \hbox (2.697pt too wide) in paragraph at lines 441--442
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [34] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
+) [31] (./Byob.aux (./Introduzione.aux) (./StatoArte.aux)
 (./Implementazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5954 strings out of 494942
- 76656 string characters out of 6180501
+ 5949 strings out of 494942
+ 76579 string characters out of 6180501
  181304 words of memory out of 5000000
- 9069 multiletter control sequences out of 15000+600000
+ 9064 multiletter control sequences out of 15000+600000
  24354 words of font info for 69 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,12n,44p,1096b,1789s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,44p,793b,1783s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </hom
 e/diomenik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/diomen
 ik/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/diomenik/.texm
@@ -673,10 +629,10 @@ k/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/diomenik/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/diomenik/.texmf-var/fon
 ts/pk/ljfour/jknappen/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Byob.pdf (37 pages, 368778 bytes).
+Output written on Byob.pdf (34 pages, 363828 bytes).
 PDF statistics:
- 772 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 758 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

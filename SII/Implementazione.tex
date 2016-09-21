@@ -154,289 +154,175 @@ Il file di configurazione consiste in un file di testo formattato nel seguente m
 \end{lstlisting}
 
 \subsection{Immissione e scrittura}
+Nel caso si scelga di inserire manualmente i parametri di configurazione, l'interfaccia mette a disposizione delle \textit{jFormattedTextField}. Esse rappresentano un modo semplice per specificare l'insieme dei caratteri accettati tramite un "formattatore": nel caso di campi numerici come \textit{Contact Time}, \textit{\#contacts} e la porta del \textit{proxy}, \`{e} stato utilizzato \textit{NumberFormatter}; nel caso del campo IP del \textit{proxy}, \`{e} stata utilizzata la classe \textit{RegexFormatter}, essendo l'indirizzo IP caratterizzato da un \textit{pattern} particolare, ovvero xxx.xxx.xxx.xxx, dove "xxx" \`{e} compreso tra 0 e 255.
 
-Torniamo all'analisi della GUI.\\
-
-
-Nel caso di scelta di inserimento manuale dei parametri di configurazione, l'interfaccia mette a disposizioni delle \textit{jFormattedTextField}. Esse rappresentano un modo facile per specificare l'insieme di caratteri che possono essere accettati tramite un "formattatore": nel caso di campi numerici come \textit{Contact Time}, \textit{\# contacts} e la porta del \textit{proxy} \`{e} stato utilizzato \textit{NumberFormatter}, il quale accetta come input alla creazione una classe \textit{abstract} chiamata \textit{NumberFormat}, la quale fornisce un'interfaccia per formattare e parsare correttamente i numeri; nel caso del campo IP del \textit{proxy}, \`{e} stato utilizzata una classe finale \textit{RegexFormatter} che estende la classe \textit{Default Formatter}. Tale estensione si \`{e} resa necessaria in quanto il campo IP richiedeva un determinato \textit{pattern}, ossia quello xxx.xxx.xxx.xxx dove "xxx" è compreso tra 0 e 255. Per tutte le altre non si \`{e} reso necessario nessun \textit{format} preciso, in quanto stringhe.
-
-
-Dapprima, viene costruita una espressione regolare che specifichi il tipo di \textit{input}:
-
+In questa classe, viene costruita una espressione regolare che specifica il tipo di \textit{input}:
 
 \vspace{0.5cm}
-
 \begin{lstlisting}
-
 String _255 = "(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
-
 \end{lstlisting}
 
-
 \begin{itemize}
-
-\item "?:" specifica che la restante espressione non \`{e} parte di un gruppo "cattura"\footnote{Nelle espressioni regolari, l'utilizzo di parentesi tonde o quadre permette di specificare "gruppi", il cui vantaggio \`{e} poter applicare, per esempio, quantificatori differenti a ciascuno di essi.};
-
-\item "25[0-5]" specifica che \`{e} necessario un \textit{match} del tipo "prima cifra pari a 2, seconda cifra pari a 5 e terza cifra compresa tra 0 e 5";
-
-\item "|" specifica \textit{OR};
-
-\item "[01]?[0-9][0-9]?" specifica che \`{e} necessario un \textit{match} del tipo "0 o 1 o nulla; qualsiasi cifra; qualsiasi cifra o nulla".
-
+	\item "?:" specifica che la restante espressione non \`{e} parte di un gruppo "cattura"\footnote{Nelle espressioni regolari, l'utilizzo di parentesi tonde o quadre permette di specificare "gruppi", il cui vantaggio \`{e} poter applicare, per esempio, quantificatori differenti a ciascuno di essi.};
+	\item "25[0-5]" specifica che \`{e} necessario un \textit{match} del tipo "prima cifra pari a 2, seconda cifra pari a 5 e terza cifra compresa tra 0 e 5";
+	\item "|" specifica \textit{OR};
+	\item "[01]?[0-9][0-9]?" specifica che \`{e} necessario un \textit{match} del tipo "0 o 1 o nulla; qualsiasi cifra; qualsiasi cifra o nulla".
 \end{itemize}
 
-successivamente \`{e} creato il \text{pattern} completo:
-
+Successivamente viene creato il \text{pattern} completo:
 
 \vspace{0.5cm}
-
 \begin{lstlisting}
-
 Pattern p = Pattern.compile( "^(?:" + _255 + "\\.){3}" + _255 + "$");
-
 \end{lstlisting}
 
-
 \begin{itemize}
-
-\item "\^"  specifica l'inizio dell'\textit{input};
-
-\item "?:" specifica l'inizio di un gruppo di non "cattura";
-
-\item "String \_255 " specifica il \textit{pattern} che deve trovare un \textit{match};
-
-\item "\textbackslash\textbackslash "  \`{e} necessario come parte del \textit{pattern} per "\textit{escape}" del periodo, il quale altrimenti farebbe il \textit{matching} su ogni carattere.
-
-\item "{3}" fa il \textit{matching} del gruppo, appena terminato, 3 volte; 
-
-\item "{{+ \_255 + "\$"}}" fa il \textit{matching}, con il pattern specificato, un'altra volta.
-
+	\item "\^"  specifica l'inizio dell'\textit{input};
+	\item "?:" specifica l'inizio di un gruppo di non "cattura";
+	\item "String \_255 " specifica il \textit{pattern} che deve trovare un \textit{match};
+	\item "\textbackslash\textbackslash "  \`{e} necessario come parte del \textit{pattern} per "\textit{escape}" del periodo, il quale altrimenti farebbe il \textit{matching} su ogni carattere.
+	\item "{3}" fa il \textit{matching} del gruppo, appena terminato, 3 volte; 
+	\item "{{+ \_255 + "\$"}}" esegue nuovamente il \textit{matching}, con il pattern specificato.
 \end{itemize}
 
 infine viene creato l'oggetto \textit{RegexFormatter} con il \textit{Pattern} p:
 
-
 \vspace{0.5cm}
-
 \begin{lstlisting}
-
 RegexFormatter ipFormatter = new RegexFormatter(p);
-
 \end{lstlisting}
 
+Tra tutti i parametri di configurazione, solamente \textit{sleep condition} non pu\`{o} essere inserito manualmente, in quanto ogni sua condizione \`{e} rappresentata tramite una lettera dell'alfabeto. A tal proposito si \`{e} pensato di fornire all'utente un'esperienza semplificata, attraverso l'utilizzo di un \textit{popup} e di due gruppi di \textit{radiobutton}. 
+Una volta confermata la selezione, vengono restituite le lettere rappresentanti le condizioni nella relativa {jFormattedTextField}.
 
-Solo un parametro di configurazione non pu\'{o} essere inserito manualmente: \textit{sleep condition}. Dato che per la rappresentazione di ciascuna condizione \`{e} utilizzata una lettera, \`{e} stato pensato di fornire all'utente un'esperienza semplificata tramite l'apertura di un \textit{jFrame} (come se fosse un pop-up) in cui dividere le condizioni secondo la categoria di appartenenza (condizioni sulle ore e condizioni sui giorni) e permettendo la scelta di una sola di esse per ciascuna categoria. Una volta fatta e confermata la selezione, vengono restituiti le lettere rappresentanti le condizioni scelte nella relativa {jFormattedTextField}. 
+Lo scopo della \textit{jTextArea} \`{e} quello di permettere una visualizzazione generale di tutte le informazioni inserite. La \textit{jTextArea} non \`{e} editabile: questo perch\`{e} si voleva evitare che l'utente potesse cambiare il \textit{format} dei parametri di configurazione, dovendo cos\`{i} effettuare un controllo sulla loro validit\`{a}.
 
+Una volta inseriti i dati, si hanno a disposizione due \textit{jButton} chiamati "Push" e "Pull". 
+Alla pressione del tasto "Push", vengono effettuati i controlli sui valori inseriti, che andranno a popolare la \textit{jTextArea}. Se \`{e} stato commesso un errore nell'inserimento dei parametri di configurazione oppure \`{e} stato dimenticato un valore non opzionale, viene visualizzato un messaggio di \textit{warning}:
 
-Una volta inseriti i dati, l'utente ha a disposizione due \textit{jButton} chiamati "Push" e "Pull".\\
-
-
-"Push" controlla e scrive i dati inseriti dall'utente all'interno della \textit{jTextArea}, il cui scopo \`{e} quello di permettere una visualizzazione generale di tutte le informazioni inserite e, nel caso, correggerle. La \textit{jTextArea} non \`{e} editabile: questo perch\`{e} si voleva evitare che l'utente potesse cambiare il \textit{format} dei parametri di configurazione e dovendo cos\`{i} rieffettuare un altro controllo sulla loro validit\'a.\\
-
-Una volta cliccato sul suddetto pulsante, se l'utente ha, per esempio, erroneamente inserito un valore sbagliato o dimenticato un campo non opzionale, viene visualizzato un messaggio a video di \textit{warning} con la lista degli errori e/o dimenticanze nelle \textit{jFormattedtextField}:
-
+\vspace{0.5cm}
 \begin{lstlisting}
-
 public static List<String> warningMessage(String[] params){
-
-List<String> warning = new ArrayList<>(); 
-
-warning.add("Fix the following parameters:\n");
-
-if(!Parser.checkNumber(params[1]))
-
-if(params[2].equals("-"))
-
-warning.add("- Contact time value not valid;\n");
-
-else
-
-warning.add("- Minimum contact time value not valid;\n");
-
-if(!Parser.checkNumber(params[2]))
-
-if(!params[2].equals("-"))
-
-warning.add("- Maximum contact time value not valid;\n");
-
-if(!Parser.checkNumber(params[3]))
-
-warning.add("- Number of contacts not valid;\n");
-
-if(!params[6].equals(" ") && !Parser.checkIPv4String(params[6]))
-
-warning.add("- Proxy IP not valid;\n");
-
-if(!params[7].equals(" ") && !Parser.checkPort(params[7]))
-
-warning.add("- Proxy port not valid (choose one between 1025 and 65525);\n");
-
-if(warning.size() == 1)
-
-return null;
-
-else {
-
-warning.add("Do you want to use default settings where data is missing?");
-
-return warning;
-
+	List<String> warning = new ArrayList<>(); 
+	warning.add("Fix the following parameters:\n");
+	if(!Parser.checkNumber(params[1]))
+		if(params[2].equals("-"))
+			warning.add("- Contact time value not valid;\n");
+		else
+		warning.add("- Minimum contact time value not valid;\n");
+	if(!Parser.checkNumber(params[2]))
+		if(!params[2].equals("-"))
+			warning.add("- Maximum contact time value not valid;\n");
+	if(!Parser.checkNumber(params[3]))
+		warning.add("- Number of contacts not valid;\n");
+	if(!params[6].equals(" ") && !Parser.checkIPv4String(params[6]))
+		warning.add("- Proxy IP not valid;\n");
+	if(!params[7].equals(" ") && !Parser.checkPort(params[7]))
+		warning.add("- Proxy port not valid (choose one between 1
+		 and 65525);\n");
+	if(warning.size() == 1)
+		return null;
+	else {
+		warning.add("Do you want to use default settings where data 
+		is missing?");
+		return warning;
+	}
 }
-
-}
-
 \end{lstlisting}.
 
-il messaggio indirizza l'utente verso una facile soluzione dell'errore e, inoltre, nel caso di mancato inserimento di parte o di tutti i dati, permette anche di utilizzare dei valori di \textit{default} dove c\`{e} questa lacuna. Nel caso l'utente scelga di non voler utilizare i parametri di configurazione di default, la \textit{popup} col messaggio di errore si chiude, ricordando all'utente di cambiare/inserire manualmente i valori errati e/o mancati.
-
-La generazione del messaggio avviene controllando, di nuovo, che:
-
+il messaggio indirizza l'utente verso una facile soluzione del problema, eventualmente tramite la selezione dei valori di \textit{default}.
+Il messaggio viene generato controllando che:
 \begin{itemize}
-
-\item \textit{contactTime}, \textit{\#contacts}, \textit{proxy port} siano numeri interi;
-
-\item \textit{proxy IP} segua una formattazione adeguata e valida;
-
-\item nel caso di scelta di \textit{contactTime} ad intervallo, che un valore sia minore dell'altro.
-
+	\item \textit{URL}, \textit{contactTime} e \textit{\#contacts} siano stati correttamente inseriti;
+	\item \textit{contactTime}, \textit{\#contacts}, \textit{proxy port} siano numeri interi;
+	\item \textit{proxy IP} segua una formattazione adeguata e valida.
 \end{itemize}
 
-Tutti i controlli sono effettuati tramite funzioni create nella classe \textit{Parser}.
+Alla pressione del tasto "Pull" viene prelevato il \textit{set} di parametri inserito nella \textit{jtextArea} e riportato, campo per campo, nelle rispettive \textit{jFormattedTextField}. 
+\`{E} quindi possibile effettuare le modifiche opportune e utilizzare nuovamente il tasto "Push" per re-importare i parametri nella \textit{jTextArea}. 
 
-
-Se l'utente si accorge di aver commesso un errore, "Pull" permette di prendere il \textit{set} di parametri inserito e riportarlo, campo per campo, nelle rispettive {jFormattedTextField}. A questo punto, \`{e} possibile effetuare le modifiche opportune e utilizzare di nuovo "Push" per re-importare i parametri nella \textit{jTextArea}. 
-
-
-Una volta inseriti tutti i parametri di configurazione nella \textit{jTextArea}, l'utente deve salvare il file di configurazione tramite il \textit{jButton} "Save file as .txt", il quale permette di scegliere la cartella dove salvare il file, dargli un nome e confermarne o meno la correttezza. Una volta confermato, avviene l'estrazione dell'IP e della porta del \textit{proxy} (se inseriti), successivamente l'estrazione dei dati dalla \textit{jTextArea} che vengono inviati alla classe \textit{Parser} insieme al numero massimo di attributi per ciascun contatto, per essere scritti su file specificato dall'utente.
-
+Al termine della scrittura del file di configurazione, la pressione del tasto \textit{Save} aprir\`{a} una finestra nella quale sar\`{a} possibile scegliere la directory di salvataggio del file.
+Indirizzo IP e porta del proxy, qualora inseriti, verranno scritti direttamente nel file salvato.
 
 \vspace{0.5cm}
-
 \begin{lstlisting}
-
-public static void writeConfigurationFile(File fileToWrite, String[] params, int columns) throws IOException {
-
-if (!fileToWrite.exists())
-
-fileToWrite.createNewFile();
-
 try (FileWriter fw = new FileWriter(fileToWrite.getAbsolutePath()); 
-
-BufferedWriter bw = new BufferedWriter(fw)) {
-
+BufferedWriter bw = new BufferedWriter(fw);
 for (int i = 0; i < params.length; i++) {
-
-String param = params[i];
-
-bw.write(param);
-
-if (i < params.length - 1)
-
-bw.newLine();
-
+	String param = params[i];
+	bw.write(param);
+	if (i < params.length - 1)
+		bw.newLine();
 } 
-
 bw.close();     
-
-}
-
 \end{lstlisting}
 
-
-\textit{fileToWrite} \`{e} l'identificativo del file che \`{e} stato creato dall'utente per salvare i parametri di configurazione secondo il formato accettato dall'applicativo, \textit{params} coincide con la lista di stringhe estratte dalla \textit{jTextArea} (il primo sar\'a sempre il \textit{proxy}, se inserito dall'utente) e \textit{columns} rappresenta il numero attributi di ciascun contatto (quest'ultimo \`{e} utile per sviluppi futuri nel caso vengano aggiunti nuovi parametri di configurazione).\\
-
-
-Il metodo \`{e} molto semplice, in quanto controlla l'esistenza o meno del file (in caso negativo, lo crea) e utilizza un oggetto di \textit{BufferedWriter} per scrivere riga per riga tutti i parametri inseriti dall'utente.\\
-
-
-A questo punto, cliccando sul \textit{jButton} "Launch", si avvia il programma tramite i parametri inseriti nel file con formato ".txt".
-
+Al termine del salvataggio viene abilitato il tasto "Lauch": alla sua pressione saranno eseguiti tutti i comandi specificati precedentemente nel file di configurazione.
 
 \subsection{Lettura e caricamento}
+Nel caso si scelga di caricare un file di configurazione creato precedentemente, la pressione del tasto "..." porter\`{a} all'apertura del \textit{jFileChooser} in una nuova finestra.
+Al termine della selezione, il percorso assoluto del file sar\`{a} visualizzato nella relativa \textit{jFormattedTextField}. 
+Cliccando sul \textit{jButton} "Launch", verranno eseguiti tutti i comandi specificati nel file selezionato.
 
+Tale lettura avviene tramite \textit{BufferedReader}.
 
-Nel caso venga scelta la lettura di un file di configurazione, tramite il \textit{jButton} "...", avvia il \textit{jFileChooser}, un componente grafico simile a quello del \textit{file explorer}, con cui pu\`{o} selezionare un qualsiasi file di testo (e quindi con formato .txt) presente sulla propria macchina. Una volta selezionato, il percorso assoluto di tale file verr\`{a} visualizzato nella relativa \textit{jFormattedTextField}. A questo punto, cliccando su \textit{jButton} "Launch" si dar\`{a} avvio alla lettura del file selezionato.\\
-
-
-La lettura avviene tramite \textit{BufferedReader}. Se la prima riga \`{e} il proxy, riconoscibile se il primo carattere \`{e} un carattere speciale (\$), parso la riga in IP e porta e passo direttamente alla seconda riga. 
+Se la prima riga del file inizia con il carattere "\$", ne verr\`{a} effettuato il parsing alla ricerca dell'indirizzo IP e della porta del \textit{proxy} che si intende utilizzare. 
 
 \begin{lstlisting}.
-
 while ((url = br.readLine()) != null) {
-
-//Search at the beginning of the configuration file for proxy setup
-
-[...]
-
-if (url.charAt(0) == '$'){
-
-String[] proxyDet = splitString(url.substring(1), ":");
-
-URLDetails.setProxy(proxyDet[0], Integer.parseInt(proxyDet[1]));
-
-System.out.println(proxyDet[0] + ":" + proxyDet[1]);
-
-continue; }
-
+	//Search at the beginning of the configuration file for 
+	//proxy setup
+	[...]
+	if (url.charAt(0) == '$'){
+		String[] proxyDet = splitString(url.substring(1), ":");
+		URLDetails.setProxy(proxyDet[0], 
+				Integer.parseInt(proxyDet[1]));
+		System.out.println(proxyDet[0] + ":" + proxyDet[1]);
+		continue;
+	}
 \end{lstlisting}
 
-
-Successivamente, a prescindere dalla presenza o meno del \textit{proxy}, si cerca una stringa che inizi con un carattere speciale (*) che indica l'inizio del singolo insieme di parametri di configurazione. La stringa immediatamente successiva \`{e} l'url da contattare e quindi se manca, il sistema esce, segnalando l'errore. 
-
+Secondo il protocollo utilizzato, la riga in cui \`{e} specificato l'indirizzo della \textit{URL} da contattare avr\`{a} un asterisco ("*") come carattere iniziale.
 
 \begin{lstlisting}
-
 //Check URL identification char
-
 if(!url.contains("*")){
-
-System.err.println("Error in configuration file, aborting");
-
-System.exit(-1);
-
+	System.err.println("Error in configuration file, aborting");
+	System.exit(-1);
 }
-
 \end{lstlisting}
 
+Vengono scandite, quindi, le righe successive del file (fino alla fine o alla successiva stringa che inizia con "*"), allo scopo di creare una stringa del tipo:
 
-Nel caso in cui sia presente, si scandiscono le righe successive del file (fino alla fine o alla successiva stringa che inizia per "*"), si crea una stringa del tipo "URL;minT;maxT;numC;sleepC;userAgent;", la si splitta per ";" e si convertono i parametri nel tipo di dato corretto. Una volta finito, tali valori sono utilizzati per creare un oggetto di \textit{URLDetails}. Il processo \`{e} ripetuto fino alla fine del file, portando cos\`{i} alla creazione di una lista di questi oggetti. 
+\vspace{0.5cm}
+\begin{normalsize}
+	URL;minT;maxT;numC;sleepC;userAgent;
+\end{normalsize}
+
+\vspace{0.5cm}
+Essa viene divisa ed i valori che la compongono sono utilizzati per la creazione di oggetti di tipo \textit{URLDetails}, raggruppati nell' \textit{ArrayList} "TaskList".
 
 \begin{lstlisting}
-
 // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
-
 String contact = url.substring(1);
-
 String line;
-
 for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
-
-if ((line = br.readLine()) != null)
-
-contact = contact + delim + line;
-
+	if ((line = br.readLine()) != null)
+	contact = contact + delim + line;
 }
-
 
 //Build detail string array
-
 String[] detail = splitString(contact, delim);
 
-
 // Build URLDetails obj and add to configuration arrayList
-
 URLDetails det = convertParam(detail);
-
 [...]
-
 configuration.add(det);
-
 \end{lstlisting}
 
 
-
-Checkbox, popup e lettura file.
-Popolamento arraylist di URLDetails
+I task vengono schedulati tramite la funzione \textit{Tools.schedule}.
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -476,7 +362,8 @@ I dettagli del contatto avvenuto sono scritti sul file di log, cos\`{\i} come l'
 \begin{lstlisting}
 public class ByobTask implements Runnable {
 
-final static ScheduledExecutorService ses = ByobSingleton.getInstance().ses;
+final static ScheduledExecutorService ses = 
+						ByobSingleton.getInstance().ses;
 URLDetails contact;
 [...]
 
