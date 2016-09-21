@@ -1,5 +1,6 @@
 package byob_v1;
 
+import static byob_v1.Tools.cr;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -56,8 +57,9 @@ public class Parser {
     * Function returns an list of array with hosts' informations.
     * @exception IOException in case of reading's problem.
     * @return hosts' informations.
+     * @throws java.io.FileNotFoundException
     */
-    public ArrayList<URLDetails> readConfigurationFile() throws IOException{
+    public ArrayList<URLDetails> readConfigurationFile() throws IOException, FileNotFoundException{
         return readConfigurationFile(FILE_NAME);
     }
   
@@ -75,6 +77,7 @@ public class Parser {
         String url;
         Boolean first = true;
         String delim = ";";
+        System.out.println("readConfFile");
         while ((url = br.readLine()) != null) {
                     System.out.println(url);
             //Search at the beginning of the configuration file for proxy setup
@@ -100,7 +103,8 @@ public class Parser {
             for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
                 if ((line = br.readLine()) != null)
                    contact = contact + delim + line;
-            }
+            }   
+            System.out.println(contact);
 
             //Build detail string array
             String[] detail = splitString(contact, delim);
@@ -134,6 +138,7 @@ public class Parser {
                 BufferedWriter bw = new BufferedWriter(fw)) {
             for (int i = 0; i < params.length; i++) {
                 String param = params[i];
+                System.out.println(param);
                 bw.write(param);
                 if (i < params.length - 1)
                     bw.newLine();
@@ -150,14 +155,14 @@ public class Parser {
         String delimiter = "----------------------------------";
         StringBuilder sb = new StringBuilder();
         if(!proxy.isEmpty()) 
-            sb.append("\nProxy: ").append(proxy.replace("$", ""));
+            sb.append(cr).append("Proxy: ").append(proxy.replace("$", ""));
         for (int i = 0; i < params.length-1; i++) {
             if(i%tags.length==0) {
-                sb.append(delimiter).append("\n");
+                sb.append(delimiter).append(cr);
                 params[i] = params[i].replace("*", "");
             }
                 
-            sb.append(tags[i%tags.length]).append(": ").append(params[i]).append("\n");     
+            sb.append(tags[i%tags.length]).append(": ").append(params[i]).append(cr);     
         }
         ByobSingleton.myLogger.info(sb.toString());     
      }
@@ -169,17 +174,17 @@ public class Parser {
     public static void writeParamsFile(ArrayList <URLDetails> taskList) {    
         String delimiter = "----------------------------------";
         StringBuilder sb = new StringBuilder();
-            sb.append("\nProxy: ").append(!taskList.get(0).getProxy().equals(":0") ?
-                    taskList.get(0).getProxy()  : "" ).append("\n") ;
+            sb.append(cr).append("Proxy: ").append(!taskList.get(0).getProxy().equals(":0") ?
+                    taskList.get(0).getProxy()  : "" ).append(cr) ;
         for (int i = 0; i < taskList.size(); i++) {
             URLDetails task = taskList.get(i);
-            sb.append(delimiter).append("\n");
-            sb.append("url : ").append(task.getURL()).append("\n");
-            sb.append("minT: ").append(task.getMinWaitTime()).append("\n");
-            sb.append("maxT: ").append(task.getMaxWaitTime()).append("\n");
-            sb.append("numC: ").append(task.getContactsNum()).append("\n");
-            sb.append("sleC: ").append(task.getSleepMode()).append("\n");
-            sb.append("usAg: ").append(task.getUserAgent()).append("\n");
+            sb.append(delimiter).append(cr);
+            sb.append("url : ").append(task.getURL()).append(cr);
+            sb.append("minT: ").append(task.getMinWaitTime()).append(cr);
+            sb.append("maxT: ").append(task.getMaxWaitTime()).append(cr);
+            sb.append("numC: ").append(task.getContactsNum()).append(cr);
+            sb.append("sleC: ").append(task.getSleepMode()).append(cr);
+            sb.append("usAg: ").append(task.getUserAgent()).append(cr);
         }
                    
         ByobSingleton.myLogger.info(sb.toString());     
