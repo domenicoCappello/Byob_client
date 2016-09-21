@@ -80,7 +80,7 @@ public class Tools {
         if(!params[6].equals(" ") && !Parser.checkIPv4String(params[6]))
             warning.add("- Proxy IP not valid;"+cr);
         if(!params[7].equals(" ") && !Parser.checkPort(params[7]))
-            warning.add("- Proxy port not valid (choose one between 1025 and 65525);"+cr);
+            warning.add("- Proxy port not valid (choose one between 1 and 65525);"+cr);
         if(warning.size() == 1)
             return null;
         else {

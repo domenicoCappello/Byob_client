@@ -263,7 +263,7 @@ public class Parser {
     public static Boolean checkPort(String port){
         if(!checkNumber(port))
             return false;
-        return (Integer.parseInt(port) >= 1025 && Integer.parseInt(port) <= 65535);
+        return (Integer.parseInt(port) >= 1 && Integer.parseInt(port) <= 65535);
     }
     
     /**
