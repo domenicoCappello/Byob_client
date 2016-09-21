@@ -738,6 +738,7 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String[] params = extractData(false);
+        System.out.println("Push: params.length " + params.length);
         List<String> warning = Tools.warningMessage(params);
         if(warning!=null) {
             final JFrame parent = new JFrame();
@@ -824,8 +825,15 @@ public final class GUI extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         
-        if(jRadioButton2.isSelected())
-            Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("["+cr+"]", -1));
+        if(jRadioButton2.isSelected()){
+//            System.out.println(jTextArea1.getText());
+//            String[] l = jTextArea1.getText().split("[\n]", -1);
+//                System.out.println("HERE");
+//            System.out.println("Launch: l.length: "+ l.length);
+//            for(int i = 0; i < l.length;i++)
+//                System.out.println(l[i]);
+            Parser.writeParamsFile(getProxy(), jTextArea1.getText().split("[\n]", -1));
+        }
         
         Parser parser = new Parser(fileConfPath);
         try {
@@ -857,7 +865,7 @@ public final class GUI extends javax.swing.JFrame {
     public void writeTextArea(String[] params){
         StringBuilder sb = new StringBuilder();
         for(int i=0; i < params.length-2; i++) 
-            sb.append(params[i]).append(cr);
+            sb.append(params[i]).append("\n");
         jTextArea1.append(sb.toString());
     }
     

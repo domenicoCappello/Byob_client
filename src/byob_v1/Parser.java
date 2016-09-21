@@ -77,9 +77,9 @@ public class Parser {
         String url;
         Boolean first = true;
         String delim = ";";
-        System.out.println("readConfFile");
+//        System.out.println("readConfFile");
         while ((url = br.readLine()) != null) {
-                    System.out.println(url);
+//                    System.out.println(url);
             //Search at the beginning of the configuration file for proxy setup
             if (first){
                 first = false;
@@ -104,7 +104,7 @@ public class Parser {
                 if ((line = br.readLine()) != null)
                    contact = contact + delim + line;
             }   
-            System.out.println(contact);
+//            System.out.println(contact);
 
             //Build detail string array
             String[] detail = splitString(contact, delim);
@@ -138,7 +138,6 @@ public class Parser {
                 BufferedWriter bw = new BufferedWriter(fw)) {
             for (int i = 0; i < params.length; i++) {
                 String param = params[i];
-                System.out.println(param);
                 bw.write(param);
                 if (i < params.length - 1)
                     bw.newLine();
@@ -156,14 +155,18 @@ public class Parser {
         StringBuilder sb = new StringBuilder();
         if(!proxy.isEmpty()) 
             sb.append(cr).append("Proxy: ").append(proxy.replace("$", ""));
+//        System.out.println("Params.length: " + params.length);
         for (int i = 0; i < params.length-1; i++) {
             if(i%tags.length==0) {
                 sb.append(delimiter).append(cr);
                 params[i] = params[i].replace("*", "");
             }
-                
+//            System.out.println(params[i]);
             sb.append(tags[i%tags.length]).append(": ").append(params[i]).append(cr);     
         }
+//        System.out.println("-----");
+//        System.out.println(sb.toString());
+//        System.out.println("-----");
         ByobSingleton.myLogger.info(sb.toString());     
      }
     
