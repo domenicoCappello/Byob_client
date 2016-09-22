@@ -945,33 +945,38 @@ public final class GUI extends javax.swing.JFrame {
                         break;
                         
                     case 1:
-                        if(jFormattedTextField4.isEnabled()){
+                        if(jRadioButton3.isSelected()){
                             /** MinTime = min(minT, maxT)*/
-                            if(Integer.parseInt(textParam.get(i+1).getText()) >= 
-                                            Integer.parseInt(textParam.get(i).getText())){
-                                params[i] = standard  && textParam.get(i).getText().equals("") ? 
-                                defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
-
-                            } else {
-                                params[i] = standard  && textParam.get(i+1).getText().equals("") ? 
-                                defaultValue[i] : textParam.get(i+1).getText().equals("") ? " " : textParam.get(i+1).getText();
-                            }  
-                        } else {
-                            params[i] = standard  && textParam.get(i).getText().equals("") ? 
-                            defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
+                            String max = textParam.get(i+1).getText();
+                            String min = textParam.get(i).getText();
+                            if(Parser.checkNumber(min) && Parser.checkNumber(max))
+                                if(Integer.parseInt(max) >= Integer.parseInt(min))
+                                    params[i] = standard  && min.equals("") ? 
+                                    defaultValue[i] : min.equals("") ? " " : min;
+                                else
+                                    params[i] = standard  && max.equals("") ? 
+                                    defaultValue[i] : max.equals("") ? " " : max;  
+                            else
+                                params[i] = standard  && min.equals("") ? 
+                                defaultValue[i] : min.equals("") ? " " : min;
                         }
                         break;
                         
                     case 2:
                         /** if(maxT exists) then MaxTime = max(minT, maxT)
                             else MaxTime = MinTime*/
-                            if(jFormattedTextField4.isEnabled() && 
-                                        Integer.parseInt(textParam.get(i).getText()) >= 
-                                        Integer.parseInt(textParam.get(i-1).getText())) {
-                                params[i] = standard ? defaultValue[i] : textParam.get(i).getText();
-                            } else {
-                                params[i] = standard ? defaultValue[i] : textParam.get(i-1).getText();
-                            }
+                            if(jRadioButton3.isSelected()){
+                                String max = textParam.get(i).getText();
+                                String min = textParam.get(i-1).getText();
+                                if(Parser.checkNumber(min) && Parser.checkNumber(max))
+                                    if(Integer.parseInt(max) >= Integer.parseInt(min))
+                                            params[i] = standard ? defaultValue[i] : max;
+                                    else 
+                                            params[i] = standard ? defaultValue[i] : min;
+                                else
+                                    params[i] = standard  && max.equals("") ? 
+                                    defaultValue[i] : max.equals("") ? " " : max; 
+                            }  
                         break;
                         
                     default:
