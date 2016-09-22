@@ -19,14 +19,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *  Class contains many useful functions not supposed to belong to any other class.
+ *  This class contains many useful functions not supposed to belong to any other class.
  *  @author Cappello,Nazio
  */
 public class Tools { 
     
     static String cr = System.getProperty("line.separator");
     
-    // Scheduler's instance
+    /** Scheduler's instance */
     final static ByobSingleton BYOB_WRAPPER = ByobSingleton.getInstance();
     
     /**

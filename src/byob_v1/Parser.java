@@ -14,19 +14,19 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
- * Class manages every aspect of the configuration file like its creation and reading,
+ * This class manages every aspect of the configuration file like its creation and reading,
  * its splitting and its parameter conversions.
  * @author Cappello, Nazio
  */
 public class Parser {
     
-    // Name of the file
+    /** Name of the file */
     static String FILE_NAME;
     
-    // Encoding of the file
+    /** Charset of the file */
     static Charset ENCODING;
     
-    // Tags for the parameters' log file
+    /** Tags for the parameters' log file */
     static String[] tags = {
         "url ",
         "minT",
@@ -272,13 +272,19 @@ public class Parser {
      *  @return     True if correct, false otherwise
      */
     public static Boolean checkNumber(String number){
-        char[] charArray = number.toCharArray();
-        if(number.equals(""))
-            return false;
-        for(char c: charArray)
-            if(!Character.isDigit(c))
+        try{
+            char[] charArray = number.toCharArray();
+            if(number.equals(""))
                 return false;
-        return true;
+            for(char c: charArray)
+                if(!Character.isDigit(c))
+                    return false;
+            return true;
+        } catch (NullPointerException ex){
+            System.err.println("checkNumber: " + number);
+            System.exit(-1);
+            return false;
+        }
     }
     
     /**

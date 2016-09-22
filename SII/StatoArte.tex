@@ -23,17 +23,11 @@ Nel software sono effettuate solo \textit{GET} assolute, e la scelta dello \text
 
 \vspace*{0.5cm}
 \subsection{Singleton Pattern}
-In determinati contesti \`e necessario che venga istanziato un solo esemplare di una classe. Ad esempio: per evitare due riproduzioni audio contemporanee, sar\`{a} opportuno istanziare un riproduttore musicale una sola volta,
-uno \textit{spooler} di stampa dovrebbe tenere una coda unica anche se sono presenti pi\`{u} stampanti attive e
-il manager di un file system dovrebbe essere unico.
+In determinati contesti \`e necessario che venga istanziato un solo esemplare di una classe. Ad esempio: per evitare due riproduzioni audio contemporanee, sar\`{a} opportuno istanziare un unico riproduttore musicale,
+uno \textit{spooler} di stampa dovrebbe tenere una sola coda anche se sono presenti pi\`{u} stampanti attive,
+etc.
 
-Per garantire questa singola istanziazione \`{e} sufficiente rendere impossible l'utilizzo del costruttore della classe da parte del resto del codice, e fornire un metodo indiretto per ottenere una istanza (l'unica) di tale classe.
-Sono quindi possibili diverse soluzioni:
-\begin{itemize}
-	\item dichiarare privato il costruttore, in modo che esso possa essere visto solo all'interno della classe Singleton;
-	\item prevedere il metodo (pubblico) statico e cio\`e di classe, in modo che esso sia comunque visibile. Questo metodo deve istanziare un esemplare se ci\`o non \`e ancora accaduto, oppure restituire l'oggetto gi\'a istanziato in precedenza senza istanziare ulteriori esemplari.
-\end{itemize}
-Questa seconda scelta \`e quella applicata nel progetto per la creazione e gestione del \textit{logger} e la creazione di uno schedulatore di task.
+Per garantire questa singola istanziazione \`{e} sufficiente rendere impossible l'utilizzo del costruttore della classe da parte del resto del codice, e fornire un metodo indiretto per ottenere l'unica istanza di tale classe.
 
 \vspace*{0.5cm}
 \subsection{Scheduler}
@@ -41,13 +35,13 @@ Lo \textit{scheduler} ha il compito di garantire la corretta esecuzione dei task
 
 Nell'applicativo \`{e} stato utilizzato uno \textit{Scheduler Executor Service}, istanziato una sola volta mediante l'uso del \textit{Singleton pattern}; data la presenza di istruzioni bloccanti nei task da eseguire, \`{e} stato messo a disposizione dello scheduler un pool di $30$ \textit{thread}.
 
-La classe utilizzata permette la schedulazione di job periodici tramite la funzione \textit{scheduleAtFixedRate} ma, data la necessit\`{a} di schedulare task con rate non fissato, \`{e} stato deciso di effettuare le singole ri-schedulazioni utilizzando, la pi\`{u} semplice, funzione \textit{schedule}.
+La classe utilizzata permette la schedulazione di job periodici tramite la funzione \textit{scheduleAtFixedRate} ma, data la necessit\`{a} di schedulare task con rate non fissato, \`{e} stato deciso di effettuare le singole ri-schedulazioni utilizzando la pi\`{u} semplice funzione \textit{schedule}.
 
 
 \vspace*{0.5cm}
 \subsection{ID dei bot e MD5}
 In una rete reale, i \textit{bot} sono univocamente identificabili dal centro di comando e controllo:
-l'attaccante ha interesse nel conoscere il numero di \textit{bot} attivi per effettuare un attacco ad una data; questa informazione inoltre risulta fondamentale, a livello economico, se egli decide di vendere o affittare la \textit{botnet} ad un acquirente esterno. 
+l'attaccante ha interesse nel conoscere il numero di \textit{bot} attivi per effettuare un attacco in un determinato istante; questa informazione inoltre risulta fondamentale, a livello economico, se egli decide di vendere o affittare la \textit{botnet} ad un acquirente esterno. 
 
 Per garantire l'unicit\`{a} dell'identificativo di ogni bot, viene effettuato l'\textit{hash md5} delle informazioni riguardanti l'hardware della macchina e il sistema operativo in esecuzione.
 

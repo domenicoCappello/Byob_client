@@ -91,7 +91,7 @@ private static String unixTermOut(String cmd){
 \end{lstlisting}
 
 \subsection{Windows}
-I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
+I browser ritenuti pi\`{u} comuni in ambiente Windows sono stati:
 \begin{itemize}
 	\item Internet Explorer
 	\item Google Chrome
@@ -135,8 +135,8 @@ String str = linuxTermOut(args);
 
 \section{File di configurazione}
 Il file di configurazione permette di impostare i parametri principali delle comunicazioni da effettuare verso l'esterno.
-Per ogni contatto \`{e} necessario definire una URL, la periodicit\`{a} di contatto (che pu\`{o} essere fissa o scelta randomicamente in un intervallo pre-impostato), il numero massimo dei contatti da effettuare.
-\`{E} inoltre possibile impostare un proxy tramite il quale effettuare le connessioni, uno \textit{user agent} differente da quello di default ed un set di condizione sotto le quali non viene effettuata la connessione alla URL specificata.
+Per ogni contatto \`{e} necessario definire una URL, la periodicit\`{a} di contatto (che pu\`{o} essere fissa o scelta randomicamente in un intervallo pre-impostato) ed il numero massimo dei contatti da effettuare.
+\`{E} inoltre possibile impostare un proxy tramite il quale effettuare le connessioni, uno \textit{user agent} differente da quello di default ed un set di condizioni sotto le quali non viene effettuata la connessione alla URL specificata.
 
 Il file di configurazione consiste in un file di testo formattato nel seguente modo:
 
@@ -194,12 +194,12 @@ RegexFormatter ipFormatter = new RegexFormatter(p);
 \end{lstlisting}
 
 Tra tutti i parametri di configurazione, solamente \textit{sleep condition} non pu\`{o} essere inserito manualmente, in quanto ogni sua condizione \`{e} rappresentata tramite una lettera dell'alfabeto. A tal proposito si \`{e} pensato di fornire all'utente un'esperienza semplificata, attraverso l'utilizzo di un \textit{popup} e di due gruppi di \textit{radiobutton}. 
-Una volta confermata la selezione, vengono restituite le lettere rappresentanti le condizioni nella relativa {jFormattedTextField}.
+Una volta confermata la selezione, vengono restituite le lettere rappresentanti le condizioni nella relativa \textit{jFormattedTextField}.
 
-Lo scopo della \textit{jTextArea} \`{e} quello di permettere una visualizzazione generale di tutte le informazioni inserite. La \textit{jTextArea} non \`{e} editabile: questo perch\`{e} si voleva evitare che l'utente potesse cambiare il \textit{format} dei parametri di configurazione, dovendo cos\`{i} effettuare un controllo sulla loro validit\`{a}.
+Lo scopo della \textit{jTextArea} \`{e} quello di permettere la visualizzazione generale di tutte le informazioni inserite.
 
 Una volta inseriti i dati, si hanno a disposizione due \textit{jButton} chiamati "Push" e "Pull". 
-Alla pressione del tasto "Push", vengono effettuati i controlli sui valori inseriti, che andranno a popolare la \textit{jTextArea}. Se \`{e} stato commesso un errore nell'inserimento dei parametri di configurazione oppure \`{e} stato dimenticato un valore non opzionale, viene visualizzato un messaggio di \textit{warning}:
+Alla pressione del tasto "Push", vengono effettuati i controlli sui valori inseriti, che andranno a popolare la \textit{jTextArea}. Se \`{e} stato commesso un errore nell'inserimento dei parametri di configurazione oppure \`{e} stato dimenticato un valore non opzionale, viene visualizzato un messaggio di \textit{warning}.
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -229,7 +229,7 @@ public static List<String> warningMessage(String[] params){
 		return warning;
 	}
 }
-\end{lstlisting}.
+\end{lstlisting}
 
 il messaggio indirizza l'utente verso una facile soluzione del problema, eventualmente tramite la selezione dei valori di \textit{default}.
 Il messaggio viene generato controllando che:
@@ -242,7 +242,8 @@ Il messaggio viene generato controllando che:
 Alla pressione del tasto "Pull" viene prelevato il \textit{set} di parametri inserito nella \textit{jtextArea} e riportato, campo per campo, nelle rispettive \textit{jFormattedTextField}. 
 \`{E} quindi possibile effettuare le modifiche opportune e utilizzare nuovamente il tasto "Push" per re-importare i parametri nella \textit{jTextArea}. 
 
-Al termine della scrittura del file di configurazione, la pressione del tasto \textit{Save} aprir\`{a} una finestra nella quale sar\`{a} possibile scegliere la directory di salvataggio del file.
+Al termine della scrittura del file di configurazione, la pressione del tasto "Save" aprir\`{a} una finestra nella quale sar\`{a} possibile scegliere la directory di salvataggio del file.
+
 Indirizzo IP e porta del proxy, qualora inseriti, verranno scritti direttamente nel file salvato.
 
 \vspace{0.5cm}
@@ -336,8 +337,9 @@ try {
 
 
 \section{Lancio}
-Dopo aver selezionato un file di configurazione, cliccando sul tasto \textit{Launch} viene eseguita la parte principale del progetto.
-L'ArrayList di \textit{URLDetails} viene passato alla funzione \textit{Tools.schedule(ArrayList<URLDetails> task)} che, per ogni elemento estratto dall'ArrayList, crea un'istanza della classe \textit{ByobTask} (che implementa l'interfaccia \textit{Runnable}) e ne richiede la schedulazione allo \textit{Scheduler Executor Service}.
+Dopo aver selezionato un file di configurazione, cliccando sul tasto "Launch" viene eseguita la parte principale del progetto.
+
+L'ArrayList di \textit{URLDetails} viene passato alla funzione \textit{Tools.schedule} che, per ogni elemento estratto dall'ArrayList, crea un'istanza della classe \textit{ByobTask} e ne richiede la schedulazione allo \textit{Scheduler Executor Service}.
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -351,12 +353,14 @@ public static void schedule(ArrayList <URLDetails> task) {
 
 
 \subsection{Schedulazione dei task}
-ByobTask rappresenta il singolo task che deve essere eseguito dallo scheduler; ogni task \`{e} legato ad una connessione, ovvero ad un'istanza di \textit{URLDetails}, che contiene tutti i dettagli delle comunicazioni da effettuare.
-Nel metodo \textit{run()}, che viene sovrascritto dalla classe, vengono dapprima controllate le condizioni di \textit{sleep}: 
-se una di queste risulta verificata il task viene ri-schedulato dopo un intervallo che va da 30 a 45 minuti, al termine dei quali viene effettuato nuovamente il check delle condizioni;
-se nessuna condizione \`{e} verificata, allora viene decrementato il numero di contatti ancora da effettuare, viene ri-schedulato il task in esame ed eventualmente viene inviata una GET http alla URL target.
-I dettagli del contatto avvenuto sono scritti sul file di log, cos\`{\i} come l'eventuale risposta (qualora specificato) da parte del server.
+\textit{ByobTask} rappresenta il singolo task che deve essere eseguito dallo scheduler; ogni task \`{e} legato ad una connessione, ovvero ad un'istanza di \textit{URLDetails}, che contiene tutti i dettagli delle comunicazioni da effettuare.
 
+Nel metodo \textit{run}, che viene sovrascritto dalla classe, sono dapprima controllate le condizioni di \textit{sleep}: 
+se una di queste risulta verificata, il task viene ri-schedulato dopo un intervallo che va da 30 a 45 minuti, al termine dei quali si effettuer\`{a} nuovamente il check delle condizioni;
+se nessuna condizione \`{e} verificata, allora viene decrementato il numero di contatti ancora da effettuare, ri-schedulato il task in esame ed eventualmente viene inviata una GET http alla URL target.
+
+I dettagli del contatto avvenuto sono scritti sul file di log, cos\`{\i} come l'eventuale risposta (qualora specificato) da parte del server.
+\newpage
 \vspace{0.5cm}
 \begin{lstlisting}
 public class ByobTask implements Runnable {
@@ -403,7 +407,7 @@ URLDetails contact;
 
 \subsection{Comunicazione HTTP}
 I contatti (http GET) sono effettuati tramite chiamata a una funzione statica della classe \textit{ByobComm}.
-Il metodo \textit{httpGet([...])} permette di specificare, oltre alla URL da contattare, anche uno user agent personalizzato, l'indirizzo ip e la porta di un server proxy che si desidera utilizzare.
+Il metodo \textit{httpGet} permette di specificare, oltre alla URL da contattare, anche uno \textit{user-agent} personalizzato, l'indirizzo IP e la porta di un server \textit{proxy} che si desidera utilizzare.
 
 \vspace{0.5cm}
 \begin{lstlisting}

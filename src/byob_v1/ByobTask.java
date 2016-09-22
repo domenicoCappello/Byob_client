@@ -30,6 +30,9 @@ public class ByobTask implements Runnable {
         this.contact = contact;
     }
     
+    /**
+     * Override of the function Runnable.run
+     */
     @Override
     public void run() {
         

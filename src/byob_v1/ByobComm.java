@@ -8,7 +8,7 @@ import java.net.Proxy;
 import java.net.URL;
 
 /**
- * Class is responsible for anything concerning the http GET method and its response.
+ * This class is responsible for anything concerning the http GET method and its response.
  * @author Cappello, Nazio
  */
 public class ByobComm {

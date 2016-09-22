@@ -4,12 +4,16 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 /**
- *  Class contains the main method that writes OS and browsers' information file
+ *  This class contains the main method that writes OS and browsers' information file
  *  and invokes the GUI.
  *  @author Cappello, Nazio
  */
 public class Byob_v1 {
 
+    /**
+     * Main method of the class. 
+     * @param args
+     */
     public static void main(String[] args) {
         /**Start the GUI*/
         GUI frame = new GUI();

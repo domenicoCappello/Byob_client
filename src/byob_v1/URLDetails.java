@@ -12,39 +12,49 @@ import java.util.Calendar;
  */
 public class URLDetails {
     
-    // Unique identifier of the bot
+    /** Unique identifier of the bot */
     String idBot = "";             
-    
-    // Whether or not wait for server response
+
+    /**
+     * Whether or not wait for server response
+     */
     public Boolean waitForResponse = false;
     
-    // URL to be contacted
+    /** URL to be contacted */
     private String URL = "";
     
-    // Minimum time of contact
+    /** Minimum time of contact */
     private int minWaitTime = 0;
     
-    // Max time of contact
+    /** Max time of contact */
     private int maxWaitTime = 0;
     
-    // Number of contacts to the URL
+    /** Number of contacts to the URL */
     private long contactsNum = 0;
     
-    // Sleep Condition xy
-    // x = O/E/'' : Odd/Even day of the week 
-    // y = A/P/'' : AM/PM hour of the day
+    /** Sleep Condition xy
+    * x = O/E/'' : Odd/Even day of the week 
+    * y = A/P/'' : AM/PM hour of the day */
     private String sleepMode = "";   
     
-    // User-Agent string
+    /** User-Agent string */
     private String userAgent = "";
     
-    // Proxy Hostname 
+
+    /**
+     * Proxy Hostname 
+     */
     public static String proxyIp = "";
     
-    // Proxy Port
+
+    /**
+     * Proxy Port
+     */
     public static int proxyPort = 0;
-    
-    // Max fields number
+
+    /**
+     * Max fields number
+     */
     public static final int NUM_FIELDS = 6;
     
     /**

@@ -53,19 +53,19 @@ import javax.swing.text.NumberFormatter;
  */
 public final class GUI extends javax.swing.JFrame {
        
-    //Configuration file's Path 
+    /** Configuration file's Path */
     String fileConfPath;
     
-    // List of user's params JTextField 
+    /** List of user's params JTextField */
     List<JTextField> textParam = new ArrayList<>();
     
-    // List of labels in which help to users can be provided
+    /** List of labels in which help to users can be provided */
     List<JLabel> configurationLabel = new ArrayList<>();
     
-    // Map of available sleep condition
+    /** Map of available sleep condition */
     HashMap<String, String> conditionMap = new HashMap<>();
     
-    // Sleep conditions
+    /** Sleep conditions */
     String[] conditionLabel = {
     "Even days",
     "Odd days",
@@ -74,7 +74,7 @@ public final class GUI extends javax.swing.JFrame {
     "PM",
     "Never" };
     
-    // Mapping of the Sleep conditions
+    /** Mapping of the Sleep conditions */
     String[] conditionLetter = {
     "E",
     "O",
@@ -83,7 +83,7 @@ public final class GUI extends javax.swing.JFrame {
     "P",
     "" };
     
-    // Help strings to show to user
+    /** Help strings to show to user */
     String[] helpText = {
     "<html>URL to contact <BR>i.e. http://www.facebook.com</html>",
     "<html>Specify for how long the URL must be contacted</html>",
@@ -94,7 +94,7 @@ public final class GUI extends javax.swing.JFrame {
     "<html>Define the IP of the proxy <BR>i.e 10.0.0.1</html>",
     "<html>Define the port of the proxy in range [1025, 65535]<BR>i.e 80</html>" };
     
-    // Default Values
+    /** Default Values */
     String[] defaultValue = {
     "*http://www.google.it",
     "6000",
@@ -105,10 +105,10 @@ public final class GUI extends javax.swing.JFrame {
     " ",
     " " };
     
-    // Variable for sleep conditions
+    /** Variable for sleep conditions */
     String sleepCondition = "";
     
-    // Help aspect of the labels' border
+    /** Help aspect of the labels' border */
     Border helpBorder = BorderFactory.createMatteBorder(1, 5, 1, 1, Color.red);
     
     /**
@@ -875,7 +875,12 @@ public final class GUI extends javax.swing.JFrame {
             jTextArea1.setText("");
     }
     
-      public String getSelectedButtonText(ButtonGroup buttonGroup) {
+    /**
+     *
+     * @param buttonGroup
+     * @return
+     */
+    public String getSelectedButtonText(ButtonGroup buttonGroup) {
         for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
             AbstractButton button = buttons.nextElement();
 
@@ -936,6 +941,7 @@ public final class GUI extends javax.swing.JFrame {
     private String[] extractData(boolean standard) {
         String[] params = new String[textParam.size()];   
         for(int i = 0; i < textParam.size() ; i++) {
+            String min, max;
             switch (i) {
                     case 0:
                         if(!textParam.get(i).getText().equals("http://"))
@@ -945,10 +951,11 @@ public final class GUI extends javax.swing.JFrame {
                         break;
                         
                     case 1:
+
                         if(jRadioButton3.isSelected()){
-                            /** MinTime = min(minT, maxT)*/
-                            String max = textParam.get(i+1).getText();
-                            String min = textParam.get(i).getText();
+                            /** MinTime = min(minT, maxT)*/                        
+                            max = textParam.get(i+1).getText();
+                            min = textParam.get(i).getText();
                             if(Parser.checkNumber(min) && Parser.checkNumber(max))
                                 if(Integer.parseInt(max) >= Integer.parseInt(min))
                                     params[i] = standard  && min.equals("") ? 
@@ -959,15 +966,18 @@ public final class GUI extends javax.swing.JFrame {
                             else
                                 params[i] = standard  && min.equals("") ? 
                                 defaultValue[i] : min.equals("") ? " " : min;
+                        } else {
+                            params[i] = standard  && textParam.get(i).getText().equals("") ? 
+                            defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
                         }
                         break;
                         
                     case 2:
-                        /** if(maxT exists) then MaxTime = max(minT, maxT)
+                            /** if(maxT exists) then MaxTime = max(minT, maxT)
                             else MaxTime = MinTime*/
                             if(jRadioButton3.isSelected()){
-                                String max = textParam.get(i).getText();
-                                String min = textParam.get(i-1).getText();
+                                max = textParam.get(i).getText();
+                                min = textParam.get(i-1).getText();
                                 if(Parser.checkNumber(min) && Parser.checkNumber(max))
                                     if(Integer.parseInt(max) >= Integer.parseInt(min))
                                             params[i] = standard ? defaultValue[i] : max;
@@ -976,13 +986,16 @@ public final class GUI extends javax.swing.JFrame {
                                 else
                                     params[i] = standard  && max.equals("") ? 
                                     defaultValue[i] : max.equals("") ? " " : max; 
-                            }  
-                        break;
+                            }  else {
+                                params[i] = textParam.get(i-1).getText().equals("")? defaultValue[i] : 
+                                                            textParam.get(i-1).getText();
+                            }
+                            break;
                         
                     default:
                         params[i] = standard  && textParam.get(i).getText().equals("") ? 
-                            defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
-                        break;       
+                        defaultValue[i] : textParam.get(i).getText().equals("") ? " " : textParam.get(i).getText();
+                    break;       
             }
         } 
         return params;

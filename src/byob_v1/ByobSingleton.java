@@ -16,13 +16,17 @@ import java.util.logging.SimpleFormatter;
  */
 public class ByobSingleton {
     
-    // Singleton instance
+    /** Singleton instance */
     private static ByobSingleton instance = null;
     
-    // Logger class
+    /**
+     * Logger class
+     */
     public static final Logger myLogger = Logger.getLogger("BYOB");
-    
-    // Scheduler Executor Service
+
+    /**
+     * Scheduler Executor Service
+     */
     public static final ScheduledExecutorService ses = Executors.newScheduledThreadPool(30);
  
     /**
