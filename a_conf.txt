@@ -1,0 +1,19 @@
+$70.164.255.172:8080
+*http://www.userk.co.uk
+232
+2341
+20
+EA
+Mozilla custom
+*http://www.lemedicine.org
+600
+600
+10
+ 
+ 
+*http://www.roccaprioracalcio.it
+100
+1000
+30
+A
+Custom

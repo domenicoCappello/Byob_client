@@ -462,3 +462,243 @@ set 20, 2016 11:31:31 PM byob_v1.ByobTask run
 BUONO: http://www.lemedicine.org, contactsNum: 1, sleepMode:  , userAgent: user
 set 20, 2016 11:31:31 PM byob_v1.ByobTask run
 BUONO: http://www.lemedicine.org, contactsNum: 0, sleepMode:  , userAgent: user
+set 21, 2016 7:01:29 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: ----------------------------------
+url : http://dsdsf
+minT: 32
+maxT: 232
+numC: 2
+sleC:  
+usAg:  
+
+set 21, 2016 7:01:29 PM byob_v1.ByobTask run
+BUONO: http://dsdsf, contactsNum: 1, sleepMode:  , userAgent:  
+set 21, 2016 7:01:29 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:01:30 PM byob_v1.ByobTask run
+BUONO: http://dsdsf, contactsNum: 0, sleepMode:  , userAgent:  
+set 21, 2016 7:01:30 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:02:12 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: 
+Proxy: 
+----------------------------------
+url : http://dsdsf
+minT: 32
+maxT: 232
+numC: 2
+sleC:  
+usAg:  
+
+set 21, 2016 7:02:12 PM byob_v1.ByobTask run
+BUONO: http://dsdsf, contactsNum: 1, sleepMode:  , userAgent:  
+set 21, 2016 7:02:12 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:02:12 PM byob_v1.ByobTask run
+BUONO: http://dsdsf, contactsNum: 0, sleepMode:  , userAgent:  
+set 21, 2016 7:02:12 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:02:41 PM byob_v1.URLDetails setProxy
+BUONO: Setting up proxy: 58.176.46.248 : 80
+set 21, 2016 7:02:41 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: 
+Proxy: 58.176.46.248:80
+----------------------------------
+url : http://www.google.com
+minT: 45
+maxT: 45
+numC: 5
+sleC:  
+usAg:  
+----------------------------------
+url : http://www.lemedicine.org
+minT: 54
+maxT: 435
+numC: 7
+sleC:  
+usAg: user
+
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.google.com, contactsNum: 4, sleepMode:  , userAgent:  
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 6, sleepMode:  , userAgent: user
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.google.com, contactsNum: 3, sleepMode:  , userAgent:  
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.google.com, contactsNum: 2, sleepMode:  , userAgent:  
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.google.com, contactsNum: 1, sleepMode:  , userAgent:  
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.google.com, contactsNum: 0, sleepMode:  , userAgent:  
+set 21, 2016 7:02:41 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 5, sleepMode:  , userAgent: user
+set 21, 2016 7:02:42 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 4, sleepMode:  , userAgent: user
+set 21, 2016 7:02:42 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 3, sleepMode:  , userAgent: user
+set 21, 2016 7:02:42 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 2, sleepMode:  , userAgent: user
+set 21, 2016 7:02:43 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 1, sleepMode:  , userAgent: user
+set 21, 2016 7:02:43 PM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 0, sleepMode:  , userAgent: user
+set 21, 2016 7:06:11 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: ----------------------------------
+url : http://ewf
+minT: 3
+maxT: 87
+numC: 9
+sleC:  
+usAg: scop
+
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 8, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 7, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 6, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 5, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 4, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 3, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 2, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 1, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:06:11 PM byob_v1.ByobTask run
+BUONO: http://ewf, contactsNum: 0, sleepMode:  , userAgent: scop
+set 21, 2016 7:06:11 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:42 PM byob_v1.Parser writeParamsFile
+INFORMAZIONI: ----------------------------------
+url : http://de3
+minT: 3
+maxT: 897
+numC: 8
+sleC:  
+usAg:  
+
+set 21, 2016 7:07:42 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 7, sleepMode:  , userAgent:  
+set 21, 2016 7:07:42 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:42 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 6, sleepMode:  , userAgent:  
+set 21, 2016 7:07:42 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:43 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 5, sleepMode:  , userAgent:  
+set 21, 2016 7:07:43 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:44 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 4, sleepMode:  , userAgent:  
+set 21, 2016 7:07:44 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:44 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 3, sleepMode:  , userAgent:  
+set 21, 2016 7:07:44 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 21, 2016 7:07:45 PM byob_v1.ByobTask run
+BUONO: http://de3, contactsNum: 2, sleepMode:  , userAgent:  
+set 21, 2016 7:07:45 PM byob_v1.ByobComm httpGet
+GRAVE: IOException: check URL
+set 22, 2016 11:06:51 AM byob_v1.URLDetails setProxy
+BUONO: Setting up proxy: 112.65.88.173 : 8080
+set 22, 2016 11:06:51 AM byob_v1.Parser writeParamsFile
+INFORMAZIONI: 
+Proxy: 112.65.88.173:8080
+----------------------------------
+url : http://www.google.com
+minT: 200
+maxT: 300
+numC: 50
+sleC: OA
+usAg: Mozilla Custom
+----------------------------------
+url : http://www.lemedicine.org
+minT: 20
+maxT: 300
+numC: 100
+sleC: O
+usAg: Custom 2
+
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: Check sleep condition for http://www.google.com in 35 minutes
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 99, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 98, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 97, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 96, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 95, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 94, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:51 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 93, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 92, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 91, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 90, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 89, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 88, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:52 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 87, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 86, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 85, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 84, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 83, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 82, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 81, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 80, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:53 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 79, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 78, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 77, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 76, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 75, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 74, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 73, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:54 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 72, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:55 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 71, sleepMode: O, userAgent: Custom 2
+set 22, 2016 11:06:55 AM byob_v1.ByobTask run
+BUONO: http://www.lemedicine.org, contactsNum: 70, sleepMode: O, userAgent: Custom 2

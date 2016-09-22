@@ -303,6 +303,7 @@ Vengono scandite, quindi, le righe successive del file (fino alla fine o alla su
 \vspace{0.5cm}
 Essa viene divisa ed i valori che la compongono sono utilizzati per la creazione di oggetti di tipo \textit{URLDetails}, raggruppati nell' \textit{ArrayList} "TaskList".
 
+\vspace{0.5cm}
 \begin{lstlisting}
 // Build the contact string ("URL;minT;maxT;numC;sleepC;userAgent;")
 String contact = url.substring(1);
@@ -311,10 +312,8 @@ for(int i = 0; i < URLDetails.NUM_FIELDS - 1; i++){
 	if ((line = br.readLine()) != null)
 	contact = contact + delim + line;
 }
-
-//Build detail string array
+// Build detail string array
 String[] detail = splitString(contact, delim);
-
 // Build URLDetails obj and add to configuration arrayList
 URLDetails det = convertParam(detail);
 [...]

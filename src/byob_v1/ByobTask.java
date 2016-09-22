@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ByobTask represents a single task that the executor service has to perform.
+ * ByobTask represents a single task that the executor service has to execute.
  * It implements the Runnable interface, and each class instance re-schedule 
  * its own execution according to the information stored in the URLDetails 
  * contact. 

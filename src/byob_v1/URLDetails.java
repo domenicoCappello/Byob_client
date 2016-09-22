@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 /**
- *  URLDetails contains all the parameters of the connection to perform.
+ *  URLDetails contains all the parameters of the connection to execute.
  *  @author Cappello, Nazio
  */
 public class URLDetails {

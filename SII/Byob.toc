@@ -5,34 +5,34 @@
 \contentsline {section}{\numberline {1.2}HTTP Botnet}{2}
 \contentsline {section}{\numberline {1.3}Obiettivo}{3}
 \contentsline {chapter}{\numberline {2}Panoramica del progetto}{4}
-\contentsline {section}{\numberline {2.1}Punti cardine}{4}
-\contentsline {subsection}{\numberline {2.1.1}HTTP}{4}
+\contentsline {section}{\numberline {2.1}Componenti principali}{4}
+\contentsline {subsection}{\numberline {2.1.1}HTTP}{5}
 \contentsline {subsection}{\numberline {2.1.2}Singleton Pattern}{5}
-\contentsline {subsection}{\numberline {2.1.3}Schedulatore}{6}
-\contentsline {subsection}{\numberline {2.1.4}ID dei bot e MD5}{6}
+\contentsline {subsection}{\numberline {2.1.3}Scheduler}{6}
+\contentsline {subsection}{\numberline {2.1.4}ID dei bot e MD5}{7}
 \contentsline {subsection}{\numberline {2.1.5}Parsing}{7}
 \contentsline {subsection}{\numberline {2.1.6}Multi-piattaforma}{7}
 \contentsline {section}{\numberline {2.2}Piattaforma di sviluppo, Swing, Awt}{8}
 \contentsline {section}{\numberline {2.3}Build your own botnet}{8}
 \contentsline {subsection}{\numberline {2.3.1}Struttura del progetto}{8}
 \contentsline {subsection}{\numberline {2.3.2}ByobComm}{9}
-\contentsline {subsection}{\numberline {2.3.3}ByobSingleton}{10}
+\contentsline {subsection}{\numberline {2.3.3}ByobSingleton}{9}
 \contentsline {subsection}{\numberline {2.3.4}ByobTask}{10}
-\contentsline {subsection}{\numberline {2.3.5}Byob\_v1}{11}
-\contentsline {subsection}{\numberline {2.3.6}GUI}{11}
-\contentsline {paragraph}{GUI user-friendly}{15}
-\contentsline {subsection}{\numberline {2.3.7}Parser}{16}
-\contentsline {subsection}{\numberline {2.3.8}Tools}{17}
-\contentsline {subsection}{\numberline {2.3.9}URLDetails}{18}
-\contentsline {chapter}{\numberline {3}Implementazione}{19}
-\contentsline {section}{\numberline {3.1}Avvio iniziale}{19}
-\contentsline {section}{\numberline {3.2}Informazioni di sistema}{20}
-\contentsline {subsection}{\numberline {3.2.1}Linux}{20}
-\contentsline {subsection}{\numberline {3.2.2}Windows}{21}
-\contentsline {subsection}{\numberline {3.2.3}Mac OSx}{22}
-\contentsline {section}{\numberline {3.3}File di configurazione}{23}
-\contentsline {subsection}{\numberline {3.3.1}Immissione e scrittura}{23}
-\contentsline {subsection}{\numberline {3.3.2}Lettura e caricamento}{27}
-\contentsline {section}{\numberline {3.4}Lancio}{29}
-\contentsline {subsection}{\numberline {3.4.1}Schedulazione dei task}{29}
-\contentsline {subsection}{\numberline {3.4.2}Comunicazione HTTP}{30}
+\contentsline {subsection}{\numberline {2.3.5}GUI}{10}
+\contentsline {paragraph}{GUI user-friendly}{14}
+\contentsline {subsection}{\numberline {2.3.6}Parser}{15}
+\contentsline {subsection}{\numberline {2.3.7}Tools}{15}
+\contentsline {subsection}{\numberline {2.3.8}URLDetails}{16}
+\contentsline {chapter}{\numberline {3}Implementazione}{17}
+\contentsline {section}{\numberline {3.1}Avvio iniziale}{17}
+\contentsline {section}{\numberline {3.2}Informazioni di sistema}{18}
+\contentsline {subsection}{\numberline {3.2.1}Linux}{18}
+\contentsline {subsection}{\numberline {3.2.2}Windows}{19}
+\contentsline {subsection}{\numberline {3.2.3}Mac OSx}{20}
+\contentsline {section}{\numberline {3.3}File di configurazione}{21}
+\contentsline {subsection}{\numberline {3.3.1}Immissione e scrittura}{21}
+\contentsline {subsection}{\numberline {3.3.2}Lettura e caricamento}{25}
+\contentsline {section}{\numberline {3.4}Lancio}{27}
+\contentsline {subsection}{\numberline {3.4.1}Schedulazione dei task}{27}
+\contentsline {subsection}{\numberline {3.4.2}Comunicazione HTTP}{28}
+\contentsline {chapter}{\numberline {4}Installazione}{30}

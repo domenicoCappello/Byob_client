@@ -245,7 +245,7 @@ public class Tools {
      */
     public static String runCmd(String command) {
         String cmdOutput = "";
-        String _string = null;
+        String _string;
 
         try {
             Process _process = Runtime.getRuntime().exec(command);
@@ -267,7 +267,7 @@ public class Tools {
      */
     public static String idGeneration() {
         String hardware;
-        String command = "";
+        String command;
         String os = getOs().toLowerCase();
         if(os.contains("linux")){
                 //command = "lshw | grep -e serial -e product | grep -v Controller | grep -v None";
