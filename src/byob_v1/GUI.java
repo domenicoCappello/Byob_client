@@ -380,11 +380,6 @@ public final class GUI extends javax.swing.JFrame {
         jFormattedTextField2.setEnabled(false);
 
         jFormattedTextField3.setEnabled(false);
-        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField3ActionPerformed(evt);
-            }
-        });
 
         jRadioButton3.setText("Interval");
         jRadioButton3.setEnabled(false);
@@ -434,11 +429,6 @@ public final class GUI extends javax.swing.JFrame {
         });
 
         jFormattedTextField4.setEnabled(false);
-        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField4ActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setText("-");
@@ -776,7 +766,7 @@ public final class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String[] params = jTextArea1.getText().split(cr);
+        String[] params = jTextArea1.getText().split("\n");
         clearFields(true, true);
         for(int i=0; i < textParam.size()-2; i++) {
             if(i==0)
@@ -842,14 +832,6 @@ public final class GUI extends javax.swing.JFrame {
             System.out.println("readConfFile IO");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
-
-    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
     
     /**
      * Method writes the paramaters inside the text area.
