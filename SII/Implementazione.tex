@@ -3,6 +3,7 @@
 \begin{minipage}{12cm}\textit{Sono di seguito presentati dettagli riguardanti l'implementazione dei passi principali eseguiti dal programma in esame. }
 \end{minipage}
 
+\vspace*{1cm}
 \section{Avvio iniziale}
 All'avvio dell'applicazione, viene visualizzata la schermata principale di configurazione; vengono inoltre raccolte e scritte sul file \textit{sys\_info.txt} informazioni riguardanti il sistema operativo della macchina e le versioni dei browser installati.
 
@@ -60,7 +61,7 @@ public static String getBrowsers(){
 \end{lstlisting}
 
 \subsection{Linux}
-I browser ritenuti pi\`{u} comuni in ambiente linux sono stati:
+I browser ritenuti pi\`{u} comuni in ambiente \textit{Linux} sono stati:
 \begin{itemize}
 	\item Google Chrome
 	\item Mozilla Firefox
@@ -91,7 +92,7 @@ private static String unixTermOut(String cmd){
 \end{lstlisting}
 
 \subsection{Windows}
-I browser ritenuti pi\`{u} comuni in ambiente Windows sono stati:
+I browser ritenuti pi\`{u} comuni in ambiente \textit{Windows} sono stati:
 \begin{itemize}
 	\item Internet Explorer
 	\item Google Chrome
@@ -119,7 +120,7 @@ I browser ritenuti pi\`{u} comuni in ambiente \textit{Mac OSx} sono stati:
 	\item Opera
 	\item Safari
 \end{itemize}
-Come per \textit{Linux}, per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la shell di sistema avviando il programma \textit{system\_profiler} con parametro \textit{SPApplicationDataType}. L'output offerto dal profiler di sistema contiene al suo interno tutto il software installato sulla macchina, compreso numero di versione e autori. 
+Come per \textit{Linux}, per identificare l'eventuale versione installata di ogni browser, viene avviato un nuovo processo che esegue la \textit{shell} di sistema avviando il programma \textit{system\_profiler} con parametro \textit{SPApplicationDataType}. L'output offerto dal profiler di sistema contiene al suo interno tutto il software installato sulla macchina, compreso numero di versione e autori. 
 Tutte le informazioni vengono salvate all'interno del file \textit{mac\_profile.txt}, da cui successivamente vengono estratte le versioni relative al software cercato.
 
 \vspace{0.5cm}
@@ -156,7 +157,7 @@ Il file di configurazione consiste in un file di testo formattato nel seguente m
 \subsection{Immissione e scrittura}
 Nel caso si scelga di inserire manualmente i parametri di configurazione, l'interfaccia mette a disposizione delle \textit{jFormattedTextField}. Esse rappresentano un modo semplice per specificare l'insieme dei caratteri accettati tramite un "formattatore": nel caso di campi numerici come \textit{Contact Time}, \textit{\#contacts} e la porta del \textit{proxy}, \`{e} stato utilizzato \textit{NumberFormatter}; nel caso del campo IP del \textit{proxy}, \`{e} stata utilizzata la classe \textit{RegexFormatter}, essendo l'indirizzo IP caratterizzato da un \textit{pattern} particolare, ovvero xxx.xxx.xxx.xxx, dove "xxx" \`{e} compreso tra 0 e 255.
 
-In questa classe, viene costruita una espressione regolare che specifica il tipo di \textit{input}:
+In questa classe, viene costruita una espressione regolare che specifica il tipo di input:
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -178,9 +179,9 @@ Pattern p = Pattern.compile( "^(?:" + _255 + "\\.){3}" + _255 + "$");
 \end{lstlisting}
 
 \begin{itemize}
-	\item "\^"  specifica l'inizio dell'\textit{input};
+	\item "\textasciicircum"  specifica l'inizio dell'input;
 	\item "?:" specifica l'inizio di un gruppo di non "cattura";
-	\item "String \_255 " specifica il \textit{pattern} che deve trovare un \textit{match};
+	\item "String \_255" specifica il \textit{pattern} che deve trovare un \textit{match};
 	\item "\textbackslash\textbackslash "  \`{e} necessario come parte del \textit{pattern} per "\textit{escape}" del periodo, il quale altrimenti farebbe il \textit{matching} su ogni carattere.
 	\item "{3}" fa il \textit{matching} del gruppo, appena terminato, 3 volte; 
 	\item "{{+ \_255 + "\$"}}" esegue nuovamente il \textit{matching}, con il pattern specificato.
@@ -193,7 +194,7 @@ infine viene creato l'oggetto \textit{RegexFormatter} con il \textit{Pattern} p:
 RegexFormatter ipFormatter = new RegexFormatter(p);
 \end{lstlisting}
 
-Tra tutti i parametri di configurazione, solamente \textit{sleep condition} non pu\`{o} essere inserito manualmente, in quanto ogni sua condizione \`{e} rappresentata tramite una lettera dell'alfabeto. A tal proposito si \`{e} pensato di fornire all'utente un'esperienza semplificata, attraverso l'utilizzo di un \textit{popup} e di due gruppi di \textit{radiobutton}. 
+Tra tutti i parametri di configurazione, solamente \textit{sleep condition} non pu\`{o} essere inserito manualmente, in quanto ogni sua condizione \`{e} rappresentata tramite una lettera dell'alfabeto. A tal proposito si \`{e} pensato di fornire all'utente un'esperienza semplificata, attraverso l'utilizzo di un \textit{popup} e di due gruppi di \textit{jRadioButton}. 
 Una volta confermata la selezione, vengono restituite le lettere rappresentanti le condizioni nella relativa \textit{jFormattedTextField}.
 
 Lo scopo della \textit{jTextArea} \`{e} quello di permettere la visualizzazione generale di tutte le informazioni inserite.
@@ -232,14 +233,14 @@ public static List<String> warningMessage(String[] params){
 \end{lstlisting}
 
 il messaggio indirizza l'utente verso una facile soluzione del problema, eventualmente tramite la selezione dei valori di \textit{default}.
-Il messaggio viene generato controllando che:
+Esso viene generato controllando che:
 \begin{itemize}
 	\item \textit{URL}, \textit{contactTime} e \textit{\#contacts} siano stati correttamente inseriti;
 	\item \textit{contactTime}, \textit{\#contacts}, \textit{proxy port} siano numeri interi;
 	\item \textit{proxy IP} segua una formattazione adeguata e valida.
 \end{itemize}
 
-Alla pressione del tasto "Pull" viene prelevato il \textit{set} di parametri inserito nella \textit{jtextArea} e riportato, campo per campo, nelle rispettive \textit{jFormattedTextField}. 
+Alla pressione del tasto "Pull" viene prelevato il \textit{set} di parametri inserito nella \textit{jTextArea} e riportato, campo per campo, nelle rispettive \textit{jFormattedTextField}. 
 \`{E} quindi possibile effettuare le modifiche opportune e utilizzare nuovamente il tasto "Push" per re-importare i parametri nella \textit{jTextArea}. 
 
 Al termine della scrittura del file di configurazione, la pressione del tasto "Save" aprir\`{a} una finestra nella quale sar\`{a} possibile scegliere la directory di salvataggio del file.
@@ -259,7 +260,7 @@ for (int i = 0; i < params.length; i++) {
 bw.close();     
 \end{lstlisting}
 
-Al termine del salvataggio viene abilitato il tasto "Lauch": alla sua pressione saranno eseguiti tutti i comandi specificati precedentemente nel file di configurazione.
+Al termine del salvataggio viene abilitato il tasto "Launch": alla sua pressione saranno eseguiti tutti i comandi specificati precedentemente nel file di configurazione.
 
 \subsection{Lettura e caricamento}
 Nel caso si scelga di caricare un file di configurazione creato precedentemente, la pressione del tasto "..." porter\`{a} all'apertura del \textit{jFileChooser} in una nuova finestra.
@@ -302,7 +303,7 @@ Vengono scandite, quindi, le righe successive del file (fino alla fine o alla su
 \end{normalsize}
 
 \vspace{0.5cm}
-Essa viene divisa ed i valori che la compongono sono utilizzati per la creazione di oggetti di tipo \textit{URLDetails}, raggruppati nell' \textit{ArrayList} "TaskList".
+Essa viene divisa ed i valori che la compongono sono utilizzati per la creazione di oggetti di tipo \textit{URLDetails}, raggruppati nell'\textit{ArrayList} "TaskList".
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -339,7 +340,7 @@ try {
 \section{Lancio}
 Dopo aver selezionato un file di configurazione, cliccando sul tasto "Launch" viene eseguita la parte principale del progetto.
 
-L'ArrayList di \textit{URLDetails} viene passato alla funzione \textit{Tools.schedule} che, per ogni elemento estratto dall'ArrayList, crea un'istanza della classe \textit{ByobTask} e ne richiede la schedulazione allo \textit{Scheduler Executor Service}.
+L'ArrayList di \textit{URLDetails} viene passato alla funzione \textit{Tools.schedule} che, per ogni elemento estratto dall'ArrayList, crea un'istanza della classe \textit{ByobTask} e ne richiede la schedulazione allo \textit{SchedulerExecutorService}.
 
 \vspace{0.5cm}
 \begin{lstlisting}
@@ -357,7 +358,7 @@ public static void schedule(ArrayList <URLDetails> task) {
 
 Nel metodo \textit{run}, che viene sovrascritto dalla classe, sono dapprima controllate le condizioni di \textit{sleep}: 
 se una di queste risulta verificata, il task viene ri-schedulato dopo un intervallo che va da 30 a 45 minuti, al termine dei quali si effettuer\`{a} nuovamente il check delle condizioni;
-se nessuna condizione \`{e} verificata, allora viene decrementato il numero di contatti ancora da effettuare, ri-schedulato il task in esame ed eventualmente viene inviata una GET http alla URL target.
+se nessuna condizione \`{e} verificata, allora viene decrementato il numero di contatti ancora da effettuare, ri-schedulato il task in esame ed eventualmente viene inviata una \textit{GET http} alla \textit{URL target}.
 
 I dettagli del contatto avvenuto sono scritti sul file di log, cos\`{\i} come l'eventuale risposta (qualora specificato) da parte del server.
 \newpage

@@ -57,6 +57,10 @@ Quando si parla di un programma multi-piattaforma si intende un programma in gra
 Sono stati gestite quindi le funzionalit\`{a} dipendenti dalla piattaforma su cui l'applicativo \`{e} in esecuzione (come la generazione dell' ID univoco del bot o l'individuazione dei browser installati), differenziandone il comportamento sulla base del sistema operativo presente sulla macchina.
 
 \vspace*{0.5cm}
+\subsection{Multi-threading}
+La presenza di istruzioni bloccanti nei \textit{task} ha reso necessario l'utilizzo, da parte dello \textit{scheduler}, di un \textit{thread pool} che grantisse un miglior tempo di risposta medio ai \textit{job} eseguiti.
+
+\vspace*{0.5cm}
 \section{Piattaforma di sviluppo, Swing, Awt}
 NetBeans \`e un ambiente di sviluppo integrato (\textit{IDE} -  \textit{Integrated Development Environment}) multi-linguaggio, scelto dalla Oracle Corporation come \textit{IDE} ufficiale da contrapporre al pi\'u diffuso Eclipse.\\
 NetBeans utilizza due componenti principali: la piattaforma, che comprende una serie di librerie per fornire gli elementi base dell'\textit{IDE} come presentazione dei dati e interfaccia utente, e l'\textit{IDE} vero e proprio, che permette di gestire il controllo e le funzionalit\'a offerte dalla piattaforma. NetBeans utilizza \textit{Abstract Window Toolkit} (\textit{AWT}), un insieme di API realizzate da Sun che permettono agli sviluppatori di modellare le interfacce grafiche delle finestre, pulsanti e altri elementi visuali. \textit{AWT} fornisce gli elementi grafici base che dipendono dalla piattaforma utilizzata, mentre per gli aspetti di alto livello come gestione di colori e interazione con l'utente \`e usata la libreria Swing.
@@ -167,9 +171,9 @@ Tramite l'inserimento manuale dei parametri di configurazione, \`{e} possibile s
 \item il \textbf{Proxy} (opzionale), ossia l'indirizzo IP e la porta di un proxy pubblico da utilizzare.
 \end{itemize} 
 
-Una volta inseriti nelle relative caselle di testo, il tasto "\textit{Push}" permette di visualizzare tali parametri nell' area sottostante (\textbf{Figura \ref{fig:push}}). 
+Una volta inseriti nelle relative caselle di testo, il tasto "Push" permette di visualizzare tali parametri nell' area sottostante (\textbf{Figura \ref{fig:push}}). 
 
-Il tasto "\textit{Pull}" permette di estrarre dall'area di testo l'ultimo inserimento effettuato per una eventuale modifica dei parametri non correttamente inseriti.
+Il tasto "Pull" permette di estrarre dall'area di testo l'ultimo inserimento effettuato per una eventuale modifica dei parametri non correttamente inseriti.
 \begin{figure}[!htb]
         \centering
 		\includegraphics[width=0.6\linewidth]{./imgs/textarea}
